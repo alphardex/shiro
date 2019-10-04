@@ -1,0 +1,76 @@
+@import url(https://fonts.googleapis.com/css?family=Lato);
+
+body {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background: #eee;
+}
+
+.login {
+  position: relative;
+  outline: none;
+  border: none;
+  width: 10em;
+  height: 4em;
+  border-radius: 4em;
+  background: linear-gradient(to right, #434343 0%, black 100%);
+  box-shadow: 0 0.5em 1em #222;
+  color: white;
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-family: "Lato";
+  font-size: 1.5em;
+  transition: all 0.5s;
+
+  .loader {
+    position: absolute;
+    top: 1.3em;
+    right: 0.5em;
+    width: 3em;
+    height: 0.5em;
+    opacity: 0;
+    transition: opacity 0.3s 0.3s;
+  }
+
+  .tick {
+    position: absolute;
+    left: 1.5em;
+    bottom: 1.2em;
+    stroke-width: 5px;
+    stroke-dasharray: 36px;
+    stroke-dashoffset: 36px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  &.active {
+    width: 4em;
+    color: transparent;
+    pointer-events: none;
+    user-select: none;
+
+    .loader {
+      opacity: 1;
+    }
+  }
+
+  &.verified {
+    .loader {
+      opacity: 0;
+    }
+
+    .tick {
+      opacity: 1;
+      animation: show-tick 0.8s 0.4s forwards;
+    }
+  }
+}
+
+@keyframes show-tick {
+  to {
+    stroke-dashoffset: 0;
+  }
+}

@@ -1,0 +1,37 @@
+$d: 10px;
+$total: 500;
+$time: 3s;
+
+body {
+  overflow: hidden; // no scrollbar
+  background: black;
+}
+
+.particle {
+  position: absolute;
+  width: $d;
+  height: $d;
+  border-radius: 50%;
+  animation: shoot $time ease-out infinite;
+
+  @for $i from 1 through $total {
+    &:nth-child(#{$i}) {
+      $t: $time - 2s + random(2000) * 1ms;
+
+      transform: translate(random(100) * 1vw, random(100) * 1vh);
+      background: hsl(random(360), 100%, 70%);
+      animation-duration: $t;
+      animation-delay: -0.01 * random(100) * $t; // execute animation in advance
+    }
+  }
+}
+
+@keyframes shoot {
+  from {
+    transform: translate(50vw, 50vh); // middle of the scene
+  }
+
+  to {
+    opacity: 0;
+  }
+}

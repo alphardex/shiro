@@ -1,0 +1,59 @@
+@import url(https://fonts.googleapis.com/css?family=Lato);
+
+$snow-size: 3em;
+
+body {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-family: "Lato";
+  background: black;
+}
+
+.card {
+  width: $snow-size * 10;
+  height: $snow-size * 10;
+  padding: 10em;
+  background: black;
+  display: flex;
+  flex-wrap: wrap;
+  filter: blur(15px) contrast(30);
+
+  .snow {
+    position: relative;
+    width: $snow-size;
+    height: $snow-size;
+    border-radius: 100%;
+
+    &::after {
+      position: absolute;
+      content: "";
+      left: 0;
+      width: inherit;
+      height: inherit;
+      background: white;
+      transition: 30s cubic-bezier(0.19, 1, 0.22, 1);
+    }
+
+    &:hover::after {
+      transform: scale(0);
+      transition-duration: 0.3s;
+    }
+  }
+}
+
+p {
+  position: absolute;
+  color: white;
+  top: 50%;
+  left: 50%;
+  z-index: 9999;
+  transform: translate(-47%, -160%);
+  font-size: 4em;
+  line-height: 1em;
+  pointer-events: none;
+  filter: blur(1px) contrast(20);
+  letter-spacing: 0.1em;
+}

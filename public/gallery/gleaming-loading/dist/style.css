@@ -1,0 +1,26 @@
+@import url(https://fonts.googleapis.com/css?family=Lato);
+body {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: black;
+}
+
+.loading {
+  color: white;
+  letter-spacing: 1rem;
+  font-size: 1.5rem;
+  font-family: "Lato";
+  text-transform: uppercase;
+}
+.loading span {
+  animation: blur 1.5s alternate infinite;
+}
+
+@keyframes blur {
+  to {
+    filter: blur(5px);
+  }
+}

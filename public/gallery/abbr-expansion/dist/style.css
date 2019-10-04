@@ -1,0 +1,35 @@
+@import url(https://fonts.googleapis.com/css?family=Lato);
+body {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background: black;
+}
+
+abbr {
+  text-decoration: none;
+  color: white;
+  font-size: 2em;
+  font-weight: bold;
+  font-family: 'Lato';
+  display: flex;
+}
+abbr span {
+  -webkit-text-decoration: underline white;
+          text-decoration: underline white;
+  transition: all 0.5s ease-in-out;
+}
+abbr span.hidden {
+  opacity: 0;
+  max-width: 0;
+  text-decoration: none;
+}
+abbr:hover span {
+  opacity: 1;
+  max-width: 2em;
+  text-decoration: none;
+}
+abbr:hover span.initial {
+  margin-left: 0.5em;
+}

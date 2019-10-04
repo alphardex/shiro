@@ -1,0 +1,54 @@
+body {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background: #222;
+}
+
+.loading {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  box-sizing: border-box;
+  border-top: 10px solid #e74c3c;
+  animation: spin 3s linear infinite;
+
+  &::before,
+  &::after {
+    position: absolute;
+    content: "";
+    width: inherit;
+    height: inherit;
+    border-radius: inherit;
+    box-sizing: inherit;
+    top: -10px;
+  }
+
+  &::before {
+    border-top: 10px solid #2ecc71;
+    transform: rotate(120deg);
+  }
+
+  &::after {
+    border-top: 10px solid #3498db;
+    transform: rotate(240deg);
+  }
+
+  span {
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    line-height: 200px;
+    text-align: center;
+    color: white;
+    animation: spin 3s linear reverse infinite;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(1turn);
+  }
+}

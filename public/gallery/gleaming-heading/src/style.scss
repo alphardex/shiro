@@ -1,0 +1,35 @@
+@import url(https://fonts.googleapis.com/css?family=Lato);
+
+body {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.gleaming {
+  color: #66ccff;
+  letter-spacing: 1rem;
+  font-size: 1.5rem;
+  font-family: "Lato";
+  text-transform: uppercase;
+
+  span {
+    animation: fadeIn 2s alternate infinite;
+    opacity: 0;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    filter: blur(10px);
+  }
+
+  50%,
+  100% {
+    opacity: 1;
+    filter: blur(0px);
+  }
+}
