@@ -1,5 +1,5 @@
 <template>
-  <figure class="imghvr-shutter-in-out-diag-2">
+  <figure class="imghvr-shutter-in-out-diag-2" data-aos="fade-up">
     <img :src="thumbnailPath" :alt="title" />
     <figcaption>
       <h3>{{ title }}</h3>
