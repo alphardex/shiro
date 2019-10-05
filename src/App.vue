@@ -6,7 +6,6 @@
 
 <style lang="scss">
 body {
-  margin: 6rem;
-  background: hsl(189, 43%, 60%);
+  background: hsl(177, 42%, 60%);
 }
 </style>

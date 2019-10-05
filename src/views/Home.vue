@@ -1,14 +1,15 @@
 <template>
   <div>
-    <h1 class="intro">Skadi</h1>
+    <a href="https://github.com/alphardex/skadi" target="_blank">
+      <h1 class="title">Skadi</h1>
+    </a>
+    <p class="intro">
+      Skadi，是alphardex平时所做的CSS动画作品集
+      <br />在这里，或许你能找到写CSS动画的灵感
+      <br />CSS is awesome.
+    </p>
     <div class="gallery">
-      <Card
-        v-for="art in arts"
-        :title="art.title"
-        :thumbnail="art.thumbnail"
-        :description="art.description"
-        :key="art.title"
-      ></Card>
+      <Card v-for="art in arts" :title="art.title" :thumbnail="art.thumbnail" :description="art.description" :key="art.title"></Card>
     </div>
   </div>
 </template>
@@ -81,18 +82,35 @@ export default class Home extends Vue {
 
 <style lang="scss">
 @import url(https://fonts.googleapis.com/css?family=Lobster);
+@import url(https://fonts.googleapis.com/css?family=ZCOOL+QingKe+HuangYou|ZCOOL+XiaoWei&display=swap);
 
-.intro {
+a {
+  text-decoration: none;
+}
+
+.title {
   color: hsl(187, 61%, 18%);
   text-align: center;
   font-size: 4em;
   font-family: "Lobster";
+  margin-top: 0.5em;
+  margin-bottom: 0.2em;
+}
+
+.intro {
+  color: hsl(187, 61%, 18%);
+  text-align: center;
+  font-size: 1.2em;
+  font-family: "ZCOOL XiaoWei", serif;
+  margin: 2em auto;
+  line-height: 1.6em;
 }
 
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(30ch, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(25ch, 1fr));
   grid-gap: 2rem;
+  margin: 0 6rem 3rem 6rem;
 
   padding-top: 2.5rem;
 }

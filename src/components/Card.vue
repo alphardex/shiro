@@ -28,6 +28,7 @@ export default class Card extends Vue {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+@import url(https://fonts.googleapis.com/css?family=Lato);
 figure {
   background: hsl(187, 40%, 25%);
   box-shadow: 0 0 10px #263758;
@@ -47,6 +48,11 @@ figure {
     h3 {
       font-size: 1em;
       line-height: 1.5em;
+      font-family: "Lato";
+    }
+
+    p {
+      font-family: "ZCOOL XiaoWei", serif;
     }
   }
 }
