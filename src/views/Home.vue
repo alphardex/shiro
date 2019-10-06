@@ -3,13 +3,20 @@
     <a href="https://github.com/alphardex/skadi" target="_blank">
       <h1 class="title">Skadi</h1>
     </a>
-    <p class="intro">
-      Skadi，是alphardex平时所做的CSS动画作品集
-      <br />在这里，或许你能找到写CSS动画的灵感
-      <br />CSS is awesome.
-    </p>
+    <p class="intro">Skadi，是alphardex平时所做的CSS动画作品集</p>
+    <div class="search-bar">
+      <i class="fa fa-search"></i>
+      <input type="search" name="keyword" id="search" placeholder="以标签搜索作品" v-model="keyword" />
+    </div>
     <div class="gallery">
-      <Card v-for="art in arts" :title="art.title" :thumbnail="art.thumbnail" :description="art.description" :key="art.title"></Card>
+      <Card
+        v-for="art in searchResult"
+        :title="art.title"
+        :thumbnail="art.thumbnail"
+        :description="art.description"
+        :tags="art.tags"
+        :key="art.title"
+      ></Card>
     </div>
   </div>
 </template>
@@ -22,6 +29,7 @@ interface Art {
   title: string;
   thumbnail: string;
   description: string;
+  tags: string[];
 }
 
 @Component({
@@ -34,49 +42,64 @@ export default class Home extends Vue {
     {
       title: "abbr-expansion",
       thumbnail: "abbr-expansion.png",
-      description: "缩写的展开效果"
+      description: "缩写的展开效果",
+      tags: ["ui", "hover"]
     },
     {
       title: "apple-watch-breeze",
       thumbnail: "apple-watch-breeze.png",
-      description: "苹果手表上加载时的呼吸动画"
+      description: "苹果手表上加载时的呼吸动画",
+      tags: ["ui", "transform"]
     },
     {
       title: "gleaming-heading",
       thumbnail: "gleaming-heading.png",
-      description: "隐约闪烁的标题"
+      description: "隐约闪烁的标题",
+      tags: ["ui", "heading", "blur", "random"]
     },
     {
       title: "gleaming-loading",
       thumbnail: "gleaming-loading.png",
-      description: "隐约闪烁的加载"
+      description: "隐约闪烁的加载",
+      tags: ["ui", "loading", "blur"]
     },
     {
       title: "gradient-background",
       thumbnail: "gradient-background.png",
-      description: "动态的渐变背景"
+      description: "动态的渐变背景",
+      tags: ["gradient", "background"]
     },
     {
       title: "login-button",
       thumbnail: "login-button.png",
-      description: "附带交互效果的登陆按钮"
+      description: "附带交互效果的登陆按钮",
+      tags: ["ui", "button", "loading"]
     },
     {
       title: "particle-burst",
       thumbnail: "particle-burst.png",
-      description: "微粒向四周爆炸的效果"
+      description: "微粒向四周爆炸的效果",
+      tags: ["particle", "random"]
     },
     {
       title: "rgb-loading",
       thumbnail: "rgb-loading.png",
-      description: "红绿蓝三色的加载环"
+      description: "红绿蓝三色的加载环",
+      tags: ["ui", "loading"]
     },
     {
       title: "snow-scratch",
       thumbnail: "snow-scratch.png",
-      description: "刮雪效果，雪会再度凝结"
+      description: "刮雪效果，雪会再度凝结",
+      tags: ["blur", "transform"]
     }
   ];
+  @Provide() keyword: string = "";
+  get searchResult() {
+    return this.keyword
+      ? this.arts.filter(art => art.tags.includes(this.keyword))
+      : this.arts;
+  }
 }
 </script>
 
@@ -95,6 +118,30 @@ a {
   font-family: "Lobster";
   margin-top: 0.5em;
   margin-bottom: 0.2em;
+}
+
+.search-bar {
+  display: flex;
+  margin: 0 auto;
+  width: 20%;
+  background: white;
+  padding: 1em;
+  box-sizing: border-box;
+  border-radius: 0.5em;
+  box-shadow: 0.5rem 0.875rem 2.375rem rgba(39, 44, 49, 0.06),
+    0.0625rem 0.1875rem 0.5rem rgba(39, 44, 49, 0.03);
+
+  i {
+    margin-right: 1em;
+  }
+
+  #search {
+    font-family: "ZCOOL XiaoWei", serif;
+    font-size: 100%;
+    border: none;
+    outline: 0;
+    width: 100%;
+  }
 }
 
 .intro {

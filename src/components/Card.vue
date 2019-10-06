@@ -4,6 +4,9 @@
     <figcaption>
       <h3>{{ title }}</h3>
       <p>{{ description }}</p>
+      <p>
+        <i class="fa fa-tag" v-for="(tag, i) in tags" :key="i">&nbsp;{{tag}}</i>
+      </p>
     </figcaption>
     <a :href="link" target="_blank"></a>
   </figure>
@@ -17,6 +20,7 @@ export default class Card extends Vue {
   @Prop() private title!: string;
   @Prop() private thumbnail!: string;
   @Prop() private description!: string;
+  @Prop() private tags!: string[];
   get link() {
     return `/gallery/${this.title}/dist/`;
   }
@@ -47,12 +51,17 @@ figure {
   figcaption {
     h3 {
       font-size: 1em;
-      line-height: 1.5em;
+      line-height: 1.2em;
       font-family: "Lato";
     }
 
     p {
       font-family: "ZCOOL XiaoWei", serif;
+
+      i {
+        font-size: 0.7em;
+        margin-right: 1em;
+      }
     }
   }
 }
