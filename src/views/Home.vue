@@ -106,6 +106,7 @@ export default class Home extends Vue {
 <style lang="scss">
 @import url(https://fonts.googleapis.com/css?family=Lobster);
 @import url(https://fonts.googleapis.com/css?family=ZCOOL+QingKe+HuangYou|ZCOOL+XiaoWei&display=swap);
+@import "@/styles/_mixin.scss";
 
 a {
   text-decoration: none;
@@ -124,6 +125,15 @@ a {
   display: flex;
   margin: 0 auto;
   width: 20%;
+
+  @include pc-layout {
+    width: 60%;
+  }
+
+  @include sp-layout {
+    width: 80%;
+  }
+
   background: white;
   padding: 1em;
   box-sizing: border-box;
