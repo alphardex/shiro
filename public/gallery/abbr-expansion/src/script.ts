@@ -1,12 +1,17 @@
-let abbrs = document.querySelectorAll("abbr");
-abbrs.forEach(abbr => {
-  let title = abbr.dataset.title;
-  let words = title.split(" ");
-  let expandableWords = words.map((e, i) => {
-    let [initial, ...rest] = e.split("");
-    let initialSpan = `<span class="initial">${initial}</span>`;
-    let hiddenRestSpans = rest.map(e => `<span class="hidden">${e}</span>`);
-    return `${initialSpan}${hiddenRestSpans.join("")}`;
+let abbr = document.querySelector("abbr");
+abbr.textContent = "";
+let title = abbr.dataset.title;
+let words = title.split(" ");
+words.forEach(word => {
+  let [initial, ...restLetters] = word.split("");
+  let initialSpan = document.createElement("span");
+  initialSpan.textContent = initial;
+  initialSpan.className = "initial";
+  abbr.append(initialSpan);
+  restLetters.forEach(letter => {
+    let hiddenSpan = document.createElement("span");
+    hiddenSpan.textContent = letter;
+    hiddenSpan.className = "hidden";
+    abbr.append(hiddenSpan);
   });
-  abbr.innerHTML = expandableWords.join("");
 });

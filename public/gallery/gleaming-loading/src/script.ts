@@ -1,6 +1,9 @@
 let loading = document.querySelector(".loading");
 let letters = loading.textContent.split("");
-let delayedLetters = letters.map(
-  (e, i) => `<span style='animation-delay: ${i / 5}s'>${e}</span>`
-);
-loading.innerHTML = delayedLetters.join("");
+loading.textContent = "";
+letters.forEach((letter, i) => {
+  let span = document.createElement("span");
+  span.textContent = letter;
+  span.style.animationDelay = `${i / 5}s`;
+  loading.append(span);
+});

@@ -1,12 +1,19 @@
-var abbrs = document.querySelectorAll("abbr");
-abbrs.forEach(function (abbr) {
-    var title = abbr.dataset.title;
-    var words = title.split(" ");
-    var expandableWords = words.map(function (e, i) {
-        var _a = e.split(""), initial = _a[0], rest = _a.slice(1);
-        var initialSpan = "<span class=\"initial\">" + initial + "</span>";
-        var hiddenRestSpans = rest.map(function (e) { return "<span class=\"hidden\">" + e + "</span>"; });
-        return "" + initialSpan + hiddenRestSpans.join("");
+var abbr = document.querySelector("abbr");
+abbr.textContent = "";
+var title = abbr.dataset.title;
+var words = title.split(" ");
+words.forEach(function (word) {
+    var _a = word.split(""),
+        initial = _a[0],
+        restLetters = _a.slice(1);
+    var initialSpan = document.createElement("span");
+    initialSpan.textContent = initial;
+    initialSpan.className = "initial";
+    abbr.append(initialSpan);
+    restLetters.forEach(function (letter) {
+        var hiddenSpan = document.createElement("span");
+        hiddenSpan.textContent = letter;
+        hiddenSpan.className = "hidden";
+        abbr.append(hiddenSpan);
     });
-    abbr.innerHTML = expandableWords.join("");
 });

@@ -1,3 +1,9 @@
-var loading = document.querySelector('.loading');
-var letters = loading.textContent.split('');
-loading.innerHTML = letters.map(function (e, i) { return "<span style='animation-delay: " + i / 5 + "s'>" + e + "</span>"; }).join('');
+var loading = document.querySelector(".loading");
+var letters = loading.textContent.split("");
+loading.textContent = "";
+letters.forEach(function (letter, i) {
+    var span = document.createElement("span");
+    span.textContent = letter;
+    span.style.animationDelay = i / 5 + "s";
+    loading.append(span);
+});
