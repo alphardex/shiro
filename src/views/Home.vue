@@ -40,10 +40,10 @@ interface Art {
 export default class Home extends Vue {
   @Provide() arts: Art[] = [
     {
-      title: "staggerred-wave-loading",
-      thumbnail: "staggerred-wave-loading.png",
+      title: "staggered-wave-loading",
+      thumbnail: "staggered-wave-loading.png",
       description: "交错的波纹加载效果",
-      tags: ["ui", "loading"]
+      tags: ["ui", "loading", "staggered"]
     },
     {
       title: "abbr-expansion",
@@ -61,13 +61,13 @@ export default class Home extends Vue {
       title: "gleaming-heading",
       thumbnail: "gleaming-heading.png",
       description: "隐约闪烁的标题",
-      tags: ["ui", "heading", "blur", "random"]
+      tags: ["ui", "heading", "blur", "staggered"]
     },
     {
       title: "gleaming-loading",
       thumbnail: "gleaming-loading.png",
       description: "隐约闪烁的加载",
-      tags: ["ui", "loading", "blur"]
+      tags: ["ui", "loading", "blur", "staggered"]
     },
     {
       title: "gradient-background",
