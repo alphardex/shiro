@@ -52,12 +52,6 @@ export default class Home extends Vue {
       tags: ["ui", "hover"]
     },
     {
-      title: "apple-watch-breeze",
-      thumbnail: "apple-watch-breeze.png",
-      description: "苹果手表上加载时的呼吸动画",
-      tags: ["ui", "transform"]
-    },
-    {
       title: "gleaming-heading",
       thumbnail: "gleaming-heading.png",
       description: "隐约闪烁的标题",
@@ -86,12 +80,6 @@ export default class Home extends Vue {
       thumbnail: "particle-burst.png",
       description: "微粒向四周爆炸的效果",
       tags: ["particle", "random"]
-    },
-    {
-      title: "rgb-loading",
-      thumbnail: "rgb-loading.png",
-      description: "红绿蓝三色的加载环",
-      tags: ["ui", "loading"]
     },
     {
       title: "snow-scratch",
