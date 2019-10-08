@@ -1,10 +1,12 @@
 @import url(https://fonts.googleapis.com/css?family=Lato);
+
 body {
   display: flex;
   height: 100vh;
   justify-content: center;
   align-items: center;
   text-align: center;
+  background: #222;
 }
 
 .gleaming {
@@ -14,6 +16,7 @@ body {
   font-family: "Lato";
   text-transform: uppercase;
 }
+
 .gleaming span {
   animation: fadeIn 2s alternate infinite;
   opacity: 0;
@@ -24,6 +27,7 @@ body {
     opacity: 0;
     filter: blur(10px);
   }
+
   50%,
   100% {
     opacity: 1;

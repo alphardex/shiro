@@ -1,11 +1,14 @@
 @import url(https://fonts.googleapis.com/css?family=Lato);
 
+$btn-color: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+$text-color: #222;
+
 body {
   display: flex;
   height: 100vh;
   justify-content: center;
   align-items: center;
-  background: #eee;
+  background: #222;
 }
 
 .login {
@@ -15,9 +18,9 @@ body {
   width: 10em;
   height: 4em;
   border-radius: 4em;
-  background: linear-gradient(to right, #434343 0%, black 100%);
+  background: $btn-color;
   box-shadow: 0 0.5em 1em #222;
-  color: white;
+  color: $text-color;
   text-align: center;
   text-transform: uppercase;
   cursor: pointer;
@@ -33,12 +36,17 @@ body {
     height: 0.5em;
     opacity: 0;
     transition: opacity 0.3s 0.3s;
+
+    & .line-scale-pulse-out-rapid div {
+      background-color: $text-color;
+    }
   }
 
   .tick {
     position: absolute;
     left: 1.5em;
     bottom: 1.2em;
+    stroke: $text-color;
     stroke-width: 5px;
     stroke-dasharray: 36px;
     stroke-dashoffset: 36px;

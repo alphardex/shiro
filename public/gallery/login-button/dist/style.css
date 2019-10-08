@@ -1,10 +1,11 @@
 @import url(https://fonts.googleapis.com/css?family=Lato);
+
 body {
   display: flex;
   height: 100vh;
   justify-content: center;
   align-items: center;
-  background: #eee;
+  background: #222;
 }
 
 .login {
@@ -14,9 +15,9 @@ body {
   width: 10em;
   height: 4em;
   border-radius: 4em;
-  background: linear-gradient(to right, #434343 0%, black 100%);
+  background: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
   box-shadow: 0 0.5em 1em #222;
-  color: white;
+  color: #222;
   text-align: center;
   text-transform: uppercase;
   cursor: pointer;
@@ -24,6 +25,7 @@ body {
   font-size: 1.5em;
   transition: all 0.5s;
 }
+
 .login .loader {
   position: absolute;
   top: 1.3em;
@@ -33,28 +35,38 @@ body {
   opacity: 0;
   transition: opacity 0.3s 0.3s;
 }
+
+.login .loader .line-scale-pulse-out-rapid div {
+  background-color: #222;
+}
+
 .login .tick {
   position: absolute;
   left: 1.5em;
   bottom: 1.2em;
+  stroke: #222;
   stroke-width: 5px;
   stroke-dasharray: 36px;
   stroke-dashoffset: 36px;
   opacity: 0;
   transition: opacity 0.3s;
 }
+
 .login.active {
   width: 4em;
   color: transparent;
   pointer-events: none;
   user-select: none;
 }
+
 .login.active .loader {
   opacity: 1;
 }
+
 .login.verified .loader {
   opacity: 0;
 }
+
 .login.verified .tick {
   opacity: 1;
   animation: show-tick 0.8s 0.4s forwards;
