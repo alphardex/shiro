@@ -42,12 +42,13 @@ body {
 }
 
 @keyframes wave {
-  50% {
+  50%,
+  75% {
     transform: scale(2.5);
   }
 
+  80%,
   100% {
-    transform: scale(2.5);
     opacity: 0;
   }
 }
