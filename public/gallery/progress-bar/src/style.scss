@@ -9,17 +9,20 @@ $time: 3s;
   border-radius: 50%;
 }
 
-body {
+@mixin center {
   display: flex;
-  height: 100vh;
   justify-content: center;
   align-items: center;
+}
+
+body {
+  @include center;
+  height: 100vh;
   background: $bg-color;
 }
 
 .progress {
   --value: 0;
-
   position: relative;
   width: 25em;
   height: 1em;
@@ -43,7 +46,7 @@ body {
       left: calc(-12px + var(--value) * 4.3px);
       background: #222;
       border: 4px solid $light-color;
-      z-index: 9999;
+      z-index: 2;
 
       &::after {
         position: absolute;
@@ -71,9 +74,7 @@ body {
     svg {
       width: 100%;
       height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @include center;
       transform: scale(0.6);
     }
   }
@@ -89,16 +90,14 @@ body {
     svg {
       width: 100%;
       height: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @include center;
       transform: scale(0.6);
       opacity: 0.25;
     }
   }
 }
 
-// for demo only
+// for demo only, don't know why it doesn't work on my iphone :(
 @keyframes loading {
   @for $i from 0 through 100 {
     #{$i}% {
