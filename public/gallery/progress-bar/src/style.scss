@@ -1,0 +1,108 @@
+$bg-color: #222;
+$dark-color: rgba(0, 0, 0, 0.25);
+$light-color: cyan;
+$time: 3s;
+
+@mixin circle($r: 2em) {
+  width: $r;
+  height: $r;
+  border-radius: 50%;
+}
+
+body {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background: $bg-color;
+}
+
+.progress {
+  --value: 0;
+
+  position: relative;
+  width: 25em;
+  height: 1em;
+  animation: loading $time ease-out forwards;
+
+  .progress-bar {
+    height: inherit;
+    background: $dark-color;
+
+    .progress-value {
+      width: calc(var(--value) * 1%);
+      height: inherit;
+      background: $light-color;
+    }
+
+    .progress-indicator {
+      position: absolute;
+      @include circle;
+      counter-reset: count var(--value);
+      top: -13px;
+      left: calc(-12px + var(--value) * 4.3px);
+      background: #222;
+      border: 4px solid $light-color;
+      z-index: 9999;
+
+      &::after {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        // var(count) doesn't work cuz content only accepts string, so use counter(count)
+        content: counter(count) "%";
+        color: $light-color;
+        font-size: 9px;
+      }
+    }
+  }
+
+  .progress-start {
+    position: absolute;
+    @include circle;
+    top: -13px;
+    left: -12px;
+    background: $bg-color;
+    border: 4px solid $light-color;
+
+    svg {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transform: scale(0.6);
+    }
+  }
+
+  .progress-end {
+    position: absolute;
+    @include circle;
+    top: -13px;
+    right: -12px;
+    background: $bg-color;
+    border: 4px solid $dark-color;
+
+    svg {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transform: scale(0.6);
+      opacity: 0.25;
+    }
+  }
+}
+
+// for demo only
+@keyframes loading {
+  @for $i from 0 through 100 {
+    #{$i}% {
+      --value: #{$i};
+    }
+  }
+}

@@ -40,6 +40,12 @@ interface Art {
 export default class Home extends Vue {
   @Provide() arts: Art[] = [
     {
+      title: "progress-bar",
+      thumbnail: "progress-bar.png",
+      description: "酷炫的进度条加载效果",
+      tags: ["ui", "loading", "progress bar"]
+    },
+    {
       title: "staggered-wave-loading",
       thumbnail: "staggered-wave-loading.png",
       description: "交错的波纹加载效果",
