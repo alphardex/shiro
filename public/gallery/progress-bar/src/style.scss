@@ -97,7 +97,6 @@ body {
   }
 }
 
-// for demo only, don't know why it doesn't work on my iphone :(
 @keyframes loading {
   @for $i from 0 through 100 {
     #{$i}% {
