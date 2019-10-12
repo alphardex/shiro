@@ -1,0 +1,33 @@
+@import url(https://fonts.googleapis.com/css?family=Lato);
+
+body {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: black;
+}
+
+.shining {
+  letter-spacing: 4px;
+  font-size: 2em;
+  font-family: "Lato";
+  text-transform: uppercase;
+  background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(255,255,255,1) 50%, rgba(0,0,0,1) 100%);
+  background-size: 80%;
+  background-repeat: no-repeat;
+  // below two lines create text gradient effect
+  color: transparent;
+  background-clip: text;
+  animation: shining 3s linear infinite;
+}
+
+@keyframes shining {
+  from {
+    background-position: -500%;
+  }
+  to {
+    background-position: 500%;
+  }
+}

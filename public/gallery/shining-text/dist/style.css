@@ -1,0 +1,42 @@
+@import url(https://fonts.googleapis.com/css?family=Lato);
+body {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: black;
+}
+
+.shining {
+  letter-spacing: 4px;
+  font-size: 2em;
+  font-family: "Lato";
+  text-transform: uppercase;
+  background: linear-gradient(90deg, black 0%, white 50%, black 100%);
+  background-size: 80%;
+  background-repeat: no-repeat;
+  color: transparent;
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-animation: shining 3s linear infinite;
+          animation: shining 3s linear infinite;
+}
+
+@-webkit-keyframes shining {
+  from {
+    background-position: -500%;
+  }
+  to {
+    background-position: 500%;
+  }
+}
+
+@keyframes shining {
+  from {
+    background-position: -500%;
+  }
+  to {
+    background-position: 500%;
+  }
+}

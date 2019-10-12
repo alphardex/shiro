@@ -40,9 +40,15 @@ interface Art {
 export default class Home extends Vue {
   @Provide() arts: Art[] = [
     {
+      title: "shining-text",
+      thumbnail: "shining-text.png",
+      description: "黑色背景下的文字渐变效果",
+      tags: ["ui", "text", "gradient", "background"]
+    },
+    {
       title: "progress-bar",
       thumbnail: "progress-bar.png",
-      description: "酷炫的进度条加载效果",
+      description: "酷炫的文件上传进度条效果",
       tags: ["ui", "loading", "progress bar"]
     },
     {
