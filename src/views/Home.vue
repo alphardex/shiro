@@ -40,6 +40,18 @@ interface Art {
 export default class Home extends Vue {
   @Provide() arts: Art[] = [
     {
+      title: "eclipse-loader",
+      thumbnail: "eclipse-loader.png",
+      description: "日食加载效果",
+      tags: ["ui", "loading", "gradient", "blur"]
+    },
+    {
+      title: "menu-hover-magnify",
+      thumbnail: "menu-hover-magnify.png",
+      description: "获取焦点时自动放大的菜单栏",
+      tags: ["ui", "menu", "hover", "scale"]
+    },
+    {
       title: "shining-text",
       thumbnail: "shining-text.png",
       description: "黑色背景下的文字渐变效果",
@@ -48,7 +60,7 @@ export default class Home extends Vue {
     {
       title: "progress-bar",
       thumbnail: "progress-bar.png",
-      description: "酷炫的文件上传进度条效果",
+      description: "文件上传进度条效果",
       tags: ["ui", "loading", "progress bar"]
     },
     {
@@ -96,7 +108,7 @@ export default class Home extends Vue {
     {
       title: "snow-scratch",
       thumbnail: "snow-scratch.png",
-      description: "刮雪效果，雪会再度凝结",
+      description: "刮雪凝结效果",
       tags: ["blur", "transform"]
     }
   ];
