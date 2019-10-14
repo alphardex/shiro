@@ -1,0 +1,43 @@
+body {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: #05083d;
+}
+
+ul {
+  display: flex;
+  list-style-type: none;
+}
+ul li {
+  margin: 3.6em;
+  width: 2.4em;
+  height: 2.4em;
+}
+ul li a {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+  color: #05083d;
+}
+ul li a::before {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  top: -25%;
+  background: white;
+  border-radius: 50%;
+  z-index: -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+}
+ul li a:hover::before {
+  box-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white, 0 0 0 20px rgba(255, 255, 255, 0.05), 0 0 0 40px rgba(255, 255, 255, 0.05), 0 0 0 60px rgba(255, 255, 255, 0.05), 0 0 0 80px rgba(255, 255, 255, 0.05), 0 0 0 100px rgba(255, 255, 255, 0.05);
+}

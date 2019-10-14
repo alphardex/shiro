@@ -40,6 +40,12 @@ interface Art {
 export default class Home extends Vue {
   @Provide() arts: Art[] = [
     {
+      title: "glowing-menu-buttons",
+      thumbnail: "glowing-menu-buttons.png",
+      description: "发光的按钮",
+      tags: ["ui", "button", "hover"]
+    },
+    {
       title: "eclipse-loader",
       thumbnail: "eclipse-loader.png",
       description: "日食加载效果",
