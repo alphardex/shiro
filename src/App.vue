@@ -6,6 +6,6 @@
 
 <style lang="scss">
 body {
-  background: hsl(177, 42%, 60%);
+  background: white;
 }
 </style>

@@ -35,16 +35,15 @@ export default class Card extends Vue {
 @import url(https://fonts.googleapis.com/css?family=Lato);
 @import "@/styles/_mixin.scss";
 
+* {
+  margin: 0;
+}
+
 figure {
   background: hsl(187, 40%, 25%);
-  box-shadow: 0 0 10px #263758;
+  box-shadow: 0 25px 20px -25px black;
   border-radius: 0.5em;
-  padding: 0.8em;
   transition: all 0.5s ease;
-
-  &:hover {
-    box-shadow: 0 0 40px #263758;
-  }
 
   img {
     max-width: 100%;
@@ -53,27 +52,31 @@ figure {
   figcaption {
     h3 {
       font-family: "Lato";
+      margin-bottom: 1em;
 
       @include pc-layout {
         font-size: 1em;
-        line-height: 1.2em;
+        line-height: 1.5em;
       }
 
       @include sp-layout {
         font-size: 0.6em;
-        line-height: 0.7em;
+        line-height: 0.9em;
       }
     }
 
     p {
       font-family: "ZCOOL XiaoWei", serif;
+      margin-bottom: 1em;
 
       @include pc-layout {
         font-size: 1em;
+        line-height: 1.5em;
       }
 
       @include sp-layout {
         font-size: 0.6em;
+        line-height: 0.9em;
       }
 
       i {
@@ -81,10 +84,12 @@ figure {
 
         @include pc-layout {
           font-size: 0.7em;
+          line-height: 1.05em;
         }
 
         @include sp-layout {
           font-size: 0.4em;
+          line-height: 0.6em;
         }
       }
     }

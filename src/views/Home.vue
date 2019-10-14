@@ -131,7 +131,7 @@ a {
 }
 
 .title {
-  color: hsl(187, 61%, 18%);
+  color: #172530;
   text-align: center;
   font-size: 4em;
   font-family: "Lobster";
@@ -173,7 +173,7 @@ a {
 }
 
 .intro {
-  color: hsl(187, 61%, 18%);
+  color: #0b2438;
   text-align: center;
   font-size: 1.2em;
   font-family: "ZCOOL XiaoWei", serif;
