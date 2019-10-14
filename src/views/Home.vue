@@ -1,9 +1,9 @@
 <template>
   <div>
-    <a href="https://github.com/alphardex/skadi" target="_blank">
-      <h1 class="title">Skadi</h1>
+    <a href="https://github.com/alphardex/shiro" target="_blank">
+      <h1 class="title">Shiro</h1>
     </a>
-    <p class="intro">Skadi，是alphardex平时所做的CSS动画作品集</p>
+    <p class="intro">Shiro，是alphardex平时所做的CSS动画作品集</p>
     <div class="search-bar">
       <i class="fa fa-search"></i>
       <input type="search" name="keyword" id="search" placeholder="以标签搜索作品" v-model="keyword" />

@@ -1,4 +1,4 @@
-# skadi
+# Shiro
 
 ## Project setup
 
