@@ -94,12 +94,6 @@ export default class Home extends Vue {
       tags: ["ui", "loading", "blur", "staggered"]
     },
     {
-      title: "gradient-background",
-      thumbnail: "gradient-background.png",
-      description: "动态的渐变背景",
-      tags: ["ui", "gradient", "background"]
-    },
-    {
       title: "login-button",
       thumbnail: "login-button.png",
       description: "附带交互效果的登陆按钮",
