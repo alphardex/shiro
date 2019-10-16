@@ -40,6 +40,12 @@ interface Art {
 export default class Home extends Vue {
   @Provide() arts: Art[] = [
     {
+      title: "staggered-square",
+      thumbnail: "staggered-square.png",
+      description: "交错放大的方块",
+      tags: ["staggered"]
+    },
+    {
       title: "glowing-menu-buttons",
       thumbnail: "glowing-menu-buttons.png",
       description: "发光的按钮",
