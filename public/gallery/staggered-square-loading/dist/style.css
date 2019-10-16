@@ -12,30 +12,47 @@ body {
   display: flex;
   flex-wrap: wrap;
 }
+
 .loader .square {
   width: 25%;
   height: 25%;
   background: #ff5252;
-  animation: zoom 1.3s ease-in-out infinite;
+  animation: zoom 1.4s ease-in-out infinite;
 }
+
 .loader .square:nth-child(13) {
   animation-delay: 0s;
 }
-.loader .square:nth-child(9), .loader .square:nth-child(14) {
+
+.loader .square:nth-child(9),
+.loader .square:nth-child(14) {
   animation-delay: 0.1s;
 }
-.loader .square:nth-child(5), .loader .square:nth-child(10), .loader .square:nth-child(15) {
+
+.loader .square:nth-child(5),
+.loader .square:nth-child(10),
+.loader .square:nth-child(15) {
   animation-delay: 0.2s;
 }
-.loader .square:nth-child(1), .loader .square:nth-child(6), .loader .square:nth-child(11), .loader .square:nth-child(16) {
+
+.loader .square:nth-child(1),
+.loader .square:nth-child(6),
+.loader .square:nth-child(11),
+.loader .square:nth-child(16) {
   animation-delay: 0.3s;
 }
-.loader .square:nth-child(2), .loader .square:nth-child(7), .loader .square:nth-child(12) {
+
+.loader .square:nth-child(2),
+.loader .square:nth-child(7),
+.loader .square:nth-child(12) {
   animation-delay: 0.4s;
 }
-.loader .square:nth-child(3), .loader .square:nth-child(8) {
+
+.loader .square:nth-child(3),
+.loader .square:nth-child(8) {
   animation-delay: 0.4s;
 }
+
 .loader .square:nth-child(4) {
   animation-delay: 0.5s;
 }
@@ -44,6 +61,7 @@ body {
   35% {
     transform: scale(0);
   }
+
   0%,
   70%,
   to {
