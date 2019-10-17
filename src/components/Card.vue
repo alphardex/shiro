@@ -33,6 +33,7 @@ export default class Card extends Vue {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 @import url(https://fonts.googleapis.com/css?family=Lato);
+@import "@/styles/_mixin.scss";
 
 * {
   margin: 0;
@@ -54,6 +55,12 @@ figure {
       margin-bottom: 1em;
       font-size: 1em;
       line-height: 1.5em;
+
+      @include sp-layout {
+        margin-bottom: 0.5em;
+        font-size: 0.5em;
+        line-height: 0.75em;
+      }
     }
 
     p {
@@ -62,10 +69,22 @@ figure {
       font-size: 1em;
       line-height: 1.5em;
 
+      @include sp-layout {
+        margin-bottom: 0.5em;
+        font-size: 0.5em;
+        line-height: 0.75em;
+      }
+
       i {
         margin-right: 1em;
         font-size: 0.7em;
         line-height: 1.05em;
+
+        @include sp-layout {
+          margin-bottom: 0.5em;
+          font-size: 0.35em;
+          line-height: 0.5em;
+        }
       }
     }
   }
