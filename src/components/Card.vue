@@ -57,9 +57,8 @@ figure {
       line-height: 1.5em;
 
       @include sp-layout {
-        margin-bottom: 0.5em;
-        font-size: 0.5em;
-        line-height: 0.75em;
+        font-size: 0.7em;
+        line-height: 1.05em;
       }
     }
 
@@ -70,9 +69,8 @@ figure {
       line-height: 1.5em;
 
       @include sp-layout {
-        margin-bottom: 0.5em;
-        font-size: 0.5em;
-        line-height: 0.75em;
+        font-size: 0.7em;
+        line-height: 1.05em;
       }
 
       i {
@@ -81,9 +79,8 @@ figure {
         line-height: 1.05em;
 
         @include sp-layout {
-          margin-bottom: 0.5em;
-          font-size: 0.35em;
-          line-height: 0.5em;
+          font-size: 0.5em;
+          line-height: 0.75em;
         }
       }
     }
