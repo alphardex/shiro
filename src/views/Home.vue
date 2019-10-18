@@ -40,6 +40,12 @@ interface Art {
 export default class Home extends Vue {
   @Provide() arts: Art[] = [
     {
+      title: "card-hover-expand-body",
+      thumbnail: "card-hover-expand-body.png",
+      description: "鼠标悬浮卡片时会展开描述文字",
+      tags: ["ui", "card", "hover"]
+    },
+    {
       title: "button-hover-shining",
       thumbnail: "button-hover-shining.png",
       description: "会闪烁的按钮",

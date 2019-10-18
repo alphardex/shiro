@@ -1,0 +1,77 @@
+@import url(https://fonts.googleapis.com/css?family=Lato);
+
+body {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background: #333;
+  font-family: "Lato";
+}
+
+.container {
+  width: 1000px;
+  display: flex;
+  justify-content: space-between;
+
+  // card style heavily inspired from bootstrap card
+  .card {
+    margin: 1em;
+
+    .card-img-top {
+      position: relative;
+      width: 300px;
+      height: 202px;
+      transform: translateY(51%);
+      transition: 0.5s;
+      z-index: 2;
+    }
+
+    .card-body {
+      background: white;
+      padding: 1.25em;
+      box-sizing: border-box;
+      height: 200px;
+      box-shadow: 0 1em 2em rgba(0, 0, 0, 0.8);
+      transform: translateY(-50%);
+      transition: 0.5s;
+      z-index: 1;
+
+      .card-title {
+        margin-bottom: 0.75em;
+        font-size: 1.25em;
+        line-height: 1.2;
+        font-weight: bold;
+      }
+
+      .card-text {
+        margin-bottom: 1em;
+      }
+
+      .btn {
+        color: black;
+        text-decoration: none;
+        border: 1px solid black;
+        padding: 0.375em 0.75em;
+        line-height: 1.5;
+        border-radius: 0.25em;
+        transition: 0.5s;
+
+        &:hover {
+          background: black;
+          color: white;
+        }
+      }
+    }
+
+    &:hover {
+      .card-img-top {
+        transform: translateY(1%);
+      }
+
+      .card-body {
+        transform: translateY(0);
+      }
+    }
+  }
+}
