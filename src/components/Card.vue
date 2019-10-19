@@ -1,5 +1,5 @@
 <template>
-  <figure class="imghvr-shutter-in-out-diag-2" data-aos="fade-up">
+  <figure class="imghvr-border-reveal-top-left" data-aos="fade-up">
     <img :src="thumbnailPath" :alt="title" loading="lazy" />
     <figcaption>
       <h3>{{ title }}</h3>
@@ -34,13 +34,13 @@ export default class Card extends Vue {
 <style scoped lang="scss">
 @import url(https://fonts.googleapis.com/css?family=Lato);
 @import "@/styles/_mixin.scss";
+@import "@/styles/_imagehover.scss";
 
 * {
   margin: 0;
 }
 
 figure {
-  background: hsl(187, 40%, 25%);
   box-shadow: 0 25px 20px -25px black;
   border-radius: 0.5em;
   transition: all 0.5s ease;
