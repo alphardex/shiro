@@ -1,15 +1,16 @@
 <template>
-  <figure class="imghvr-border-reveal-top-left" data-aos="fade-up">
-    <img :src="thumbnailPath" :alt="title" loading="lazy" />
-    <figcaption>
-      <h3>{{ title }}</h3>
-      <p>{{ description }}</p>
-      <p>
-        <i class="fa fa-tag" v-for="(tag, i) in tags" :key="i">&nbsp;{{tag}}</i>
-      </p>
-    </figcaption>
-    <a :href="link" target="_blank"></a>
-  </figure>
+  <a :href="link" target="_blank">
+    <figure data-aos="fade-up">
+      <img :src="thumbnailPath" :alt="title" loading="lazy" />
+      <figcaption>
+        <h3>{{ title }}</h3>
+        <p>{{ description }}</p>
+        <p>
+          <i class="fa fa-tag" v-for="(tag, i) in tags" :key="i">&nbsp;{{tag}}</i>
+        </p>
+      </figcaption>
+    </figure>
+  </a>
 </template>
 
 <script lang="ts">
@@ -34,22 +35,51 @@ export default class Card extends Vue {
 <style scoped lang="scss">
 @import url(https://fonts.googleapis.com/css?family=Lato);
 @import "@/styles/_mixin.scss";
-@import "@/styles/_imagehover.scss";
 
 * {
   margin: 0;
 }
 
+a {
+  color: white;
+}
+
 figure {
-  box-shadow: 0 25px 20px -25px black;
-  border-radius: 0.5em;
-  transition: all 0.5s ease;
+  position: relative;
+  box-sizing: border-box;
 
   img {
     max-width: 100%;
+    box-shadow: 0 25px 20px -25px black;
+    transition: 0.3s;
   }
 
   figcaption {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity 0.3s;
+
+    &::after {
+      position: absolute;
+      content: "";
+      width: 100%;
+      height: 100%;
+      border: 2.8px solid white;
+      transform: scale(1);
+      transition: transform 0.3s;
+    }
+
     h3 {
       font-family: "Lato";
       margin-bottom: 1em;
@@ -75,13 +105,27 @@ figure {
 
       i {
         margin-right: 1em;
-        font-size: 0.7em;
-        line-height: 1.05em;
+        font-size: 0.6em;
+        line-height: 0.9em;
 
         @include sp-layout {
           font-size: 0.5em;
           line-height: 0.75em;
         }
+      }
+    }
+  }
+
+  &:hover {
+    img {
+      filter: blur(3px) brightness(0.5);
+    }
+
+    figcaption {
+      opacity: 1;
+
+      &::after {
+        transform: scale(0.85);
       }
     }
   }
