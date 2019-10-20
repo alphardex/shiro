@@ -40,6 +40,12 @@ interface Art {
 export default class Home extends Vue {
   @Provide() arts: Art[] = [
     {
+      title: "login-button-form",
+      thumbnail: "login-button-form.png",
+      description: "把登陆按钮本身作为表单",
+      tags: ["ui", "button", "form", "login"]
+    },
+    {
       title: "card-hover-expand-body",
       thumbnail: "card-hover-expand-body.png",
       description: "鼠标悬浮卡片时会展开描述文字",

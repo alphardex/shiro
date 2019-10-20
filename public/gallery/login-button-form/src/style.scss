@@ -1,0 +1,151 @@
+@import url(https://fonts.googleapis.com/css?family=Lato);
+
+@mixin label {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  background: #457efd;
+  transform-origin: left;
+  transition: 0.7s cubic-bezier(0.8, 0, 0.25, 1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  svg {
+    opacity: 0;
+    transition: 0.5s;
+  }
+}
+
+@mixin input {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  font-size: 1.2em;
+  padding-left: 30px;
+  transform-origin: right;
+  transform: scaleX(0.82);
+  border: none;
+}
+
+body {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background: #e7e5e8;
+  font-family: "Lato";
+}
+
+.login {
+  position: relative;
+  width: 14em;
+  height: 2em;
+  font-size: 1.5em;
+  padding: 0.3em;
+  border-radius: 0.2em;
+  color: white;
+  text-transform: uppercase;
+  user-select: none;
+  box-shadow: 0 0 12px -6px black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+  overflow: hidden;
+  z-index: 2;
+
+  input#email {
+    @include input;
+    z-index: -2;
+  }
+
+  label.email {
+    @include label;
+    z-index: -1;
+  }
+
+  &.email-input {
+    color: transparent;
+
+    label.email {
+      // can't use "transform: scaleX" since icon will be scaled too QAQ;
+      width: 21%;
+
+      svg {
+        opacity: 1;
+      }
+    }
+  }
+
+  input#password {
+    @include input;
+    z-index: -4;
+  }
+
+  label.password {
+    @include label;
+    width: 21%;
+    z-index: -3;
+  }
+
+  &.password-input {
+    color: transparent;
+
+    label.email {
+      display: none;
+    }
+
+    input#email {
+      display: none;
+    }
+
+    label.password {
+      svg {
+        opacity: 1;
+      }
+    }
+  }
+
+  span.submit {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    display: none;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &.submit {
+    color: transparent;
+    pointer-events: none;
+
+    span.submit {
+      display: flex;
+      color: white;
+      z-index: 3;
+    }
+
+    label.email {
+      display: none;
+    }
+
+    input#email {
+      display: none;
+    }
+
+    label.password {
+      width: 100%;
+
+      svg {
+        display: none;
+      }
+    }
+  }
+}
