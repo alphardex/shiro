@@ -189,11 +189,7 @@ a {
   }
 
   @include sp-layout {
-    width: 9.8%;
-
-    &:hover {
-      width: 80%;
-    }
+    width: 80%;
   }
 
   background: white;
