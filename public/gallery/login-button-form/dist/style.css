@@ -16,7 +16,10 @@ body {
   border-radius: 0.2em;
   color: white;
   text-transform: uppercase;
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   box-shadow: 0 0 12px -6px black;
   display: flex;
   justify-content: center;
@@ -24,6 +27,18 @@ body {
   transition: 0.5s;
   overflow: hidden;
   z-index: 2;
+}
+.login svg {
+  position: absolute;
+  right: 12em;
+  transition: 0.5s ease;
+}
+.login svg.email-icon {
+  opacity: 0;
+}
+.login svg.password-icon {
+  -webkit-transform: translateY(-100%) scale(0);
+          transform: translateY(-100%) scale(0);
 }
 .login input#email {
   position: absolute;
@@ -33,8 +48,10 @@ body {
   top: 0;
   font-size: 1.2em;
   padding: 0 0 0 30px;
-  transform-origin: right;
-  transform: scaleX(0.82);
+  -webkit-transform-origin: right;
+          transform-origin: right;
+  -webkit-transform: scaleX(0.82);
+          transform: scaleX(0.82);
   border: none;
   z-index: -2;
 }
@@ -45,25 +62,13 @@ body {
   left: 0;
   top: 0;
   background: #457efd;
-  transform-origin: left;
+  -webkit-transform-origin: left;
+          transform-origin: left;
   transition: 0.7s cubic-bezier(0.8, 0, 0.25, 1);
   display: flex;
   justify-content: center;
   align-items: center;
   z-index: -1;
-}
-.login label.email svg {
-  opacity: 0;
-  transition: 0.5s;
-}
-.login.email-input {
-  color: transparent;
-}
-.login.email-input label.email {
-  width: 21%;
-}
-.login.email-input label.email svg {
-  opacity: 1;
 }
 .login input#password {
   position: absolute;
@@ -73,8 +78,10 @@ body {
   top: 0;
   font-size: 1.2em;
   padding: 0 0 0 30px;
-  transform-origin: right;
-  transform: scaleX(0.82);
+  -webkit-transform-origin: right;
+          transform-origin: right;
+  -webkit-transform: scaleX(0.82);
+          transform: scaleX(0.82);
   border: none;
   z-index: -4;
 }
@@ -85,29 +92,15 @@ body {
   left: 0;
   top: 0;
   background: #457efd;
-  transform-origin: left;
+  -webkit-transform-origin: left;
+          transform-origin: left;
   transition: 0.7s cubic-bezier(0.8, 0, 0.25, 1);
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 21%;
+  -webkit-transform: scaleX(0.21);
+          transform: scaleX(0.21);
   z-index: -3;
-}
-.login label.password svg {
-  opacity: 0;
-  transition: 0.5s;
-}
-.login.password-input {
-  color: transparent;
-}
-.login.password-input label.email {
-  display: none;
-}
-.login.password-input input#email {
-  display: none;
-}
-.login.password-input label.password svg {
-  opacity: 1;
 }
 .login span.submit {
   position: absolute;
@@ -115,18 +108,53 @@ body {
   height: 100%;
   left: 0;
   top: 0;
+  color: white;
   display: none;
   justify-content: center;
   align-items: center;
+  z-index: 3;
+}
+.login.email-input {
+  color: transparent;
+}
+.login.email-input label.email {
+  -webkit-transform: scaleX(0.21);
+          transform: scaleX(0.21);
+}
+.login.email-input svg.email-icon {
+  opacity: 1;
+}
+.login.password-input {
+  color: transparent;
+}
+.login.password-input svg.email-icon {
+  -webkit-transform: translateY(100%) scale(0);
+          transform: translateY(100%) scale(0);
+}
+.login.password-input svg.password-icon {
+  -webkit-transform: translateY(0) scale(1);
+          transform: translateY(0) scale(1);
+}
+.login.password-input label.email {
+  display: none;
+}
+.login.password-input input#email {
+  display: none;
 }
 .login.submit {
   color: transparent;
   pointer-events: none;
 }
+.login.submit label.password {
+  -webkit-transform: scaleX(1);
+          transform: scaleX(1);
+}
+.login.submit svg.password-icon {
+  -webkit-transform: translateY(100%) scale(0);
+          transform: translateY(100%) scale(0);
+}
 .login.submit span.submit {
   display: flex;
-  color: white;
-  z-index: 3;
 }
 .login.submit label.email {
   display: none;
@@ -134,11 +162,3 @@ body {
 .login.submit input#email {
   display: none;
 }
-.login.submit label.password {
-  width: 100%;
-}
-.login.submit label.password svg {
-  display: none;
-}
-
-/*# sourceMappingURL=style.css.map */

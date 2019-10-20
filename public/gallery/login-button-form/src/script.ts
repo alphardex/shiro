@@ -4,9 +4,7 @@ let emailInput = document.querySelector("input#email");
 let passwordInput = document.querySelector("input#password");
 
 login.addEventListener("click", () => {
-  if (!login.classList.contains("password-input")) {
-    login.classList.add("email-input");
-  }
+  login.classList.add("email-input");
 });
 
 form.addEventListener("keydown", e => {

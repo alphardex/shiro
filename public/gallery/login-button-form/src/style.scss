@@ -12,11 +12,6 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
-  svg {
-    opacity: 0;
-    transition: 0.5s;
-  }
 }
 
 @mixin input {
@@ -58,6 +53,20 @@ body {
   overflow: hidden;
   z-index: 2;
 
+  svg {
+    position: absolute;
+    right: 12em;
+    transition: 0.5s ease;
+
+    &.email-icon {
+      opacity: 0;
+    }
+
+    &.password-icon {
+      transform: translateY(-100%) scale(0);
+    }
+  }
+
   input#email {
     @include input;
     z-index: -2;
@@ -68,19 +77,6 @@ body {
     z-index: -1;
   }
 
-  &.email-input {
-    color: transparent;
-
-    label.email {
-      // can't use "transform: scaleX" since icon will be scaled too QAQ;
-      width: 21%;
-
-      svg {
-        opacity: 1;
-      }
-    }
-  }
-
   input#password {
     @include input;
     z-index: -4;
@@ -88,26 +84,8 @@ body {
 
   label.password {
     @include label;
-    width: 21%;
+    transform: scaleX(0.21);
     z-index: -3;
-  }
-
-  &.password-input {
-    color: transparent;
-
-    label.email {
-      display: none;
-    }
-
-    input#email {
-      display: none;
-    }
-
-    label.password {
-      svg {
-        opacity: 1;
-      }
-    }
   }
 
   span.submit {
@@ -116,19 +94,34 @@ body {
     height: 100%;
     left: 0;
     top: 0;
+    color: white;
     display: none;
     justify-content: center;
     align-items: center;
+    z-index: 3;
   }
 
-  &.submit {
+  &.email-input {
     color: transparent;
-    pointer-events: none;
 
-    span.submit {
-      display: flex;
-      color: white;
-      z-index: 3;
+    label.email {
+      transform: scaleX(0.21);
+    }
+
+    svg.email-icon {
+      opacity: 1;
+    }
+  }
+
+  &.password-input {
+    color: transparent;
+
+    svg.email-icon {
+      transform: translateY(100%) scale(0);
+    }
+
+    svg.password-icon {
+      transform: translateY(0) scale(1);
     }
 
     label.email {
@@ -138,13 +131,30 @@ body {
     input#email {
       display: none;
     }
+  }
+
+  &.submit {
+    color: transparent;
+    pointer-events: none;
 
     label.password {
-      width: 100%;
+      transform: scaleX(1);
+    }
 
-      svg {
-        display: none;
-      }
+    svg.password-icon {
+      transform: translateY(100%) scale(0);
+    }
+
+    span.submit {
+      display: flex;
+    }
+
+    label.email {
+      display: none;
+    }
+
+    input#email {
+      display: none;
     }
   }
 }

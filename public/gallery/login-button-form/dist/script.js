@@ -3,9 +3,7 @@ var form = document.querySelector("form");
 var emailInput = document.querySelector("input#email");
 var passwordInput = document.querySelector("input#password");
 login.addEventListener("click", function () {
-    if (!login.classList.contains("password-input")) {
-        login.classList.add("email-input");
-    }
+    login.classList.add("email-input");
 });
 form.addEventListener("keydown", function (e) {
     if (e.code === "Enter") {
