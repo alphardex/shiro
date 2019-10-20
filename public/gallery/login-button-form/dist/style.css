@@ -11,16 +11,12 @@ body {
 .login {
   position: relative;
   width: 14em;
-  height: 2em;
+  height: 2.4em;
   font-size: 1.5em;
-  padding: 0.3em;
   border-radius: 0.2em;
   color: white;
   text-transform: uppercase;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  user-select: none;
   box-shadow: 0 0 12px -6px black;
   display: flex;
   justify-content: center;
@@ -36,11 +32,9 @@ body {
   left: 0;
   top: 0;
   font-size: 1.2em;
-  padding-left: 30px;
-  -webkit-transform-origin: right;
-          transform-origin: right;
-  -webkit-transform: scaleX(0.82);
-          transform: scaleX(0.82);
+  padding: 0 0 0 30px;
+  transform-origin: right;
+  transform: scaleX(0.82);
   border: none;
   z-index: -2;
 }
@@ -51,8 +45,7 @@ body {
   left: 0;
   top: 0;
   background: #457efd;
-  -webkit-transform-origin: left;
-          transform-origin: left;
+  transform-origin: left;
   transition: 0.7s cubic-bezier(0.8, 0, 0.25, 1);
   display: flex;
   justify-content: center;
@@ -79,11 +72,9 @@ body {
   left: 0;
   top: 0;
   font-size: 1.2em;
-  padding-left: 30px;
-  -webkit-transform-origin: right;
-          transform-origin: right;
-  -webkit-transform: scaleX(0.82);
-          transform: scaleX(0.82);
+  padding: 0 0 0 30px;
+  transform-origin: right;
+  transform: scaleX(0.82);
   border: none;
   z-index: -4;
 }
@@ -94,8 +85,7 @@ body {
   left: 0;
   top: 0;
   background: #457efd;
-  -webkit-transform-origin: left;
-          transform-origin: left;
+  transform-origin: left;
   transition: 0.7s cubic-bezier(0.8, 0, 0.25, 1);
   display: flex;
   justify-content: center;
@@ -150,3 +140,5 @@ body {
 .login.submit label.password svg {
   display: none;
 }
+
+/*# sourceMappingURL=style.css.map */
