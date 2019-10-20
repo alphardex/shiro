@@ -172,7 +172,6 @@ a {
 .search-bar {
   display: flex;
   margin: 0 auto;
-  width: 4.9%;
   height: 3em;
   display: flex;
   justify-content: center;
@@ -182,12 +181,16 @@ a {
   cursor: pointer;
 
   @include pc-layout {
+    width: 4.9%;
+
     &:hover {
       width: 60%;
     }
   }
 
   @include sp-layout {
+    width: 9.8%;
+
     &:hover {
       width: 80%;
     }
