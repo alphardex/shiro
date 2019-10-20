@@ -40,8 +40,8 @@ interface Art {
 export default class Home extends Vue {
   @Provide() arts: Art[] = [
     {
-      title: "login-button-form",
-      thumbnail: "login-button-form.png",
+      title: "one-field-login-form",
+      thumbnail: "one-field-login-form.png",
       description: "把登陆按钮本身作为表单",
       tags: ["ui", "button", "form", "login"]
     },
@@ -172,25 +172,36 @@ a {
 .search-bar {
   display: flex;
   margin: 0 auto;
-  width: 20%;
+  width: 4.9%;
+  height: 3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid rgba(0, 0, 0, 0.4);
+  transition: width 0.6s ease-in-out;
+  cursor: pointer;
 
   @include pc-layout {
-    width: 60%;
+    &:hover {
+      width: 60%;
+    }
   }
 
   @include sp-layout {
-    width: 80%;
+    &:hover {
+      width: 80%;
+    }
   }
 
   background: white;
-  padding: 1em;
+  padding: 0;
   box-sizing: border-box;
   border-radius: 0.5em;
   box-shadow: 0.5rem 0.875rem 2.375rem rgba(39, 44, 49, 0.06),
     0.0625rem 0.1875rem 0.5rem rgba(39, 44, 49, 0.03);
 
   i {
-    margin-right: 1em;
+    margin: 0 1em 0 1em;
   }
 
   #search {
