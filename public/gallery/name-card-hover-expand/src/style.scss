@@ -1,0 +1,90 @@
+@import url(https://fonts.googleapis.com/css?family=Lato);
+
+body {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background: #fafafa;
+  font-family: "Lato";
+}
+
+// box-shadow will be effected by clip-path, so use a wrapper + drop-shadow to make shadow.
+.shadow {
+  filter: drop-shadow(-2px 2px 8px rgba(50, 50, 0, 0.5));
+}
+
+.card {
+  clip-path: inset(0 0 70% 0);
+  transform: translateY(30%);
+  transition: 0.5s ease;
+
+  .card-header {
+    width: 400px;
+    height: 100px;
+    font-size: 2em;
+    background-color: #2979ff;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    clip-path: inset(0 19% 0 19%);
+    transition: 0.5s ease;
+  }
+
+  .card-body {
+    background: white;
+    box-sizing: border-box;
+    padding: 1.25em;
+    width: 400px;
+    height: 225px;
+    font-size: 1.6em;
+    clip-path: inset(0 19% 0 19%);
+    transition: 0.5s ease;
+
+    dl {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    span {
+      transform: translateY(100%);
+      opacity: 0;
+      transition: 0.5s ease-in;
+
+      @for $i from 1 through 3 {
+        &:nth-child(#{$i}) {
+          transition-delay: $i * 0.1s;
+        }
+      }
+
+      dt,
+      dd {
+        display: inline;
+
+        i {
+          color: #4289ff;
+          margin-right: 0.3em;
+        }
+      }
+    }
+  }
+
+  &:hover {
+    transform: translateY(0);
+    clip-path: inset(0 0 0 0);
+
+    .card-header,
+    .card-body {
+      clip-path: inset(0 0 0 0);
+    }
+
+    span {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+}
