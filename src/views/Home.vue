@@ -5,8 +5,8 @@
     </a>
     <p class="intro">Shiro，是alphardex平时所做的CSS动画作品集</p>
     <div class="search-bar">
+      <input type="search" name="keyword" id="search" placeholder="以标签搜索作品，如button" v-model="keyword" />
       <i class="fa fa-search"></i>
-      <input type="search" name="keyword" id="search" placeholder="以标签搜索作品" v-model="keyword" />
     </div>
     <div class="gallery">
       <Card
@@ -145,13 +145,13 @@ export default class Home extends Vue {
       title: "snow-scratch",
       thumbnail: "snow-scratch.png",
       description: "刮雪凝结效果",
-      tags: ["blur", "transform"]
+      tags: ["transform", "blur", "contrast"]
     }
   ];
   @Provide() keyword: string = "";
   get searchResult() {
     return this.keyword
-      ? this.arts.filter(art => art.tags.includes(this.keyword))
+      ? this.arts.filter(art => art.tags.includes(this.keyword.toLowerCase()))
       : this.arts;
   }
 }
@@ -175,56 +175,64 @@ a {
   margin-bottom: 0.2em;
 }
 
-.search-bar {
-  display: flex;
-  margin: 0 auto;
-  height: 3em;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border: 2px solid rgba(0, 0, 0, 0.4);
-  transition: width 0.6s ease-in-out;
-  cursor: pointer;
-
-  @include pc-layout {
-    width: 4.9%;
-
-    &:hover {
-      width: 60%;
-    }
-  }
-
-  @include sp-layout {
-    width: 80%;
-  }
-
-  background: white;
-  padding: 0;
-  box-sizing: border-box;
-  border-radius: 0.5em;
-  box-shadow: 0.5rem 0.875rem 2.375rem rgba(39, 44, 49, 0.06),
-    0.0625rem 0.1875rem 0.5rem rgba(39, 44, 49, 0.03);
-
-  i {
-    margin: 0 1em 0 1em;
-  }
-
-  #search {
-    font-family: "ZCOOL XiaoWei", serif;
-    font-size: 100%;
-    border: none;
-    outline: 0;
-    width: 100%;
-  }
-}
-
 .intro {
   color: #0b2438;
   text-align: center;
   font-size: 1.2em;
   font-family: "ZCOOL XiaoWei", serif;
-  margin: 2em auto;
+  margin: 1em 0 4em 0;
   line-height: 1.6em;
+}
+
+.search-bar {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -150%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  height: 40px;
+  border: 2px solid rgba(0, 0, 0, 0.4);
+  border-radius: 40px;
+  padding: 10px;
+  cursor: pointer;
+
+  input#search {
+    font-family: "ZCOOL XiaoWei", serif;
+    font-size: 1em;
+    line-height: 40px;
+    border: none;
+    outline: none;
+    background: none;
+    width: 0;
+    padding: 0;
+    transition: 0.5s ease-in-out;
+  }
+
+  i {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    color: #448aff;
+    background: #f5f5f5;
+    transition: 0.5s;
+  }
+
+  &:hover {
+    input#search {
+      width: 30em;
+      padding: 0 1em;
+    }
+
+    i {
+      background: #616161;
+    }
+  }
 }
 
 .gallery {
