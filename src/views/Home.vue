@@ -223,14 +223,23 @@ a {
     transition: 0.5s;
   }
 
-  &:hover {
-    input#search {
-      width: 30em;
-      padding: 0 1em;
-    }
+  @include pc-layout {
+    &:hover {
+      input#search {
+        width: 30em;
+        padding: 0 1em;
+      }
 
-    i {
-      background: #616161;
+      i {
+        background: #616161;
+      }
+    }
+  }
+
+  @include sp-layout {
+    input#search {
+      width: 27em;
+      padding: 0 1em;
     }
   }
 }
