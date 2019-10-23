@@ -5,7 +5,13 @@
     </a>
     <p class="intro">Shiro，是alphardex平时所做的CSS动画作品集</p>
     <div class="search-bar">
-      <input type="search" name="keyword" id="search" placeholder="以标签搜索作品，如button" v-model="keyword" />
+      <input
+        type="search"
+        name="keyword"
+        id="search"
+        placeholder="以标签搜索作品，如button"
+        v-model="keyword"
+      />
       <i class="fa fa-search"></i>
     </div>
     <div class="gallery">
@@ -237,8 +243,10 @@ a {
   }
 
   @include sp-layout {
+    transform: translate(-50%, -200%);
+
     input#search {
-      width: 27em;
+      width: 19em;
       padding: 0 1em;
     }
   }
