@@ -5,13 +5,7 @@
     </a>
     <p class="intro">Shiro，是alphardex平时所做的CSS动画作品集</p>
     <div class="search-bar">
-      <input
-        type="search"
-        name="keyword"
-        id="search"
-        placeholder="以标签搜索作品，如button"
-        v-model="keyword"
-      />
+      <input type="search" name="keyword" id="search" placeholder="以标签搜索作品，如button" v-model="keyword" />
       <i class="fa fa-search"></i>
     </div>
     <div class="gallery">
@@ -45,6 +39,12 @@ interface Art {
 })
 export default class Home extends Vue {
   @Provide() arts: Art[] = [
+    {
+      title: "transparent-material-login-form",
+      thumbnail: "transparent-material-login-form.png",
+      description: "透明的material设计风格的登录表单",
+      tags: ["ui", "material", "form", "login"]
+    },
     {
       title: "name-card-hover-expand",
       thumbnail: "name-card-hover-expand.png",
@@ -243,7 +243,7 @@ a {
   }
 
   @include sp-layout {
-    transform: translate(-50%, -200%);
+    transform: translate(-50%, -180%);
 
     input#search {
       width: 19em;
