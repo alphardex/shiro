@@ -5,7 +5,8 @@ body {
   height: 100vh;
   justify-content: center;
   align-items: center;
-  background: url("https://i.loli.net/2019/10/18/buDT4YS6zUMfHst.jpg") 0 / cover fixed;
+  background: url("https://i.loli.net/2019/10/18/buDT4YS6zUMfHst.jpg") 0 / cover
+    fixed;
   font-family: "Lato";
 }
 
@@ -40,7 +41,7 @@ body {
       bottom: -1px;
       left: 0;
       background: #3498db;
-      transform-origin: center;
+      transform-origin: left;
       transform: scaleX(0);
       transition: 0.4s ease;
     }
@@ -56,11 +57,21 @@ body {
       color: white;
       padding-left: 10px;
 
-      &:focus~label,
-      &:valid~label {
+      // label will float in 2 situations based on its sibling input:
+      // 1. input get focus
+      // 2. input has text filled
+      &:focus ~ label,
+      &:not(:placeholder-shown) ~ label {
         top: 0;
         font-size: 15px;
+      }
+
+      &:valid ~ label {
         color: #3498db;
+      }
+
+      &:invalid ~ label {
+        color: #e74c3c;
       }
     }
 
@@ -93,10 +104,12 @@ body {
       height: 100%;
       top: 0;
       left: 0;
-      background: linear-gradient(120deg,
-          transparent,
-          hsla(204, 70%, 53%, 0.5),
-          transparent);
+      background: linear-gradient(
+        120deg,
+        transparent,
+        hsla(204, 70%, 53%, 0.5),
+        transparent
+      );
       transform: translateX(-100%);
       transition: 0.5s;
     }

@@ -1,5 +1,4 @@
 @import url(https://fonts.googleapis.com/css?family=Lato);
-
 body {
   display: flex;
   height: 100vh;
@@ -19,13 +18,11 @@ body {
   border-radius: 10px;
   box-shadow: 0 15px 20px rgba(0, 0, 0, 0.5);
 }
-
 .login-form h1 {
   font-size: 2.5em;
   margin-bottom: 0.3em;
   padding: 12px 0;
 }
-
 .login-form .form-field {
   position: relative;
   font-size: 20px;
@@ -33,7 +30,6 @@ body {
   margin: 20px 0 8px 0;
   transition: 0.4s;
 }
-
 .login-form .form-field::after {
   position: absolute;
   content: "";
@@ -42,15 +38,13 @@ body {
   bottom: -1px;
   left: 0;
   background: #3498db;
-  transform-origin: center;
+  transform-origin: left;
   transform: scaleX(0);
   transition: 0.4s ease;
 }
-
 .login-form .form-field:focus-within::after {
   transform: scaleX(1);
 }
-
 .login-form .form-field input {
   border: none;
   outline: none;
@@ -58,21 +52,22 @@ body {
   color: white;
   padding-left: 10px;
 }
-
-.login-form .form-field input:focus~label,
-.login-form .form-field input:valid~label {
+.login-form .form-field input:focus ~ label, .login-form .form-field input:not(:placeholder-shown) ~ label {
   top: 0;
   font-size: 15px;
+}
+.login-form .form-field input:valid ~ label {
   color: #3498db;
 }
-
+.login-form .form-field input:invalid ~ label {
+  color: #e74c3c;
+}
 .login-form .form-field label {
   position: absolute;
   left: 32px;
   top: 24px;
   transition: 0.4s;
 }
-
 .login-form .btn {
   position: relative;
   outline: none;
@@ -87,7 +82,6 @@ body {
   overflow: hidden;
   transition: 0.5s;
 }
-
 .login-form .btn::before {
   position: absolute;
   content: "";
@@ -99,11 +93,9 @@ body {
   transform: translateX(-100%);
   transition: 0.5s;
 }
-
 .login-form .btn:hover {
   box-shadow: 0 0 20px 10px rgba(51, 152, 219, 0.5);
 }
-
 .login-form .btn:hover::before {
   transform: translateX(100%);
 }
