@@ -71,6 +71,12 @@ interface Art {
 export default class Home extends Vue {
   @Provide() arts: Art[] = [
     {
+      title: "nav-tab",
+      thumbnail: "nav-tab.png",
+      description: "动态导航栏",
+      tags: ["ui", "nav", "tabs"]
+    },
+    {
       title: "transparent-material-login-form",
       thumbnail: "transparent-material-login-form.png",
       description: "透明material风格的登录表单",

@@ -1,0 +1,74 @@
+@import url(https://fonts.googleapis.com/css?family=Lato);
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #03a9f4;
+  font-family: "Lato";
+}
+
+nav.navtab {
+  --navtab-width: 600px;
+  --navtab-item-width: calc(var(--navtab-width) / 4 - 20px);
+  --navtab-overlay-width: calc(var(--navtab-item-width) + 80px);
+  --active-index: 0;
+  position: relative;
+  width: var(--navtab-width);
+  height: 150px;
+  background: white;
+  border-radius: 5% 5% 15% 15% / 15% 15% 50% 50%;
+  overflow: hidden;
+  border: 1em solid white;
+}
+nav.navtab ul {
+  list-style-type: none;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+nav.navtab ul li.navtab-item {
+  width: var(--navtab-item-width);
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: #0288d1;
+  z-index: 2;
+  cursor: pointer;
+  transition: 0.5s ease;
+}
+nav.navtab ul li.navtab-item i {
+  font-size: 2em;
+  transition: 0.5s ease;
+}
+nav.navtab ul li.navtab-item span {
+  font-size: 20px;
+  user-select: none;
+  opacity: 0;
+  transition: 0.5s ease;
+}
+nav.navtab ul li.navtab-item.active {
+  width: var(--navtab-overlay-width);
+}
+nav.navtab ul li.navtab-item.active i {
+  transform: translateY(-10px);
+}
+nav.navtab ul li.navtab-item.active span {
+  opacity: 1;
+}
+nav.navtab::after {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: var(--navtab-overlay-width);
+  top: 0;
+  left: 0;
+  background: #b3e5fc;
+  border-radius: 20px;
+  transform: translateX(calc(var(--navtab-item-width) * var(--active-index)));
+  transition: 0.5s ease;
+}

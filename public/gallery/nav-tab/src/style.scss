@@ -1,0 +1,85 @@
+@import url(https://fonts.googleapis.com/css?family=Lato);
+
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  @include center;
+  height: 100vh;
+  background: #03a9f4;
+  font-family: "Lato";
+}
+
+nav.navtab {
+  --navtab-width: 600px;
+  --navtab-item-width: calc(var(--navtab-width) / 4 - 20px);
+  --navtab-overlay-width: calc(var(--navtab-item-width) + 80px);
+  --active-index: 0;
+
+  position: relative;
+  width: var(--navtab-width);
+  height: 150px;
+  background: white;
+  // https://9elements.github.io/fancy-border-radius/full-control.html#15.5.15.15-50.95.50.85-150.600
+  border-radius: 5% 5% 15% 15% / 15% 15% 50% 50%;
+  overflow: hidden;
+  border: 1em solid white;
+
+  ul {
+    list-style-type: none;
+    width: 100%;
+    height: 100%;
+    @include center;
+
+    li.navtab-item {
+      width: var(--navtab-item-width);
+      height: 100%;
+      @include center;
+      flex-direction: column;
+      color: #0288d1;
+      z-index: 2;
+      cursor: pointer;
+      transition: 0.5s ease;
+
+      i {
+        font-size: 2em;
+        transition: 0.5s ease;
+      }
+
+      span {
+        font-size: 20px;
+        user-select: none;
+        opacity: 0;
+        transition: 0.5s ease;
+      }
+
+      &.active {
+        width: var(--navtab-overlay-width);
+
+        i {
+          transform: translateY(-10px);
+        }
+
+        span {
+          opacity: 1;
+        }
+      }
+    }
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    height: 100%;
+    width: var(--navtab-overlay-width);
+    top: 0;
+    left: 0;
+    background: #b3e5fc;
+    border-radius: 20px;
+    transform: translateX(calc(var(--navtab-item-width) * var(--active-index)));
+    transition: 0.5s ease;
+  }
+}
