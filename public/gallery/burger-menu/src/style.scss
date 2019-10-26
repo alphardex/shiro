@@ -1,9 +1,3 @@
-@mixin sp-layout {
-  @media screen and (max-width: 750px) {
-    @content;
-  }
-}
-
 body {
   display: flex;
   height: 100vh;
@@ -13,6 +7,7 @@ body {
 }
 
 .burger-menu {
+  position: relative;
   width: 10em;
   height: 10em;
   border-radius: 50%;
@@ -21,22 +16,30 @@ body {
   border: solid 2px black;
   cursor: pointer;
   z-index: 2;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
   transition: all 0.5s ease-in-out;
 
   .line {
+    position: absolute;
+    left: 25%;
     width: 50%;
     height: 3px;
     background: black;
-    margin: 10px;
     overflow: hidden;
     transition: all 0.5s ease;
 
+    &:nth-child(1) {
+      top: 30%;
+    }
+
+    &:nth-child(3) {
+      bottom: 30%;
+    }
+
     &::after {
+      position: absolute;
       content: "";
-      display: block;
+      top: 0;
+      left: 0;
       width: 100%;
       height: 100%;
       background: lightblue;
@@ -48,18 +51,6 @@ body {
       &:nth-child(#{$i})::after {
         transition-delay: 0.1s * ($i - 1);
       }
-    }
-
-    &:nth-child(1) {
-      transform-origin: top left;
-    }
-
-    &:nth-child(2) {
-      transform-origin: left;
-    }
-
-    &:nth-child(3) {
-      transform-origin: bottom left;
     }
   }
 
@@ -74,11 +65,8 @@ body {
 
     .line {
       &:nth-child(1) {
-        transform: translateX(10%) rotate(45deg) scaleX(1.2);
-
-        @include sp-layout {
-          transform: rotate(45deg) scaleX(1.6);
-        }
+        top: 50%;
+        transform: rotate(45deg);
       }
 
       &:nth-child(2) {
@@ -86,11 +74,8 @@ body {
       }
 
       &:nth-child(3) {
-        transform: translateX(10%) rotate(-45deg) scaleX(1.2);
-
-        @include sp-layout {
-          transform: rotate(-45deg) scaleX(1.6);
-        }
+        bottom: 50%;
+        transform: rotate(-45deg);
       }
     }
   }

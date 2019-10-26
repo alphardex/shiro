@@ -315,6 +315,7 @@ export default class Home extends Vue {
 
 .gallery {
   display: grid;
+  // 自适应列数，每列的范围最小为25个字符宽度，正常情况下为1列的大小
   grid-template-columns: repeat(auto-fill, minmax(25ch, 1fr));
   grid-gap: 2rem;
   margin: 0 6rem 3rem 6rem;
