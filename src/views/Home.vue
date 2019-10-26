@@ -71,6 +71,12 @@ interface Art {
 export default class Home extends Vue {
   @Provide() arts: Art[] = [
     {
+      title: "neon-text",
+      thumbnail: "neon-text.png",
+      description: "用text-shadow制作霓虹文字",
+      tags: ["ui", "text", "neon"]
+    },
+    {
       title: "nav-tab",
       thumbnail: "nav-tab.png",
       description: "动态导航栏",
@@ -158,19 +164,19 @@ export default class Home extends Vue {
       title: "abbr-expansion",
       thumbnail: "abbr-expansion.png",
       description: "缩写的展开效果",
-      tags: ["ui", "hover"]
+      tags: ["ui", "text", "hover"]
     },
     {
       title: "gleaming-heading",
       thumbnail: "gleaming-heading.png",
       description: "隐约闪烁的标题",
-      tags: ["ui", "heading", "blur", "staggered"]
+      tags: ["ui", "text", "blur", "staggered"]
     },
     {
       title: "gleaming-loading",
       thumbnail: "gleaming-loading.png",
       description: "隐约闪烁的加载",
-      tags: ["ui", "loading", "blur", "staggered"]
+      tags: ["ui", "text", "loading", "blur", "staggered"]
     },
     {
       title: "login-button",
