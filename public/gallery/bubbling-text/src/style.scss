@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css?family=Bubblegum+Sans&display=swap');
+
+body {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: #3498db;
+}
+
+.bubbling {
+  position: relative;
+  color: white;
+  font-size: 2.5rem;
+  font-family: 'Bubblegum Sans', cursive;
+  font-weight: bold;
+  text-transform: uppercase;
+  z-index: 2;
+}
+
+.bubble {
+  position: absolute;
+  border-radius: 100%;
+  background: white;
+}

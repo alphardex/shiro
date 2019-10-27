@@ -71,6 +71,12 @@ interface Art {
 export default class Home extends Vue {
   @Provide() arts: Art[] = [
     {
+      title: "bubbling-text",
+      thumbnail: "bubbling-text.png",
+      description: "用web animation制作冒泡文字",
+      tags: ["ui", "text", "bubble"]
+    },
+    {
       title: "neon-text",
       thumbnail: "neon-text.png",
       description: "用text-shadow制作霓虹文字",
