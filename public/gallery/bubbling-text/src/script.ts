@@ -31,7 +31,7 @@ requestInterval(() => {
   bubble.style.left = `${bubblePosition}px`;
   bubbleText.append(bubble);
   let bubbleAnimation = bubble.animate(
-    [{ bottom: "10px", opacity: 1 }, { bottom: "180%", opacity: 1 }],
+    [{ bottom: "10px", opacity: 1 }, { bottom: "180%", opacity: 0.6 }],
     {
       fill: "forwards",
       duration: 3000
