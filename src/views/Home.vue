@@ -71,6 +71,12 @@ interface Art {
 export default class Home extends Vue {
   @Provide() arts: Art[] = [
     {
+      title: "staggered-stair-loading",
+      thumbnail: "staggered-stair-loading.png",
+      description: "高低起伏的阶梯式加载",
+      tags: ["ui", "loading", "staggered"]
+    },
+    {
       title: "bubbling-text",
       thumbnail: "bubbling-text.png",
       description: "用web animation制作冒泡文字",

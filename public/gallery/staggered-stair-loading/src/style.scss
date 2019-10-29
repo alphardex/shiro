@@ -1,0 +1,32 @@
+@import url(https://fonts.googleapis.com/css?family=Lato);
+
+body {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: #2980b9;
+}
+
+.loading {
+  color: white;
+  font-size: 3em;
+  font-family: "Lato";
+  text-transform: uppercase;
+  display: flex;
+
+  span {
+    background: #34495e;
+    padding: 0 20px;
+    line-height: 100px;
+    animation: bulge 2s infinite;
+  }
+}
+
+@keyframes bulge {
+  50% {
+    transform: translateY(-35px);
+    box-shadow: 0 20px 0 #eee;
+  }
+}
