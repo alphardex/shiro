@@ -71,6 +71,12 @@ interface Art {
 export default class Home extends Vue {
   @Provide() arts: Art[] = [
     {
+      title: "menu-hover-underline",
+      thumbnail: "menu-hover-underline.png",
+      description: "获取焦点时出现下划线的菜单栏",
+      tags: ["ui", "menu", "hover"]
+    },
+    {
       title: "staggered-stair-loading",
       thumbnail: "staggered-stair-loading.png",
       description: "高低起伏的阶梯式加载",
