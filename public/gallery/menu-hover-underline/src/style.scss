@@ -12,10 +12,10 @@ body {
 ul {
   display: flex;
   flex-direction: column;
+  align-items: start;
   list-style-type: none;
 
   li {
-    align-self: flex-start;
     padding: 6px 0;
 
     a {
@@ -32,7 +32,7 @@ ul {
         position: absolute;
         content: "";
         width: 100%;
-        height: 10%;
+        height: 3px;
         top: 100%;
         left: 0;
         background: #3498db;
