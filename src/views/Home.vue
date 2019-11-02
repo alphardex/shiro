@@ -71,6 +71,12 @@ interface Art {
 export default class Home extends Vue {
   @Provide() arts: Art[] = [
     {
+      title: "staggered-bouncing-3d-loading",
+      thumbnail: "staggered-bouncing-3d-loading.png",
+      description: "弹跳的3D文本加载",
+      tags: ["ui", "text", "loading", "staggered"]
+    },
+    {
       title: "menu-hover-underline",
       thumbnail: "menu-hover-underline.png",
       description: "获取焦点时出现下划线的菜单栏",
@@ -205,14 +211,14 @@ export default class Home extends Vue {
     {
       title: "particle-burst",
       thumbnail: "particle-burst.png",
-      description: "微粒向四周爆炸的效果",
-      tags: ["particle", "random"]
+      description: "微粒向四周爆炸的动画",
+      tags: ["ui", "loading", "particle", "random"]
     },
     {
       title: "snow-scratch",
       thumbnail: "snow-scratch.png",
-      description: "刮雪融化效果",
-      tags: ["transform", "blur", "contrast"]
+      description: "刮雪融化的文本效果",
+      tags: ["ui", "text", "blur", "contrast"]
     }
   ];
   @Provide() keyword: string = "";

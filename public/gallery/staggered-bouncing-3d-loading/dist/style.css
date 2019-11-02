@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css?family=Baloo+Bhaijaan&display=swap");
+body {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: #2980b9;
+}
+
+.loading {
+  font-size: 5em;
+  font-family: "Baloo Bhaijaan", cursive;
+  text-transform: uppercase;
+  display: flex;
+}
+.loading span {
+  transform: translateY(20px);
+  color: white;
+  text-shadow: 0 1px 0 #bbb, 0 2px 0 #bbb, 0 3px 0 #bbb, 0 4px 0 #bbb, 0 5px 0 #bbb, 0 6px 0 transparent, 0 7px 0 transparent, 0 8px 0 transparent, 0 9px 0 transparent, 0 10px 0 transparent, 0 10px 10px rgba(0, 0, 0, 0.4);
+  animation: bounce 0.3s ease infinite alternate;
+}
+
+@keyframes bounce {
+  to {
+    transform: translateY(-20px);
+    color: white;
+    text-shadow: 0 1px 0 #bbb, 0 2px 0 #bbb, 0 3px 0 #bbb, 0 4px 0 #bbb, 0 5px 0 #bbb, 0 6px 0 #bbb, 0 7px 0 #bbb, 0 8px 0 #bbb, 0 9px 0 #bbb, 0 10px 0 #bbb, 0 50px 25px rgba(0, 0, 0, 0.2);
+  }
+}
