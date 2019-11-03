@@ -1,0 +1,88 @@
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: #34495e;
+}
+
+.switch {
+  position: relative;
+  width: 60px;
+  height: 32px;
+  border-radius: 1em;
+  box-shadow: 0 1px 3px #00013d;
+  cursor: pointer;
+
+  &::before {
+    position: absolute;
+    content: "";
+    background: white;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+  }
+
+  input[type="checkbox"] {
+    & ~ .line::before {
+      position: absolute;
+      content: "";
+      background: #bdc3c7;
+      top: 14px;
+      left: 4px;
+      width: 24px;
+      height: 4px;
+      border-radius: 2px 0 0 2px;
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: 0.3s ease;
+    }
+
+    & ~ .line::after {
+      position: absolute;
+      content: "";
+      background: #bdc3c7;
+      top: 14px;
+      left: 32px;
+      width: 24px;
+      height: 4px;
+      border-radius: 0 2px 2px 0;
+      transform-origin: right;
+      transition: 0.3s ease;
+    }
+
+    & ~ .ball {
+      position: absolute;
+      content: "";
+      background: white;
+      top: 4px;
+      left: 4px;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      box-shadow: inset 0 0 0 4px #bdc3c7;
+      transition: 0.3s ease;
+    }
+
+    &:checked ~ .line::before {
+      transform: scaleX(1);
+    }
+
+    &:checked ~ .line::after {
+      transform: scaleX(0);
+    }
+
+    &:checked ~ .ball {
+      transform: translateX(28px);
+      box-shadow: inset 0 0 0 12px #2357f3;
+    }
+  }
+
+  & + & {
+    margin-top: 2em;
+  }
+}

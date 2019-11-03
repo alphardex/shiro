@@ -71,6 +71,12 @@ interface Art {
 export default class Home extends Vue {
   @Provide() arts: Art[] = [
     {
+      title: "toggle",
+      thumbnail: "toggle.png",
+      description: "精巧的开关",
+      tags: ["ui", "toggle"]
+    },
+    {
       title: "staggered-glow-in-text",
       thumbnail: "staggered-glow-in-text.png",
       description: "发光文本淡入显现效果",
