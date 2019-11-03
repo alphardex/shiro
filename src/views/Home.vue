@@ -71,6 +71,12 @@ interface Art {
 export default class Home extends Vue {
   @Provide() arts: Art[] = [
     {
+      title: "staggered-glow-in-text",
+      thumbnail: "staggered-glow-in-text.png",
+      description: "发光文本淡入显现效果",
+      tags: ["ui", "text", "glow", "staggered"]
+    },
+    {
       title: "staggered-bouncing-3d-loading",
       thumbnail: "staggered-bouncing-3d-loading.png",
       description: "弹跳的3D文本加载",
