@@ -71,6 +71,12 @@ interface Art {
 export default class Home extends Vue {
   @Provide() arts: Art[] = [
     {
+      title: "radio-button",
+      thumbnail: "radio-button.png",
+      description: "精巧的单选按钮",
+      tags: ["ui", "form", "radio"]
+    },
+    {
       title: "toggle",
       thumbnail: "toggle.png",
       description: "精巧的开关",
