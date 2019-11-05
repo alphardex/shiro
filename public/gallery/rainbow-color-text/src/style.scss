@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css?family=Lora:400,400i,700");
+
+body {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: #222;
+}
+
+.rainbow {
+  letter-spacing: 0.2rem;
+  font-size: 1.2rem;
+  font-family: Lora, serif;
+  text-transform: uppercase;
+
+  span {
+    animation: rainbow 50s alternate infinite forwards;
+  }
+}
+
+@keyframes rainbow {
+  @for $i from 0 through 20 {
+    #{percentage($i * 0.05)} {
+      color: hsl(random(360%), 75, 75);
+    }
+  }
+}

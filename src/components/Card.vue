@@ -21,14 +21,13 @@ import { Component, Prop, Vue } from "vue-property-decorator";
 @Component
 export default class Card extends Vue {
   @Prop() private title!: string;
-  @Prop() private thumbnail!: string;
   @Prop() private description!: string;
   @Prop() private tags!: string[];
   get link() {
     return `/gallery/${this.title}/dist/`;
   }
   get thumbnailPath() {
-    return `/thumbnails/${this.thumbnail}`;
+    return `/thumbnails/${this.title}.png`;
   }
 }
 </script>

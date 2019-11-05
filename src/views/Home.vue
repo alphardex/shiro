@@ -43,7 +43,6 @@
       <Card
         v-for="art in searchResult"
         :title="art.title"
-        :thumbnail="art.thumbnail"
         :description="art.description"
         :tags="art.tags"
         :key="art.title"
@@ -58,7 +57,6 @@ import Card from "@/components/Card.vue";
 
 interface Art {
   title: string;
-  thumbnail: string;
   description: string;
   tags: string[];
 }
@@ -71,170 +69,147 @@ interface Art {
 export default class Home extends Vue {
   @Provide() arts: Art[] = [
     {
+      title: "rainbow-color-text",
+      description: "彩虹渐变文本",
+      tags: ["ui", "text", "staggered"]
+    },
+    {
       title: "radio-button",
-      thumbnail: "radio-button.png",
       description: "精巧的单选按钮",
       tags: ["ui", "form", "radio"]
     },
     {
       title: "toggle",
-      thumbnail: "toggle.png",
       description: "精巧的开关",
       tags: ["ui", "toggle"]
     },
     {
       title: "staggered-glow-in-text",
-      thumbnail: "staggered-glow-in-text.png",
       description: "发光文本淡入显现效果",
       tags: ["ui", "text", "glow", "staggered"]
     },
     {
       title: "staggered-bouncing-3d-loading",
-      thumbnail: "staggered-bouncing-3d-loading.png",
       description: "弹跳的3D文本加载",
       tags: ["ui", "text", "loading", "staggered"]
     },
     {
       title: "menu-hover-underline",
-      thumbnail: "menu-hover-underline.png",
       description: "获取焦点时出现下划线的菜单栏",
       tags: ["ui", "menu", "hover"]
     },
     {
       title: "staggered-stair-loading",
-      thumbnail: "staggered-stair-loading.png",
       description: "高低起伏的阶梯式加载",
       tags: ["ui", "loading", "staggered"]
     },
     {
       title: "bubbling-text",
-      thumbnail: "bubbling-text.png",
       description: "用web animation制作冒泡文字",
       tags: ["ui", "text", "bubble"]
     },
     {
       title: "neon-text",
-      thumbnail: "neon-text.png",
       description: "用text-shadow制作霓虹文字",
       tags: ["ui", "text", "neon"]
     },
     {
       title: "nav-tab",
-      thumbnail: "nav-tab.png",
       description: "动态导航栏",
       tags: ["ui", "nav", "tabs"]
     },
     {
       title: "transparent-material-login-form",
-      thumbnail: "transparent-material-login-form.png",
       description: "透明material风格的登录表单",
       tags: ["ui", "material", "form", "login"]
     },
     {
       title: "name-card-hover-expand",
-      thumbnail: "name-card-hover-expand.png",
       description: "利用裁剪属性实现卡片的展开",
       tags: ["ui", "card", "hover", "clip-path"]
     },
     {
       title: "one-field-login-form",
-      thumbnail: "one-field-login-form.png",
       description: "把登陆按钮本身作为表单",
       tags: ["ui", "button", "form", "login"]
     },
     {
       title: "card-hover-expand-body",
-      thumbnail: "card-hover-expand-body.png",
       description: "鼠标悬浮卡片时会展开描述文字",
       tags: ["ui", "card", "hover"]
     },
     {
       title: "button-hover-shining",
-      thumbnail: "button-hover-shining.png",
       description: "会闪烁的按钮",
       tags: ["ui", "button", "hover"]
     },
     {
       title: "burger-menu",
-      thumbnail: "burger-menu.png",
       description: "汉堡菜单",
       tags: ["ui", "menu", "burger", "staggered"]
     },
     {
       title: "staggered-square-loading",
-      thumbnail: "staggered-square-loading.png",
       description: "交错放大的方块加载",
       tags: ["ui", "loading", "staggered"]
     },
     {
       title: "glowing-menu-buttons",
-      thumbnail: "glowing-menu-buttons.png",
       description: "发光的按钮",
       tags: ["ui", "button", "hover"]
     },
     {
       title: "eclipse-loader",
-      thumbnail: "eclipse-loader.png",
       description: "日食加载效果",
       tags: ["ui", "loading", "gradient", "blur"]
     },
     {
       title: "menu-hover-magnify",
-      thumbnail: "menu-hover-magnify.png",
       description: "获取焦点时自动放大的菜单栏",
       tags: ["ui", "menu", "hover", "scale"]
     },
     {
       title: "shining-text",
-      thumbnail: "shining-text.png",
       description: "黑色背景下的文字渐变效果",
       tags: ["ui", "text", "gradient", "background"]
     },
     {
       title: "progress-bar",
-      thumbnail: "progress-bar.png",
       description: "文件上传进度条效果",
       tags: ["ui", "loading", "progress bar"]
     },
     {
       title: "staggered-wave-loading",
-      thumbnail: "staggered-wave-loading.png",
       description: "交错的波纹加载效果",
       tags: ["ui", "loading", "staggered"]
     },
     {
       title: "abbr-expansion",
-      thumbnail: "abbr-expansion.png",
       description: "缩写的展开效果",
       tags: ["ui", "text", "hover"]
     },
     {
       title: "gleaming-heading",
-      thumbnail: "gleaming-heading.png",
       description: "隐约闪烁的标题",
       tags: ["ui", "text", "blur", "staggered"]
     },
     {
       title: "gleaming-loading",
-      thumbnail: "gleaming-loading.png",
       description: "隐约闪烁的加载",
       tags: ["ui", "text", "loading", "blur", "staggered"]
     },
     {
       title: "login-button",
-      thumbnail: "login-button.png",
       description: "附带交互效果的登陆按钮",
       tags: ["ui", "button", "loading"]
     },
     {
       title: "particle-burst",
-      thumbnail: "particle-burst.png",
       description: "微粒向四周爆炸的动画",
       tags: ["ui", "loading", "particle", "random"]
     },
     {
       title: "snow-scratch",
-      thumbnail: "snow-scratch.png",
       description: "刮雪融化的文本效果",
       tags: ["ui", "text", "blur", "contrast"]
     }

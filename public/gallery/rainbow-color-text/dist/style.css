@@ -1,0 +1,85 @@
+@import url("https://fonts.googleapis.com/css?family=Lora:400,400i,700");
+body {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: #222;
+}
+
+.rainbow {
+  letter-spacing: 0.2rem;
+  font-size: 1.2rem;
+  font-family: Lora, serif;
+  text-transform: uppercase;
+}
+.rainbow span {
+  animation: rainbow 50s alternate infinite forwards;
+}
+
+@keyframes rainbow {
+  0% {
+    color: #efd18f;
+  }
+  5% {
+    color: #d4ef8f;
+  }
+  10% {
+    color: #8fefab;
+  }
+  15% {
+    color: #8fefb1;
+  }
+  20% {
+    color: #8fef9b;
+  }
+  25% {
+    color: #a98fef;
+  }
+  30% {
+    color: #8fefa6;
+  }
+  35% {
+    color: #8fa9ef;
+  }
+  40% {
+    color: #efe98f;
+  }
+  45% {
+    color: #ef8fb7;
+  }
+  50% {
+    color: #ef8fb9;
+  }
+  55% {
+    color: #b48fef;
+  }
+  60% {
+    color: #ecef8f;
+  }
+  65% {
+    color: #ef8fed;
+  }
+  70% {
+    color: #cc8fef;
+  }
+  75% {
+    color: #8fc2ef;
+  }
+  80% {
+    color: #8fefac;
+  }
+  85% {
+    color: #be8fef;
+  }
+  90% {
+    color: #8fef9f;
+  }
+  95% {
+    color: #8f97ef;
+  }
+  100% {
+    color: #ef8fcc;
+  }
+}
