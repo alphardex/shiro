@@ -69,6 +69,11 @@ interface Art {
 export default class Home extends Vue {
   @Provide() arts: Art[] = [
     {
+      title: "reveal-text",
+      description: "文本展现",
+      tags: ["ui", "text", "staggered"]
+    },
+    {
       title: "rainbow-color-text",
       description: "彩虹渐变文本",
       tags: ["ui", "text", "staggered"]
