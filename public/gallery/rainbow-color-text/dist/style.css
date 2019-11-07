@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Lato:100");
+@import url("https://fonts.googleapis.com/css?family=Lato:300");
 body {
   display: flex;
   height: 100vh;
@@ -20,66 +20,66 @@ body {
 
 @keyframes rainbow {
   0% {
-    color: #ef8fab;
+    color: #8fecef;
   }
   5% {
-    color: #8fefef;
+    color: #8fc7ef;
   }
   10% {
-    color: #c1ef8f;
+    color: #ef8fe9;
   }
   15% {
-    color: #ef8faf;
+    color: #d4ef8f;
   }
   20% {
-    color: #e48fef;
+    color: #8fccef;
   }
   25% {
-    color: #e7ef8f;
+    color: #8f91ef;
   }
   30% {
-    color: #d7ef8f;
+    color: #8fb6ef;
   }
   35% {
-    color: #8fbfef;
+    color: #efd18f;
   }
   40% {
-    color: #efba8f;
+    color: #c28fef;
   }
   45% {
-    color: #8fdaef;
+    color: #8fafef;
   }
   50% {
-    color: #ef8fa9;
+    color: #8faeef;
   }
   55% {
-    color: #ef8fe2;
+    color: #af8fef;
   }
   60% {
-    color: #8fb1ef;
+    color: #efec8f;
   }
   65% {
-    color: #8fe9ef;
+    color: #efe78f;
   }
   70% {
-    color: #efd28f;
+    color: #8fefa9;
   }
   75% {
-    color: #ef8fc1;
+    color: #8fafef;
   }
   80% {
-    color: #e1ef8f;
+    color: #e6ef8f;
   }
   85% {
-    color: #8fefc7;
+    color: #ef8fb7;
   }
   90% {
-    color: #ef8fc2;
+    color: #8fefc1;
   }
   95% {
-    color: #c4ef8f;
+    color: #8fefef;
   }
   100% {
-    color: #8f93ef;
+    color: #ac8fef;
   }
 }
