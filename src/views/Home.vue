@@ -69,6 +69,11 @@ interface Art {
 export default class Home extends Vue {
   @Provide() arts: Art[] = [
     {
+      title: "checkbox",
+      description: "精巧的复选框",
+      tags: ["ui", "form", "checkbox"]
+    },
+    {
       title: "reveal-text",
       description: "文本展现",
       tags: ["ui", "text", "staggered"]
