@@ -1,5 +1,26 @@
 $bg-color: hsl(237, 85%, 13%);
 
+@function glow(
+  $inner-color: white,
+  $outer-color: hsla(255, 255, 255, 0.05),
+  $depth: 5,
+  $delta: 20px
+) {
+  $shadows: ();
+
+  // inner glow
+  @for $i from 1 through ceil(($depth / 2)) {
+    $shadows: append($shadows, 0 0 (($delta / 2) * $i) $inner-color, comma);
+  }
+
+  // outer glow
+  @for $i from 1 through $depth {
+    $shadows: append($shadows, 0 0 0 ($delta * $i) $outer-color, comma);
+  }
+
+  @return $shadows;
+}
+
 body {
   display: flex;
   height: 100vh;
@@ -42,12 +63,7 @@ ul {
       }
 
       &:hover::before {
-        box-shadow: 0 0 10px white, 0 0 20px white, 0 0 30px white,
-          0 0 0 20px hsla(255, 255, 255, 0.05),
-          0 0 0 40px hsla(255, 255, 255, 0.05),
-          0 0 0 60px hsla(255, 255, 255, 0.05),
-          0 0 0 80px hsla(255, 255, 255, 0.05),
-          0 0 0 100px hsla(255, 255, 255, 0.05);
+        box-shadow: glow();
       }
     }
   }

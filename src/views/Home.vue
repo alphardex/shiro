@@ -211,7 +211,7 @@ export default class Home extends Vue {
     {
       title: "login-button",
       description: "附带交互效果的登陆按钮",
-      tags: ["ui", "button", "loading"]
+      tags: ["ui", "button", "loading", "morphing"]
     },
     {
       title: "particle-burst",
