@@ -39,24 +39,24 @@ body {
     }
 
     .progress-indicator {
-      position: absolute;
       @include circle;
-      counter-reset: count var(--value);
+      position: absolute;
       top: -13px;
       left: calc(-12px + var(--value) * 4.3px);
+      z-index: 2;
       background: #222;
       border: 4px solid $light-color;
-      z-index: 2;
+      counter-reset: count var(--value);
 
       &::after {
         position: absolute;
+        // var(count) doesn't work cuz content only accepts string, so use counter(count)
+        content: counter(count) "%";
         width: 100%;
         height: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
-        // var(count) doesn't work cuz content only accepts string, so use counter(count)
-        content: counter(count) "%";
         color: $light-color;
         font-size: 9px;
       }
@@ -64,33 +64,33 @@ body {
   }
 
   .progress-start {
-    position: absolute;
     @include circle;
+    position: absolute;
     top: -13px;
     left: -12px;
     background: $bg-color;
     border: 4px solid $light-color;
 
     svg {
+      @include center;
       width: 100%;
       height: 100%;
-      @include center;
       transform: scale(0.6);
     }
   }
 
   .progress-end {
-    position: absolute;
     @include circle;
+    position: absolute;
     top: -13px;
     right: -12px;
     background: $bg-color;
     border: 4px solid $dark-color;
 
     svg {
+      @include center;
       width: 100%;
       height: 100%;
-      @include center;
       transform: scale(0.6);
       opacity: 0.25;
     }

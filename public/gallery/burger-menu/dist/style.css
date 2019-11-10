@@ -8,14 +8,14 @@ body {
 
 .burger-menu {
   position: relative;
+  z-index: 2;
   width: 10em;
   height: 10em;
-  border-radius: 50%;
   background: #222;
-  outline: none;
   border: solid 2px black;
+  border-radius: 50%;
+  outline: none;
   cursor: pointer;
-  z-index: 2;
   transition: all 0.5s ease-in-out;
 }
 .burger-menu .line {

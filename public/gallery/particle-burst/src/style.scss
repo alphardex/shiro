@@ -3,8 +3,8 @@ $total: 500;
 $time: 3s;
 
 body {
-  overflow: hidden; // no scrollbar
   background: black;
+  overflow: hidden; // no scrollbar
 }
 
 .particle {
@@ -18,8 +18,8 @@ body {
     &:nth-child(#{$i}) {
       $t: $time - 2s + random(2000) * 1ms;
 
-      transform: translate(random(100) * 1vw, random(100) * 1vh);
       background: hsl(random(360), 100%, 70%);
+      transform: translate(random(100) * 1vw, random(100) * 1vh);
       animation-duration: $t;
       animation-delay: -0.01 * random(100) * $t; // execute animation in advance
     }

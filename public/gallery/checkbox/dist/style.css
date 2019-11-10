@@ -8,9 +8,9 @@ body {
 }
 
 legend {
-  background-color: black;
-  color: white;
   padding: 3px 6px;
+  color: white;
+  background-color: black;
 }
 
 .form-group {
@@ -30,9 +30,9 @@ input[type="checkbox"] + label::before {
   content: "";
   width: 20px;
   height: 20px;
-  border: 1px solid #a3b6bb;
   margin-right: 10px;
   background: #ecf0f1;
+  border: 1px solid #a3b6bb;
   cursor: pointer;
   transition: 0.3s ease;
 }
@@ -47,8 +47,8 @@ input[type="checkbox"] + label .tick {
 }
 input[type="checkbox"]:checked + label::before {
   background: #3498db;
-  animation: pulse 1s;
   box-shadow: 0 0 0 8px rgba(52, 152, 219, 0);
+  animation: pulse 1s;
 }
 input[type="checkbox"]:checked + label .tick {
   stroke-dashoffset: 0;

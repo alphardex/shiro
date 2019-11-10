@@ -8,12 +8,12 @@ body {
 }
 
 abbr {
-  text-decoration: none;
+  display: flex;
   color: white;
   font-size: 2em;
   font-weight: bold;
-  font-family: 'Lato';
-  display: flex;
+  font-family: Lato, sans-serif;
+  text-decoration: none;
 }
 abbr span {
   -webkit-text-decoration: underline white;
@@ -21,14 +21,14 @@ abbr span {
   transition: all 0.5s ease-in-out;
 }
 abbr span.hidden {
-  opacity: 0;
   max-width: 0;
   text-decoration: none;
+  opacity: 0;
 }
 abbr:hover span {
-  opacity: 1;
   max-width: 2em;
   text-decoration: none;
+  opacity: 1;
 }
 abbr:hover span.initial {
   margin-left: 0.5em;

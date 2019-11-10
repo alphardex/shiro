@@ -50,15 +50,15 @@ ul {
       &::before {
         position: absolute;
         content: "";
-        width: 100%;
-        height: 100%;
         top: -25%;
-        background: white;
-        border-radius: 50%;
         z-index: -1;
         display: flex;
         justify-content: center;
         align-items: center;
+        width: 100%;
+        height: 100%;
+        background: white;
+        border-radius: 50%;
         transition: 0.5s;
       }
 

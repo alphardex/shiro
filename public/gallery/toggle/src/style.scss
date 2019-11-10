@@ -19,11 +19,11 @@ body {
   &::before {
     position: absolute;
     content: "";
-    background: white;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
+    background: white;
     border-radius: inherit;
   }
 
@@ -31,11 +31,11 @@ body {
     & ~ .line::before {
       position: absolute;
       content: "";
-      background: #bdc3c7;
       top: 14px;
       left: 4px;
       width: 24px;
       height: 4px;
+      background: #bdc3c7;
       border-radius: 2px 0 0 2px;
       transform: scaleX(0);
       transform-origin: left;
@@ -45,11 +45,11 @@ body {
     & ~ .line::after {
       position: absolute;
       content: "";
-      background: #bdc3c7;
       top: 14px;
       left: 32px;
       width: 24px;
       height: 4px;
+      background: #bdc3c7;
       border-radius: 0 2px 2px 0;
       transform-origin: right;
       transition: 0.3s ease;
@@ -58,11 +58,11 @@ body {
     & ~ .ball {
       position: absolute;
       content: "";
-      background: white;
       top: 4px;
       left: 4px;
       width: 24px;
       height: 24px;
+      background: white;
       border-radius: 50%;
       box-shadow: inset 0 0 0 4px #bdc3c7;
       transition: 0.3s ease;
@@ -77,8 +77,8 @@ body {
     }
 
     &:checked ~ .ball {
-      transform: translateX(28px);
       box-shadow: inset 0 0 0 12px #2357f3;
+      transform: translateX(28px);
     }
   }
 

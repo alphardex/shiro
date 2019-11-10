@@ -31,22 +31,22 @@ body {
 }
 
 .loading {
+  display: flex;
   color: white;
   font-size: 5em;
   font-family: "Baloo Bhaijaan", cursive;
   text-transform: uppercase;
-  display: flex;
 
   span {
-    transform: translateY(20px);
     text-shadow: float-text-3d($floating: false);
+    transform: translateY(20px);
     animation: bounce 0.3s ease infinite alternate;
   }
 }
 
 @keyframes bounce {
   to {
-    transform: translateY(-20px);
     text-shadow: float-text-3d($floating: true);
+    transform: translateY(-20px);
   }
 }

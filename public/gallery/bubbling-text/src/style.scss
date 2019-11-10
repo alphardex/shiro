@@ -10,18 +10,18 @@ body {
 }
 
 .bubbling {
-  display: inline-block;
   position: relative;
+  z-index: 2;
+  display: inline-block;
   color: white;
   font-size: 2.5rem;
   font-family: 'Bubblegum Sans', cursive;
   font-weight: bold;
   text-transform: uppercase;
-  z-index: 2;
 }
 
 .bubble {
   position: absolute;
-  border-radius: 100%;
   background: white;
+  border-radius: 100%;
 }

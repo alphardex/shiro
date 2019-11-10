@@ -8,7 +8,6 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  font-family: "Lato";
   background: black;
 }
 
@@ -16,9 +15,9 @@ body {
   width: $snow-size * 10;
   height: $snow-size * 10;
   padding: 10em;
-  background: black;
   display: flex;
   flex-wrap: wrap;
+  background: black;
   filter: blur(15px) contrast(30);
 
   .snow {
@@ -46,14 +45,15 @@ body {
 
 p {
   position: absolute;
-  color: white;
   top: 50%;
   left: 50%;
   z-index: 9999;
-  transform: translate(-47%, -160%);
+  color: white;
+  font-family: Lato, sans-serif;
   font-size: 4em;
   line-height: 1em;
+  letter-spacing: 0.1em;
+  transform: translate(-47%, -160%);
   pointer-events: none;
   filter: blur(1px) contrast(20);
-  letter-spacing: 0.1em;
 }

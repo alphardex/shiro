@@ -11,28 +11,28 @@ body {
 .reveal {
   position: relative;
   display: flex;
-  white-space: pre;
   color: #6ee1f5;
-  letter-spacing: 3px;
   font-size: 2em;
   font-family: Raleway, sans-serif;
+  letter-spacing: 3px;
   text-transform: uppercase;
+  white-space: pre;
 }
 .reveal span {
-  transform: scale(0);
   opacity: 0;
+  transform: scale(0);
   animation: fadeIn 2.4s forwards;
 }
 .reveal::before, .reveal::after {
   position: absolute;
   content: "";
-  background: white;
-  width: 2px;
-  height: 100%;
   top: 0;
   bottom: 0;
-  transform: scale(0);
+  width: 2px;
+  height: 100%;
+  background: white;
   opacity: 0;
+  transform: scale(0);
 }
 .reveal::before {
   left: 50%;
@@ -45,21 +45,21 @@ body {
 
 @keyframes fadeIn {
   to {
-    transform: scale(1);
     opacity: 1;
+    transform: scale(1);
   }
 }
 @keyframes slideLeft {
   to {
     left: -6%;
-    transform: scale(0.9);
     opacity: 1;
+    transform: scale(0.9);
   }
 }
 @keyframes slideRight {
   to {
     right: -6%;
-    transform: scale(0.9);
     opacity: 1;
+    transform: scale(0.9);
   }
 }

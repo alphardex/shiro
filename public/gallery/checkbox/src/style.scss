@@ -8,9 +8,9 @@ body {
 }
 
 legend {
-  background-color: black;
-  color: white;
   padding: 3px 6px;
+  color: white;
+  background-color: black;
 }
 
 .form-group {
@@ -28,9 +28,9 @@ input[type="checkbox"] {
       content: "";
       width: 20px;
       height: 20px;
-      border: 1px solid darken(#ecf0f1, 25%);
       margin-right: 10px;
       background: #ecf0f1;
+      border: 1px solid darken(#ecf0f1, 25%);
       cursor: pointer;
       transition: 0.3s ease;
     }
@@ -48,8 +48,8 @@ input[type="checkbox"] {
     & + label {
       &::before {
         background: #3498db;
-        animation: pulse 1s;
         box-shadow: 0 0 0 8px rgba(#3498db, 0);
+        animation: pulse 1s;
       }
       .tick {
         stroke-dashoffset: 0;

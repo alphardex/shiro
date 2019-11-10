@@ -8,19 +8,19 @@ body {
   justify-content: center;
   align-items: center;
   background: #222;
-  font-family: "Lato";
 }
 
 button.shine {
   position: relative;
+  padding: 1em 3em;
   color: white;
+  font-family: Lato, sans-serif;
+  font-size: 1em;
+  text-transform: uppercase;
   background: transparent;
+  border: 1px solid $shine-color;
   outline: none;
   cursor: pointer;
-  font-size: 1em;
-  padding: 1em 3em;
-  text-transform: uppercase;
-  border: 1px solid $shine-color;
   overflow: hidden;
   transition: 0.3s;
 

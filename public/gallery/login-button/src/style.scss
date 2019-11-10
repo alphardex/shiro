@@ -13,19 +13,19 @@ body {
 
 .login {
   position: relative;
-  outline: none;
-  border: none;
   width: 10em;
   height: 4em;
-  border-radius: 4em;
-  background: $btn-color;
-  box-shadow: 0 0.5em 1em #222;
   color: $text-color;
+  font-family: Lato, sans-serif;
+  font-size: 1.5em;
   text-align: center;
   text-transform: uppercase;
+  background: $btn-color;
+  border: none;
+  border-radius: 4em;
+  outline: none;
+  box-shadow: 0 0.5em 1em #222;
   cursor: pointer;
-  font-family: "Lato";
-  font-size: 1.5em;
   transition: all 0.5s;
 
   .loader {
@@ -46,11 +46,11 @@ body {
     position: absolute;
     left: 1.5em;
     bottom: 1.2em;
+    opacity: 0;
     stroke: $text-color;
     stroke-width: 5px;
     stroke-dasharray: 36px;
     stroke-dashoffset: 36px;
-    opacity: 0;
     transition: opacity 0.3s;
   }
 

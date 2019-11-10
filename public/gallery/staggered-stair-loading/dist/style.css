@@ -9,22 +9,22 @@ body {
 }
 
 .loading {
+  display: flex;
   color: white;
   font-size: 3em;
-  font-family: "Lato";
+  font-family: Lato, sans-serif;
   text-transform: uppercase;
-  display: flex;
 }
 .loading span {
-  background: #34495e;
   padding: 0 20px;
   line-height: 100px;
+  background: #34495e;
   animation: bulge 2s infinite;
 }
 
 @keyframes bulge {
   50% {
-    transform: translateY(-35px);
     box-shadow: 0 20px 0 #eee;
+    transform: translateY(-35px);
   }
 }

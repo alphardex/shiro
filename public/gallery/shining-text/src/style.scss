@@ -10,9 +10,9 @@ body {
 }
 
 .shining {
-  letter-spacing: 4px;
   font-size: 2em;
-  font-family: "Lato";
+  font-family: Lato, sans-serif;
+  letter-spacing: 4px;
   text-transform: uppercase;
   background: linear-gradient(90deg, rgba(0,0,0,1) 0%, rgba(255,255,255,1) 50%, rgba(0,0,0,1) 100%);
   background-size: 80%;

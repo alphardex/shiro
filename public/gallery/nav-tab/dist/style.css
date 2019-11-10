@@ -4,8 +4,8 @@ body {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  font-family: Lato, sans-serif;
   background: #03a9f4;
-  font-family: "Lato";
 }
 
 nav.navtab {
@@ -17,27 +17,27 @@ nav.navtab {
   width: var(--navtab-width);
   height: 150px;
   background: white;
+  border: 1em solid white;
   border-radius: 5% 5% 15% 15% / 15% 15% 50% 50%;
   overflow: hidden;
-  border: 1em solid white;
 }
 nav.navtab ul {
-  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  list-style-type: none;
 }
 nav.navtab ul li.navtab-item {
-  width: var(--navtab-item-width);
-  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
-  color: #0288d1;
   z-index: 2;
+  flex-direction: column;
+  width: var(--navtab-item-width);
+  height: 100%;
+  color: #0288d1;
   cursor: pointer;
   transition: 0.5s ease;
 }
@@ -63,10 +63,10 @@ nav.navtab ul li.navtab-item.active span {
 nav.navtab::after {
   position: absolute;
   content: "";
-  height: 100%;
-  width: var(--navtab-overlay-width);
   top: 0;
   left: 0;
+  height: 100%;
+  width: var(--navtab-overlay-width);
   background: #b3e5fc;
   border-radius: 20px;
   transform: translateX(calc(var(--navtab-item-width) * var(--active-index)));

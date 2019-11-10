@@ -4,8 +4,8 @@ body {
   height: 100vh;
   justify-content: center;
   align-items: center;
+  font-family: Lato, sans-serif;
   background: url("https://i.loli.net/2019/10/18/buDT4YS6zUMfHst.jpg") 0/cover fixed;
-  font-family: "Lato";
 }
 
 .login-form {
@@ -13,30 +13,30 @@ body {
   flex-direction: column;
   align-items: center;
   padding: 3em;
-  background: rgba(0, 0, 0, 0.8);
   color: white;
+  background: rgba(0, 0, 0, 0.8);
   border-radius: 10px;
   box-shadow: 0 15px 20px rgba(0, 0, 0, 0.5);
 }
 .login-form h1 {
-  font-size: 2.5em;
   margin-bottom: 0.3em;
   padding: 12px 0;
+  font-size: 2.5em;
 }
 .login-form .form-field {
   position: relative;
+  margin: 20px 0 8px 0;
   font-size: 20px;
   border-bottom: 1px solid white;
-  margin: 20px 0 8px 0;
   transition: 0.4s;
 }
 .login-form .form-field::after {
   position: absolute;
   content: "";
-  width: 100%;
-  height: 2px;
   bottom: -1px;
   left: 0;
+  width: 100%;
+  height: 2px;
   background: #3498db;
   transform-origin: left;
   transform: scaleX(0);
@@ -46,11 +46,11 @@ body {
   transform: scaleX(1);
 }
 .login-form .form-field input {
+  padding-left: 10px;
+  color: white;
+  background: transparent;
   border: none;
   outline: none;
-  background: transparent;
-  color: white;
-  padding-left: 10px;
 }
 .login-form .form-field input:focus ~ label, .login-form .form-field input:not(:placeholder-shown) ~ label {
   top: 0;
@@ -70,14 +70,14 @@ body {
 }
 .login-form .btn {
   position: relative;
-  outline: none;
-  background: transparent;
-  color: white;
-  border: 2px solid #3398db;
   width: 100%;
-  font-size: 1.2em;
-  margin: 36px 0 18px 0;
   padding: 6px 0;
+  margin: 36px 0 18px 0;
+  font-size: 1.2em;
+  color: white;
+  background: transparent;
+  border: 2px solid #3398db;
+  outline: none;
   cursor: pointer;
   overflow: hidden;
   transition: 0.5s;
@@ -85,10 +85,10 @@ body {
 .login-form .btn::before {
   position: absolute;
   content: "";
-  width: 100%;
-  height: 100%;
   top: 0;
   left: 0;
+  width: 100%;
+  height: 100%;
   background: linear-gradient(120deg, transparent, rgba(51, 152, 219, 0.5), transparent);
   transform: translateX(-100%);
   transition: 0.5s;

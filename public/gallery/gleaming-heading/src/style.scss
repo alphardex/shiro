@@ -13,12 +13,12 @@ body {
   color: #66ccff;
   letter-spacing: 1rem;
   font-size: 1.5rem;
-  font-family: "Lato";
+  font-family: Lato, sans-serif;
   text-transform: uppercase;
 
   span {
-    animation: fadeIn 2s alternate infinite;
     opacity: 0;
+    animation: fadeIn 2s alternate infinite;
   }
 }
 
