@@ -1,0 +1,60 @@
+@import url(https://fonts.googleapis.com/css?family=Lato);
+body {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: #222;
+}
+
+.split-menu {
+  --primary-color: #03a9f4;
+  --secondary-color: #ffffff;
+  --border-color: #d2d5e4;
+  display: flex;
+  list-style-type: none;
+}
+.split-menu li:not(:last-child) {
+  border-right: 2px dotted var(--border-color);
+}
+.split-menu li a {
+  display: flex;
+  padding: 6px 2em 3px;
+  color: white;
+  font-family: Lato, sans-serif;
+  text-decoration: none;
+  overflow: hidden;
+  transition: 0.5s;
+}
+.split-menu li a span.primary {
+  position: relative;
+  padding-right: 4px;
+  color: var(--primary-color);
+  transition: 0.3s;
+}
+.split-menu li a span.primary::before {
+  position: absolute;
+  content: attr(data-text);
+  color: var(--secondary-color);
+  transform: translateY(130%);
+  transition: 0.3s;
+}
+.split-menu li a span.secondary {
+  position: relative;
+  color: var(--secondary-color);
+  transition: 0.3s;
+}
+.split-menu li a span.secondary::before {
+  position: absolute;
+  content: attr(data-text);
+  color: var(--primary-color);
+  transform: translateY(-130%);
+  transition: 0.3s;
+}
+.split-menu li a:hover span.primary {
+  transform: translateY(-130%);
+}
+.split-menu li a:hover span.secondary {
+  transform: translateY(130%);
+}

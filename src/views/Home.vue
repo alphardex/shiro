@@ -69,6 +69,11 @@ interface Art {
 export default class Home extends Vue {
   @Provide() arts: Art[] = [
     {
+      title: "split-text-menu",
+      description: "交错分割文本菜单",
+      tags: ["ui", "menu", "hover", "staggered"]
+    },
+    {
       title: "checkbox",
       description: "精巧的复选框",
       tags: ["ui", "form", "checkbox"]
