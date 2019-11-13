@@ -69,6 +69,11 @@ interface Art {
 export default class Home extends Vue {
   @Provide() arts: Art[] = [
     {
+      title: "logout-button",
+      description: "具有悬浮效果的登出图标按钮",
+      tags: ["ui", "button", "hover"]
+    },
+    {
       title: "split-text-menu",
       description: "交错分割文本菜单",
       tags: ["ui", "menu", "hover", "staggered"]

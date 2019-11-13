@@ -1,0 +1,51 @@
+@import url(https://fonts.googleapis.com/css?family=Lato);
+
+body {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: #222;
+}
+
+.logout {
+  position: relative;
+  padding: 0.5rem 1.5rem;
+  font-size: 1.1rem;
+  font-family: Lato, sans-serif;
+  font-weight: bold;
+  line-height: 1.5;
+  color: white;
+  background: hsl(197, 80%, 35%);
+  border-width: 0 1px 4px 1px;
+  border-style: solid;
+  border-color: hsl(197, 80%, 41%);
+  border-radius: 0.3rem;
+  outline: transparent;
+  overflow: hidden;
+  cursor: pointer;
+
+  i {
+    position: absolute;
+    top: 10%;
+    left: 40%;
+    transform: translateY(400%);
+    transition: 0.2s;
+  }
+
+  span {
+    display: flex;
+    transition: 0.2s;
+  }
+
+  &:hover {
+    i {
+      transform: translateY(50%);
+    }
+
+    span {
+      transform: translateY(-400%);
+    }
+  }
+}
