@@ -52,6 +52,11 @@ interface Art {
 export default class Home extends Vue {
   @Provide() arts: Art[] = [
     {
+      title: "carousel",
+      description: "精致的轮播图",
+      tags: ["ui", "carousel", "slider", "scroll"]
+    },
+    {
       title: "button-collection",
       description: "有意思的按钮合集",
       tags: ["ui", "button", "hover", "cta"]
