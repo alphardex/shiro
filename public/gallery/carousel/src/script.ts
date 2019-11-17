@@ -1,10 +1,10 @@
-// For main purpose(sliding), JS is not necessary, just let the dots and arrows work too.
+const AUTO_PLAY_SECOND = 4000;
+
 let carousel = document.querySelector(".carousel");
 let dots = document.querySelectorAll(".dot a");
 let slides = document.querySelector(".slides");
 let slideCount = dots.length;
 
-// dots
 let setActiveIndex = (activeIndex: number) => {
   dots.forEach(dot => dot.classList.remove("active"));
   dots[activeIndex].classList.add("active");
@@ -13,17 +13,8 @@ let setActiveIndex = (activeIndex: number) => {
     `${activeIndex}`
   );
 };
-dots[0].classList.add("active");
-dots.forEach((dot, activeIndex) => {
-  dot.addEventListener("click", () => {
-    setActiveIndex(activeIndex);
-  });
-});
 
-// arrows
-let leftArrow = document.querySelector(".nav-arrows .arrow-left");
-let rightArrow = document.querySelector(".nav-arrows .arrow-right");
-leftArrow.addEventListener("click", () => {
+let scrollLeft = () => {
   let minIndex = false;
   let activeIndex = Number(
     (carousel as HTMLElement).style.getPropertyValue("--active-index")
@@ -42,8 +33,9 @@ leftArrow.addEventListener("click", () => {
   } else {
     slides.scrollBy(-(carousel as HTMLElement).offsetWidth, 0);
   }
-});
-rightArrow.addEventListener("click", () => {
+};
+
+let scrollRight = () => {
   let maxIndex = false;
   let activeIndex = Number(
     (carousel as HTMLElement).style.getPropertyValue("--active-index")
@@ -62,4 +54,23 @@ rightArrow.addEventListener("click", () => {
   } else {
     slides.scrollBy((carousel as HTMLElement).offsetWidth, 0);
   }
+};
+
+// dots
+dots[0].classList.add("active");
+dots.forEach((dot, activeIndex) => {
+  dot.addEventListener("click", () => {
+    setActiveIndex(activeIndex);
+  });
 });
+
+// arrows
+let leftArrow = document.querySelector(".nav-arrows .arrow-left");
+let rightArrow = document.querySelector(".nav-arrows .arrow-right");
+leftArrow.addEventListener("click", scrollLeft);
+rightArrow.addEventListener("click", scrollRight);
+
+// auto play
+if (carousel.classList.contains("auto-play")) {
+  setInterval(scrollRight, AUTO_PLAY_SECOND);
+}

@@ -21,11 +21,14 @@ body {
   display: flex;
   overflow: hidden;
   scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior: contain;
   list-style-type: none;
 }
 .carousel .slides img {
   width: var(--carousel-width);
   height: calc(var(--carousel-height) - var(--navdots-height));
+  scroll-snap-align: start;
 }
 .carousel .nav-dots {
   display: flex;
