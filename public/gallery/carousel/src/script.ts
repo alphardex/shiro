@@ -56,10 +56,25 @@ let scrollRight = () => {
   }
 };
 
+// auto play
+let autoPlayTimer = setInterval(scrollRight, AUTO_PLAY_SECOND);
+let canAutoPlay = carousel.classList.contains("auto-play");
+if (!canAutoPlay) {
+  clearInterval(autoPlayTimer);
+}
+
+let resetTimer = () => {
+  if (canAutoPlay) {
+    clearInterval(autoPlayTimer);
+    autoPlayTimer = setInterval(scrollRight, AUTO_PLAY_SECOND);
+  }
+};
+
 // dots
 dots[0].classList.add("active");
 dots.forEach((dot, activeIndex) => {
   dot.addEventListener("click", () => {
+    resetTimer();
     setActiveIndex(activeIndex);
   });
 });
@@ -67,10 +82,11 @@ dots.forEach((dot, activeIndex) => {
 // arrows
 let leftArrow = document.querySelector(".nav-arrows .arrow-left");
 let rightArrow = document.querySelector(".nav-arrows .arrow-right");
-leftArrow.addEventListener("click", scrollLeft);
-rightArrow.addEventListener("click", scrollRight);
-
-// auto play
-if (carousel.classList.contains("auto-play")) {
-  setInterval(scrollRight, AUTO_PLAY_SECOND);
-}
+leftArrow.addEventListener("click", () => {
+  resetTimer();
+  scrollLeft();
+});
+rightArrow.addEventListener("click", () => {
+  resetTimer();
+  scrollRight();
+});

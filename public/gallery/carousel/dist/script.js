@@ -40,19 +40,34 @@ var scrollRight = function () {
         slides.scrollBy(carousel.offsetWidth, 0);
     }
 };
+// auto play
+var autoPlayTimer = setInterval(scrollRight, AUTO_PLAY_SECOND);
+var canAutoPlay = carousel.classList.contains("auto-play");
+if (!canAutoPlay) {
+    clearInterval(autoPlayTimer);
+}
+var resetTimer = function () {
+    if (canAutoPlay) {
+        clearInterval(autoPlayTimer);
+        autoPlayTimer = setInterval(scrollRight, AUTO_PLAY_SECOND);
+    }
+};
 // dots
 dots[0].classList.add("active");
 dots.forEach(function (dot, activeIndex) {
     dot.addEventListener("click", function () {
+        resetTimer();
         setActiveIndex(activeIndex);
     });
 });
 // arrows
 var leftArrow = document.querySelector(".nav-arrows .arrow-left");
 var rightArrow = document.querySelector(".nav-arrows .arrow-right");
-leftArrow.addEventListener("click", scrollLeft);
-rightArrow.addEventListener("click", scrollRight);
-// auto play
-if (carousel.classList.contains("auto-play")) {
-    setInterval(scrollRight, AUTO_PLAY_SECOND);
-}
+leftArrow.addEventListener("click", function () {
+    resetTimer();
+    scrollLeft();
+});
+rightArrow.addEventListener("click", function () {
+    resetTimer();
+    scrollRight();
+});
