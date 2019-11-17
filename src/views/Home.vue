@@ -52,6 +52,11 @@ interface Art {
 export default class Home extends Vue {
   @Provide() arts: Art[] = [
     {
+      title: "frosted-glass",
+      description: "毛玻璃背景效果",
+      tags: ["ui", "background", "filter"]
+    },
+    {
       title: "carousel",
       description: "精致的轮播图",
       tags: ["ui", "carousel", "slider", "scroll"]

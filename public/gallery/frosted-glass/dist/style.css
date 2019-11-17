@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:200");
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: url(https://i.loli.net/2019/11/17/GAYyzeKsiWjP5qO.jpg);
+  background-size: cover;
+  background-position: center;
+}
+
+.frosted-glass {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 72vw;
+  height: 36vh;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+  -webkit-backdrop-filter: blur(20px);
+          backdrop-filter: blur(20px);
+  transition: 0.5s ease;
+}
+.frosted-glass:hover {
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.5);
+}
+.frosted-glass .title {
+  padding-left: 0.375em;
+  font-size: 3.6em;
+  font-family: Lato, sans-serif;
+  font-weight: 200;
+  letter-spacing: 0.75em;
+  color: white;
+}
+@media (max-width: 640px) {
+  .frosted-glass .title {
+    font-size: 2em;
+  }
+}
