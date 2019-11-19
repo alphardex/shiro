@@ -1,5 +1,6 @@
 <dialog id="confirm-modal" class="modal">
   <div class="modal-content">
+    <svg t="1574164208713" class="model-icon" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5819" width="63" height="63"><path d="M512 0C230.4 0 0 230.4 0 512s230.4 512 512 512 512-230.4 512-512S793.6 0 512 0zM512 877.714286c-40.228571 0-73.142857-32.914286-73.142857-73.142857s32.914286-73.142857 73.142857-73.142857 73.142857 32.914286 73.142857 73.142857S552.228571 877.714286 512 877.714286zM585.142857 512c0 40.228571-32.914286 73.142857-73.142857 73.142857s-73.142857-32.914286-73.142857-73.142857L438.857143 219.428571c0-40.228571 32.914286-73.142857 73.142857-73.142857s73.142857 32.914286 73.142857 73.142857L585.142857 512z" p-id="5820" fill="white"></path></svg>
     <h2 class="modal-title">Are you sure?</h2>
     <p class="modal-description">
       You can't undo this action.
@@ -18,11 +19,11 @@
     </div>
   </div>
 </dialog>
-<main>
+<form action="javascript:void(0);">
   <button
-    class="btn btn-primary"
+    class="btn btn-danger"
     onclick="document.querySelector('#confirm-modal').showModal()"
   >
     Delete history
   </button>
-</main>
+</form>

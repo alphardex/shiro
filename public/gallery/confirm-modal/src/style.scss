@@ -30,12 +30,12 @@ body {
   white-space: nowrap;
   transition: 0.25s;
 
-  &-primary {
+  &-danger {
     color: white;
-    background-color: var(--primary-color);
+    background-color: var(--danger-color);
 
     &:hover {
-      background-color: hsl(171, 100%, 38%);
+      background-color: hsl(348, 86%, 53%);
     }
   }
 
@@ -101,6 +101,13 @@ body {
 
   &::backdrop {
     background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(3px);
+  }
+
+  .model-icon {
+    margin-bottom: 1.25rem;
+    opacity: 0;
+    animation: show-modal-icon 0.5s ease 0.2s forwards;
   }
 
   .modal-content {
@@ -114,13 +121,13 @@ body {
       margin-top: 0;
       margin-bottom: 1.2rem;
       opacity: 0;
-      animation: show-title 0.5s ease 0.2s forwards;
+      animation: show-modal-text 0.5s ease 0.35s forwards;
     }
 
     .modal-description {
       margin: 0;
       opacity: 0;
-      animation: show-description 0.5s ease 0.35s forwards;
+      animation: show-modal-text 1s ease 0.5s forwards;
     }
 
     .modal-options {
@@ -138,7 +145,7 @@ body {
 
       .confirm {
         opacity: 0;
-        animation: show-option 0.5s ease 0.5s forwards;
+        animation: show-modal-option 0.5s ease 0.65s forwards;
 
         &::before {
           background: var(--success-color);
@@ -151,7 +158,7 @@ body {
 
       .cancel {
         opacity: 0;
-        animation: show-option 0.5s ease 0.65s forwards;
+        animation: show-modal-option 0.5s ease 0.8s forwards;
 
         &::before {
           background: var(--danger-color);
@@ -181,7 +188,7 @@ body {
   }
 }
 
-@keyframes show-title {
+@keyframes show-modal-icon {
   from {
     transform: scale(0.4);
   }
@@ -197,7 +204,7 @@ body {
   }
 }
 
-@keyframes show-description {
+@keyframes show-modal-text {
   from {
     transform: scale(0.6);
   }
@@ -213,7 +220,7 @@ body {
   }
 }
 
-@keyframes show-option {
+@keyframes show-modal-option {
   from {
     transform: scale(0.4);
   }
