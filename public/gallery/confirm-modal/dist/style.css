@@ -1,0 +1,192 @@
+@import url(https://fonts.googleapis.com/css?family=Lato);
+:root {
+  --primary-color: hsl(171, 100%, 41%);
+  --success-color: hsl(141, 53%, 53%);
+  --danger-color: hsl(348, 86%, 61%);
+}
+
+body {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  font-family: Lato, sans-serif;
+}
+
+.btn {
+  position: relative;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: #212121;
+  text-decoration: none;
+  background-color: white;
+  border: transparent;
+  border-radius: 3px;
+  outline: transparent;
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+  transition: 0.25s;
+}
+.btn-primary {
+  color: white;
+  background-color: var(--primary-color);
+}
+.btn-primary:hover {
+  background-color: #00c2a5;
+}
+.btn-round {
+  border-radius: 30px;
+}
+.btn-fill {
+  overflow: hidden;
+}
+.btn-fill-left::before {
+  transform: translateX(100%);
+}
+.btn-fill-right::before {
+  transform: translateX(-100%);
+}
+.btn-fill::before {
+  position: absolute;
+  content: "";
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  transition: 0.4s cubic-bezier(0.75, 0, 0.25, 1);
+}
+.btn-fill::after {
+  position: relative;
+  content: attr(data-text);
+  transition: 0.4s ease;
+}
+.btn-fill:hover::before {
+  transform: translateX(0);
+}
+.btn-fill:hover::after {
+  color: white !important;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 999;
+  color: white;
+  background-image: linear-gradient(to right, #0acffe 0%, #495aff 100%);
+  border: transparent;
+  border-radius: 12px;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+  animation: show-modal 0.5s ease forwards;
+}
+.modal::backdrop {
+  background: rgba(0, 0, 0, 0.4);
+}
+.modal .modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 300px;
+  padding: 1em;
+}
+.modal .modal-content .modal-title {
+  margin-top: 0;
+  margin-bottom: 1.2rem;
+  opacity: 0;
+  animation: show-title 0.5s ease 0.2s forwards;
+}
+.modal .modal-content .modal-description {
+  margin: 0;
+  opacity: 0;
+  animation: show-description 0.5s ease 0.35s forwards;
+}
+.modal .modal-content .modal-options {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: space-around;
+}
+.modal .modal-content .modal-options .option {
+  padding: 0 2em;
+  margin: 0.3em;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+.modal .modal-content .modal-options .confirm {
+  opacity: 0;
+  animation: show-option 0.5s ease 0.5s forwards;
+}
+.modal .modal-content .modal-options .confirm::before {
+  background: var(--success-color);
+}
+.modal .modal-content .modal-options .confirm::after {
+  color: var(--success-color);
+}
+.modal .modal-content .modal-options .cancel {
+  opacity: 0;
+  animation: show-option 0.5s ease 0.65s forwards;
+}
+.modal .modal-content .modal-options .cancel::before {
+  background: var(--danger-color);
+}
+.modal .modal-content .modal-options .cancel::after {
+  color: var(--danger-color);
+}
+
+@keyframes show-modal {
+  from {
+    transform: scale(0.8);
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 1;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes show-title {
+  from {
+    transform: scale(0.4);
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes show-description {
+  from {
+    transform: scale(0.6);
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes show-option {
+  from {
+    transform: scale(0.4);
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}

@@ -33,16 +33,16 @@ body {
   z-index: 2;
   background: #222;
   border: 4px solid cyan;
-  counter-reset: count var(--value);
+  counter-reset: progress var(--value);
 }
 .progress .progress-bar .progress-indicator::after {
-  position: absolute;
-  content: counter(count) "%";
-  width: 100%;
-  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
+  position: absolute;
+  content: counter(progress) "%";
+  width: 100%;
+  height: 100%;
   color: cyan;
   font-size: 9px;
 }

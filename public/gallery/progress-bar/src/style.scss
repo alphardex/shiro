@@ -46,17 +46,15 @@ body {
       z-index: 2;
       background: #222;
       border: 4px solid $light-color;
-      counter-reset: count var(--value);
+      counter-reset: progress var(--value);
 
       &::after {
+        @include center;
         position: absolute;
-        // var(count) doesn't work cuz content only accepts string, so use counter(count)
-        content: counter(count) "%";
+        // var() doesn't work cuz content only accepts string, so use counter()
+        content: counter(progress) "%";
         width: 100%;
         height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
         color: $light-color;
         font-size: 9px;
       }

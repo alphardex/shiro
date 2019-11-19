@@ -1,0 +1,28 @@
+<dialog id="confirm-modal" class="modal">
+  <div class="modal-content">
+    <h2 class="modal-title">Are you sure?</h2>
+    <p class="modal-description">
+      You can't undo this action.
+    </p>
+    <div class="modal-options">
+      <button
+        class="btn btn-round btn-fill btn-fill-left option confirm"
+        data-text="Yes"
+        onclick="document.querySelector('#confirm-modal').close()"
+      ></button>
+      <button
+        class="btn btn-round btn-fill btn-fill-right option cancel"
+        data-text="No"
+        onclick="document.querySelector('#confirm-modal').close()"
+      ></button>
+    </div>
+  </div>
+</dialog>
+<main>
+  <button
+    class="btn btn-primary"
+    onclick="document.querySelector('#confirm-modal').showModal()"
+  >
+    Delete history
+  </button>
+</main>
