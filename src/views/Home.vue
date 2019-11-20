@@ -69,6 +69,11 @@ interface Art {
 export default class Home extends Vue {
   @Provide() arts: Art[] = [
     {
+      title: "todo-list",
+      description: "精致的待办事项",
+      tags: ["ui", "todo-list"]
+    },
+    {
       title: "confirm-modal",
       description: "动态的确认弹窗",
       tags: ["ui", "modal", "button", "staggered"]
