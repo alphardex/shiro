@@ -1,0 +1,176 @@
+@import url(https://fonts.googleapis.com/css?family=Lato);
+
+body {
+  display: flex;
+  height: 100vh;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  background: #222;
+}
+
+.btn {
+  $primary-color: hsl(171, 100%, 41%);
+  $ease-in-duration: 0.25s;
+  $ease-out-duration: 0.65s;
+  $ease-out-delay: $ease-in-duration;
+
+  position: relative;
+  padding: 1rem 3rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  color: hsl(0, 0%, 13%);
+  text-decoration: none;
+  background-color: white;
+  border: 1px solid hsl(0, 0, 86%);
+  outline: transparent;
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+  transition: 0.25s;
+
+  &-ghost {
+    color: $primary-color;
+    background-color: transparent;
+    border-color: $primary-color;
+  }
+
+  &-border-stroke {
+    border-color: transparentize($primary-color, 0.65);
+
+    .btn-borders {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+
+      .border-top {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 1px;
+        background: $primary-color;
+        transform: scaleX(0);
+        transform-origin: left;
+      }
+
+      .border-right {
+        position: absolute;
+        right: 0;
+        width: 1px;
+        height: 100%;
+        background: $primary-color;
+        transform: scaleY(0);
+        transform-origin: bottom;
+      }
+
+      .border-bottom {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 1px;
+        background: $primary-color;
+        transform: scaleX(0);
+        transform-origin: left;
+      }
+
+      .border-left {
+        position: absolute;
+        left: 0;
+        width: 1px;
+        height: 100%;
+        background: $primary-color;
+        transform: scaleY(0);
+        transform-origin: bottom;
+      }
+
+      // when unhover, ease-in top, right; ease-out bottom, left
+
+      .border-left {
+        transition: $ease-out-duration $ease-out-delay
+          cubic-bezier(0.2, 1, 0.2, 1);
+      }
+      .border-bottom {
+        transition: $ease-out-duration $ease-out-delay
+          cubic-bezier(0.2, 1, 0.2, 1);
+      }
+
+      .border-right {
+        transition: $ease-in-duration cubic-bezier(1, 0, 0.8, 0);
+      }
+      .border-top {
+        transition: $ease-in-duration cubic-bezier(1, 0, 0.8, 0);
+      }
+    }
+
+    &:hover {
+      .border-top,
+      .border-bottom {
+        transform: scaleX(1);
+      }
+      .border-left,
+      .border-right {
+        transform: scaleY(1);
+      }
+
+      // when hover, ease-in bottom, left; ease-out top, right
+
+      .border-left {
+        transition: $ease-in-duration cubic-bezier(1, 0, 0.8, 0);
+      }
+      .border-bottom {
+        transition: $ease-in-duration cubic-bezier(1, 0, 0.8, 0);
+      }
+
+      .border-right {
+        transition: $ease-out-duration $ease-out-delay
+          cubic-bezier(0.2, 1, 0.2, 1);
+      }
+      .border-top {
+        transition: $ease-out-duration $ease-out-delay
+          cubic-bezier(0.2, 1, 0.2, 1);
+      }
+    }
+  }
+
+  &-text-float-up {
+    &::after {
+      position: absolute;
+      content: attr(data-text);
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      transform: translateY(35%);
+      transition: 0.25s ease-out;
+    }
+
+    // when hover, ease-in top-text; ease-out bottom-text
+
+    .btn-text {
+      display: block;
+      transition: 0.75s 0.1s cubic-bezier(0.2, 1, 0.2, 1);
+    }
+
+    &:hover {
+      // when hover, ease-in bottom-text; ease-out top-text
+
+      .btn-text {
+        opacity: 0;
+        transform: translateY(-25%);
+        transition: 0.25s ease-out;
+      }
+
+      &::after {
+        opacity: 1;
+        transform: translateY(0);
+        transition: 0.75s 0.1s cubic-bezier(0.2, 1, 0.2, 1);
+      }
+    }
+  }
+}

@@ -69,6 +69,11 @@ interface Art {
 export default class Home extends Vue {
   @Provide() arts: Art[] = [
     {
+      title: "button-hover-border-stroke-with-float-text",
+      description: "带有描边和文字浮动效果的按钮",
+      tags: ["ui", "button", "hover", "border"]
+    },
+    {
       title: "todo-list",
       description: "精致的待办事项",
       tags: ["ui", "todo-list"]
