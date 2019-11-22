@@ -1,0 +1,72 @@
+// palette: https://coolors.co/1c1d2a-8d99ae-edf2f4-ef233c-d90429
+@import url(https://fonts.googleapis.com/css?family=Lato);
+
+body {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn-share {
+  position: relative;
+  display: flex;
+  width: 280px;
+  height: 80px;
+  font-family: Lato, sans-serif;
+  font-size: 20px;
+  color: white;
+  letter-spacing: 2px;
+  background: #edf2f4;
+  border: none;
+  border-radius: 4em;
+  outline: none;
+  box-shadow: 0 0.5em 1em #222;
+  cursor: pointer;
+  overflow: hidden;
+  transition: 0.2s ease-in-out;
+
+  .btn-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, #434343 0%, black 100%);
+    border-radius: inherit;
+    transition: 0.6s linear;
+  }
+
+  a {
+    flex: 1;
+    font-size: 28px;
+    color: #1c1d2a;
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: 0.3s;
+
+    @for $i from 1 through 4 {
+      &:nth-child(#{$i}) {
+        transition-delay: 1s - 0.2s * ($i - 1);
+      }
+    }
+  }
+
+  &:hover {
+    transform: scale(1.1);
+
+    .btn-text {
+      transform: translateX(-100%);
+      transition-delay: 0.25s;
+    }
+
+    a {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+}
