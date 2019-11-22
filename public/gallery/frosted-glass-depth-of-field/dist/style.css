@@ -6,6 +6,7 @@ body {
 .glass {
   background: url(https://i.loli.net/2019/11/17/GAYyzeKsiWjP5qO.jpg);
   background-position: center;
+  background-repeat: no-repeat;
 }
 
 .frosted-bg {
