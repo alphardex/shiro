@@ -1,0 +1,37 @@
+body {
+  height: 100vh;
+}
+
+.frosted-bg,
+.glass {
+  background: url(https://i.loli.net/2019/11/17/GAYyzeKsiWjP5qO.jpg);
+  background-position: center;
+}
+
+.frosted-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: 1s;
+}
+
+.glass {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  width: 600px;
+  height: 450px;
+  transform: translate(-50%, -50%);
+  transition: 1s;
+
+  &:hover {
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+  }
+
+  &:hover ~ .frosted-bg {
+    filter: blur(10px);
+  }
+}

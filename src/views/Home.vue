@@ -69,6 +69,11 @@ interface Art {
 export default class Home extends Vue {
   @Provide() arts: Art[] = [
     {
+      title: "frosted-glass-depth-of-field",
+      description: "毛玻璃背景效果-景深版",
+      tags: ["ui", "background", "filter"]
+    },
+    {
       title: "button-hover-border-stroke",
       description: "带有描边和文字浮动效果的按钮",
       tags: ["ui", "button", "hover", "border"]
