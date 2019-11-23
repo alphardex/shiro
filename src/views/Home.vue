@@ -52,204 +52,209 @@ interface Art {
 export default class Home extends Vue {
   @Provide() arts: Art[] = [
     {
+      title: "3d-cube",
+      description: "3D的方块效果",
+      tags: ["3d", "cube"]
+    },
+    {
       title: "share-button",
       description: "分享按钮",
-      tags: ["ui", "button", "hover", "staggered"]
+      tags: ["button", "hover", "staggered"]
     },
     {
       title: "frosted-glass-depth-of-field",
       description: "毛玻璃背景效果-景深版",
-      tags: ["ui", "background", "filter"]
+      tags: ["background", "filter"]
     },
     {
       title: "button-hover-border-stroke",
       description: "带有描边和文字浮动效果的按钮",
-      tags: ["ui", "button", "hover", "border"]
+      tags: ["button", "hover", "border"]
     },
     {
       title: "todo-list",
       description: "精致的待办事项",
-      tags: ["ui", "todo-list"]
+      tags: ["todo-list"]
     },
     {
       title: "confirm-modal",
       description: "动态的确认弹窗",
-      tags: ["ui", "modal", "button", "staggered"]
+      tags: ["modal", "button", "staggered"]
     },
     {
       title: "frosted-glass",
       description: "毛玻璃背景效果",
-      tags: ["ui", "background", "filter"]
+      tags: ["background", "filter"]
     },
     {
       title: "carousel",
       description: "精致的轮播图",
-      tags: ["ui", "carousel", "slider", "scroll"]
+      tags: ["carousel", "slider", "scroll"]
     },
     {
       title: "button-collection",
       description: "有意思的按钮合集",
-      tags: ["ui", "button", "hover", "cta"]
+      tags: ["button", "hover", "cta"]
     },
     {
       title: "split-text-menu",
       description: "交错分割文本菜单",
-      tags: ["ui", "menu", "hover", "staggered"]
+      tags: ["menu", "hover", "staggered"]
     },
     {
       title: "checkbox",
       description: "精巧的复选框",
-      tags: ["ui", "form", "checkbox"]
+      tags: ["form", "checkbox"]
     },
     {
       title: "reveal-text",
       description: "文本展现",
-      tags: ["ui", "text", "staggered"]
+      tags: ["text", "staggered"]
     },
     {
       title: "rainbow-color-text",
       description: "彩虹渐变文本",
-      tags: ["ui", "text", "staggered"]
+      tags: ["text", "staggered"]
     },
     {
       title: "radio-button",
       description: "精巧的单选按钮",
-      tags: ["ui", "form", "radio"]
+      tags: ["form", "radio"]
     },
     {
       title: "toggle",
       description: "精巧的开关",
-      tags: ["ui", "toggle"]
+      tags: ["toggle"]
     },
     {
       title: "staggered-glow-in-text",
       description: "发光文本淡入显现效果",
-      tags: ["ui", "text", "glow", "staggered"]
+      tags: ["text", "glow", "staggered"]
     },
     {
       title: "staggered-bouncing-3d-loading",
       description: "弹跳的3D文本加载",
-      tags: ["ui", "text", "loading", "staggered"]
+      tags: ["text", "loading", "staggered"]
     },
     {
       title: "menu-hover-underline",
       description: "获取焦点时出现下划线的菜单栏",
-      tags: ["ui", "menu", "hover"]
+      tags: ["menu", "hover"]
     },
     {
       title: "staggered-stair-loading",
       description: "高低起伏的阶梯式加载",
-      tags: ["ui", "loading", "staggered"]
+      tags: ["loading", "staggered"]
     },
     {
       title: "bubbling-text",
       description: "用web animation制作冒泡文字",
-      tags: ["ui", "text", "bubble"]
+      tags: ["text", "bubble"]
     },
     {
       title: "neon-text",
       description: "用text-shadow制作霓虹文字",
-      tags: ["ui", "text", "neon"]
+      tags: ["text", "neon"]
     },
     {
       title: "nav-tab",
       description: "动态导航栏",
-      tags: ["ui", "nav", "tabs"]
+      tags: ["nav", "tabs"]
     },
     {
       title: "transparent-material-login-form",
       description: "透明material风格的登录表单",
-      tags: ["ui", "material", "form", "login"]
+      tags: ["material", "form", "login"]
     },
     {
       title: "name-card-hover-expand",
       description: "利用裁剪属性实现卡片的展开",
-      tags: ["ui", "card", "hover", "clip-path"]
+      tags: ["card", "hover", "clip-path"]
     },
     {
       title: "one-field-login-form",
       description: "把登陆按钮本身作为表单",
-      tags: ["ui", "button", "form", "login"]
+      tags: ["button", "form", "login"]
     },
     {
       title: "card-hover-expand-body",
       description: "鼠标悬浮卡片时会展开描述文字",
-      tags: ["ui", "card", "hover"]
+      tags: ["card", "hover"]
     },
     {
       title: "button-hover-shining",
       description: "会闪烁的按钮",
-      tags: ["ui", "button", "hover"]
+      tags: ["button", "hover"]
     },
     {
       title: "burger-menu",
       description: "汉堡菜单",
-      tags: ["ui", "menu", "burger", "staggered"]
+      tags: ["menu", "burger", "staggered"]
     },
     {
       title: "staggered-square-loading",
       description: "交错放大的方块加载",
-      tags: ["ui", "loading", "staggered"]
+      tags: ["loading", "staggered"]
     },
     {
       title: "glowing-menu-buttons",
       description: "发光的按钮",
-      tags: ["ui", "button", "hover"]
+      tags: ["button", "hover"]
     },
     {
       title: "eclipse-loader",
       description: "日食加载效果",
-      tags: ["ui", "loading", "gradient", "blur"]
+      tags: ["loading", "gradient", "blur"]
     },
     {
       title: "menu-hover-magnify",
       description: "获取焦点时自动放大的菜单栏",
-      tags: ["ui", "menu", "hover", "scale"]
+      tags: ["menu", "hover", "scale"]
     },
     {
       title: "shining-text",
       description: "黑色背景下的文字渐变效果",
-      tags: ["ui", "text", "gradient", "background"]
+      tags: ["text", "gradient", "background"]
     },
     {
       title: "progress-bar",
       description: "文件上传进度条效果",
-      tags: ["ui", "loading", "progress bar"]
+      tags: ["loading", "progress bar"]
     },
     {
       title: "staggered-wave-loading",
       description: "交错的波纹加载效果",
-      tags: ["ui", "loading", "staggered"]
+      tags: ["loading", "staggered"]
     },
     {
       title: "abbr-expansion",
       description: "缩写的展开效果",
-      tags: ["ui", "text", "hover"]
+      tags: ["text", "hover"]
     },
     {
       title: "gleaming-heading",
       description: "隐约闪烁的标题",
-      tags: ["ui", "text", "blur", "staggered"]
+      tags: ["text", "blur", "staggered"]
     },
     {
       title: "gleaming-loading",
       description: "隐约闪烁的加载",
-      tags: ["ui", "text", "loading", "blur", "staggered"]
+      tags: ["text", "loading", "blur", "staggered"]
     },
     {
       title: "login-button",
       description: "附带交互效果的登陆按钮",
-      tags: ["ui", "button", "loading", "morphing"]
+      tags: ["button", "loading", "morphing"]
     },
     {
       title: "particle-burst",
       description: "微粒向四周爆炸的动画",
-      tags: ["ui", "loading", "particle", "random"]
+      tags: ["loading", "particle", "random"]
     },
     {
       title: "snow-scratch",
       description: "刮雪融化的文本效果",
-      tags: ["ui", "text", "blur", "contrast"]
+      tags: ["text", "blur", "contrast"]
     }
   ];
   @Provide() keyword: string = "";
