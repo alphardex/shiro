@@ -1,7 +1,12 @@
 export default [
   {
+    title: "isometric-icon-hover",
+    description: "3d等距图标悬浮效果",
+    tags: ["3d", "icon", "hover"]
+  },
+  {
     title: "glowing-list-hover",
-    description: "荧光列表",
+    description: "荧光列表悬浮效果",
     tags: ["list", "hover", "glow", "blur"]
   },
   {

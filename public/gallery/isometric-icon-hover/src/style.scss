@@ -1,0 +1,145 @@
+// Thanks to https://3dtransforms.desandro.com/box
+// icon color reference: https://www.nidesign.co.uk/social-media-colours-hex-and-rbg/
+$icon-colors: #00aced, black, #24292E, #007bb6, #e4405f;
+
+body {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background: #ccc;
+}
+
+.icon-list {
+  display: flex;
+  list-style-type: none;
+
+  .icon-list__item {
+    margin: 0 40px;
+
+    a {
+      .box {
+        --box-width: 80px;
+        --box-height: 80px;
+        --box-depth: 20px;
+
+        width: var(--box-width);
+        height: var(--box-height);
+        position: relative;
+        transform-style: preserve-3d;
+        transform: rotateX(55deg) rotateZ(45deg);
+        transition: 0.5s;
+
+        .box__face {
+          position: absolute;
+          font-size: 10px;
+          font-weight: bold;
+          color: white;
+          text-align: center;
+        }
+
+        .box__face--front,
+        .box__face--back {
+          width: var(--box-width);
+          height: var(--box-height);
+          line-height: var(--box-height);
+        }
+
+        .box__face--right,
+        .box__face--left {
+          width: var(--box-depth);
+          height: var(--box-height);
+          left: calc((var(--box-width) - var(--box-depth)) / 2);
+          line-height: var(--box-height);
+        }
+
+        .box__face--top,
+        .box__face--bottom {
+          width: var(--box-width);
+          height: var(--box-depth);
+          top: calc((var(--box-height) - var(--box-depth)) / 2);
+          line-height: var(--box-depth);
+        }
+
+        .box__face--front {
+          background: white;
+          transition: 0.5s;
+
+          i {
+            font-size: 40px;
+            line-height: 2;
+            color: hsl(0,0,33%);
+            transform: rotate(270deg);
+            transition: 0.5s;
+          }
+        }
+
+        .box__face--right {
+          background: darken(white, 10%);
+          transition: 0.5s;
+        }
+
+        .box__face--bottom {
+          background: darken(white, 30%);
+          transition: 0.5s;
+        }
+
+        .box__face--back {
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+          transition: 0.5s;
+        }
+
+        .box__face--front {
+          transform: rotateY(0deg) translateZ(calc(var(--box-depth) / 2));
+        }
+        .box__face--back {
+          transform: rotateY(180deg) translateZ(calc(var(--box-depth) / 2));
+        }
+
+        .box__face--right {
+          transform: rotateY(90deg) translateZ(calc(var(--box-width) / 2));
+        }
+        .box__face--left {
+          transform: rotateY(-90deg) translateZ(calc(var(--box-width) / 2));
+        }
+
+        .box__face--top {
+          transform: rotateX(90deg) translateZ(calc(var(--box-height) / 2));
+        }
+        .box__face--bottom {
+          transform: rotateX(-90deg) translateZ(calc(var(--box-height) / 2));
+        }
+      }
+    }
+
+    &:hover {
+      @for $i from 1 through 5 {
+        &:nth-child(#{$i}) a {
+          .box {
+            transform: rotateX(55deg) rotateZ(45deg) translateZ(20px);
+
+            .box__face--back {
+              box-shadow: -30px 30px 50px rgba(0, 0, 0, 0.5);
+            }
+          }
+
+          .box__face--front {
+            background: nth($icon-colors, $i);
+
+            i {
+              color: white;
+            }
+          }
+
+          .box__face--right {
+            background: darken(nth($icon-colors, $i), 5%);
+          }
+
+          .box__face--bottom {
+            background: darken(nth($icon-colors, $i), 10%);
+          }
+        }
+      }
+    }
+  }
+}
