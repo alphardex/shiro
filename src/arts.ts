@@ -1,5 +1,10 @@
 export default [
   {
+    title: "glowing-list-hover",
+    description: "荧光列表",
+    tags: ["list", "hover", "glow", "blur"]
+  },
+  {
     title: "accordion-menu",
     description: "手风琴式下拉菜单",
     tags: ["menu", "accordion"]
