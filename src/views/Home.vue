@@ -69,6 +69,11 @@ interface Art {
 export default class Home extends Vue {
   @Provide() arts: Art[] = [
     {
+      title: "accordion-menu",
+      description: "手风琴式下拉菜单",
+      tags: ["menu", "accordion"]
+    },
+    {
       title: "elevator-switch",
       description: "电梯开关",
       tags: ["radio", "switch"]

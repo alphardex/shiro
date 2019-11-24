@@ -1,0 +1,65 @@
+@import url(https://fonts.googleapis.com/css?family=Lato);
+
+body {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background: #e8ebfb;
+}
+
+.accordion-menu {
+  width: 300px;
+  border-radius: 8px;
+  overflow: hidden;
+  list-style-type: none;
+
+  .accordion-menu__item {
+    .accrodion-menu__link {
+      position: relative;
+      display: block;
+      padding: 1em 2em;
+      font-family: Lato, sans-serif;
+      text-decoration: none;
+      color: white;
+      background: #3498db;
+      transition: 0.5s;
+
+      // arrow
+      &:not(:last-child)::before {
+        position: absolute;
+        content: "";
+        bottom: -7px;
+        left: 20px;
+        width: 15px;
+        height: 15px;
+        background: inherit;
+        transform: rotate(45deg);
+      }
+    }
+
+    .accordion-menu__submenu {
+      max-height: 0;
+      background: #333;
+      overflow: hidden;
+      transition: 0.5s;
+
+      a {
+        display: block;
+        padding: 1em 2em;
+        color: white;
+        text-decoration: none;
+        font-size: 14px;
+        transition: 0.5s;
+
+        &:hover {
+          background: #2980b9;
+        }
+      }
+    }
+
+    &:target .accordion-menu__submenu {
+      max-height: 10em;
+    }
+  }
+}
