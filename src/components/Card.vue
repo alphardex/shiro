@@ -43,43 +43,35 @@ export default class Card extends Vue {
 
 a {
   color: white;
+  text-decoration: none;
 }
 
 figure {
   position: relative;
-  box-sizing: border-box;
+  box-shadow: 0 25px 20px -25px black;
 
   img {
-    max-width: 100%;
-    box-shadow: 0 25px 20px -25px black;
-    transition: 0.3s;
-  }
-
-  figcaption {
     position: absolute;
     top: 0;
     left: 0;
-    bottom: 0;
-    right: 0;
     width: 100%;
     height: 100%;
+    object-fit: cover;
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    transition: 0.5s;
+  }
+
+  &:hover img {
+    clip-path: polygon(0 0, 100% 0, 0 0, 0% 100%);
+  }
+
+  figcaption {
+    padding: 1em 0;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    overflow: hidden;
-    opacity: 0;
-    transition: opacity 0.3s;
-
-    &::after {
-      position: absolute;
-      content: "";
-      width: 100%;
-      height: 100%;
-      border: 2.8px solid white;
-      transform: scale(1);
-      transition: transform 0.3s;
-    }
+    background: #2c3e50;
 
     h3 {
       font-family: "Lato";
@@ -113,20 +105,6 @@ figure {
           font-size: 0.5em;
           line-height: 0.75em;
         }
-      }
-    }
-  }
-
-  &:hover {
-    img {
-      filter: blur(3px) brightness(0.5);
-    }
-
-    figcaption {
-      opacity: 1;
-
-      &::after {
-        transform: scale(0.85);
       }
     }
   }
