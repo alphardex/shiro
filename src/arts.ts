@@ -1,5 +1,15 @@
 export default [
   {
+    title: "snake-border-button",
+    description: "蛇形边框按钮",
+    tags: ["button", "gradient"]
+  },
+  {
+    title: "glowing-gradient-button",
+    description: "渐变发光按钮",
+    tags: ["button", "gradient", "hover", "glow"]
+  },
+  {
     title: "glowing-gradient-border",
     description: "渐变发光边框",
     tags: ["card", "gradient", "glow"]

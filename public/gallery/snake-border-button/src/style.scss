@@ -1,0 +1,100 @@
+@import url(https://fonts.googleapis.com/css?family=Lato);
+
+body {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: #222;
+}
+
+.btn {
+  $primary-color: #2980b9;
+
+  position: relative;
+  padding: 1rem 3rem;
+  font-family: Lato, sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  color: black;
+  text-decoration: none;
+  background-color: white;
+  border: transparent;
+  outline: transparent;
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+  overflow: hidden;
+
+  &-primary {
+    color: white;
+    background-color: $primary-color;
+  }
+
+  &-snake-border {
+    .btn-borders {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+
+      .border-top {
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(to right, transparent, white);
+        animation: moveHorizontally 2s linear infinite;
+      }
+
+      .border-right {
+        position: absolute;
+        right: 0;
+        width: 2px;
+        height: 100%;
+        background: linear-gradient(to bottom, transparent, white);
+        animation: moveVertically 2s 1s linear infinite;
+      }
+
+      .border-bottom {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(to left, transparent, white);
+        animation: moveHorizontally 2s linear reverse infinite;
+      }
+
+      .border-left {
+        position: absolute;
+        left: 0;
+        width: 2px;
+        height: 100%;
+        background: linear-gradient(to top, transparent, white);
+        animation: moveVertically 2s 1s linear reverse infinite;
+      }
+    }
+  }
+}
+
+@keyframes moveHorizontally {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes moveVertically {
+  from {
+    transform: translateY(-100%);
+  }
+
+  to {
+    transform: translateY(100%);
+  }
+}
