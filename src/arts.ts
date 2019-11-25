@@ -5,6 +5,11 @@ export default [
     tags: ["card", "gradient", "glow"]
   },
   {
+    title: "isometric-images-hover",
+    description: "3d等距图片悬浮效果",
+    tags: ["3d", "isometric", "image", "hover"]
+  },
+  {
     title: "isometric-icon-hover",
     description: "3d等距图标悬浮效果",
     tags: ["3d", "isometric", "icon", "hover"]
