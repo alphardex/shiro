@@ -1,0 +1,57 @@
+@import url(https://fonts.googleapis.com/css?family=Lato);
+body {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  font-family: Lato, sans-serif;
+  background: #040a22;
+}
+
+.card {
+  position: relative;
+  width: 300px;
+
+  &::before,
+  &::after {
+    position: absolute;
+    content: "";
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+  }
+
+  &::before {
+    z-index: -1;
+    background: #040a22;
+  }
+
+  &::after {
+    --gradientColor1: #09ec3a;
+    --gradientColor2: #040c27;
+    --gradientColor3: #37a5ee;
+    z-index: -2;
+    background: linear-gradient(
+      235deg,
+      var(--gradientColor1),
+      var(--gradientColor2),
+      var(--gradientColor3)
+    );
+    filter: blur(40px);
+    animation: glow 4s linear infinite;
+  }
+
+  .card-body {
+    padding: 20px;
+    color: white;
+  }
+}
+
+@keyframes glow {
+  50% {
+    --gradientColor1: rgba(9, 236, 58, 0.6);
+    --gradientColor2: rgba(4, 12, 39, 0.6);
+    --gradientColor3: rgba(55, 165, 238, 0.6);
+  }
+}

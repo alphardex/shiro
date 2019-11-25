@@ -1,0 +1,31 @@
+body {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.layer {
+  position: relative;
+  width: 360px;
+  height: 640px;
+  background: rgba(0, 0, 0, 0.1);
+  transform-style: preserve-3d;
+  transform: rotateX(45deg) rotateZ(-45deg) scale(0.5);
+
+  img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: 0.5s;
+  }
+
+  &:hover {
+    @for $i from 1 through 4 {
+      img:nth-child(#{$i}) {
+        transform: translateZ(40px * $i);
+        opacity: 0.2 + 0.2 * $i;
+      }
+    }
+  }
+}

@@ -1,8 +1,13 @@
 export default [
   {
+    title: "glowing-gradient-border",
+    description: "渐变发光边框",
+    tags: ["card", "gradient", "glow"]
+  },
+  {
     title: "isometric-icon-hover",
     description: "3d等距图标悬浮效果",
-    tags: ["3d", "icon", "hover"]
+    tags: ["3d", "isometric", "icon", "hover"]
   },
   {
     title: "glowing-list-hover",
