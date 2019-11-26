@@ -42,7 +42,7 @@ export default [
   {
     title: "elevator-switch",
     description: "电梯开关",
-    tags: ["radio", "switch"]
+    tags: ["radio", "switch", "glow"]
   },
   {
     title: "3d-cube",
@@ -57,7 +57,7 @@ export default [
   {
     title: "frosted-glass-depth-of-field",
     description: "毛玻璃背景效果-景深版",
-    tags: ["background", "filter"]
+    tags: ["background", "filter", "depth of field"]
   },
   {
     title: "button-hover-border-stroke",
@@ -67,7 +67,7 @@ export default [
   {
     title: "todo-list",
     description: "精致的待办事项",
-    tags: ["todo-list"]
+    tags: ["todo list"]
   },
   {
     title: "confirm-modal",
@@ -192,7 +192,7 @@ export default [
   {
     title: "glowing-menu-buttons",
     description: "发光的按钮",
-    tags: ["button", "hover"]
+    tags: ["button", "hover", "glow"]
   },
   {
     title: "eclipse-loader",
@@ -202,7 +202,7 @@ export default [
   {
     title: "menu-hover-magnify",
     description: "获取焦点时自动放大的菜单栏",
-    tags: ["menu", "hover", "scale"]
+    tags: ["menu", "hover", "depth of field"]
   },
   {
     title: "shining-text",
@@ -237,7 +237,7 @@ export default [
   {
     title: "login-button",
     description: "附带交互效果的登陆按钮",
-    tags: ["button", "loading", "morphing"]
+    tags: ["button", "login", "loading", "morphing"]
   },
   {
     title: "particle-burst",
@@ -247,6 +247,6 @@ export default [
   {
     title: "snow-scratch",
     description: "刮雪融化的文本效果",
-    tags: ["text", "blur", "contrast"]
+    tags: ["text", "blur", "gooey"]
   }
 ];
