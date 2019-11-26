@@ -1,0 +1,49 @@
+// color scheme: https://coolors.co/app/247ba0-70c1b3-b2dbbf-f3ffbd-ff1654
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #0a112d;
+}
+
+.gradient-range {
+  $slider-colors: (
+    (green, #70c1b3, 0%),
+    (blue, #247ba0, 25%),
+    (yellow, #f3ffbd, 50%),
+    (crimson, #ff1654, 100%)
+  );
+  $gradient-color: (45deg);
+  @each $color, $rgb, $color-stop in $slider-colors {
+    $gradient-color: append($gradient-color, $rgb $color-stop, comma);
+  }
+
+  width: 16em;
+  height: 2px;
+  background: linear-gradient($gradient-color);
+  appearance: none;
+  outline: none;
+
+  &::-webkit-slider-thumb {
+    width: 2em;
+    height: 2em;
+    background: #0a112d;
+    border: 2px solid;
+    border-radius: 50%;
+    appearance: none;
+    cursor: grab;
+    transition: border 1s;
+
+    &:active {
+      cursor: grabbing;
+    }
+  }
+
+  @each $color, $rgb, $color-stop in $slider-colors {
+    &.#{$color}::-webkit-slider-thumb {
+      border-color: $rgb;
+    }
+  }
+}

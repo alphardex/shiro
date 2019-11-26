@@ -1,5 +1,10 @@
 export default [
   {
+    title: "gradient-range-slider",
+    description: "渐变滑块",
+    tags: ["input", "range", "gradient"]
+  },
+  {
     title: "snake-border-button",
     description: "蛇形边框按钮",
     tags: ["button", "gradient"]
