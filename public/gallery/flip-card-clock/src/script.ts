@@ -1,8 +1,8 @@
 class Flipper {
   isFlipping = false;
-  flipNode: Element = null;
-  frontNode: Element = null;
-  backNode: Element = null;
+  flipNode: Element;
+  frontNode: HTMLElement | null;
+  backNode: HTMLElement | null;
   duration: number = 600;
 
   constructor(node: Element, currentTime: string, nextTime: string) {
@@ -13,16 +13,12 @@ class Flipper {
     this.setBackTime(nextTime);
   }
 
-  digitalClassFormat(aspect: string, time: string) {
-    return `digital ${aspect} number${time}`;
-  }
-
   setFrontTime(time: string) {
-    this.frontNode.className = this.digitalClassFormat("front", time);
+    this.frontNode!.dataset.number = time;
   }
 
   setBackTime(time: string) {
-    this.backNode.className = this.digitalClassFormat("back", time);
+    this.backNode!.dataset.number = time;
   }
 
   flipDown(currentTime: string, nextTime: string) {

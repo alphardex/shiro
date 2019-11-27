@@ -1,9 +1,6 @@
 var Flipper = /** @class */ (function () {
     function Flipper(node, currentTime, nextTime) {
         this.isFlipping = false;
-        this.flipNode = null;
-        this.frontNode = null;
-        this.backNode = null;
         this.duration = 600;
         this.flipNode = node;
         this.frontNode = node.querySelector(".front");
@@ -11,14 +8,11 @@ var Flipper = /** @class */ (function () {
         this.setFrontTime(currentTime);
         this.setBackTime(nextTime);
     }
-    Flipper.prototype.digitalClassFormat = function (aspect, time) {
-        return "digital " + aspect + " number" + time;
-    };
     Flipper.prototype.setFrontTime = function (time) {
-        this.frontNode.className = this.digitalClassFormat("front", time);
+        this.frontNode.dataset.number = time;
     };
     Flipper.prototype.setBackTime = function (time) {
-        this.backNode.className = this.digitalClassFormat("back", time);
+        this.backNode.dataset.number = time;
     };
     Flipper.prototype.flipDown = function (currentTime, nextTime) {
         var _this = this;

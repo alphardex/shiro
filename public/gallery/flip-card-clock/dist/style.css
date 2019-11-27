@@ -27,7 +27,7 @@ body {
 }
 .clock .flip .digital::before, .clock .flip .digital::after {
   position: absolute;
-  content: "";
+  content: attr(data-number);
   left: 0;
   right: 0;
   color: white;
@@ -46,36 +46,6 @@ body {
   bottom: 0;
   line-height: 0;
   border-radius: 0 0 10px 10px;
-}
-.clock .flip .number0::before, .clock .flip .number0::after {
-  content: "0";
-}
-.clock .flip .number1::before, .clock .flip .number1::after {
-  content: "1";
-}
-.clock .flip .number2::before, .clock .flip .number2::after {
-  content: "2";
-}
-.clock .flip .number3::before, .clock .flip .number3::after {
-  content: "3";
-}
-.clock .flip .number4::before, .clock .flip .number4::after {
-  content: "4";
-}
-.clock .flip .number5::before, .clock .flip .number5::after {
-  content: "5";
-}
-.clock .flip .number6::before, .clock .flip .number6::after {
-  content: "6";
-}
-.clock .flip .number7::before, .clock .flip .number7::after {
-  content: "7";
-}
-.clock .flip .number8::before, .clock .flip .number8::after {
-  content: "8";
-}
-.clock .flip .number9::before, .clock .flip .number9::after {
-  content: "9";
 }
 .clock .flip .back::before,
 .clock .flip .front::after {
