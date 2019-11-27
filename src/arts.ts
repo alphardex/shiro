@@ -1,5 +1,10 @@
 export default [
   {
+    title: "flip-card-clock",
+    description: "翻牌时钟",
+    tags: ["clock", "flip", "3d"]
+  },
+  {
     title: "video-mask-text",
     description: "视频文字蒙版",
     tags: ["video", "text", "mask"]
