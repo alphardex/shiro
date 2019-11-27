@@ -1,5 +1,10 @@
 export default [
   {
+    title: "video-mask-text",
+    description: "视频文字蒙版",
+    tags: ["video", "text", "mask"]
+  },
+  {
     title: "gradient-range-slider",
     description: "渐变滑块",
     tags: ["input", "range", "gradient"]
