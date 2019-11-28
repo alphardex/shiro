@@ -25,7 +25,7 @@ body {
   opacity: 0;
 }
 .rotating-text p .word .letter {
-  transform-origin: 50% 50% 25px;
+  transform-origin: center center 25px;
 }
 .rotating-text p .word .letter.out {
   transform: rotateX(90deg);

@@ -18,18 +18,20 @@ let rotateText = () => {
   let currentWord = words[currentWordIndex];
   let nextWord =
     currentWordIndex === maxWordIndex ? words[0] : words[currentWordIndex + 1];
-  for (let i = 0; i < currentWord.children.length; i++) {
+  // rotate out letters of current word
+  Array.from(currentWord.children).forEach((letter, i) => {
     setTimeout(() => {
-      currentWord.children[i].className = "letter out";
+      letter.className = "letter out";
     }, i * 80);
-  }
-  for (let i = 0; i < nextWord.children.length; i++) {
-    nextWord.children[i].className = "letter behind";
-    (nextWord as HTMLElement).style.opacity = "1";
+  });
+  // reveal and rotate in letters of next word
+  (nextWord as HTMLElement).style.opacity = "1";
+  Array.from(nextWord.children).forEach((letter, i) => {
+    letter.className = "letter behind";
     setTimeout(() => {
-      nextWord.children[i].className = "letter in";
+      letter.className = "letter in";
     }, 340 + i * 80);
-  }
+  });
   currentWordIndex =
     currentWordIndex === maxWordIndex ? 0 : currentWordIndex + 1;
 };
