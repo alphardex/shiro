@@ -1,5 +1,10 @@
 export default [
   {
+    title: "rotating-text",
+    description: "翻滚的文字",
+    tags: ["text", "rotate", "3d", "staggered"]
+  },
+  {
     title: "flip-card-clock",
     description: "翻牌时钟",
     tags: ["clock", "flip", "3d"]
