@@ -1,5 +1,3 @@
-$colors: #7ef9ff, #89cff0, #4682b4, #0f52ba, #000080;
-
 body {
   display: flex;
   height: 100vh;
@@ -9,6 +7,7 @@ body {
 }
 
 .loading {
+  $colors: #7ef9ff, #89cff0, #4682b4, #0f52ba, #000080;
   display: flex;
   animation-delay: 1s;
 

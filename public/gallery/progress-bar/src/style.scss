@@ -1,8 +1,3 @@
-$bg-color: #222;
-$dark-color: rgba(0, 0, 0, 0.25);
-$light-color: cyan;
-$time: 3s;
-
 @mixin circle($r: 2em) {
   width: $r;
   height: $r;
@@ -18,24 +13,27 @@ $time: 3s;
 body {
   @include center;
   height: 100vh;
-  background: $bg-color;
+  background: #222;
 }
 
 .progress {
   --value: 0;
+  --dark-color: rgba(0, 0, 0, 0.25);
+  --light-color: cyan;
+  --duration: 3s;
   position: relative;
   width: 25em;
   height: 1em;
-  animation: loading $time ease-out forwards;
+  animation: loading var(--duration) ease-out forwards;
 
   .progress-bar {
     height: inherit;
-    background: $dark-color;
+    background: var(--dark-color);
 
     .progress-value {
       width: calc(var(--value) * 1%);
       height: inherit;
-      background: $light-color;
+      background: var(--light-color);
     }
 
     .progress-indicator {
@@ -45,7 +43,7 @@ body {
       left: calc(-12px + var(--value) * 4.3px);
       z-index: 2;
       background: #222;
-      border: 4px solid $light-color;
+      border: 4px solid var(--light-color);
       counter-reset: progress var(--value);
 
       &::after {
@@ -55,7 +53,7 @@ body {
         content: counter(progress) "%";
         width: 100%;
         height: 100%;
-        color: $light-color;
+        color: var(--light-color);
         font-size: 9px;
       }
     }
@@ -66,8 +64,8 @@ body {
     position: absolute;
     top: -13px;
     left: -12px;
-    background: $bg-color;
-    border: 4px solid $light-color;
+    background: #222;
+    border: 4px solid var(--light-color);
 
     svg {
       @include center;
@@ -82,8 +80,8 @@ body {
     position: absolute;
     top: -13px;
     right: -12px;
-    background: $bg-color;
-    border: 4px solid $dark-color;
+    background: #222;
+    border: 4px solid var(--dark-color);
 
     svg {
       @include center;

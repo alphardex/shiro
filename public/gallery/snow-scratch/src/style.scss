@@ -1,7 +1,5 @@
 @import url(https://fonts.googleapis.com/css?family=Lato);
 
-$snow-size: 3em;
-
 body {
   display: flex;
   height: 100vh;
@@ -12,6 +10,7 @@ body {
 }
 
 .card {
+  $snow-size: 3em;
   width: $snow-size * 10;
   height: $snow-size * 10;
   padding: 10em;

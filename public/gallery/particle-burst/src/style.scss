@@ -1,13 +1,12 @@
-$d: 10px;
-$total: 500;
-$time: 3s;
-
 body {
   background: black;
   overflow: hidden; // no scrollbar
 }
 
 .particle {
+  $d: 10px;
+  $total: 500;
+  $time: 3s;
   position: absolute;
   width: $d;
   height: $d;

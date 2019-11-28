@@ -1,27 +1,25 @@
 @charset "UTF-8";
 @import url(https://fonts.googleapis.com/css?family=Lato);
-:root {
-  --primary-color: hsl(171, 100%, 41%);
-}
-
 body {
   display: flex;
   height: 100vh;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   text-align: center;
   background: #222;
 }
 
 .btn {
+  --hue: 190;
   position: relative;
   padding: 0.375rem 0.75rem;
+  margin: 1rem;
   font-size: 1rem;
   line-height: 1.5;
-  color: #212121;
+  color: white;
   text-decoration: none;
-  background-color: white;
-  border: 1px solid #dbdbdb;
+  background-color: hsl(var(--hue), 100%, 41%);
+  border: 1px solid hsl(var(--hue), 100%, 41%);
   border-radius: 3px;
   outline: transparent;
   overflow: hidden;
@@ -31,21 +29,15 @@ body {
   transition: 0.25s;
 }
 .btn:hover {
-  border-color: #b5b5b5;
+  background: hsl(var(--hue), 100%, 31%);
 }
 .btn-primary {
-  color: white;
-  background-color: var(--primary-color);
-  border-color: transparent;
-}
-.btn-primary:hover {
-  background-color: #00c2a5;
-  border-color: transparent;
+  --hue: 171;
 }
 .btn-ghost {
-  color: var(--primary-color);
+  color: hsl(var(--hue), 100%, 41%);
   background-color: transparent;
-  border-color: var(--primary-color);
+  border-color: hsl(var(--hue), 100%, 41%);
 }
 .btn-icon {
   position: relative;
@@ -76,7 +68,8 @@ body {
 }
 .btn-fill:hover {
   color: white;
-  box-shadow: inset 0 0 0 2em var(--primary-color);
+  background: transparent;
+  box-shadow: inset 0 0 0 2em hsl(var(--hue), 100%, 41%);
 }
 .btn-hand {
   overflow: visible;
@@ -128,6 +121,6 @@ body {
 }
 @keyframes pulse {
   from {
-    box-shadow: 0 0 0 0 var(--primary-color);
+    box-shadow: 0 0 0 0 hsl(var(--hue), 100%, 41%);
   }
 }

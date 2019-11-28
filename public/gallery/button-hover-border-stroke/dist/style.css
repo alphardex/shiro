@@ -9,27 +9,41 @@ body {
 }
 
 .btn {
+  --hue: 190;
+  --ease-in-duration: 0.25s;
+  --ease-out-duration: 0.65s;
+  --ease-out-delay: var(--ease-in-duration);
   position: relative;
   padding: 1rem 3rem;
   font-size: 1rem;
   line-height: 1.5;
-  color: #212121;
+  color: white;
   text-decoration: none;
-  background-color: white;
-  border: 1px solid #dbdbdb;
+  background-color: hsl(var(--hue), 100%, 41%);
+  border: 1px solid hsl(var(--hue), 100%, 41%);
   outline: transparent;
+  overflow: hidden;
   cursor: pointer;
   user-select: none;
   white-space: nowrap;
   transition: 0.25s;
 }
+.btn:hover {
+  background: hsl(var(--hue), 100%, 31%);
+}
+.btn-primary {
+  --hue: 171;
+}
 .btn-ghost {
-  color: #00d1b2;
+  color: hsl(var(--hue), 100%, 41%);
   background-color: transparent;
-  border-color: #00d1b2;
+  border-color: hsl(var(--hue), 100%, 41%);
+}
+.btn-ghost:hover {
+  color: white;
 }
 .btn-border-stroke {
-  border-color: rgba(0, 209, 178, 0.35);
+  border-color: hsla(var(--hue), 100%, 41%, 0.35);
 }
 .btn-border-stroke .btn-borders {
   position: absolute;
@@ -43,7 +57,7 @@ body {
   top: 0;
   width: 100%;
   height: 1px;
-  background: #00d1b2;
+  background: hsl(var(--hue), 100%, 41%);
   transform: scaleX(0);
   transform-origin: left;
 }
@@ -52,7 +66,7 @@ body {
   right: 0;
   width: 1px;
   height: 100%;
-  background: #00d1b2;
+  background: hsl(var(--hue), 100%, 41%);
   transform: scaleY(0);
   transform-origin: bottom;
 }
@@ -61,7 +75,7 @@ body {
   bottom: 0;
   width: 100%;
   height: 1px;
-  background: #00d1b2;
+  background: hsl(var(--hue), 100%, 41%);
   transform: scaleX(0);
   transform-origin: left;
 }
@@ -70,21 +84,25 @@ body {
   left: 0;
   width: 1px;
   height: 100%;
-  background: #00d1b2;
+  background: hsl(var(--hue), 100%, 41%);
   transform: scaleY(0);
   transform-origin: bottom;
 }
 .btn-border-stroke .btn-borders .border-left {
-  transition: 0.65s 0.25s cubic-bezier(0.2, 1, 0.2, 1);
+  transition: var(--ease-out-duration) var(--ease-out-delay) cubic-bezier(0.2, 1, 0.2, 1);
 }
 .btn-border-stroke .btn-borders .border-bottom {
-  transition: 0.65s 0.25s cubic-bezier(0.2, 1, 0.2, 1);
+  transition: var(--ease-out-duration) var(--ease-out-delay) cubic-bezier(0.2, 1, 0.2, 1);
 }
 .btn-border-stroke .btn-borders .border-right {
-  transition: 0.25s cubic-bezier(1, 0, 0.8, 0);
+  transition: var(--ease-in-duration) cubic-bezier(1, 0, 0.8, 0);
 }
 .btn-border-stroke .btn-borders .border-top {
-  transition: 0.25s cubic-bezier(1, 0, 0.8, 0);
+  transition: var(--ease-in-duration) cubic-bezier(1, 0, 0.8, 0);
+}
+.btn-border-stroke:hover {
+  color: hsl(var(--hue), 100%, 41%);
+  background: transparent;
 }
 .btn-border-stroke:hover .border-top,
 .btn-border-stroke:hover .border-bottom {
@@ -95,16 +113,16 @@ body {
   transform: scaleY(1);
 }
 .btn-border-stroke:hover .border-left {
-  transition: 0.25s cubic-bezier(1, 0, 0.8, 0);
+  transition: var(--ease-in-duration) cubic-bezier(1, 0, 0.8, 0);
 }
 .btn-border-stroke:hover .border-bottom {
-  transition: 0.25s cubic-bezier(1, 0, 0.8, 0);
+  transition: var(--ease-in-duration) cubic-bezier(1, 0, 0.8, 0);
 }
 .btn-border-stroke:hover .border-right {
-  transition: 0.65s 0.25s cubic-bezier(0.2, 1, 0.2, 1);
+  transition: var(--ease-out-duration) var(--ease-out-delay) cubic-bezier(0.2, 1, 0.2, 1);
 }
 .btn-border-stroke:hover .border-top {
-  transition: 0.65s 0.25s cubic-bezier(0.2, 1, 0.2, 1);
+  transition: var(--ease-out-duration) var(--ease-out-delay) cubic-bezier(0.2, 1, 0.2, 1);
 }
 .btn-text-float-up::after {
   position: absolute;

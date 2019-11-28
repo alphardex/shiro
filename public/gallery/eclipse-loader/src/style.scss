@@ -1,20 +1,16 @@
-$bg-color: #222;
-$loader-r: 8em;
-$loader-color: linear-gradient(-225deg, #ff3cac 0%, #562b7c 52%, #2b86c5 100%);
-
 body {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: $bg-color;
+  background: #222;
 }
 
 .loader {
   position: relative;
-  width: $loader-r;
-  height: $loader-r;
-  background: $loader-color;
+  width: 8em;
+  height: 8em;
+  background: linear-gradient(-225deg, #ff3cac 0%, #562b7c 52%, #2b86c5 100%);
   border-radius: 50%;
   animation: spin 0.5s linear infinite;
 
@@ -49,7 +45,7 @@ body {
     left: 10px;
     right: 10px;
     bottom: 10px;
-    background: $bg-color;
+    background: #222;
     border-radius: inherit;
   }
 }

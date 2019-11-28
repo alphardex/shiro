@@ -10,33 +10,45 @@ body {
 }
 
 .btn {
-  $primary-color: hsl(171, 100%, 41%);
-  $ease-in-duration: 0.25s;
-  $ease-out-duration: 0.65s;
-  $ease-out-delay: $ease-in-duration;
-
+  --hue: 190;
+  --ease-in-duration: 0.25s;
+  --ease-out-duration: 0.65s;
+  --ease-out-delay: var(--ease-in-duration);
   position: relative;
   padding: 1rem 3rem;
   font-size: 1rem;
   line-height: 1.5;
-  color: hsl(0, 0%, 13%);
+  color: white;
   text-decoration: none;
-  background-color: white;
-  border: 1px solid hsl(0, 0, 86%);
+  background-color: hsl(var(--hue), 100%, 41%);
+  border: 1px solid hsl(var(--hue), 100%, 41%);
   outline: transparent;
+  overflow: hidden;
   cursor: pointer;
   user-select: none;
   white-space: nowrap;
   transition: 0.25s;
 
+  &:hover {
+    background: hsl(var(--hue), 100%, 31%);
+  }
+
+  &-primary {
+    --hue: 171;
+  }
+
   &-ghost {
-    color: $primary-color;
+    color: hsl(var(--hue), 100%, 41%);
     background-color: transparent;
-    border-color: $primary-color;
+    border-color: hsl(var(--hue), 100%, 41%);
+    
+    &:hover {
+      color: white;
+    }
   }
 
   &-border-stroke {
-    border-color: transparentize($primary-color, 0.65);
+    border-color: hsla(var(--hue), 100%, 41%, 0.35);
 
     .btn-borders {
       position: absolute;
@@ -50,7 +62,7 @@ body {
         top: 0;
         width: 100%;
         height: 1px;
-        background: $primary-color;
+        background: hsl(var(--hue), 100%, 41%);
         transform: scaleX(0);
         transform-origin: left;
       }
@@ -60,7 +72,7 @@ body {
         right: 0;
         width: 1px;
         height: 100%;
-        background: $primary-color;
+        background: hsl(var(--hue), 100%, 41%);
         transform: scaleY(0);
         transform-origin: bottom;
       }
@@ -70,7 +82,7 @@ body {
         bottom: 0;
         width: 100%;
         height: 1px;
-        background: $primary-color;
+        background: hsl(var(--hue), 100%, 41%);
         transform: scaleX(0);
         transform-origin: left;
       }
@@ -80,7 +92,7 @@ body {
         left: 0;
         width: 1px;
         height: 100%;
-        background: $primary-color;
+        background: hsl(var(--hue), 100%, 41%);
         transform: scaleY(0);
         transform-origin: bottom;
       }
@@ -88,23 +100,26 @@ body {
       // when unhover, ease-in top, right; ease-out bottom, left
 
       .border-left {
-        transition: $ease-out-duration $ease-out-delay
+        transition: var(--ease-out-duration) var(--ease-out-delay)
           cubic-bezier(0.2, 1, 0.2, 1);
       }
       .border-bottom {
-        transition: $ease-out-duration $ease-out-delay
+        transition: var(--ease-out-duration) var(--ease-out-delay)
           cubic-bezier(0.2, 1, 0.2, 1);
       }
 
       .border-right {
-        transition: $ease-in-duration cubic-bezier(1, 0, 0.8, 0);
+        transition: var(--ease-in-duration) cubic-bezier(1, 0, 0.8, 0);
       }
       .border-top {
-        transition: $ease-in-duration cubic-bezier(1, 0, 0.8, 0);
+        transition: var(--ease-in-duration) cubic-bezier(1, 0, 0.8, 0);
       }
     }
 
     &:hover {
+      color: hsl(var(--hue), 100%, 41%);
+      background: transparent;
+
       .border-top,
       .border-bottom {
         transform: scaleX(1);
@@ -117,18 +132,18 @@ body {
       // when hover, ease-in bottom, left; ease-out top, right
 
       .border-left {
-        transition: $ease-in-duration cubic-bezier(1, 0, 0.8, 0);
+        transition: var(--ease-in-duration) cubic-bezier(1, 0, 0.8, 0);
       }
       .border-bottom {
-        transition: $ease-in-duration cubic-bezier(1, 0, 0.8, 0);
+        transition: var(--ease-in-duration) cubic-bezier(1, 0, 0.8, 0);
       }
 
       .border-right {
-        transition: $ease-out-duration $ease-out-delay
+        transition: var(--ease-out-duration) var(--ease-out-delay)
           cubic-bezier(0.2, 1, 0.2, 1);
       }
       .border-top {
-        transition: $ease-out-duration $ease-out-delay
+        transition: var(--ease-out-duration) var(--ease-out-delay)
           cubic-bezier(0.2, 1, 0.2, 1);
       }
     }
