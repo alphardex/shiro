@@ -16,11 +16,20 @@ body {
 .accordion-menu .accordion-menu__item .accrodion-menu__link {
   position: relative;
   display: block;
-  padding: 1em 2em;
+  padding: 16px 20px;
   font-family: Lato, sans-serif;
   text-decoration: none;
   color: white;
   background: #3498db;
+  transition: 0.5s;
+}
+.accordion-menu .accordion-menu__item .accrodion-menu__link i {
+  margin-right: 10px;
+}
+.accordion-menu .accordion-menu__item .accrodion-menu__link i.fa-chevron-down {
+  position: absolute;
+  right: 10px;
+  color: white;
   transition: 0.5s;
 }
 .accordion-menu .accordion-menu__item .accrodion-menu__link:not(:last-child)::before {
@@ -49,6 +58,9 @@ body {
 }
 .accordion-menu .accordion-menu__item .accordion-menu__submenu a:hover {
   background: #2980b9;
+}
+.accordion-menu .accordion-menu__item:target .accrodion-menu__link i.fa-chevron-down {
+  transform: rotate(0.5turn);
 }
 .accordion-menu .accordion-menu__item:target .accordion-menu__submenu {
   max-height: 10em;

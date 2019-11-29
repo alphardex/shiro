@@ -18,12 +18,23 @@ body {
     .accrodion-menu__link {
       position: relative;
       display: block;
-      padding: 1em 2em;
+      padding: 16px 20px;
       font-family: Lato, sans-serif;
       text-decoration: none;
       color: white;
       background: #3498db;
       transition: 0.5s;
+
+      i {
+        margin-right: 10px;
+
+        &.fa-chevron-down {
+          position: absolute;
+          right: 10px;
+          color: white;
+          transition: 0.5s;
+        }
+      }
 
       // arrow
       &:not(:last-child)::before {
@@ -58,8 +69,14 @@ body {
       }
     }
 
-    &:target .accordion-menu__submenu {
-      max-height: 10em;
+    &:target {
+      .accrodion-menu__link i.fa-chevron-down {
+        transform: rotate(0.5turn);
+      }
+
+      .accordion-menu__submenu {
+        max-height: 10em;
+      }
     }
   }
 }
