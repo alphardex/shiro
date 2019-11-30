@@ -1,11 +1,6 @@
 <template>
   <div>
-    <a
-      href="https://github.com/alphardex/shiro"
-      target="_blank"
-      class="github-corner"
-      aria-label="View source on GitHub"
-    >
+    <a href="https://github.com/alphardex/shiro" target="_blank" class="github-corner" aria-label="View source on GitHub">
       <svg
         width="80"
         height="80"
@@ -30,23 +25,11 @@
     <h1 class="title">Shiro</h1>
     <p class="intro">Shiro，是alphardex平时所做的CSS动画作品集</p>
     <div class="search-bar">
-      <input
-        type="search"
-        name="keyword"
-        id="search"
-        placeholder="以标签搜索作品，如button"
-        v-model="keyword"
-      />
+      <input type="search" name="keyword" id="search" placeholder="以标签搜索作品，如button" v-model="keyword" />
       <i class="fa fa-search"></i>
     </div>
     <div class="gallery">
-      <Card
-        v-for="art in searchResult"
-        :title="art.title"
-        :description="art.description"
-        :tags="art.tags"
-        :key="art.title"
-      ></Card>
+      <Card v-for="art in searchResult" :title="art.title" :description="art.description" :tags="art.tags" :key="art.title"></Card>
     </div>
   </div>
 </template>
@@ -193,7 +176,7 @@ export default class Home extends Vue {
 
 .gallery {
   display: grid;
-  // 自适应列数，每列的范围最小为25个字符宽度，正常情况下为1列的大小
+  // 自适应列数，每列的宽度最小为25个字符宽度，最大为1fr的大小（即等分宽度）
   grid-template-columns: repeat(auto-fill, minmax(25ch, 1fr));
   grid-gap: 2rem;
   margin: 0 6rem 3rem 6rem;

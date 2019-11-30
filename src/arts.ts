@@ -1,5 +1,10 @@
 export default [
   {
+    title: "isometric-icon-nav-bar",
+    description: "等距的图标导航",
+    tags: ["3d", "isometric", "nav", "hover"]
+  },
+  {
     title: "staggered-shrinking-loading",
     description: "交错的文本缩放加载效果",
     tags: ["loading", "text", "staggered"]
