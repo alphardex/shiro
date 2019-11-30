@@ -1,5 +1,10 @@
 export default [
   {
+    title: "staggered-shrinking-loading",
+    description: "交错的文本缩放加载效果",
+    tags: ["loading", "text", "staggered"]
+  },
+  {
     title: "rotating-text",
     description: "翻滚的文字",
     tags: ["text", "rotate", "3d", "staggered"]

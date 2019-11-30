@@ -1,0 +1,26 @@
+@import url("https://fonts.googleapis.com/css?family=Lato:100");
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: black;
+}
+
+.loading {
+  display: flex;
+  color: white;
+  font-size: 2rem;
+  font-family: Lato, sans-serif;
+  letter-spacing: 0.5rem;
+  text-transform: uppercase;
+}
+.loading span {
+  animation: shrink 2s infinite;
+}
+
+@keyframes shrink {
+  50% {
+    transform: scale(0);
+  }
+}
