@@ -1,6 +1,11 @@
 <template>
   <div>
-    <a href="https://github.com/alphardex/shiro" target="_blank" class="github-corner" aria-label="View source on GitHub">
+    <a
+      href="https://github.com/alphardex/shiro"
+      target="_blank"
+      class="github-corner"
+      aria-label="View source on GitHub"
+    >
       <svg
         width="80"
         height="80"
@@ -24,12 +29,28 @@
     </a>
     <h1 class="title">Shiro</h1>
     <p class="intro">Shiro，是alphardex平时所做的CSS动画作品集</p>
-    <div class="search-bar">
-      <input type="search" name="keyword" id="search" placeholder="以标签搜索作品，如button" v-model="keyword" />
-      <i class="fa fa-search"></i>
+    <div class="center">
+      <div class="search-bar">
+        <input
+          type="search"
+          name="keyword"
+          id="search"
+          class="balloon"
+          placeholder="如button, hover, staggered等"
+          v-model="keyword"
+          autocomplete="off"
+        />
+        <label for="search">标签</label>
+      </div>
     </div>
     <div class="gallery">
-      <Card v-for="art in searchResult" :title="art.title" :description="art.description" :tags="art.tags" :key="art.title"></Card>
+      <Card
+        v-for="art in searchResult"
+        :title="art.title"
+        :description="art.description"
+        :tags="art.tags"
+        :key="art.title"
+      ></Card>
     </div>
   </div>
 </template>
@@ -99,8 +120,6 @@ export default class Home extends Vue {
   text-align: center;
   font-size: 4em;
   font-family: "Lobster";
-  margin-top: 0.5em;
-  margin-bottom: 0.2em;
 }
 
 .intro {
@@ -108,68 +127,88 @@ export default class Home extends Vue {
   text-align: center;
   font-size: 1.2em;
   font-family: "ZCOOL XiaoWei", serif;
-  margin: 1em 0 4em 0;
   line-height: 1.6em;
 }
 
-.search-bar {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -150%);
+.center {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
-  height: 40px;
-  border: 2px solid rgba(0, 0, 0, 0.4);
-  border-radius: 40px;
-  padding: 10px;
-  cursor: pointer;
+  padding: 1em 0;
+}
 
-  input#search {
-    font-family: "ZCOOL XiaoWei", serif;
-    font-size: 1em;
-    line-height: 40px;
+.search-bar {
+  position: relative;
+
+  .balloon {
+    @include pc-layout {
+      width: 45vw;
+    }
+
+    @include sp-layout {
+      width: 60vw;
+    }
+
+    padding: 10px 0 10px 15px;
+    text-indent: 60px;
+    color: #4fc1e9;
+    background: #efefef;
     border: none;
+    border-radius: 3px;
     outline: none;
-    background: none;
-    width: 0;
-    padding: 0;
-    transition: 0.5s ease-in-out;
-  }
+    transition: all 0.3s ease-in-out;
 
-  i {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    color: #448aff;
-    background: #f5f5f5;
-    transition: 0.5s;
-  }
+    &::-webkit-input-placeholder {
+      text-indent: 0;
+      color: #efefef;
+    }
 
-  @include pc-layout {
-    &:hover {
-      input#search {
-        width: 30em;
-        padding: 0 1em;
-      }
+    & + label {
+      position: absolute;
+      top: 8px;
+      left: 0;
+      bottom: 8px;
+      padding: 5px 15px;
+      font-size: 11px;
+      font-weight: 700;
+      text-shadow: 0 1px 0 rgba(19, 74, 70, 0);
+      border-radius: 3px;
+      transition: 0.3s ease-in-out;
 
-      i {
-        background: #616161;
+      // arrow
+      &:after {
+        position: absolute;
+        content: "";
+        width: 0;
+        height: 0;
+        top: 100%;
+        left: 50%;
+        margin-left: -3px;
+        border-left: 3px solid transparent;
+        border-right: 3px solid transparent;
+        border-top: 3px solid rgba(122, 184, 147, 0);
+        transition: 0.3s ease-in-out;
       }
     }
-  }
+    &:focus,
+    &:active {
+      color: #4fc1e9;
+      text-indent: 0;
 
-  @include sp-layout {
-    transform: translate(-50%, -180%);
+      &::-webkit-input-placeholder {
+        color: #aaa;
+      }
 
-    input#search {
-      width: 19em;
-      padding: 0 1em;
+      & + label {
+        color: white;
+        text-shadow: 0 1px 0 rgba(19, 74, 70, 0.4);
+        background: #4fc1e9;
+        transform: translateY(-40px);
+
+        &:after {
+          border-top: 4px solid #4fc1e9;
+        }
+      }
     }
   }
 }
