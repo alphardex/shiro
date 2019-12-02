@@ -1,5 +1,15 @@
 export default [
   {
+    title: "3d-dropdown-menu",
+    description: "3D旋转变换的下拉菜单",
+    tags: ["3d", "menu", "dropdown", "hover"]
+  },
+  {
+    title: "gradient-border",
+    description: "渐变边框",
+    tags: ["border", "gradient"]
+  },
+  {
     title: "header-with-slide-bar",
     description: "横条划过显现的标题",
     tags: ["text", "header", "slide"]
