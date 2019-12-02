@@ -1,5 +1,10 @@
 export default [
   {
+    title: "header-with-slide-bar",
+    description: "横条划过显现的标题",
+    tags: ["text", "header", "slide"]
+  },
+  {
     title: "isometric-icon-nav-bar",
     description: "等距的图标导航",
     tags: ["3d", "isometric", "nav", "hover"]

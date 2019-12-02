@@ -1,0 +1,69 @@
+@import url("https://fonts.googleapis.com/css?family=Lato");
+@import url("https://fonts.googleapis.com/css?family=Lora:400,400i,700");
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #222;
+}
+
+header .title,
+header .subtitle {
+  position: relative;
+  width: 250px;
+  height: 30px;
+  color: transparent;
+  animation: fadeIn 2s 1.6s forwards;
+}
+header .title::before,
+header .subtitle::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: slideRight 2s cubic-bezier(0.75, 0, 0, 1) forwards;
+}
+header .title {
+  font-family: Lora, serif;
+  font-size: 32px;
+  line-height: 30px;
+}
+header .title::before {
+  background: #FF4081;
+}
+header .subtitle {
+  margin-top: 10px;
+  font-family: Lato, sans-serif;
+  font-size: 12px;
+  line-height: 30px;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  animation-delay: 3.2s;
+}
+header .subtitle::before {
+  background: #03A9F4;
+  animation-delay: 2s;
+}
+
+@keyframes fadeIn {
+  to {
+    color: white;
+  }
+}
+@keyframes slideRight {
+  50% {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  50.1% {
+    transform-origin: right;
+  }
+  to {
+    transform-origin: right;
+  }
+}
