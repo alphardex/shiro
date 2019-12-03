@@ -38,7 +38,7 @@ body {
         transition: 0.3s;
       }
 
-      &:hover {
+      &:hover, &:active {
         color: #3498db;
         border-bottom: 1px solid #3498db;
 
@@ -47,14 +47,8 @@ body {
         }
       }
 
-      &.active {
-        color: #3498db;
-        border-bottom: 1px solid #3498db;
-
-        i {
-          border-color: #3498db;
+      &.active i {
           transform: rotate(0.5turn);
-        }
       }
     }
 

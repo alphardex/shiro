@@ -34,19 +34,14 @@ body {
   border-radius: 50%;
   transition: 0.3s;
 }
-.accordion .accordion-item a:hover {
+.accordion .accordion-item a:hover, .accordion .accordion-item a:active {
   color: #3498db;
   border-bottom: 1px solid #3498db;
 }
-.accordion .accordion-item a:hover i {
+.accordion .accordion-item a:hover i, .accordion .accordion-item a:active i {
   border-color: #3498db;
-}
-.accordion .accordion-item a.active {
-  color: #3498db;
-  border-bottom: 1px solid #3498db;
 }
 .accordion .accordion-item a.active i {
-  border-color: #3498db;
   transform: rotate(0.5turn);
 }
 .accordion .accordion-item .content {

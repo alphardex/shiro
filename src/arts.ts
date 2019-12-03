@@ -1,5 +1,10 @@
 export default [
   {
+    title: "pagination",
+    description: "分页栏",
+    tags: ["pagination"]
+  },
+  {
     title: "accordion-panel",
     description: "折叠面板",
     tags: ["accordion", "panel"]

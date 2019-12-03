@@ -28,7 +28,7 @@
       </svg>
     </a>
     <h1 class="title">Shiro</h1>
-    <p class="intro">Shiro，是alphardex平时所做的CSS动画作品集</p>
+    <p class="intro">Shiro，是alphardex平时所做的CSS创意作品集</p>
     <div class="center">
       <div class="search-bar">
         <input
