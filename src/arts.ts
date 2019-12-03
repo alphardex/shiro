@@ -1,5 +1,10 @@
 export default [
   {
+    title: "accordion-panel",
+    description: "折叠面板",
+    tags: ["accordion", "panel"]
+  },
+  {
     title: "3d-dropdown-menu",
     description: "3D旋转变换的下拉菜单",
     tags: ["3d", "menu", "dropdown", "hover"]
