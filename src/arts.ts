@@ -1,5 +1,10 @@
 export default [
   {
+    title: "tabs",
+    description: "动态的渐变标签页",
+    tags: ["tabs", "gradient", "hover"]
+  },
+  {
     title: "pagination",
     description: "分页栏",
     tags: ["pagination"]
