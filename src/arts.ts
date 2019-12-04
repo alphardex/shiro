@@ -1,5 +1,10 @@
 export default [
   {
+    title: "star-rating",
+    description: "5星评分",
+    tags: ["radio", "rating"]
+  },
+  {
     title: "tabs",
     description: "动态的渐变标签页",
     tags: ["tabs", "gradient", "hover"]

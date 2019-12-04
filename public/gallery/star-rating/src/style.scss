@@ -1,0 +1,53 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #222;
+}
+
+.rating {
+  display: flex;
+  flex-direction: row-reverse;
+  font-family: "Ionicons";
+
+  input {
+    appearance: none;
+
+    // fill the checked element and all its previous siblings
+    &:checked ~ label::before {
+      opacity: 1;
+    }
+  }
+
+  label {
+    position: relative;
+    margin-right: 6px;
+    font-size: 5em;
+    color: gold;
+    cursor: pointer;
+    transition: 0.5s;
+
+    &:hover {
+      transform: scale(1.2);
+    }
+
+    &::before {
+      position: absolute;
+      content: "\f384";
+      opacity: 0;
+      transition: 0.5s;
+    }
+
+    // fill the hovered element and all its previous siblings
+    &:hover::before,
+    &:hover ~ label::before {
+      opacity: 1 !important;
+    }
+  }
+
+  // when pointer re-enters the checked element, checked element and its siblings became transparent.
+  &:hover input:checked ~ label::before {
+    opacity: 0;
+  }
+}
