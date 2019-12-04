@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Lato:400,100");
+@import url("https://fonts.googleapis.com/css?family=Lato:400,300");
 body {
   display: flex;
   justify-content: center;
@@ -8,6 +8,7 @@ body {
 }
 
 .tabs {
+  --tab-links-height: 80px;
   --tab-links-bg: linear-gradient(135deg, #e5eaf1 0%, #b9c5d8 100%);
   --tab-links-overlay: linear-gradient(
     135deg,
@@ -31,13 +32,13 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 80px;
+  height: var(--tab-links-height);
   background: var(--tab-links-bg);
   list-style-type: none;
 }
-@media screen and (max-width: 512px) {
+@media screen and (max-width: 750px) {
   .tabs .tabs__links {
-    height: 40px;
+    height: calc(var(--tab-links-height) / 2);
   }
 }
 .tabs .tabs__links li {
@@ -46,18 +47,33 @@ body {
 .tabs .tabs__links li .tabs__link {
   all: unset;
   position: relative;
-  height: 80px;
+  height: var(--tab-links-height);
   width: 100%;
   background: var(--tab-link-bg);
   cursor: pointer;
   overflow: hidden;
   transition: 0.3s;
 }
-@media screen and (max-width: 512px) {
+@media screen and (max-width: 750px) {
   .tabs .tabs__links li .tabs__link {
-    height: 40px;
+    height: calc(var(--tab-links-height) / 2);
     font-size: 12px;
   }
+}
+.tabs .tabs__links li .tabs__link::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  background: var(--tab-links-overlay);
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
+  -webkit-transform-origin: top;
+          transform-origin: top;
+  transition: 0.3s ease-in-out;
 }
 .tabs .tabs__links li .tabs__link .tabs__link__text {
   position: relative;
@@ -79,25 +95,14 @@ body {
   opacity: 0.1;
   transition: 1.2s ease-out;
 }
-@media screen and (max-width: 512px) {
+@media screen and (max-width: 750px) {
   .tabs .tabs__links li .tabs__link .tabs__link__text::before {
     display: none;
   }
 }
-.tabs .tabs__links li .tabs__link::before {
-  position: absolute;
-  content: "";
-  top: 0;
-  left: 0;
-  z-index: 2;
-  width: 100%;
-  height: 100%;
-  background: var(--tab-links-overlay);
-  -webkit-transform: scaleY(0);
-          transform: scaleY(0);
-  -webkit-transform-origin: top;
-          transform-origin: top;
-  transition: 0.3s ease-in-out;
+.tabs .tabs__links li .tabs__link:hover::before {
+  -webkit-transform: scaleY(1);
+          transform: scaleY(1);
 }
 .tabs .tabs__links li .tabs__link:hover .tabs__link__text {
   color: white;
@@ -107,22 +112,18 @@ body {
   -webkit-transform: translateY(-300%);
           transform: translateY(-300%);
 }
-.tabs .tabs__links li .tabs__link:hover::before {
-  -webkit-transform: scaleY(1);
-          transform: scaleY(1);
-}
 .tabs .tabs__links li .tabs__link.active {
   -webkit-transform: scaleY(1.4);
           transform: scaleY(1.4);
   background: white;
 }
-.tabs .tabs__links li .tabs__link.active .tabs__link__text {
-  -webkit-transform: scaleY(0.714);
-          transform: scaleY(0.714);
-}
 .tabs .tabs__links li .tabs__link.active::before {
   -webkit-transform: scaleY(0.05);
           transform: scaleY(0.05);
+}
+.tabs .tabs__links li .tabs__link.active .tabs__link__text {
+  -webkit-transform: scaleY(0.714);
+          transform: scaleY(0.714);
 }
 .tabs .tabs__links li .tabs__link.active .tabs__link__text, .tabs .tabs__links li .tabs__link.active:hover .tabs__link__text {
   background: var(--tab-links-overlay);
@@ -151,7 +152,7 @@ body {
 .tabs .tabs__contents .tabs__content {
   display: none;
   min-height: 200px;
-  font-weight: 100;
+  font-weight: 300;
   line-height: 1.8;
   opacity: 0;
   -webkit-transform: translateY(30%);
