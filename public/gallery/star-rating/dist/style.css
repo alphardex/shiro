@@ -12,6 +12,7 @@ body {
   font-family: "Ionicons";
 }
 .rating input {
+  opacity: 0;
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
