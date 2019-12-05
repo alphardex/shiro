@@ -53,8 +53,7 @@ body {
   outline: none;
 }
 .login-form .form-field input:focus ~ label, .login-form .form-field input:not(:placeholder-shown) ~ label {
-  top: 0;
-  font-size: 15px;
+  transform: translateY(-24px) scale(0.75);
 }
 .login-form .form-field input:valid ~ label {
   color: #3498db;
@@ -66,6 +65,7 @@ body {
   position: absolute;
   left: 32px;
   top: 24px;
+  transform-origin: left;
   transition: 0.4s;
 }
 .login-form .btn {

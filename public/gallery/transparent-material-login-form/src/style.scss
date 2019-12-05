@@ -62,8 +62,7 @@ body {
       // 2. input has text filled
       &:focus ~ label,
       &:not(:placeholder-shown) ~ label {
-        top: 0;
-        font-size: 15px;
+        transform: translateY(-24px) scale(0.75);
       }
 
       &:valid ~ label {
@@ -79,6 +78,7 @@ body {
       position: absolute;
       left: 32px;
       top: 24px;
+      transform-origin: left;
       transition: 0.4s;
     }
   }
