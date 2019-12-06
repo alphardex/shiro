@@ -1,5 +1,10 @@
 export default [
   {
+    title: "snow",
+    description: "雪花飘飘",
+    tags: ["snow"]
+  },
+  {
     title: "star-rating",
     description: "5星评分",
     tags: ["radio", "rating"]
