@@ -23,6 +23,7 @@ body {
     $random-x: random(1000000) * 0.0001vw;
     $random-offset: random_range(-100000, 100000) * 0.0001vw;
     $random-x-end: $random-x + $random-offset;
+    $random-x-end-reverse: $random-x - $random-offset; // yoyo
     $random-scale: random(10000) * 0.0001;
     $fall-duration: random_range(10, 30) * 1s;
     $fall-delay: random(30) * -1s;
@@ -34,8 +35,12 @@ body {
     }
 
     @keyframes fall-#{$i} {
+      50% {
+        transform: translate($random-x-end, 50vh) scale($random-scale);
+      }
+      
       to {
-        transform: translate($random-x-end, 100vh) scale($random-scale);
+        transform: translate($random-x-end-reverse, 100vh) scale($random-scale);
       }
     }
   }
