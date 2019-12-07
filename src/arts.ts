@@ -2,7 +2,7 @@ export default [
   {
     title: "snow",
     description: "雪花飘飘",
-    tags: ["snow"]
+    tags: ["snow", 'staggered']
   },
   {
     title: "star-rating",
