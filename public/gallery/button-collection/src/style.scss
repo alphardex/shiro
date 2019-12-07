@@ -13,7 +13,7 @@ body {
   --hue: 190;
   position: relative;
   padding: 0.375rem 0.75rem;
-  margin: 0.5rem;
+  margin: 1rem;
   font-size: 1rem;
   line-height: 1.5;
   color: white;
@@ -222,6 +222,46 @@ body {
 
       .back {
         transform: rotateX(0deg);
+      }
+    }
+  }
+
+  &-breach {
+    border-width: 4px;
+    border-radius: 0;
+    overflow: visible;
+
+    &::before,
+    &::after {
+      position: absolute;
+      content: "";
+      width: 14px;
+      height: 4px;
+      background: #222;
+      transform: skewX(60deg);
+      transition: 0.4s linear;
+    }
+
+    &::before {
+      top: -4px;
+      left: 10%;
+    }
+
+    &::after {
+      bottom: -4px;
+      right: 10%;
+    }
+
+    &:hover {
+      color: hsl(var(--hue), 100%, 41%);
+      background: transparent;
+
+      &::before {
+        transform: translateX(360%) skewX(60deg);
+      }
+
+      &::after {
+        transform: translateX(-360%) skewX(60deg);
       }
     }
   }
