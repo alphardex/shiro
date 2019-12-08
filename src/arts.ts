@@ -1,8 +1,13 @@
 export default [
   {
+    title: "button-collection",
+    description: "有意思的按钮合集",
+    tags: ["button", "hover", "cta"]
+  },
+  {
     title: "snow",
     description: "雪花飘飘",
-    tags: ["snow", 'staggered']
+    tags: ["snow", "staggered"]
   },
   {
     title: "star-rating",
@@ -148,11 +153,6 @@ export default [
     title: "carousel",
     description: "精致的轮播图",
     tags: ["carousel", "slider", "scroll"]
-  },
-  {
-    title: "button-collection",
-    description: "有意思的按钮合集",
-    tags: ["button", "hover", "cta"]
   },
   {
     title: "split-text-menu",
