@@ -12,7 +12,10 @@ body {
   padding: 10px 20px;
   background: white;
   border-radius: 50px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0.3px 0.6px rgba(0, 0, 0, 0.056),
+    0 0.7px 1.3px rgba(0, 0, 0, 0.081), 0 1.3px 2.5px rgba(0, 0, 0, 0.1),
+    0 2.2px 4.5px rgba(0, 0, 0, 0.119), 0 4.2px 8.4px rgba(0, 0, 0, 0.144),
+    0 10px 20px rgba(0, 0, 0, 0.2);
   list-style-type: none;
 
   li {

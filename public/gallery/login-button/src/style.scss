@@ -5,23 +5,25 @@ body {
   height: 100vh;
   justify-content: center;
   align-items: center;
-  background: #222;
 }
 
 .login {
   position: relative;
   width: 10em;
   height: 4em;
-  color: #222;
+  color: #eee;
   font-family: Lato, sans-serif;
   font-size: 1.5em;
   text-align: center;
   text-transform: uppercase;
-  background: linear-gradient(to top, #e6e9f0 0%, #eef1f5 100%);
+  background: linear-gradient(to right, #434343 0%, black 100%);
   border: none;
   border-radius: 4em;
   outline: none;
-  box-shadow: 0 0.5em 1em #222;
+  box-shadow: 0 1.4px 2.8px rgba(0, 0, 0, 0.141),
+    0 3.3px 6.7px rgba(0, 0, 0, 0.202), 0 6.3px 12.5px rgba(0, 0, 0, 0.25),
+    0 11.2px 22.3px rgba(0, 0, 0, 0.298), 0 20.9px 41.8px rgba(0, 0, 0, 0.359),
+    0 50px 100px rgba(0, 0, 0, 0.5);
   cursor: pointer;
   transition: all 0.5s;
 
@@ -35,7 +37,7 @@ body {
     transition: opacity 0.3s 0.3s;
 
     & .line-scale-pulse-out-rapid div {
-      background-color: #222;
+      background-color: #eee;
     }
   }
 
@@ -44,7 +46,7 @@ body {
     left: 1.5em;
     bottom: 1.2em;
     opacity: 0;
-    stroke: #222;
+    stroke: #eee;
     stroke-width: 5px;
     stroke-dasharray: 36px;
     stroke-dashoffset: 36px;

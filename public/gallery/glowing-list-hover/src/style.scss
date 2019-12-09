@@ -10,7 +10,9 @@ body {
 
 .glowing-list {
   list-style-type: none;
-  box-shadow: 0 20px 40px black;
+  box-shadow: 0 0.7px 1.4px rgba(0, 0, 0, 0.189),
+    0 1.7px 3.5px rgba(0, 0, 0, 0.268), 0 3.5px 7.1px rgba(0, 0, 0, 0.335),
+    0 7.3px 14.6px rgba(0, 0, 0, 0.415), 0 20px 40px rgba(0, 0, 0, 0.6);
 
   .glowing-list__item {
     position: relative;

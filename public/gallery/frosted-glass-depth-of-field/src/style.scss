@@ -29,7 +29,9 @@ body {
   transition: 1s;
 
   &:hover {
-    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+    box-shadow: 0 0.7px 1.7px rgba(0, 0, 0, 0.248),
+      0 1.7px 4.3px rgba(0, 0, 0, 0.355), 0 3.5px 8.9px rgba(0, 0, 0, 0.445),
+      0 7.3px 18.3px rgba(0, 0, 0, 0.552), 0 20px 50px rgba(0, 0, 0, 0.8);
   }
 
   &:hover ~ .frosted-bg {

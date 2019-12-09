@@ -29,7 +29,10 @@ body {
   transition: 1s;
 }
 .glass:hover {
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 0.6px 1.4px rgba(0, 0, 0, 0.225),
+    0 1.3px 3.3px rgba(0, 0, 0, 0.323), 0 2.5px 6.3px rgba(0, 0, 0, 0.4),
+    0 4.5px 11.2px rgba(0, 0, 0, 0.477), 0 8.4px 20.9px rgba(0, 0, 0, 0.575),
+    0 20px 50px rgba(0, 0, 0, 0.8);
 }
 .glass:hover ~ .frosted-bg {
   filter: blur(10px);
