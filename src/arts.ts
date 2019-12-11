@@ -2,7 +2,7 @@ export default [
   {
     title: "sticky-sections",
     description: "粘性章节页面特效",
-    tags: "sticky"
+    tags: ["sticky"]
   },
   {
     title: "parallax",
