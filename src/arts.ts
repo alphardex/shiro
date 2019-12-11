@@ -1,5 +1,10 @@
 export default [
   {
+    title: "sticky-sections",
+    description: "粘性章节页面特效",
+    tags: "sticky"
+  },
+  {
     title: "parallax",
     description: "滚动视差页面特效",
     tags: ["parallax"]

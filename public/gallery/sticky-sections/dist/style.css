@@ -8,45 +8,38 @@ body {
   height: 100vh;
   font-family: Lora, serif;
   overflow-x: hidden;
-  perspective: 2px;
 }
 
 .slide {
-  position: relative;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
   height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
   letter-spacing: 0.2em;
   color: white;
-  box-shadow: 0 0 5px 1px black;
-}
-.slide.parallax::before {
-  position: absolute;
-  content: "";
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -1;
-  width: 100vw;
   background-size: cover;
   background-position: center;
-  transform-style: preserve-3d;
-  transform: translateZ(-1px) scale(1.5);
-}
-.slide:not(.parallax) {
-  background: #111;
 }
 .slide h1 {
   font-size: 250%;
   text-shadow: 0 2px 2px black;
 }
 
-#slide1::before {
+#slide1 {
   background-image: url("https://i.loli.net/2019/11/23/cnKl1Ykd5rZCVwm.jpg");
 }
 
-#slide3::before {
+#slide2 {
   background-image: url("https://i.loli.net/2019/10/18/uXF1Kx7lzELB6wf.jpg");
+}
+
+#slide3 {
+  background-image: url("https://i.loli.net/2019/11/16/FLnzi5Kq4tkRZSm.jpg");
+}
+
+#slide4 {
+  background-image: url("https://i.loli.net/2019/10/18/buDT4YS6zUMfHst.jpg");
 }
