@@ -1,5 +1,10 @@
 export default [
   {
+    title: "parallax",
+    description: "滚动视差页面特效",
+    tags: ["parallax"]
+  },
+  {
     title: "button-collection",
     description: "有意思的按钮合集",
     tags: ["button", "hover", "cta"]
