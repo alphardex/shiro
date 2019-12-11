@@ -32,6 +32,7 @@ body {
   z-index: -1;
   width: 100vw;
   background-size: cover;
+  background-position: center;
   transform-style: preserve-3d;
   transform: translateZ(-1px) scale(1.5);
 }
