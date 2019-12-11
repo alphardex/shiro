@@ -33,8 +33,7 @@ body {
     bottom: 0;
     z-index: -1;
     width: 100vw;
-    background-size: 100%;
-    background-repeat: no-repeat;
+    background-size: cover;
     transform-style: preserve-3d;
     // move the pseudo-element back away from the camera
     // then scale it to fill the viewport
