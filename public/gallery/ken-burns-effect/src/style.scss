@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css?family=Lora:400,400i,700");
+
+body {
+  margin: 0;
+  padding: 0;
+  background: black;
+}
+
+.ken-burns-slideshow {
+  $total-slides: 4;
+  $interval: 6s;
+  position: fixed;
+  z-index: -2;
+  margin: 0;
+  padding: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  list-style-type: none;
+
+  .slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transform: scale(1.2);
+    animation: kenburns $total-slides * $interval linear infinite;
+
+    @for $i from 1 through $total-slides {
+      &:nth-child(#{$i}) {
+        animation-delay: $interval * ($i - 1);
+      }
+    }
+  }
+}
+
+#slide1 {
+  background-image: url("https://i.loli.net/2019/11/23/cnKl1Ykd5rZCVwm.jpg");
+}
+
+#slide2 {
+  background-image: url("https://i.loli.net/2019/10/18/uXF1Kx7lzELB6wf.jpg");
+}
+
+#slide3 {
+  background-image: url("https://i.loli.net/2019/11/16/FLnzi5Kq4tkRZSm.jpg");
+}
+
+#slide4 {
+  background-image: url("https://i.loli.net/2019/10/18/buDT4YS6zUMfHst.jpg");
+}
+
+main {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Lora, serif;
+
+  h1 {
+    font-size: 250%;
+    text-shadow: 0 2px 2px black;
+    letter-spacing: 0.2em;
+    color: white;
+  }
+}
+
+@keyframes kenburns {
+  10% {
+    opacity: 1;
+  }
+
+  25% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  40% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}

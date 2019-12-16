@@ -1,13 +1,18 @@
 export default [
   {
+    title: "ken-burns-effect",
+    description: "镜头拉伸页面特效",
+    tags: ["ken burns", "staggered", "fullscreen"]
+  },
+  {
     title: "sticky-sections",
     description: "粘性章节页面特效",
-    tags: ["sticky"]
+    tags: ["sticky", "fullscreen"]
   },
   {
     title: "parallax",
     description: "滚动视差页面特效",
-    tags: ["parallax"]
+    tags: ["parallax", "fullscreen"]
   },
   {
     title: "button-collection",
