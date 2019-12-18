@@ -2,7 +2,7 @@ export default [
   {
     title: "card-flip-reflection",
     description: "卡片倒影翻转效果",
-    tags: ["card", "hover", "flip", "reflection"]
+    tags: ["3d", "card", "hover", "flip", "reflection"]
   },
   {
     title: "ken-burns-effect",
