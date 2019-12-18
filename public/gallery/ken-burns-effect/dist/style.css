@@ -62,12 +62,12 @@ main {
   justify-content: center;
   align-items: center;
   font-family: Lora, serif;
+  letter-spacing: 0.2em;
+  color: white;
 }
 main h1 {
   font-size: 250%;
   text-shadow: 0 2px 2px black;
-  letter-spacing: 0.2em;
-  color: white;
 }
 
 @keyframes kenburns {

@@ -1,5 +1,10 @@
 export default [
   {
+    title: "card-flip-reflection",
+    description: "卡片倒影翻转效果",
+    tags: ["card", "hover", "flip", "reflection"]
+  },
+  {
     title: "ken-burns-effect",
     description: "镜头拉伸页面特效",
     tags: ["ken burns", "staggered", "fullscreen"]
