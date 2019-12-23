@@ -46,4 +46,6 @@ body {
   color: white;
   border-bottom: 1px solid rgba(255, 255, 255, 0.3);
   mix-blend-mode: difference;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
 }
