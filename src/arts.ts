@@ -1,5 +1,10 @@
 export default [
   {
+    title: "menu-hover-image",
+    description: "菜单悬浮图片显现",
+    tags: ["menu", "hover", "image"]
+  },
+  {
     title: "card-flip-reflection",
     description: "卡片倒影翻转效果",
     tags: ["3d", "card", "hover", "flip", "reflection"]

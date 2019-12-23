@@ -1,0 +1,49 @@
+@import url("https://fonts.googleapis.com/css?family=Lora:400,400i,700");
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #121212;
+}
+
+.menu-hover-image {
+  position: relative;
+  width: 50rem;
+  font-family: Lora, serif;
+  list-style-type: none;
+}
+.menu-hover-image .cursor {
+  position: absolute;
+  top: -50%;
+  left: -25%;
+  z-index: -1;
+  width: 600px;
+  height: 400px;
+  background-image: linear-gradient(120deg, #a1c4fd 0%, #c2e9fb 100%);
+  background-position: 50% 50%;
+  background-size: cover;
+  opacity: 0;
+}
+.menu-hover-image .menu-item:nth-child(1):hover ~ .cursor {
+  background-image: url("https://i.loli.net/2019/10/18/buDT4YS6zUMfHst.jpg");
+}
+.menu-hover-image .menu-item:nth-child(2):hover ~ .cursor {
+  background-image: url("https://i.loli.net/2019/10/18/uXF1Kx7lzELB6wf.jpg");
+}
+.menu-hover-image .menu-item:nth-child(3):hover ~ .cursor {
+  background-image: url("https://i.loli.net/2019/11/23/cnKl1Ykd5rZCVwm.jpg");
+}
+.menu-hover-image .menu-item:nth-child(4):hover ~ .cursor {
+  background-image: url("https://i.loli.net/2019/11/03/RtVq2wxQYySDb8L.jpg");
+}
+.menu-hover-image .menu-item a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  text-decoration: none;
+  color: white;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+  mix-blend-mode: difference;
+}
