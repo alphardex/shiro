@@ -1,5 +1,10 @@
 export default [
   {
+    title: "staggered-rise-in-text",
+    description: "交错文本显现",
+    tags: ["header", "text", "staggered"]
+  },
+  {
     title: "menu-hover-image",
     description: "菜单悬浮图片显现",
     tags: ["menu", "hover", "image"]

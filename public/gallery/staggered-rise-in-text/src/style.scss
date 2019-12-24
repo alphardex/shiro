@@ -1,0 +1,50 @@
+@import url("https://fonts.googleapis.com/css?family=Lato");
+@import url("https://fonts.googleapis.com/css?family=Lora:400,400i,700");
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #222;
+}
+
+header {
+
+  .title,
+  .subtitle {
+    position: relative;
+    display: flex;
+    width: 250px;
+    height: 30px;
+    color: white;
+    white-space: pre;
+    overflow: hidden;
+
+    span {
+      transform: translateY(100%);
+      animation: rise-in 1s forwards;
+    }
+  }
+
+  .title {
+    font-family: Lora, serif;
+    font-size: 32px;
+    line-height: 30px;
+  }
+
+  .subtitle {
+    margin-top: 10px;
+    font-family: Lato, sans-serif;
+    font-size: 12px;
+    line-height: 30px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+  }
+}
+
+@keyframes rise-in {
+  to {
+    transform: translateY(0);
+  }
+}
