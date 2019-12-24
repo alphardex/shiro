@@ -1,5 +1,10 @@
 export default [
   {
+    title: "menu-hover-fill-text",
+    description: "悬浮菜单填充文本",
+    tags: ["menu", "hover", "text", "fill"]
+  },
+  {
     title: "staggered-rise-in-text",
     description: "交错文本显现",
     tags: ["header", "text", "staggered"]
