@@ -1,5 +1,10 @@
 export default [
   {
+    title: "animated-image-slider",
+    description: "动态滑动幻灯片",
+    tags: ["slider", "image", "fullscreen", "staggered"]
+  },
+  {
     title: "menu-hover-fill-text",
     description: "悬浮菜单填充文本",
     tags: ["menu", "hover", "text", "fill"]

@@ -1,0 +1,102 @@
+// gradient: https://webgradients.com
+
+@import url("https://fonts.googleapis.com/css?family=Lora:400,400i,700");
+
+.container {
+  --bg: linear-gradient(-20deg, #2b5876 0%, #4e4376 100%);
+
+  position: relative;
+  height: 100vh;
+  background-image: var(--bg);
+
+  .slideshow {
+    $slide-bgs: url('https://i.loli.net/2019/11/23/cnKl1Ykd5rZCVwm.jpg'),
+      url('https://i.loli.net/2019/10/18/uXF1Kx7lzELB6wf.jpg'),
+      url('https://i.loli.net/2019/11/16/FLnzi5Kq4tkRZSm.jpg'),
+      url('https://i.loli.net/2019/11/03/RtVq2wxQYySDb8L.jpg'),
+      url('https://i.loli.net/2019/10/18/buDT4YS6zUMfHst.jpg'),
+      url('https://i.loli.net/2019/11/16/cqyJiYlRwnTeHmj.jpg');
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    .slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 100%;
+      overflow: hidden;
+      animation: slide-right 0.6s ease-in-out forwards;
+
+      // use pseudo element to avoid the side effect of bg-size: cover
+      &::after {
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100%;
+      }
+
+      @for $i from 1 through length($slide-bgs) {
+        &:nth-child(#{$i}) {
+          animation-delay: 0.15s * $i;
+
+          &::after {
+            background: nth($slide-bgs, $i) center / cover no-repeat;
+          }
+        }
+      }
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-image: var(--bg);
+      transform: translateX(-100%);
+      animation: move-right 0.6s ease-in-out forwards;
+      animation-delay: 0.15s * length($slide-bgs) + 1s;
+
+      h1 {
+        font-size: 250%;
+        font-family: Lora, serif;
+        letter-spacing: 0.2em;
+        color: white;
+        text-shadow: 0 2px 2px black;
+        opacity: 0;
+        animation: fade-in 1s forwards;
+        animation-delay: 0.15s * length($slide-bgs) + 1.7s;
+      }
+    }
+  }
+}
+
+@keyframes slide-right {
+  to {
+    // If you animate scaleX here, the image will look weird. So animate width instead.
+    // (a little damage on performance though)
+    width: 100%;
+  }
+}
+
+@keyframes move-right {
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade-in {
+  to {
+    opacity: 1;
+  }
+}
