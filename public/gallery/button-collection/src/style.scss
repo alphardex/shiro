@@ -207,6 +207,7 @@ body {
       transform: translate(-50%, -50%) rotate(-45deg) scaleX(0);
       transition: 0.25s;
     }
+
     &:hover {
       background: transparent;
 
@@ -364,31 +365,83 @@ body {
       }
     }
   }
+
+  &-cross {
+    border-radius: 1.5rem;
+
+    &::before,
+    &::after {
+      position: absolute;
+      content: "";
+      left: 0;
+      z-index: -1;
+      width: 100%;
+      height: 50%;
+      background: hsl(var(--hue), 100%, 41%);
+      transform: scaleX(0);
+      transition: transform 0.5s;
+    }
+
+    &::before {
+      top: 0;
+      transform-origin: left;
+    }
+
+    &::after {
+      top: 50%;
+      transform-origin: right;
+    }
+
+    &:hover {
+      background: transparent;
+
+      &::before,
+      &::after {
+        transform: scaleX(1);
+      }
+
+      &::before {
+        transform-origin: right;
+      }
+
+      &::after {
+        transform-origin: left;
+      }
+    }
+  }
 }
 
 @keyframes jittery {
+
   5%,
   50% {
     transform: scale(1);
   }
+
   10% {
     transform: scale(0.9);
   }
+
   15% {
     transform: scale(1.15);
   }
+
   20% {
     transform: scale(1.15) rotate(-5deg);
   }
+
   25% {
     transform: scale(1.15) rotate(5deg);
   }
+
   30% {
     transform: scale(1.15) rotate(-3deg);
   }
+
   35% {
     transform: scale(1.15) rotate(2deg);
   }
+
   40% {
     transform: scale(1.15) rotate(0);
   }
