@@ -409,10 +409,47 @@ body {
       }
     }
   }
+
+  &-open-line {
+    border: none;
+    overflow: visible;
+
+    &::before,
+    &::after {
+      position: absolute;
+      content: "";
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background: hsl(var(--hue), 100%, 41%);
+      opacity: 0;
+      transform: scaleX(0);
+      transition: 0.4s ease-in-out;
+    }
+
+    &::before {
+      top: 0;
+    }
+
+    &::after {
+      bottom: 0;
+    }
+
+    &:hover {
+      letter-spacing: 5px;
+      color: hsl(var(--hue), 100%, 41%);
+      background: transparent;
+
+      &::before,
+      &::after {
+        opacity: 1;
+        transform: scaleX(1.2);
+      }
+    }
+  }
 }
 
 @keyframes jittery {
-
   5%,
   50% {
     transform: scale(1);

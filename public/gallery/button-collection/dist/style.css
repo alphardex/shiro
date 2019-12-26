@@ -323,6 +323,36 @@ body {
 .btn-cross:hover::after {
   transform-origin: left;
 }
+.btn-open-line {
+  border: none;
+  overflow: visible;
+}
+.btn-open-line::before, .btn-open-line::after {
+  position: absolute;
+  content: "";
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: hsl(var(--hue), 100%, 41%);
+  opacity: 0;
+  transform: scaleX(0);
+  transition: 0.4s ease-in-out;
+}
+.btn-open-line::before {
+  top: 0;
+}
+.btn-open-line::after {
+  bottom: 0;
+}
+.btn-open-line:hover {
+  letter-spacing: 5px;
+  color: hsl(var(--hue), 100%, 41%);
+  background: transparent;
+}
+.btn-open-line:hover::before, .btn-open-line:hover::after {
+  opacity: 1;
+  transform: scaleX(1.2);
+}
 
 @keyframes jittery {
   5%,
