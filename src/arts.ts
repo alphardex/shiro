@@ -1,5 +1,10 @@
 export default [
   {
+    title: "staggered-float-text-menu",
+    description: "交错悬浮文字菜单",
+    tags: ["menu", "hover", "text", "staggered"]
+  },
+  {
     title: "animated-image-slider",
     description: "动态滑动幻灯片",
     tags: ["slider", "image", "fullscreen", "staggered"]

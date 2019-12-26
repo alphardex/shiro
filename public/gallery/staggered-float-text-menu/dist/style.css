@@ -1,0 +1,34 @@
+@import url(https://fonts.googleapis.com/css?family=Lato);
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: black;
+}
+
+.float-text-menu {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+}
+.float-text-menu li a {
+  display: flex;
+  padding: 6px;
+  color: white;
+  font-family: Lato, sans-serif;
+  text-decoration: none;
+  overflow: hidden;
+}
+.float-text-menu li a span {
+  position: relative;
+  transition: 0.3s;
+}
+.float-text-menu li a span::before {
+  position: absolute;
+  content: attr(data-text);
+  transform: translateY(130%);
+}
+.float-text-menu li a:hover span {
+  transform: translateY(-130%);
+}
