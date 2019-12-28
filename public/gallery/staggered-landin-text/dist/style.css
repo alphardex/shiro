@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css?family=Lora:400,400i,700");
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  background-image: linear-gradient(rgba(16, 16, 16, 0.8), rgba(16, 16, 16, 0.8)), url(https://i.loli.net/2019/10/18/buDT4YS6zUMfHst.jpg);
+  background-size: cover;
+}
+
+p {
+  margin: 0 9em;
+  font-size: 2em;
+  font-weight: 600;
+}
+
+.landIn {
+  display: flex;
+  flex-wrap: wrap;
+  line-height: 1.8;
+  color: white;
+  font-family: Lora, serif;
+  white-space: pre;
+}
+.landIn span {
+  animation: landIn 0.8s ease-out both;
+}
+
+@keyframes landIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

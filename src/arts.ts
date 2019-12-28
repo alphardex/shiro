@@ -5,6 +5,11 @@ export default [
     tags: ["menu", "hover", "staggered"]
   },
   {
+    title: "staggered-landin-text",
+    description: "交错降落的文本",
+    tags: ["text", "staggered"]
+  },
+  {
     title: "staggered-float-text-menu",
     description: "交错悬浮文字菜单",
     tags: ["menu", "hover", "text", "staggered"]
