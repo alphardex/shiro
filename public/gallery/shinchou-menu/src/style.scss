@@ -1,0 +1,71 @@
+@import url(https://fonts.googleapis.com/css?family=Lato);
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #fafafa;
+}
+
+.shinchou-menu {
+  --highlight-text-color: #00ACF0;
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+
+  li {
+    margin: 6px;
+
+    a {
+      position: relative;
+      display: inline-flex;
+      padding: 6px 2px 6px 2px;
+      color: black;
+      font-size: 1.6em;
+      font-weight: 700;
+      line-height: 1; // ensure span is a square
+      text-decoration: none;
+      overflow: hidden;
+
+      &::before {
+        position: absolute;
+        content: '';
+        top: 0;
+        left: 0;
+        z-index: -2;
+        width: 100%;
+        height: 100%;
+        background: black;
+      }
+
+      &:hover {
+        span {
+          color: white !important;
+          text-shadow: 0 0 10px var(--highlight-text-color);
+        }
+      }
+
+      span {
+        position: relative;
+        margin: 0 5px 0 4px;
+        transition: 0.3s;
+
+        &.highlight::before {
+          position: absolute;
+          content: '';
+          top: -3px;
+          left: -3px;
+          bottom: -3px;
+          right: -3px;
+          z-index: -1;
+          background: var(--highlight-text-color);
+        }
+
+        &:not(.highlight) {
+          color: var(--highlight-text-color);
+        }
+      }
+    }
+  }
+}

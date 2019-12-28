@@ -1,5 +1,10 @@
 export default [
   {
+    title: "shinchou-menu",
+    description: "慎重勇者风格菜单",
+    tags: ["menu", "hover", "staggered"]
+  },
+  {
     title: "staggered-float-text-menu",
     description: "交错悬浮文字菜单",
     tags: ["menu", "hover", "text", "staggered"]
