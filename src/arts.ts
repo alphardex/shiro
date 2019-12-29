@@ -1,5 +1,10 @@
 export default [
   {
+    title: "gauge",
+    description: "conic-gradient实现的度量计",
+    tags: ["gauge"]
+  },
+  {
     title: "shinchou-menu",
     description: "慎重勇者风格菜单",
     tags: ["menu", "hover", "staggered"]
