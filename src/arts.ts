@@ -1,5 +1,10 @@
 export default [
   {
+    title: "crimson-crescent-loading",
+    description: "box-shadow: inset实现月牙形",
+    tags: ["loading", "glow"]
+  },
+  {
     title: "gauge",
     description: "conic-gradient实现的度量计",
     tags: ["gauge"]
