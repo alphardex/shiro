@@ -1,5 +1,10 @@
 export default [
   {
+    title: "button-hover-multiple-border-stroke",
+    description: "按钮多重边框悬浮效果",
+    tags: ["button", "hover", "border"]
+  },
+  {
     title: "crimson-crescent-loading",
     description: "box-shadow: inset实现月牙形",
     tags: ["loading", "glow"]
