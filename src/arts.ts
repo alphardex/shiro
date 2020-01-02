@@ -1,5 +1,10 @@
 export default [
   {
+    title: "inverted-color-beating-cursor",
+    description: "跳动反色光标跟随效果",
+    tags: ["cursor", "hover"]
+  },
+  {
     title: "button-hover-multiple-border-stroke",
     description: "按钮多重边框悬浮效果",
     tags: ["button", "hover", "border"]

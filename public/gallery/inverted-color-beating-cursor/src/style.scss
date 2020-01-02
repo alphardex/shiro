@@ -1,0 +1,48 @@
+@import url("https://fonts.googleapis.com/css?family=Lora:400,400i,700");
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: black;
+  cursor: none;
+}
+
+.cursor {
+  --cursor-radius: 6em;
+  position: absolute;
+  top: calc(var(--cursor-radius) * -1);
+  left: calc(var(--cursor-radius) * -1);
+  width: calc(var(--cursor-radius) * 2);
+  height: calc(var(--cursor-radius) * 2);
+  transform: scale(0);
+  mix-blend-mode: exclusion;
+
+  // Use pseudo element to isolate the "beat" animation.
+  &::after {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    border-radius: 50%;
+    animation: beat 1s ease-out infinite;
+    // Optimize the performance to avoid the blurry border.
+    will-change: transform;
+  }
+}
+
+h1 {
+  font-size: 5em;
+  font-family: Lora, serif;
+  color: white;
+}
+
+@keyframes beat {
+  50% {
+    transform: scale(1.2);
+  }
+}
