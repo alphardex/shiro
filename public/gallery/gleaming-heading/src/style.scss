@@ -17,16 +17,12 @@ body {
 
   span {
     opacity: 0;
+    filter: blur(10px);
     animation: fadeIn 2s alternate infinite;
   }
 }
 
 @keyframes fadeIn {
-  0% {
-    opacity: 0;
-    filter: blur(10px);
-  }
-
   50%,
   100% {
     opacity: 1;
