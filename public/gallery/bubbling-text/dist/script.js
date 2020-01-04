@@ -15,12 +15,13 @@ var requestInterval = function (fn, delay) {
     handle.value = requestAnimationFrame(loop);
     return handle;
 };
+var sample = function (arr) { return arr[Math.floor(Math.random() * arr.length)]; };
 var bubbleSizes = [3, 6, 9, 12];
 var bubbleText = document.querySelector(".bubbling");
 var bubblePositions = Array.from(Array(bubbleText.offsetWidth).keys());
 requestInterval(function () {
-    var bubbleSize = _.sample(bubbleSizes);
-    var bubblePosition = _.sample(bubblePositions);
+    var bubbleSize = sample(bubbleSizes);
+    var bubblePosition = sample(bubblePositions);
     var bubble = document.createElement("div");
     bubble.className = "bubble";
     bubble.style.width = bubbleSize + "px";

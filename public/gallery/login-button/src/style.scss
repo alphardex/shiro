@@ -36,9 +36,26 @@ body {
     opacity: 0;
     transition: opacity 0.3s 0.3s;
 
-    & .line-scale-pulse-out-rapid div {
-      background-color: #eee;
+    .line-scale-pulse-out-rapid div {
+      display: inline-flex;
+      width: 4px;
+      height: 35px;
+      margin: 2px;
+      border-radius: 2px;
+      background-color: white;
+      animation: line-scale-pulse-out-rapid 0.9s -0.5s infinite cubic-bezier(.11, .49, .38, .78);
+
+      &:nth-child(2),
+      &:nth-child(4) {
+        animation-delay: -0.25s;
+      }
+
+      &:nth-child(1),
+      &:nth-child(5) {
+        animation-delay: 0s;
+      }
     }
+
   }
 
   .tick {
@@ -73,6 +90,18 @@ body {
       opacity: 1;
       animation: show-tick 0.8s 0.4s forwards;
     }
+  }
+}
+
+@keyframes line-scale-pulse-out-rapid {
+
+  from,
+  90% {
+    transform: scaleY(1);
+  }
+
+  80% {
+    transform: scaleY(0.3);
   }
 }
 

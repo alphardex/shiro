@@ -26,9 +26,9 @@ body {
   outline: transparent;
   cursor: pointer;
   -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   white-space: nowrap;
   transition: 0.25s;
 }
@@ -47,11 +47,11 @@ body {
 }
 .btn-fill-left::before {
   -webkit-transform: translateX(100%);
-  transform: translateX(100%);
+          transform: translateX(100%);
 }
 .btn-fill-right::before {
   -webkit-transform: translateX(-100%);
-  transform: translateX(-100%);
+          transform: translateX(-100%);
 }
 .btn-fill::before {
   position: absolute;
@@ -70,7 +70,7 @@ body {
 }
 .btn-fill:hover::before {
   -webkit-transform: translateX(0);
-  transform: translateX(0);
+          transform: translateX(0);
 }
 .btn-fill:hover::after {
   color: white !important;
@@ -87,28 +87,25 @@ body {
   background-image: linear-gradient(to right, #0acffe 0%, #495aff 100%);
   border: transparent;
   border-radius: 12px;
-  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02),
-    0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035),
-    0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05),
-    0 100px 80px rgba(0, 0, 0, 0.07);
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02), 0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035), 0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05), 0 100px 80px rgba(0, 0, 0, 0.07);
   -webkit-animation: show-modal 0.5s ease forwards;
-  animation: show-modal 0.5s ease forwards;
+          animation: show-modal 0.5s ease forwards;
 }
 .modal::-webkit-backdrop {
   background: rgba(0, 0, 0, 0.4);
   -webkit-backdrop-filter: blur(3px);
-  backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
 }
 .modal::backdrop {
   background: rgba(0, 0, 0, 0.4);
   -webkit-backdrop-filter: blur(3px);
-  backdrop-filter: blur(3px);
+          backdrop-filter: blur(3px);
 }
 .modal .model-icon {
   margin-bottom: 1.25rem;
   opacity: 0;
   -webkit-animation: show-modal-icon 0.5s ease 0.2s forwards;
-  animation: show-modal-icon 0.5s ease 0.2s forwards;
+          animation: show-modal-icon 0.5s ease 0.2s forwards;
 }
 .modal .modal-content {
   display: flex;
@@ -122,13 +119,13 @@ body {
   margin-bottom: 1.2rem;
   opacity: 0;
   -webkit-animation: show-modal-text 0.5s ease 0.35s forwards;
-  animation: show-modal-text 0.5s ease 0.35s forwards;
+          animation: show-modal-text 0.5s ease 0.35s forwards;
 }
 .modal .modal-content .modal-description {
   margin: 0;
   opacity: 0;
   -webkit-animation: show-modal-text 1s ease 0.5s forwards;
-  animation: show-modal-text 1s ease 0.5s forwards;
+          animation: show-modal-text 1s ease 0.5s forwards;
 }
 .modal .modal-content .modal-options {
   margin-top: 1rem;
@@ -145,7 +142,7 @@ body {
 .modal .modal-content .modal-options .confirm {
   opacity: 0;
   -webkit-animation: show-modal-option 0.5s ease 0.65s forwards;
-  animation: show-modal-option 0.5s ease 0.65s forwards;
+          animation: show-modal-option 0.5s ease 0.65s forwards;
 }
 .modal .modal-content .modal-options .confirm::before {
   background: var(--success-color);
@@ -156,7 +153,7 @@ body {
 .modal .modal-content .modal-options .cancel {
   opacity: 0;
   -webkit-animation: show-modal-option 0.5s ease 0.8s forwards;
-  animation: show-modal-option 0.5s ease 0.8s forwards;
+          animation: show-modal-option 0.5s ease 0.8s forwards;
 }
 .modal .modal-content .modal-options .cancel::before {
   background: var(--danger-color);
@@ -168,16 +165,16 @@ body {
 @-webkit-keyframes show-modal {
   from {
     -webkit-transform: scale(0.8);
-    transform: scale(0.8);
+            transform: scale(0.8);
   }
   50% {
     -webkit-transform: scale(1.1);
-    transform: scale(1.1);
+            transform: scale(1.1);
     opacity: 1;
   }
   to {
     -webkit-transform: scale(1);
-    transform: scale(1);
+            transform: scale(1);
     opacity: 1;
   }
 }
@@ -185,112 +182,112 @@ body {
 @keyframes show-modal {
   from {
     -webkit-transform: scale(0.8);
-    transform: scale(0.8);
+            transform: scale(0.8);
   }
   50% {
     -webkit-transform: scale(1.1);
-    transform: scale(1.1);
+            transform: scale(1.1);
     opacity: 1;
   }
   to {
     -webkit-transform: scale(1);
-    transform: scale(1);
+            transform: scale(1);
     opacity: 1;
   }
 }
 @-webkit-keyframes show-modal-icon {
   from {
     -webkit-transform: scale(0.4);
-    transform: scale(0.4);
+            transform: scale(0.4);
   }
   50% {
     -webkit-transform: scale(1.2);
-    transform: scale(1.2);
+            transform: scale(1.2);
     opacity: 1;
   }
   to {
     -webkit-transform: scale(1);
-    transform: scale(1);
+            transform: scale(1);
     opacity: 1;
   }
 }
 @keyframes show-modal-icon {
   from {
     -webkit-transform: scale(0.4);
-    transform: scale(0.4);
+            transform: scale(0.4);
   }
   50% {
     -webkit-transform: scale(1.2);
-    transform: scale(1.2);
+            transform: scale(1.2);
     opacity: 1;
   }
   to {
     -webkit-transform: scale(1);
-    transform: scale(1);
+            transform: scale(1);
     opacity: 1;
   }
 }
 @-webkit-keyframes show-modal-text {
   from {
     -webkit-transform: scale(0.6);
-    transform: scale(0.6);
+            transform: scale(0.6);
   }
   50% {
     -webkit-transform: scale(1.2);
-    transform: scale(1.2);
+            transform: scale(1.2);
     opacity: 1;
   }
   to {
     -webkit-transform: scale(1);
-    transform: scale(1);
+            transform: scale(1);
     opacity: 1;
   }
 }
 @keyframes show-modal-text {
   from {
     -webkit-transform: scale(0.6);
-    transform: scale(0.6);
+            transform: scale(0.6);
   }
   50% {
     -webkit-transform: scale(1.2);
-    transform: scale(1.2);
+            transform: scale(1.2);
     opacity: 1;
   }
   to {
     -webkit-transform: scale(1);
-    transform: scale(1);
+            transform: scale(1);
     opacity: 1;
   }
 }
 @-webkit-keyframes show-modal-option {
   from {
     -webkit-transform: scale(0.4);
-    transform: scale(0.4);
+            transform: scale(0.4);
   }
   50% {
     -webkit-transform: scale(1.2);
-    transform: scale(1.2);
+            transform: scale(1.2);
     opacity: 1;
   }
   to {
     -webkit-transform: scale(1);
-    transform: scale(1);
+            transform: scale(1);
     opacity: 1;
   }
 }
 @keyframes show-modal-option {
   from {
     -webkit-transform: scale(0.4);
-    transform: scale(0.4);
+            transform: scale(0.4);
   }
   50% {
     -webkit-transform: scale(1.2);
-    transform: scale(1.2);
+            transform: scale(1.2);
     opacity: 1;
   }
   to {
     -webkit-transform: scale(1);
-    transform: scale(1);
+            transform: scale(1);
     opacity: 1;
   }
 }
