@@ -21,6 +21,8 @@ body {
 
   .slides {
     display: flex;
+    padding: 0;
+    margin: 0;
     overflow: hidden;
     scroll-behavior: smooth;
     scroll-snap-type: x mandatory;
@@ -39,7 +41,8 @@ body {
     display: flex;
     justify-content: space-around;
     height: var(--navdots-height);
-    padding-top: 20px;
+    padding: 20px 0 0 0;
+    margin: 0;
     list-style-type: none;
 
     .dot a {
@@ -69,6 +72,7 @@ body {
 
   // arrows
   .nav-arrows {
+    margin: 0;
     list-style-type: none;
 
     li {

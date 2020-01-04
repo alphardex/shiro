@@ -1,8 +1,11 @@
-// gradient: https://webgradients.com
-
 @import url("https://fonts.googleapis.com/css?family=Lora:400,400i,700");
 
+body {
+  margin: 0;
+}
+
 .container {
+  // gradient: https://webgradients.com
   --bg: linear-gradient(-20deg, #2b5876 0%, #4e4376 100%);
 
   position: relative;

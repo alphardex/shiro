@@ -8,10 +8,9 @@ body {
 }
 
 .glowing-list {
+  padding: 0;
   list-style-type: none;
-  box-shadow: 0 0.7px 1.4px rgba(0, 0, 0, 0.189),
-    0 1.7px 3.5px rgba(0, 0, 0, 0.268), 0 3.5px 7.1px rgba(0, 0, 0, 0.335),
-    0 7.3px 14.6px rgba(0, 0, 0, 0.415), 0 20px 40px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0.7px 1.4px rgba(0, 0, 0, 0.189), 0 1.7px 3.5px rgba(0, 0, 0, 0.268), 0 3.5px 7.1px rgba(0, 0, 0, 0.335), 0 7.3px 14.6px rgba(0, 0, 0, 0.415), 0 20px 40px rgba(0, 0, 0, 0.6);
 }
 .glowing-list .glowing-list__item {
   position: relative;
@@ -23,8 +22,7 @@ body {
   cursor: pointer;
   transition: 0.5s;
 }
-.glowing-list .glowing-list__item::before,
-.glowing-list .glowing-list__item::after {
+.glowing-list .glowing-list__item::before, .glowing-list .glowing-list__item::after {
   position: absolute;
   content: "";
   top: 0;
@@ -46,8 +44,7 @@ body {
 .glowing-list .glowing-list__item:hover {
   color: #111;
 }
-.glowing-list .glowing-list__item:hover::before,
-.glowing-list .glowing-list__item:hover::after {
+.glowing-list .glowing-list__item:hover::before, .glowing-list .glowing-list__item:hover::after {
   transform: scaleY(1);
   transform-origin: top;
 }

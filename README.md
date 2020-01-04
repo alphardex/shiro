@@ -1,5 +1,12 @@
 # Shiro
 
+## Features
+
+- SCSS + TypeScript
+- No third party libraries! (reset.css, jQuery, lodash, etc)
+- Only Font Awesome as an icon library
+- Handcrafted UI with love
+
 ## Project setup
 
 ```

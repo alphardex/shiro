@@ -10,11 +10,13 @@ body {
 
 .accordion-menu {
   width: 300px;
+  padding: 0;
   border-radius: 8px;
   overflow: hidden;
   list-style-type: none;
 
   .accordion-menu__item {
+
     .accrodion-menu__link {
       position: relative;
       display: block;
@@ -51,8 +53,10 @@ body {
 
     .accordion-menu__submenu {
       max-height: 0;
+      padding: 0;
       background: #333;
       overflow: hidden;
+      list-style-type: none;
       transition: 0.5s;
 
       a {

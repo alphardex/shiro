@@ -8,7 +8,7 @@ body {
   background: #03a9f4;
 }
 
-nav.navtab {
+.navtab {
   --navtab-width: 600px;
   --navtab-item-width: calc(var(--navtab-width) / 4 - 20px);
   --navtab-overlay-width: calc(var(--navtab-item-width) + 80px);
@@ -21,15 +21,17 @@ nav.navtab {
   border-radius: 5% 5% 15% 15% / 15% 15% 50% 50%;
   overflow: hidden;
 }
-nav.navtab ul {
+.navtab ul {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: 100%;
+  padding: 0;
+  margin: 0;
   list-style-type: none;
 }
-nav.navtab ul li.navtab-item {
+.navtab ul li.navtab-item {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -41,26 +43,26 @@ nav.navtab ul li.navtab-item {
   cursor: pointer;
   transition: 0.5s ease;
 }
-nav.navtab ul li.navtab-item i {
+.navtab ul li.navtab-item i {
   font-size: 2em;
   transition: 0.5s ease;
 }
-nav.navtab ul li.navtab-item span {
+.navtab ul li.navtab-item span {
   font-size: 20px;
   user-select: none;
   opacity: 0;
   transition: 0.5s ease;
 }
-nav.navtab ul li.navtab-item.active {
+.navtab ul li.navtab-item.active {
   width: var(--navtab-overlay-width);
 }
-nav.navtab ul li.navtab-item.active i {
+.navtab ul li.navtab-item.active i {
   transform: translateY(-10px);
 }
-nav.navtab ul li.navtab-item.active span {
+.navtab ul li.navtab-item.active span {
   opacity: 1;
 }
-nav.navtab::after {
+.navtab::after {
   position: absolute;
   content: "";
   top: 0;

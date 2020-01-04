@@ -13,7 +13,7 @@ body {
   background: #03a9f4;
 }
 
-nav.navtab {
+.navtab {
   --navtab-width: 600px;
   --navtab-item-width: calc(var(--navtab-width) / 4 - 20px);
   --navtab-overlay-width: calc(var(--navtab-item-width) + 80px);
@@ -32,6 +32,8 @@ nav.navtab {
     @include center;
     width: 100%;
     height: 100%;
+    padding: 0;
+    margin: 0;
     list-style-type: none;
 
     li.navtab-item {

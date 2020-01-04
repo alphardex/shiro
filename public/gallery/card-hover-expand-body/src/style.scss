@@ -22,8 +22,8 @@ body {
       position: relative;
       z-index: 2;
       width: 302px;
-      height: 202px;
-      transform: translateY(51%);
+      height: 222px;
+      transform: translateY(52%);
       transition: 0.5s;
     }
 
@@ -31,8 +31,7 @@ body {
       z-index: 1;
       box-sizing: border-box;
       padding: 1.25em;
-      width: 302px;
-      height: 200px;
+      height: 220px;
       background: white;
       box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.056),
         0 6.7px 5.3px rgba(0, 0, 0, 0.081), 0 12.5px 10px rgba(0, 0, 0, 0.1),
@@ -42,14 +41,14 @@ body {
       transition: 0.5s;
 
       .card-title {
-        margin-bottom: 0.75em;
+        margin: 0 0 0.75em 0;
         font-size: 1.25em;
         font-weight: bold;
         line-height: 1.2;
       }
 
       .card-text {
-        margin-bottom: 1em;
+        margin: 0 0 1em 0;
       }
 
       .btn {
@@ -70,7 +69,7 @@ body {
 
     &:hover {
       .card-img-top {
-        transform: translateY(1%);
+        transform: translateY(2%);
       }
 
       .card-body {

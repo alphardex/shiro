@@ -20,31 +20,28 @@ body {
   position: relative;
   z-index: 2;
   width: 302px;
-  height: 202px;
-  transform: translateY(51%);
+  height: 222px;
+  transform: translateY(52%);
   transition: 0.5s;
 }
 .container .card .card-body {
   z-index: 1;
   box-sizing: border-box;
   padding: 1.25em;
-  width: 302px;
-  height: 200px;
+  height: 220px;
   background: white;
-  box-shadow: 0 0.7px 1.7px rgba(0, 0, 0, 0.248),
-    0 1.7px 4.3px rgba(0, 0, 0, 0.355), 0 3.5px 8.9px rgba(0, 0, 0, 0.445),
-    0 7.3px 18.3px rgba(0, 0, 0, 0.552), 0 20px 50px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.056), 0 6.7px 5.3px rgba(0, 0, 0, 0.081), 0 12.5px 10px rgba(0, 0, 0, 0.1), 0 22.3px 17.9px rgba(0, 0, 0, 0.119), 0 41.8px 33.4px rgba(0, 0, 0, 0.144), 0 100px 80px rgba(0, 0, 0, 0.2);
   transform: translateY(-50%);
   transition: 0.5s;
 }
 .container .card .card-body .card-title {
-  margin-bottom: 0.75em;
+  margin: 0 0 0.75em 0;
   font-size: 1.25em;
   font-weight: bold;
   line-height: 1.2;
 }
 .container .card .card-body .card-text {
-  margin-bottom: 1em;
+  margin: 0 0 1em 0;
 }
 .container .card .card-body .btn {
   padding: 0.375em 0.75em;
@@ -60,7 +57,7 @@ body {
   background: black;
 }
 .container .card:hover .card-img-top {
-  transform: translateY(1%);
+  transform: translateY(2%);
 }
 .container .card:hover .card-body {
   transform: translateY(0);

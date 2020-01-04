@@ -9,7 +9,6 @@ body {
 .rating {
   display: flex;
   flex-direction: row-reverse;
-  font-family: "Ionicons";
 
   input {
     opacity: 0;
@@ -24,6 +23,8 @@ body {
   label {
     position: relative;
     margin-right: 6px;
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
     font-size: 5em;
     color: gold;
     cursor: pointer;
@@ -35,7 +36,7 @@ body {
 
     &::before {
       position: absolute;
-      content: "\f384";
+      content: "\f005";
       opacity: 0;
       transition: 0.5s;
     }

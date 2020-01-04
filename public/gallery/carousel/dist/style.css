@@ -19,6 +19,8 @@ body {
 }
 .carousel .slides {
   display: flex;
+  padding: 0;
+  margin: 0;
   overflow: hidden;
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
@@ -34,7 +36,8 @@ body {
   display: flex;
   justify-content: space-around;
   height: var(--navdots-height);
-  padding-top: 20px;
+  padding: 20px 0 0 0;
+  margin: 0;
   list-style-type: none;
 }
 .carousel .nav-dots .dot a {
@@ -58,6 +61,7 @@ body {
   background: rgba(0, 0, 0, 0.6);
 }
 .carousel .nav-arrows {
+  margin: 0;
   list-style-type: none;
 }
 .carousel .nav-arrows li {

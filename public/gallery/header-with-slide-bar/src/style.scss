@@ -34,6 +34,7 @@ header {
   }
 
   .title {
+    margin: 0;
     font-family: Lora, serif;
     font-size: 32px;
     line-height: 30px;
@@ -44,7 +45,7 @@ header {
   }
 
   .subtitle {
-    margin-top: 10px;
+    margin: 10px 0 0 0;
     font-family: Lato, sans-serif;
     font-size: 12px;
     line-height: 30px;
