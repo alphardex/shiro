@@ -7,7 +7,7 @@ var barSlideIn = function (bar, delay) {
         { transform: "scaleY(0)", transformOrigin: "top" },
         { transform: "scaleY(1)", transformOrigin: "top" }
     ], {
-        duration: 1000,
+        duration: 800,
         easing: "ease-in-out",
         fill: "forwards",
         delay: 200 * delay
@@ -19,7 +19,7 @@ var barSlideOut = function (bar, delay) {
         { transformOrigin: "bottom", offset: 0.001 },
         { transform: "scaleY(0)", transformOrigin: "bottom" }
     ], {
-        duration: 1000,
+        duration: 800,
         easing: "ease-in-out",
         fill: "forwards",
         delay: 200 * delay

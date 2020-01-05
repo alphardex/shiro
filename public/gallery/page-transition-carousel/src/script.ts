@@ -10,7 +10,7 @@ let barSlideIn = (bar: Element, delay: number) => {
       { transform: "scaleY(1)", transformOrigin: "top" }
     ],
     {
-      duration: 1000,
+      duration: 800,
       easing: "ease-in-out",
       fill: "forwards",
       delay: 200 * delay
@@ -26,7 +26,7 @@ let barSlideOut = (bar: Element, delay: number) => {
       { transform: "scaleY(0)", transformOrigin: "bottom" }
     ],
     {
-      duration: 1000,
+      duration: 800,
       easing: "ease-in-out",
       fill: "forwards",
       delay: 200 * delay
