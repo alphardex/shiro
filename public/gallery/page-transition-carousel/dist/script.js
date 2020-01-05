@@ -31,7 +31,7 @@ var titleFadeIn = function (title) {
         { opacity: 0, transform: "translateY(100%)" },
         { opacity: 1, transform: "translateY(0)" }
     ], {
-        duration: 500,
+        duration: 1200,
         easing: "ease",
         fill: "forwards",
         delay: 500
@@ -40,9 +40,9 @@ var titleFadeIn = function (title) {
 var titleFadeOut = function (title) {
     return title.animate([
         { opacity: 1, transform: "translateY(0)" },
-        { opacity: 0, transform: "translateY(100%)" }
+        { opacity: 0, transform: "translateY(-100%)" }
     ], {
-        duration: 500,
+        duration: 600,
         easing: "ease",
         fill: "forwards"
     });

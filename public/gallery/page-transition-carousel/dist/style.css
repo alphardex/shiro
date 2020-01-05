@@ -6,6 +6,26 @@ body {
 .container {
   position: relative;
   height: 100vh;
+  font-family: Lora, serif;
+  color: white;
+}
+.container h1 {
+  margin: 0;
+  font-size: 250%;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-shadow: 0 2px 2px black;
+}
+.container h3 {
+  margin: 0;
+  letter-spacing: 0.2em;
+  text-shadow: 0 2px 2px black;
+}
+.container .page-title {
+  position: absolute;
+  left: 4em;
+  top: 2em;
+  z-index: 1;
 }
 .container .slideshow {
   position: absolute;
@@ -44,15 +64,9 @@ body {
   background: url("https://i.loli.net/2019/11/16/cqyJiYlRwnTeHmj.jpg") center/cover no-repeat;
 }
 .container .slideshow .slide .slide-title {
-  position: relative;
+  position: absolute;
   top: 40vh;
   left: 2em;
-  font-size: 250%;
-  font-family: Lora, serif;
-  font-weight: 700;
-  letter-spacing: 0.2em;
-  color: white;
-  text-shadow: 0 2px 2px black;
 }
 .container .bars {
   position: absolute;
@@ -63,7 +77,6 @@ body {
   display: flex;
 }
 .container .bars .bar {
-  z-index: 2;
   flex: 1;
   background: #34495e;
   transform: scaleY(0);
