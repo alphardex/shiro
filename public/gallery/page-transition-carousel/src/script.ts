@@ -2,6 +2,7 @@ let slideshow = document.querySelector(".slideshow");
 let slides = document.querySelectorAll(".slideshow .slide");
 let bars = document.querySelectorAll(".bars .bar");
 let dots = document.querySelectorAll(".nav-dots .dot a");
+let slideTitles = document.querySelectorAll(".slide-title");
 
 let barSlideIn = (bar: Element, delay: number) => {
   return bar.animate(
@@ -34,7 +35,37 @@ let barSlideOut = (bar: Element, delay: number) => {
   );
 };
 
+let titleFadeIn = (title: Element) => {
+  return title.animate(
+    [
+      { opacity: 0, transform: "translateY(100%)" },
+      { opacity: 1, transform: "translateY(0)" }
+    ],
+    {
+      duration: 500,
+      easing: "ease",
+      fill: "forwards",
+      delay: 500
+    }
+  );
+};
+
+let titleFadeOut = (title: Element) => {
+  return title.animate(
+    [
+      { opacity: 1, transform: "translateY(0)" },
+      { opacity: 0, transform: "translateY(100%)" }
+    ],
+    {
+      duration: 500,
+      easing: "ease",
+      fill: "forwards"
+    }
+  );
+};
+
 let pageTransition = (activeIndex: number) => {
+  slideTitles.forEach(title => titleFadeOut(title));
   Promise.all(
     Array.from(bars).map((bar, i) => barSlideIn(bar, i).finished)
   ).then(() => {
@@ -42,6 +73,7 @@ let pageTransition = (activeIndex: number) => {
     bars.forEach((bar, i) => {
       barSlideOut(bar, i);
     });
+    slideTitles.forEach(title => titleFadeIn(title));
   });
 };
 
@@ -52,8 +84,8 @@ let setActiveIndex = (activeIndex: number) => {
     "--active-index",
     `${activeIndex}`
   );
-  slides.forEach(slide => ((slide as HTMLElement).style.zIndex = `0`));
-  (slides[activeIndex] as HTMLElement).style.zIndex = `1`;
+  slides.forEach(slide => ((slide as HTMLElement).style.zIndex = `-1`));
+  (slides[activeIndex] as HTMLElement).style.zIndex = `0`;
 };
 
 // dots

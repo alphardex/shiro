@@ -2,6 +2,7 @@ var slideshow = document.querySelector(".slideshow");
 var slides = document.querySelectorAll(".slideshow .slide");
 var bars = document.querySelectorAll(".bars .bar");
 var dots = document.querySelectorAll(".nav-dots .dot a");
+var slideTitles = document.querySelectorAll(".slide-title");
 var barSlideIn = function (bar, delay) {
     return bar.animate([
         { transform: "scaleY(0)", transformOrigin: "top" },
@@ -25,20 +26,43 @@ var barSlideOut = function (bar, delay) {
         delay: 200 * delay
     });
 };
+var titleFadeIn = function (title) {
+    return title.animate([
+        { opacity: 0, transform: "translateY(100%)" },
+        { opacity: 1, transform: "translateY(0)" }
+    ], {
+        duration: 500,
+        easing: "ease",
+        fill: "forwards",
+        delay: 500
+    });
+};
+var titleFadeOut = function (title) {
+    return title.animate([
+        { opacity: 1, transform: "translateY(0)" },
+        { opacity: 0, transform: "translateY(100%)" }
+    ], {
+        duration: 500,
+        easing: "ease",
+        fill: "forwards"
+    });
+};
 var pageTransition = function (activeIndex) {
+    slideTitles.forEach(function (title) { return titleFadeOut(title); });
     Promise.all(Array.from(bars).map(function (bar, i) { return barSlideIn(bar, i).finished; })).then(function () {
         setActiveIndex(activeIndex);
         bars.forEach(function (bar, i) {
             barSlideOut(bar, i);
         });
+        slideTitles.forEach(function (title) { return titleFadeIn(title); });
     });
 };
 var setActiveIndex = function (activeIndex) {
     dots.forEach(function (dot) { return dot.classList.remove("active"); });
     dots[activeIndex].classList.add("active");
     slideshow.style.setProperty("--active-index", "" + activeIndex);
-    slides.forEach(function (slide) { return (slide.style.zIndex = "0"); });
-    slides[activeIndex].style.zIndex = "1";
+    slides.forEach(function (slide) { return (slide.style.zIndex = "-1"); });
+    slides[activeIndex].style.zIndex = "0";
 };
 // dots
 dots[0].classList.add("active");
