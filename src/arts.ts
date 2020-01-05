@@ -1,5 +1,10 @@
 export default [
   {
+    title: "page-transition-carousel",
+    description: "页面转场效果结合轮播图",
+    tags: ["carousel", "fullscreen", "page transition"]
+  },
+  {
     title: "inverted-color-beating-cursor",
     description: "跳动反色光标跟随效果",
     tags: ["cursor", "hover"]
