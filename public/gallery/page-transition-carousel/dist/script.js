@@ -3,31 +3,35 @@ var slides = document.querySelectorAll(".slideshow .slide");
 var bars = document.querySelectorAll(".bars .bar");
 var dots = document.querySelectorAll(".nav-dots .dot a");
 var slideTitles = document.querySelectorAll(".slide-title");
-var barSlideIn = function (bar, delay) {
-    return bar.animate([
+// https://easings.net
+// easing is very important, here I chose easeInOutCubic.
+// If you found a better easing function, just overwrite it.
+var easing = "cubic-bezier(0.645, 0.045, 0.355, 1)";
+var staggeredSlideIn = function (element, delay) {
+    return element.animate([
         { transform: "scaleY(0)", transformOrigin: "top" },
         { transform: "scaleY(1)", transformOrigin: "top" }
     ], {
         duration: 800,
-        easing: "ease-in-out",
+        easing: easing,
         fill: "forwards",
         delay: 200 * delay
     });
 };
-var barSlideOut = function (bar, delay) {
-    return bar.animate([
+var staggeredSlideOut = function (element, delay) {
+    return element.animate([
         { transform: "scaleY(1)", transformOrigin: "top" },
         { transformOrigin: "bottom", offset: 0.001 },
         { transform: "scaleY(0)", transformOrigin: "bottom" }
     ], {
         duration: 800,
-        easing: "ease-in-out",
+        easing: easing,
         fill: "forwards",
         delay: 200 * delay
     });
 };
-var titleFadeIn = function (title) {
-    return title.animate([
+var fadeIn = function (element) {
+    return element.animate([
         { opacity: 0, transform: "translateY(100%)" },
         { opacity: 1, transform: "translateY(0)" }
     ], {
@@ -37,8 +41,8 @@ var titleFadeIn = function (title) {
         delay: 500
     });
 };
-var titleFadeOut = function (title) {
-    return title.animate([
+var fadeOut = function (element) {
+    return element.animate([
         { opacity: 1, transform: "translateY(0)" },
         { opacity: 0, transform: "translateY(-100%)" }
     ], {
@@ -48,13 +52,13 @@ var titleFadeOut = function (title) {
     });
 };
 var pageTransition = function (activeIndex) {
-    slideTitles.forEach(function (title) { return titleFadeOut(title); });
-    Promise.all(Array.from(bars).map(function (bar, i) { return barSlideIn(bar, i).finished; })).then(function () {
+    slideTitles.forEach(function (title) { return fadeOut(title); });
+    Promise.all(Array.from(bars).map(function (bar, i) { return staggeredSlideIn(bar, i).finished; })).then(function () {
         setActiveIndex(activeIndex);
         bars.forEach(function (bar, i) {
-            barSlideOut(bar, i);
+            staggeredSlideOut(bar, i);
         });
-        slideTitles.forEach(function (title) { return titleFadeIn(title); });
+        slideTitles.forEach(function (title) { return fadeIn(title); });
     });
 };
 var setActiveIndex = function (activeIndex) {

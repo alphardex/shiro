@@ -3,24 +3,28 @@ let slides = document.querySelectorAll(".slideshow .slide");
 let bars = document.querySelectorAll(".bars .bar");
 let dots = document.querySelectorAll(".nav-dots .dot a");
 let slideTitles = document.querySelectorAll(".slide-title");
+// https://easings.net
+// easing is very important, here I chose easeInOutCubic.
+// If you found a better easing function, just overwrite it.
+let easing = "cubic-bezier(0.645, 0.045, 0.355, 1)";
 
-let barSlideIn = (bar: Element, delay: number) => {
-  return bar.animate(
+let staggeredSlideIn = (element: Element, delay: number) => {
+  return element.animate(
     [
       { transform: "scaleY(0)", transformOrigin: "top" },
       { transform: "scaleY(1)", transformOrigin: "top" }
     ],
     {
       duration: 800,
-      easing: "ease-in-out",
+      easing: easing,
       fill: "forwards",
       delay: 200 * delay
     }
   );
 };
 
-let barSlideOut = (bar: Element, delay: number) => {
-  return bar.animate(
+let staggeredSlideOut = (element: Element, delay: number) => {
+  return element.animate(
     [
       { transform: "scaleY(1)", transformOrigin: "top" },
       { transformOrigin: "bottom", offset: 0.001 },
@@ -28,15 +32,15 @@ let barSlideOut = (bar: Element, delay: number) => {
     ],
     {
       duration: 800,
-      easing: "ease-in-out",
+      easing: easing,
       fill: "forwards",
       delay: 200 * delay
     }
   );
 };
 
-let titleFadeIn = (title: Element) => {
-  return title.animate(
+let fadeIn = (element: Element) => {
+  return element.animate(
     [
       { opacity: 0, transform: "translateY(100%)" },
       { opacity: 1, transform: "translateY(0)" }
@@ -50,8 +54,8 @@ let titleFadeIn = (title: Element) => {
   );
 };
 
-let titleFadeOut = (title: Element) => {
-  return title.animate(
+let fadeOut = (element: Element) => {
+  return element.animate(
     [
       { opacity: 1, transform: "translateY(0)" },
       { opacity: 0, transform: "translateY(-100%)" }
@@ -65,15 +69,15 @@ let titleFadeOut = (title: Element) => {
 };
 
 let pageTransition = (activeIndex: number) => {
-  slideTitles.forEach(title => titleFadeOut(title));
+  slideTitles.forEach(title => fadeOut(title));
   Promise.all(
-    Array.from(bars).map((bar, i) => barSlideIn(bar, i).finished)
+    Array.from(bars).map((bar, i) => staggeredSlideIn(bar, i).finished)
   ).then(() => {
     setActiveIndex(activeIndex);
     bars.forEach((bar, i) => {
-      barSlideOut(bar, i);
+      staggeredSlideOut(bar, i);
     });
-    slideTitles.forEach(title => titleFadeIn(title));
+    slideTitles.forEach(title => fadeIn(title));
   });
 };
 

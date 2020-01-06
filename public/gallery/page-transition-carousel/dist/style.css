@@ -52,16 +52,13 @@ body {
   background: url("https://i.loli.net/2019/10/18/uXF1Kx7lzELB6wf.jpg") center/cover no-repeat;
 }
 .container .slideshow .slide:nth-child(3) {
-  background: url("https://i.loli.net/2019/11/16/FLnzi5Kq4tkRZSm.jpg") center/cover no-repeat;
+  background: url("https://i.loli.net/2020/01/06/hJnwRiWvgCcXoAr.png") center/cover no-repeat;
 }
 .container .slideshow .slide:nth-child(4) {
   background: url("https://i.loli.net/2019/11/03/RtVq2wxQYySDb8L.jpg") center/cover no-repeat;
 }
 .container .slideshow .slide:nth-child(5) {
-  background: url("https://i.loli.net/2019/10/18/buDT4YS6zUMfHst.jpg") center/cover no-repeat;
-}
-.container .slideshow .slide:nth-child(6) {
-  background: url("https://i.loli.net/2019/11/16/cqyJiYlRwnTeHmj.jpg") center/cover no-repeat;
+  background: url("https://i.loli.net/2020/01/06/OF6PzWyrwM31ldi.jpg") center/cover no-repeat;
 }
 .container .slideshow .slide .slide-title {
   position: absolute;
@@ -78,21 +75,9 @@ body {
 }
 .container .bars .bar {
   flex: 1;
-  background: #34495e;
+  background: #2c3e50;
   transform: scaleY(0);
   transform-origin: top;
-}
-.container .bars .bar:nth-child(1) {
-  animation-delay: 0s;
-}
-.container .bars .bar:nth-child(2) {
-  animation-delay: 0.15s;
-}
-.container .bars .bar:nth-child(3) {
-  animation-delay: 0.3s;
-}
-.container .bars .bar:nth-child(4) {
-  animation-delay: 0.45s;
 }
 .container .nav-dots {
   position: absolute;
@@ -119,12 +104,12 @@ body {
   content: "";
   width: 100%;
   height: 100%;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.4);
   border-radius: 50%;
 }
 .container .nav-dots .dot a:hover::before {
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.6);
 }
 .container .nav-dots .dot a.active::before {
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(255, 255, 255, 0.8);
 }

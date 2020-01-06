@@ -2,7 +2,7 @@ export default [
   {
     title: "page-transition-carousel",
     description: "页面转场效果结合轮播图",
-    tags: ["carousel", "fullscreen", "page transition"]
+    tags: ["carousel", "fullscreen", "page transition", "staggered"]
   },
   {
     title: "inverted-color-beating-cursor",
