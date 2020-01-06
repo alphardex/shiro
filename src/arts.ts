@@ -1,5 +1,10 @@
 export default [
   {
+    title: "mawaru",
+    description: "CSS Houdidi conic-gradient 动画",
+    tags: ["animation", "staggered"]
+  },
+  {
     title: "page-transition-carousel",
     description: "页面转场效果结合轮播图",
     tags: ["carousel", "fullscreen", "transition", "staggered"]
