@@ -52,13 +52,13 @@ var fadeOut = function (element) {
     });
 };
 var pageTransition = function (activeIndex) {
-    slideTitles.forEach(function (title) { return fadeOut(title); });
+    slideTitles.forEach(function (slideTitle) { return fadeOut(slideTitle); });
     Promise.all(Array.from(bars).map(function (bar, i) { return staggeredSlideIn(bar, i).finished; })).then(function () {
         setActiveIndex(activeIndex);
         bars.forEach(function (bar, i) {
             staggeredSlideOut(bar, i);
         });
-        slideTitles.forEach(function (title) { return fadeIn(title); });
+        slideTitles.forEach(function (slideTitle) { return fadeIn(slideTitle); });
     });
 };
 var setActiveIndex = function (activeIndex) {

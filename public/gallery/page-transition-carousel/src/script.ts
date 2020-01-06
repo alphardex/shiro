@@ -69,7 +69,7 @@ let fadeOut = (element: Element) => {
 };
 
 let pageTransition = (activeIndex: number) => {
-  slideTitles.forEach(title => fadeOut(title));
+  slideTitles.forEach(slideTitle => fadeOut(slideTitle));
   Promise.all(
     Array.from(bars).map((bar, i) => staggeredSlideIn(bar, i).finished)
   ).then(() => {
@@ -77,7 +77,7 @@ let pageTransition = (activeIndex: number) => {
     bars.forEach((bar, i) => {
       staggeredSlideOut(bar, i);
     });
-    slideTitles.forEach(title => fadeIn(title));
+    slideTitles.forEach(slideTitle => fadeIn(slideTitle));
   });
 };
 

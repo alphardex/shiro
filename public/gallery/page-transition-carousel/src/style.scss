@@ -87,12 +87,12 @@ body {
     }
   }
 
-  // dots
+  // dots for navigation
   .nav-dots {
     position: absolute;
-    z-index: 1;
     left: 2em;
     bottom: 4em;
+    z-index: 1;
     display: flex;
     margin: 0;
     list-style-type: none;
