@@ -9,7 +9,6 @@ body {
 }
 
 .btn {
-  --hue: 190;
   position: relative;
   font-size: 1rem;
   line-height: 1.5;
@@ -33,8 +32,16 @@ body {
     --hue: 171;
   }
 
+  &-info {
+    --hue: 204;
+  }
+
   &-success {
     --hue: 141;
+  }
+
+  &-danger {
+    --hue: 348;
   }
 
   &-shock {
@@ -121,7 +128,7 @@ body {
       font-size: 2em;
       color: transparent;
       user-select: none;
-      transition: 0.5s 0.5s;
+      transition: 1.5s 0.5s;
     }
 
     &::before,
@@ -133,12 +140,10 @@ body {
       z-index: 1;
       width: 100%;
       height: 100%;
-      pointer-events: none;
       background: hsl(var(--hue), 100%, 31%);
       transform: rotate(-90deg);
       transform-origin: left top;
-      transition: transform cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.5s,
-        opacity 0.5s;
+      transition: transform cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.5s;
     }
 
     &::after {
@@ -146,12 +151,11 @@ body {
     }
   }
 
-  &.active {
+  &.sent {
     .hint {
 
       h2 {
         color: white;
-        transition: 0.5s;
       }
 
       &::before,
@@ -162,33 +166,9 @@ body {
       &::before {
         background: white;
       }
-    }
-  }
 
-  &.active.cut .hint::after {
-    --hue: 190;
-  }
-
-
-  &.active.copy .hint::after {
-    --hue: 171;
-  }
-
-
-  &.active.paste .hint::after {
-    --hue: 141;
-  }
-
-  &.inactive {
-    .hint {
-
-      h2 {
-        color: transparent;
-      }
-
-      &::before,
       &::after {
-        opacity: 0;
+        --hue: 141;
       }
     }
   }

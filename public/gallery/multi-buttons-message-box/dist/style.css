@@ -8,7 +8,6 @@ body {
 }
 
 .btn {
-  --hue: 190;
   position: relative;
   font-size: 1rem;
   line-height: 1.5;
@@ -33,8 +32,14 @@ body {
 .btn-primary {
   --hue: 171;
 }
+.btn-info {
+  --hue: 204;
+}
 .btn-success {
   --hue: 141;
+}
+.btn-danger {
+  --hue: 348;
 }
 .btn-shock {
   background: transparent;
@@ -114,7 +119,7 @@ body {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  transition: 0.5s 0.5s;
+  transition: 1.5s 0.5s;
 }
 .card .hint::before, .card .hint::after {
   position: absolute;
@@ -124,44 +129,30 @@ body {
   z-index: 1;
   width: 100%;
   height: 100%;
-  pointer-events: none;
   background: hsl(var(--hue), 100%, 31%);
   -webkit-transform: rotate(-90deg);
           transform: rotate(-90deg);
   -webkit-transform-origin: left top;
           transform-origin: left top;
-  transition: opacity 0.5s, -webkit-transform cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.5s;
-  transition: transform cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.5s, opacity 0.5s;
-  transition: transform cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.5s, opacity 0.5s, -webkit-transform cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.5s;
+  transition: -webkit-transform cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.5s;
+  transition: transform cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.5s;
+  transition: transform cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.5s, -webkit-transform cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.5s;
 }
 .card .hint::after {
   transition-delay: 0.1s;
 }
-.card.active .hint h2 {
+.card.sent .hint h2 {
   color: white;
-  transition: 0.5s;
 }
-.card.active .hint::before, .card.active .hint::after {
+.card.sent .hint::before, .card.sent .hint::after {
   -webkit-transform: rotate(0);
           transform: rotate(0);
 }
-.card.active .hint::before {
+.card.sent .hint::before {
   background: white;
 }
-.card.active.cut .hint::after {
-  --hue: 190;
-}
-.card.active.copy .hint::after {
-  --hue: 171;
-}
-.card.active.paste .hint::after {
+.card.sent .hint::after {
   --hue: 141;
-}
-.card.inactive .hint h2 {
-  color: transparent;
-}
-.card.inactive .hint::before, .card.inactive .hint::after {
-  opacity: 0;
 }
 .card .textarea {
   -webkit-appearance: none;

@@ -1,11 +1,11 @@
-<div class="card">
+<form class="card" action="javascript:void(0);">
   <div class="hint">
-    <h2>Success!</h2>
+    <h2>Message Sent!</h2>
   </div>
-  <textarea class="textarea" placeholder="Plz type something, then push the three buttons below."></textarea>
+  <textarea class="textarea" placeholder="Say something." required></textarea>
   <div class="multi-button">
-    <button class="btn btn-shock">Cut</button>
-    <button class="btn btn-primary btn-shock">Copy</button>
-    <button class="btn btn-success btn-shock">Paste</button>
+    <button class="btn btn-danger btn-shock" id="cancel">Cancel</button>
+    <button class="btn btn-info btn-shock" type="reset" id="reset">Clear</button>
+    <button class="btn btn-success btn-shock" type="submit" id="send">Send</button>
   </div>
-</div>
+</form>
