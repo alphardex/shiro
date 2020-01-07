@@ -1,5 +1,10 @@
 export default [
   {
+    title: "multi-buttons-message-box",
+    description: "多按钮消息框",
+    tags: ["card", "button"]
+  },
+  {
     title: "mawaru",
     description: "CSS Houdidi conic-gradient 动画",
     tags: ["animation", "staggered"]
