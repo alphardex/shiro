@@ -1,7 +1,7 @@
 export default [
   {
     title: "multi-buttons-message-box",
-    description: "多按钮消息框",
+    description: "精致的留言板",
     tags: ["card", "button"]
   },
   {
