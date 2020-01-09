@@ -1,5 +1,10 @@
 export default [
   {
+    title: "particle-button",
+    description: "粒子特效按钮",
+    tags: ["button", "particle", "random"]
+  },
+  {
     title: "multi-buttons-message-box",
     description: "精致的留言板",
     tags: ["card", "button"]
