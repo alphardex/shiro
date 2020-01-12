@@ -1,5 +1,10 @@
 export default [
   {
+    title: "profile-card",
+    description: "我的社交名片",
+    tags: ["card", "profile"]
+  },
+  {
     title: "particle-button",
     description: "粒子特效按钮",
     tags: ["button", "particle", "random"]

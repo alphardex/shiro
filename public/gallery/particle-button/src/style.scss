@@ -7,6 +7,10 @@ body {
   align-items: center;
 }
 
+@function sample($list) {
+  @return nth($list, random(length($list)));
+}
+
 @function bubbles($color, $count: 16) {
   $bubbles: ();
   // define your own bubbles here!
@@ -15,7 +19,7 @@ body {
     radial-gradient(circle, transparent 20%, $color 20%, transparent 30%)
   );
   @for $i from 1 through $count {
-    $bubbles: append($bubbles, nth($bubble-types, random(length($bubble-types))), comma);
+    $bubbles: append($bubbles, sample($bubble-types), comma);
   }
   @return $bubbles;
 }
