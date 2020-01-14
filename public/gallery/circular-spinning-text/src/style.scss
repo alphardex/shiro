@@ -1,0 +1,34 @@
+body {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.circular {
+  position: absolute;
+  width: calc(var(--total) * 5px);
+  height: calc(var(--total) * 5px);
+
+  span {
+    --offset-path: path('M 0,50 a 50,50 0 1,1 0,1 z');
+    --offset-distance: calc(var(--i) / var(--total) * 100%);
+
+    position: absolute;
+    font-weight: 700;
+    color: #140872;
+    offset-path: var(--offset-path);
+    offset-distance: var(--offset-distance);
+    animation: spin 4s linear infinite;
+  }
+
+  &:hover span {
+    animation-play-state: paused;
+  }
+}
+
+@keyframes spin {
+  to {
+    offset-distance: calc(var(--offset-distance) + 100%);
+  }
+}

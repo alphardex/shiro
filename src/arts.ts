@@ -1,5 +1,10 @@
 export default [
   {
+    title: "circular-spinning-text",
+    description: "motion path实现的环形文字",
+    tags: ["text", "motion path"]
+  },
+  {
     title: "profile-card",
     description: "我的社交名片",
     tags: ["card", "profile"]
