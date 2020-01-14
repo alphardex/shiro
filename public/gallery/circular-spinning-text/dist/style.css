@@ -18,7 +18,7 @@ body {
   color: #140872;
   offset-path: var(--offset-path);
   offset-distance: var(--offset-distance);
-  animation: spin 4s linear infinite;
+  animation: spin 10s linear infinite;
 }
 .circular:hover span {
   animation-play-state: paused;

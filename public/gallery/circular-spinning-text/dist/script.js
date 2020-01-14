@@ -1,4 +1,4 @@
-var offsetRadiusStep = 2.5;
+var offsetRadiusStep = 2.45;
 var circularTexts = document.querySelectorAll(".circular");
 circularTexts.forEach(function (circularText) {
     var letters = circularText.textContent.split("");
