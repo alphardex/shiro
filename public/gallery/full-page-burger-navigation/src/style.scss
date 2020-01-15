@@ -101,6 +101,7 @@ main {
   }
 
   &.active {
+    // Here don't use box-shadow to make overlay because it will damage performance.
     & ~ .overlay {
       opacity: 1;
       transform: scale(160);
@@ -116,7 +117,7 @@ main {
     }
 
     & ~ main {
-      filter: blur(5px);
+      filter: blur(3px) contrast(0.8) brightness(0.8);
     }
 
     .line {

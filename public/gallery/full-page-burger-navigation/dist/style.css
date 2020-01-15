@@ -96,7 +96,7 @@ main h1 {
   transform: translateX(0);
 }
 .burger-menu.active ~ main {
-  filter: blur(5px);
+  filter: blur(3px) contrast(0.8) brightness(0.8);
 }
 .burger-menu.active .line:nth-child(1) {
   transform: translateY(calc(var(--burger-menu-radius) / 5)) rotate(45deg);
