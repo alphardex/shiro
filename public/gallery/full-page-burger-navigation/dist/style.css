@@ -11,17 +11,30 @@ body {
 main {
   padding: 0.5em calc(50% - 400px);
   font-family: Lato, sans-serif;
-  transition: 0.5s ease-in-out;
+  transition: 1s ease-in-out;
 }
 main h1 {
   text-align: center;
 }
 
-.burger-menu {
-  --burger-menu-radius: 6em;
+.overlay {
   position: fixed;
-  top: 20px;
-  left: 20px;
+  top: 50px;
+  left: 50px;
+  width: 2em;
+  height: 2em;
+  background: rgba(40, 127, 184, 0.9);
+  border-radius: 50%;
+  opacity: 0;
+  transition: 0.5s ease-in-out;
+  will-change: transform;
+}
+
+.burger-menu {
+  --burger-menu-radius: 5em;
+  position: fixed;
+  top: 25px;
+  left: 25px;
   z-index: 100;
   width: var(--burger-menu-radius);
   height: var(--burger-menu-radius);
@@ -37,7 +50,7 @@ main h1 {
   left: 25%;
   width: 50%;
   height: 3px;
-  background: rgba(43, 61, 79, 0.2);
+  background: rgba(43, 61, 79, 0.3);
   border-radius: 10px;
   overflow: hidden;
   transition: all 0.5s ease;
@@ -66,13 +79,14 @@ main h1 {
   transition-delay: 0.2s;
 }
 .burger-menu:hover {
-  box-shadow: 15px 15px 30px rgba(0, 0, 0, 0.15);
+  box-shadow: 0.4px 0.4px 0.8px rgba(0, 0, 0, 0.042), 1px 1px 2px rgba(0, 0, 0, 0.061), 1.9px 1.9px 3.8px rgba(0, 0, 0, 0.075), 3.4px 3.4px 6.7px rgba(0, 0, 0, 0.089), 6.3px 6.3px 12.5px rgba(0, 0, 0, 0.108), 15px 15px 30px rgba(0, 0, 0, 0.15);
 }
 .burger-menu:hover .line::after {
   transform: translateX(0);
 }
-.burger-menu.active {
-  box-shadow: 0 0 0 5000px rgba(40, 127, 184, 0.9);
+.burger-menu.active ~ .overlay {
+  opacity: 1;
+  transform: scale(160);
 }
 .burger-menu.active ~ nav {
   pointer-events: auto;

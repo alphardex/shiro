@@ -13,18 +13,31 @@ body {
 main {
   padding: 0.5em calc(50% - 400px);
   font-family: Lato, sans-serif;
-  transition: 0.5s ease-in-out;
+  transition: 1s ease-in-out;
 
   h1 {
     text-align: center;
   }
 }
 
-.burger-menu {
-  --burger-menu-radius: 6em;
+.overlay {
   position: fixed;
-  top: 20px;
-  left: 20px;
+  top: 50px;
+  left: 50px;
+  width: 2em;
+  height: 2em;
+  background: hsla(204, 64%, 44%, 0.9);
+  border-radius: 50%;
+  opacity: 0;
+  transition: 0.5s ease-in-out;
+  will-change: transform;
+}
+
+.burger-menu {
+  --burger-menu-radius: 5em;
+  position: fixed;
+  top: 25px;
+  left: 25px;
   z-index: 100;
   width: var(--burger-menu-radius);
   height: var(--burger-menu-radius);
@@ -40,7 +53,7 @@ main {
     left: 25%;
     width: 50%;
     height: 3px;
-    background: hsla(210, 29%, 24%, 0.2);
+    background: hsla(210, 29%, 24%, 0.3);
     border-radius: 10px;
     overflow: hidden;
     transition: all 0.5s ease;
@@ -73,7 +86,14 @@ main {
   }
 
   &:hover {
-    box-shadow: 15px 15px 30px hsla(0, 0, 0, 0.15);
+    box-shadow:
+  0.4px 0.4px 0.8px rgba(0, 0, 0, 0.042),
+  1px 1px 2px rgba(0, 0, 0, 0.061),
+  1.9px 1.9px 3.8px rgba(0, 0, 0, 0.075),
+  3.4px 3.4px 6.7px rgba(0, 0, 0, 0.089),
+  6.3px 6.3px 12.5px rgba(0, 0, 0, 0.108),
+  15px 15px 30px rgba(0, 0, 0, 0.15)
+;
 
     .line::after {
       transform: translateX(0);
@@ -81,7 +101,10 @@ main {
   }
 
   &.active {
-    box-shadow: 0 0 0 5000px hsla(204, 64%, 44%, 0.9);
+    & ~ .overlay {
+      opacity: 1;
+      transform: scale(160);
+    }
 
     & ~ nav {
       pointer-events: auto;
