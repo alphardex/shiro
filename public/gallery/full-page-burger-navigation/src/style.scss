@@ -13,7 +13,7 @@ body {
 main {
   padding: 0.5em calc(50% - 400px);
   font-family: Lato, sans-serif;
-  transition: 1s ease-in-out;
+  transition: 0.5s ease-in-out;
 
   h1 {
     text-align: center;
@@ -117,7 +117,8 @@ main {
     }
 
     & ~ main {
-      filter: blur(3px) contrast(0.8) brightness(0.8);
+      opacity: 0.5;
+      filter: blur(5px);
     }
 
     .line {
