@@ -1,5 +1,10 @@
 export default [
   {
+    title: "full-page-burger-navigation",
+    description: "覆盖整页的汉堡菜单导航",
+    tags: ["menu", "hover", "fullscreen"]
+  },
+  {
     title: "circular-spinning-text",
     description: "motion path实现的环形文字",
     tags: ["text", "motion path"]
