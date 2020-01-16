@@ -150,6 +150,7 @@ nav ul li:nth-child(4) {
 nav ul li a {
   position: relative;
   display: block;
+  padding: 5px;
   font-family: Lato, sans-serif;
   font-size: 2em;
   text-decoration: none;
