@@ -1,5 +1,10 @@
 export default [
   {
+    title: "bar-loading",
+    description: "四条加载效果",
+    tags: ["loading"]
+  },
+  {
     title: "full-page-burger-navigation",
     description: "覆盖整页的汉堡菜单导航",
     tags: ["menu", "hover", "fullscreen"]
