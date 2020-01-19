@@ -1,0 +1,77 @@
+@import url("https://fonts.googleapis.com/css?family=Lora:400,400i,700");
+
+body {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+}
+
+.carousel {
+  position: relative;
+  display: flex;
+
+  .slides {
+    position: relative;
+    top: -4em;
+    left: 10em;
+
+    img {
+      position: absolute;
+      width: 450px;
+      height: 450px;
+      opacity: 0;
+      z-index: 9999;
+
+      &.active {
+        opacity: 1;
+      }
+    }
+  }
+
+  // palette: https://flatuicolors.com
+  .overlays {
+    position: relative;
+    width: 36em;
+    height: 18em;
+
+    .bar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--bar-color);
+      transform-origin: left;
+    }
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 0;
+    padding: 0 0 0 6em;
+    list-style-type: none;
+
+    .nav-link {
+      font-size: 2rem;
+      font-family: Lora, serif;
+      line-height: 2;
+      text-decoration: none;
+      color: #7f8c8d;
+      transition: 0.3s;
+
+      &:hover {
+        color: #1c1e1f;
+      }
+
+      &.active {
+        color: black;
+        pointer-events: none;
+      }
+    }
+  }
+}

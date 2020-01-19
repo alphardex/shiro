@@ -1,5 +1,10 @@
 export default [
   {
+    title: 'product-carousel',
+    description: '产品轮播展示效果',
+    tags: ['carousel']
+  },
+  {
     title: "bar-loading",
     description: "四条加载效果",
     tags: ["loading"]

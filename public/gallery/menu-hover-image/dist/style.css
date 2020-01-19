@@ -3,13 +3,14 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 120vh;
   background: #121212;
 }
 
 .menu-hover-image {
   position: relative;
-  width: 50rem;
+  width: 56rem;
+  margin-bottom: 12rem;
   font-family: Lora, serif;
   list-style-type: none;
 }
