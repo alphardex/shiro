@@ -1,8 +1,8 @@
 export default [
   {
-    title: 'product-carousel',
-    description: '产品轮播展示效果',
-    tags: ['carousel']
+    title: "product-carousel",
+    description: "产品轮播展示效果",
+    tags: ["carousel"]
   },
   {
     title: "bar-loading",
