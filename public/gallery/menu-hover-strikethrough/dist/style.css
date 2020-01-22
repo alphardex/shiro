@@ -1,0 +1,51 @@
+@import url(https://fonts.googleapis.com/css?family=Lato);
+body {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: #222;
+}
+
+ul {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  list-style-type: none;
+}
+ul li {
+  padding: 6px 0;
+}
+ul li a {
+  position: relative;
+  display: block;
+  padding: 4px;
+  font-family: Lato, sans-serif;
+  font-weight: 100;
+  color: #f0f0f0;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: 0.5s;
+}
+ul li a::before, ul li a::after {
+  position: absolute;
+  content: "";
+  top: 50%;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: currentColor;
+  transform-origin: right;
+  transition: transform 0.5s;
+}
+ul li a::before {
+  opacity: 0.2;
+}
+ul li a::after {
+  transform: scaleX(0);
+}
+ul li a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}

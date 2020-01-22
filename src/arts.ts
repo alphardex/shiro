@@ -1,5 +1,10 @@
 export default [
   {
+    title: "menu-hover-strikethrough",
+    description: "获取焦点时线划过链接的菜单栏",
+    tags: ["menu", "hover"]
+  },
+  {
     title: "product-carousel",
     description: "产品轮播展示效果",
     tags: ["carousel"]
