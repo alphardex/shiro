@@ -15,14 +15,13 @@ body {
   opacity: 0;
 
   &:checked {
-
     // Here don't use box-shadow to make overlay because it will damage performance.
-    &~.overlay {
+    & ~ .overlay {
       opacity: 1;
       transform: scale(160);
     }
 
-    &~nav {
+    & ~ nav {
       pointer-events: auto;
 
       ul li {
@@ -31,15 +30,16 @@ body {
       }
     }
 
-    &~main {
+    & ~ main {
       opacity: 0.5;
       filter: blur(5px);
     }
 
-    &~.burger-menu {
+    & ~ .burger-menu {
       .line {
         &:nth-child(1) {
-          transform: translateY(calc(var(--burger-menu-radius) / 5)) rotate(45deg);
+          transform: translateY(calc(var(--burger-menu-radius) / 5))
+            rotate(45deg);
         }
 
         &:nth-child(2) {
@@ -47,7 +47,8 @@ body {
         }
 
         &:nth-child(3) {
-          transform: translateY(calc(var(--burger-menu-radius) / -5)) rotate(-45deg);
+          transform: translateY(calc(var(--burger-menu-radius) / -5))
+            rotate(-45deg);
         }
       }
     }
@@ -112,10 +113,8 @@ body {
   }
 
   &:hover {
-    box-shadow:
-      0.4px 0.4px 0.8px rgba(0, 0, 0, 0.042),
-      1px 1px 2px rgba(0, 0, 0, 0.061),
-      1.9px 1.9px 3.8px rgba(0, 0, 0, 0.075),
+    box-shadow: 0.4px 0.4px 0.8px rgba(0, 0, 0, 0.042),
+      1px 1px 2px rgba(0, 0, 0, 0.061), 1.9px 1.9px 3.8px rgba(0, 0, 0, 0.075),
       3.4px 3.4px 6.7px rgba(0, 0, 0, 0.089),
       6.3px 6.3px 12.5px rgba(0, 0, 0, 0.108),
       15px 15px 30px rgba(0, 0, 0, 0.15);
@@ -162,12 +161,20 @@ nav {
       padding: 6px 0;
       margin: 1em 3em;
       opacity: 0;
-      transform: translateX(-100%);
-      transition: 0.5s ease-in-out;
+      // easeOutQuart
+      transition: 0.6s cubic-bezier(0.365, 0.84, 0.44, 1);
+
+      &:nth-child(odd) {
+        transform: translateX(-100%);
+      }
+
+      &:nth-child(even) {
+        transform: translateX(100%);
+      }
 
       @for $i from 1 through 4 {
         &:nth-child(#{$i}) {
-          transition-delay: 0.1s * $i;
+          transition-delay: 0.05s * $i;
         }
       }
 
