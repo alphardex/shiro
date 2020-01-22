@@ -6,7 +6,7 @@ export default [
   },
   {
     title: "product-carousel",
-    description: "产品轮播展示效果",
+    description: "不同颜色的产品轮播展示效果",
     tags: ["carousel"]
   },
   {
