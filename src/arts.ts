@@ -1,5 +1,10 @@
 export default [
   {
+    title: "flex-frosted-image-gallery",
+    description: "flex风格的画廊",
+    tags: ["fullscreen", "filter", "hover"]
+  },
+  {
     title: "menu-hover-strikethrough",
     description: "获取焦点时线划过链接的菜单栏",
     tags: ["menu", "hover"]
