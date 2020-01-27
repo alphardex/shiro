@@ -1,5 +1,10 @@
 export default [
   {
+    title: "spiral-loading",
+    description: "螺旋加载动画",
+    tags: ["loading", "staggered"]
+  },
+  {
     title: "flex-frosted-image-gallery",
     description: "flex风格的画廊",
     tags: ["fullscreen", "filter", "hover"]
