@@ -62,7 +62,7 @@ body {
   position: relative;
   margin-left: 8px;
 }
-.btn-icon i {
+.btn-icon svg {
   position: absolute;
   top: 10%;
   left: 40%;
@@ -75,7 +75,7 @@ body {
   align-items: center;
   transition: 0.2s;
 }
-.btn-icon:hover i {
+.btn-icon:hover svg {
   transform: translate(-16%, 42%);
 }
 .btn-icon:hover span {

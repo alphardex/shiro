@@ -3,8 +3,7 @@
 ## Features
 
 - SCSS + TypeScript
-- No third party libraries! (reset.css, jQuery, lodash, etc)
-- Only Font Awesome as an icon library
+- No third party libraries! (reset, jQuery, lodash, font-awesome, etc)
 - Handcrafted UI with love
 
 ## Project setup

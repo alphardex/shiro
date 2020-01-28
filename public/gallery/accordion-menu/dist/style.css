@@ -24,11 +24,12 @@ body {
   background: #3498db;
   transition: 0.5s;
 }
-.accordion-menu .accordion-menu__item .accrodion-menu__link i {
-  margin-right: 10px;
+.accordion-menu .accordion-menu__item .accrodion-menu__link svg {
+  margin: 0 10px -2px 0;
 }
-.accordion-menu .accordion-menu__item .accrodion-menu__link i.fa-chevron-down {
+.accordion-menu .accordion-menu__item .accrodion-menu__link svg.chevron {
   position: absolute;
+  top: 16px;
   right: 10px;
   color: white;
   transition: 0.5s;
@@ -62,7 +63,7 @@ body {
 .accordion-menu .accordion-menu__item .accordion-menu__submenu a:hover {
   background: #2980b9;
 }
-.accordion-menu .accordion-menu__item:target .accrodion-menu__link i.fa-chevron-down {
+.accordion-menu .accordion-menu__item:target .accrodion-menu__link svg.chevron {
   transform: rotate(0.5turn);
 }
 .accordion-menu .accordion-menu__item:target .accordion-menu__submenu {

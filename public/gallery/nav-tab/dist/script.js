@@ -1,3 +1,4 @@
+"use strict";
 var navtab = document.querySelector("nav.navtab");
 var navtabItems = document.querySelectorAll("li.navtab-item");
 navtabItems.forEach(function (navtabItem, activeIndex) {

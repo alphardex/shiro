@@ -36,7 +36,7 @@ body {
     margin: 0;
     list-style-type: none;
 
-    li.navtab-item {
+    .navtab-item {
       @include center;
       z-index: 2;
       flex-direction: column;
@@ -46,8 +46,7 @@ body {
       cursor: pointer;
       transition: 0.5s ease;
 
-      i {
-        font-size: 2em;
+      svg {
         transition: 0.5s ease;
       }
 
@@ -61,7 +60,7 @@ body {
       &.active {
         width: var(--navtab-overlay-width);
 
-        i {
+        svg {
           transform: translateY(-10px);
         }
 

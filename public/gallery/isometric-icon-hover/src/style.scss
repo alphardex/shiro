@@ -62,15 +62,17 @@ body {
         }
 
         .box__face--front {
+          display: flex;
+          justify-content: center;
+          align-items: center;
           background: white;
           transition: 0.5s;
 
-          i {
-            font-size: 40px;
-            line-height: 2;
-            color: hsl(0,0,33%);
+          svg {
             transform: rotate(270deg);
-            transition: 0.5s;
+            path {
+              transition: 0.5s;
+            }
           }
         }
 
@@ -126,8 +128,8 @@ body {
           .box__face--front {
             background: nth($icon-colors, $i);
 
-            i {
-              color: white;
+            svg path {
+              fill: white;
             }
           }
 

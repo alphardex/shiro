@@ -27,11 +27,12 @@ body {
       background: #3498db;
       transition: 0.5s;
 
-      i {
-        margin-right: 10px;
+      svg {
+        margin: 0 10px -2px 0;
 
-        &.fa-chevron-down {
+        &.chevron {
           position: absolute;
+          top: 16px;
           right: 10px;
           color: white;
           transition: 0.5s;
@@ -74,7 +75,7 @@ body {
     }
 
     &:target {
-      .accrodion-menu__link i.fa-chevron-down {
+      .accrodion-menu__link svg.chevron {
         transform: rotate(0.5turn);
       }
 

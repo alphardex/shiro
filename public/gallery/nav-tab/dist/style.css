@@ -31,7 +31,7 @@ body {
   margin: 0;
   list-style-type: none;
 }
-.navtab ul li.navtab-item {
+.navtab ul .navtab-item {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -43,23 +43,22 @@ body {
   cursor: pointer;
   transition: 0.5s ease;
 }
-.navtab ul li.navtab-item i {
-  font-size: 2em;
+.navtab ul .navtab-item svg {
   transition: 0.5s ease;
 }
-.navtab ul li.navtab-item span {
+.navtab ul .navtab-item span {
   font-size: 20px;
   user-select: none;
   opacity: 0;
   transition: 0.5s ease;
 }
-.navtab ul li.navtab-item.active {
+.navtab ul .navtab-item.active {
   width: var(--navtab-overlay-width);
 }
-.navtab ul li.navtab-item.active i {
+.navtab ul .navtab-item.active svg {
   transform: translateY(-10px);
 }
-.navtab ul li.navtab-item.active span {
+.navtab ul .navtab-item.active span {
   opacity: 1;
 }
 .navtab::after {

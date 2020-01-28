@@ -120,7 +120,7 @@ body {
 .card .card-content .social-icons .social-icon:nth-child(1)::after {
   animation-delay: 2.2s;
 }
-.card .card-content .social-icons .social-icon:nth-child(1) i {
+.card .card-content .social-icons .social-icon:nth-child(1) svg {
   animation-delay: 2.3s;
 }
 .card .card-content .social-icons .social-icon:nth-child(2)::before {
@@ -129,7 +129,7 @@ body {
 .card .card-content .social-icons .social-icon:nth-child(2)::after {
   animation-delay: 2.3s;
 }
-.card .card-content .social-icons .social-icon:nth-child(2) i {
+.card .card-content .social-icons .social-icon:nth-child(2) svg {
   animation-delay: 2.4s;
 }
 .card .card-content .social-icons .social-icon:nth-child(3)::before {
@@ -138,7 +138,7 @@ body {
 .card .card-content .social-icons .social-icon:nth-child(3)::after {
   animation-delay: 2.4s;
 }
-.card .card-content .social-icons .social-icon:nth-child(3) i {
+.card .card-content .social-icons .social-icon:nth-child(3) svg {
   animation-delay: 2.5s;
 }
 .card .card-content .social-icons .social-icon::before, .card .card-content .social-icons .social-icon::after {
@@ -159,7 +159,7 @@ body {
   background: #2C3E50;
   animation: scale-in 0.5s cubic-bezier(0.75, 0, 0, 1) forwards;
 }
-.card .card-content .social-icons .social-icon i {
+.card .card-content .social-icons .social-icon svg {
   z-index: 1;
   transform: scale(0);
   animation: scale-in 0.5s cubic-bezier(0.75, 0, 0, 1) forwards;

@@ -1,3 +1,4 @@
+"use strict";
 var prevLink = document.querySelector(".prev");
 var nextLink = document.querySelector(".next");
 var pagination = document.querySelector(".pagination");

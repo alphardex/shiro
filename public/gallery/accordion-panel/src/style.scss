@@ -24,15 +24,11 @@ body {
       color: #7f8c8d;
       border-bottom: 1px solid #e5e5e5;
 
-      i {
+      svg {
         position: absolute;
         right: 1rem;
-        box-sizing: border-box;
-        padding: 5px;
         width: 30px;
         height: 30px;
-        font-size: 1rem;
-        text-align: center;
         border: 1px solid #7f8c8d;
         border-radius: 50%;
         transition: 0.3s;
@@ -40,14 +36,15 @@ body {
 
       &:hover, &:active {
         color: #3498db;
-        border-bottom: 1px solid #3498db;
+        border-bottom: 1px solid currentColor;
 
-        i {
-          border-color: #3498db;
+        svg {
+          border-color: currentColor;
+          fill: currentColor;
         }
       }
 
-      &.active i {
+      &.active svg {
           transform: rotate(0.5turn);
       }
     }

@@ -69,7 +69,7 @@ body {
     position: relative;
     margin-left: 8px;
 
-    i {
+    svg {
       position: absolute;
       top: 10%;
       left: 40%;
@@ -85,7 +85,7 @@ body {
     }
 
     &:hover {
-      i {
+      svg {
         transform: translate(-16%, 42%);
       }
 

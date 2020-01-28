@@ -21,27 +21,24 @@ body {
   color: #7f8c8d;
   border-bottom: 1px solid #e5e5e5;
 }
-.accordion .accordion-item a i {
+.accordion .accordion-item a svg {
   position: absolute;
   right: 1rem;
-  box-sizing: border-box;
-  padding: 5px;
   width: 30px;
   height: 30px;
-  font-size: 1rem;
-  text-align: center;
   border: 1px solid #7f8c8d;
   border-radius: 50%;
   transition: 0.3s;
 }
 .accordion .accordion-item a:hover, .accordion .accordion-item a:active {
   color: #3498db;
-  border-bottom: 1px solid #3498db;
+  border-bottom: 1px solid currentColor;
 }
-.accordion .accordion-item a:hover i, .accordion .accordion-item a:active i {
-  border-color: #3498db;
+.accordion .accordion-item a:hover svg, .accordion .accordion-item a:active svg {
+  border-color: currentColor;
+  fill: currentColor;
 }
-.accordion .accordion-item a.active i {
+.accordion .accordion-item a.active svg {
   transform: rotate(0.5turn);
 }
 .accordion .accordion-item .content {

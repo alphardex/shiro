@@ -52,14 +52,16 @@ body {
   line-height: var(--box-depth);
 }
 .icon-list .icon-list__item a .box .box__face--front {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: white;
   transition: 0.5s;
 }
-.icon-list .icon-list__item a .box .box__face--front i {
-  font-size: 40px;
-  line-height: 2;
-  color: #545454;
+.icon-list .icon-list__item a .box .box__face--front svg {
   transform: rotate(270deg);
+}
+.icon-list .icon-list__item a .box .box__face--front svg path {
   transition: 0.5s;
 }
 .icon-list .icon-list__item a .box .box__face--right {
@@ -101,8 +103,8 @@ body {
 .icon-list .icon-list__item:hover:nth-child(1) a .box__face--front {
   background: #00aced;
 }
-.icon-list .icon-list__item:hover:nth-child(1) a .box__face--front i {
-  color: white;
+.icon-list .icon-list__item:hover:nth-child(1) a .box__face--front svg path {
+  fill: white;
 }
 .icon-list .icon-list__item:hover:nth-child(1) a .box__face--right {
   background: #0099d4;
@@ -119,8 +121,8 @@ body {
 .icon-list .icon-list__item:hover:nth-child(2) a .box__face--front {
   background: black;
 }
-.icon-list .icon-list__item:hover:nth-child(2) a .box__face--front i {
-  color: white;
+.icon-list .icon-list__item:hover:nth-child(2) a .box__face--front svg path {
+  fill: white;
 }
 .icon-list .icon-list__item:hover:nth-child(2) a .box__face--right {
   background: black;
@@ -137,8 +139,8 @@ body {
 .icon-list .icon-list__item:hover:nth-child(3) a .box__face--front {
   background: #24292E;
 }
-.icon-list .icon-list__item:hover:nth-child(3) a .box__face--front i {
-  color: white;
+.icon-list .icon-list__item:hover:nth-child(3) a .box__face--front svg path {
+  fill: white;
 }
 .icon-list .icon-list__item:hover:nth-child(3) a .box__face--right {
   background: #191c20;
@@ -155,8 +157,8 @@ body {
 .icon-list .icon-list__item:hover:nth-child(4) a .box__face--front {
   background: #007bb6;
 }
-.icon-list .icon-list__item:hover:nth-child(4) a .box__face--front i {
-  color: white;
+.icon-list .icon-list__item:hover:nth-child(4) a .box__face--front svg path {
+  fill: white;
 }
 .icon-list .icon-list__item:hover:nth-child(4) a .box__face--right {
   background: #006a9d;
@@ -173,8 +175,8 @@ body {
 .icon-list .icon-list__item:hover:nth-child(5) a .box__face--front {
   background: #e4405f;
 }
-.icon-list .icon-list__item:hover:nth-child(5) a .box__face--front i {
-  color: white;
+.icon-list .icon-list__item:hover:nth-child(5) a .box__face--front svg path {
+  fill: white;
 }
 .icon-list .icon-list__item:hover:nth-child(5) a .box__face--right {
   background: #e12a4c;
