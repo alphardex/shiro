@@ -1,3 +1,4 @@
+"use strict";
 var headerTexts = document.querySelectorAll("header > *");
 headerTexts.forEach(function (headerText) {
     var letters = headerText.textContent.split("");

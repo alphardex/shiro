@@ -1,0 +1,44 @@
+@import url(https://fonts.googleapis.com/css?family=Lato);
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: black;
+}
+
+.blink-text-menu {
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+}
+.blink-text-menu li a {
+  position: relative;
+  display: flex;
+  padding: 6px;
+  color: white;
+  font-family: Lato, sans-serif;
+  text-decoration: none;
+}
+.blink-text-menu li a span {
+  position: relative;
+  overflow: hidden;
+  transition: 0.6s;
+}
+.blink-text-menu li a span .out {
+  display: inline-flex;
+}
+.blink-text-menu li a span .in {
+  position: absolute;
+  left: 0;
+  opacity: 0;
+  transform: translateX(100%);
+}
+.blink-text-menu li a:hover span .out {
+  opacity: 0;
+  transform: translateX(-100%);
+}
+.blink-text-menu li a:hover span .in {
+  opacity: 1;
+  transform: translateX(0);
+}

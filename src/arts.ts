@@ -1,5 +1,10 @@
 export default [
   {
+    title: "staggered-blink-text-menu",
+    description: "交错闪烁文字菜单",
+    tags: ["menu", "hover", "text", "staggered"]
+  },
+  {
     title: "spiral-loading",
     description: "螺旋加载动画",
     tags: ["loading", "staggered"]
