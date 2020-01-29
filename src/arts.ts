@@ -1,5 +1,10 @@
 export default [
   {
+    title: "header-underline",
+    description: "下划线悬浮菜单",
+    tags: ["menu", "hover"]
+  },
+  {
     title: "staggered-blink-text-menu",
     description: "交错闪烁文字菜单",
     tags: ["menu", "hover", "text", "staggered"]
