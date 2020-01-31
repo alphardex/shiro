@@ -1,0 +1,88 @@
+@import url(https://fonts.googleapis.com/css?family=Lato);
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #e1e6f9;
+}
+
+.btn-share {
+  position: relative;
+  padding: 1rem 2rem;
+  font-family: Lato, sans-serif;
+  color: white;
+  background: none;
+  border: none;
+  outline: none;
+  overflow: hidden;
+  cursor: pointer;
+  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.btn-share::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(to top, #1e3c72 0%, #1e3c72 1%, #2a5298 100%);
+  border-radius: 2rem;
+  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.btn-share .btn-text,
+.btn-share .btn-icon {
+  display: inline-flex;
+  vertical-align: middle;
+  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.btn-share .btn-text {
+  transition-delay: 0.05s;
+}
+.btn-share .btn-icon {
+  margin-left: 16px;
+  transition-delay: 0.1s;
+}
+.btn-share .social-icons {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  right: 0;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  transform: translateY(-50%);
+}
+.btn-share .social-icons li {
+  flex: 1;
+}
+.btn-share .social-icons li a {
+  display: inline-flex;
+  vertical-align: middle;
+  transform: translateY(55px);
+  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+.btn-share .social-icons li a:hover {
+  opacity: 0.5;
+}
+.btn-share:hover::before {
+  transform: scale(1.2);
+}
+.btn-share:hover .btn-text,
+.btn-share:hover .btn-icon {
+  transform: translateY(-55px);
+}
+.btn-share:hover .social-icons li a {
+  transform: translateY(0);
+}
+.btn-share:hover .social-icons li:nth-child(1) a {
+  transition-delay: 0.15s;
+}
+.btn-share:hover .social-icons li:nth-child(2) a {
+  transition-delay: 0.2s;
+}
+.btn-share:hover .social-icons li:nth-child(3) a {
+  transition-delay: 0.25s;
+}

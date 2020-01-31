@@ -1,9 +1,12 @@
 @import url(https://fonts.googleapis.com/css?family=Lato);
 body {
+  display: -webkit-box;
   display: flex;
   height: 100vh;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
   background: #e7e5e8;
   font-family: Lato, sans-serif;
 }
@@ -11,30 +14,33 @@ body {
 .login {
   position: relative;
   z-index: 2;
+  display: -webkit-box;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
   width: 14em;
   height: 2.4em;
   color: white;
   font-size: 1.5em;
   text-transform: uppercase;
   border-radius: 0.2em;
-  box-shadow: 0 0px 1.1px -5px rgba(0, 0, 0, 0.042),
-    0 0px 2.7px -5px rgba(0, 0, 0, 0.061), 0 0px 5px -5px rgba(0, 0, 0, 0.075),
-    0 0px 8.9px -5px rgba(0, 0, 0, 0.089),
-    0 0px 16.7px -5px rgba(0, 0, 0, 0.108), 0 0px 40px -5px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 0px 1.1px -5px rgba(0, 0, 0, 0.042), 0 0px 2.7px -5px rgba(0, 0, 0, 0.061), 0 0px 5px -5px rgba(0, 0, 0, 0.075), 0 0px 8.9px -5px rgba(0, 0, 0, 0.089), 0 0px 16.7px -5px rgba(0, 0, 0, 0.108), 0 0px 40px -5px rgba(0, 0, 0, 0.15);
   overflow: hidden;
   -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  cursor: pointer;
+  -webkit-transition: 0.5s;
   transition: 0.5s;
 }
 .login svg {
   position: absolute;
   top: 0.6em;
   right: 11.9em;
+  -webkit-transition: 0.5s ease;
   transition: 0.5s ease;
 }
 .login svg.email-icon {
@@ -42,7 +48,7 @@ body {
 }
 .login svg.password-icon {
   -webkit-transform: translateY(-100%) scale(0);
-  transform: translateY(-100%) scale(0);
+          transform: translateY(-100%) scale(0);
 }
 .login input#email {
   position: absolute;
@@ -52,26 +58,30 @@ body {
   width: 100%;
   height: 100%;
   font-size: 1.2em;
-  color: #71798e;
+  color: #71798E;
   border: none;
   -webkit-transform-origin: right;
-  transform-origin: right;
+          transform-origin: right;
   -webkit-transform: scaleX(0.82);
-  transform: scaleX(0.82);
+          transform: scaleX(0.82);
   z-index: -2;
 }
 .login label.email {
   position: absolute;
   left: 0;
   top: 0;
+  display: -webkit-box;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
   width: 100%;
   height: 100%;
   background: #457efd;
   -webkit-transform-origin: left;
-  transform-origin: left;
+          transform-origin: left;
+  -webkit-transition: 0.7s cubic-bezier(0.8, 0, 0.25, 1);
   transition: 0.7s cubic-bezier(0.8, 0, 0.25, 1);
   z-index: -1;
 }
@@ -83,29 +93,33 @@ body {
   width: 100%;
   height: 100%;
   font-size: 1.2em;
-  color: #71798e;
+  color: #71798E;
   border: none;
   -webkit-transform-origin: right;
-  transform-origin: right;
+          transform-origin: right;
   -webkit-transform: scaleX(0.82);
-  transform: scaleX(0.82);
+          transform: scaleX(0.82);
   z-index: -4;
 }
 .login label.password {
   position: absolute;
   left: 0;
   top: 0;
+  display: -webkit-box;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
   width: 100%;
   height: 100%;
   background: #457efd;
   -webkit-transform-origin: left;
-  transform-origin: left;
+          transform-origin: left;
+  -webkit-transition: 0.7s cubic-bezier(0.8, 0, 0.25, 1);
   transition: 0.7s cubic-bezier(0.8, 0, 0.25, 1);
   -webkit-transform: scaleX(0.21);
-  transform: scaleX(0.21);
+          transform: scaleX(0.21);
   z-index: -3;
 }
 .login span.submit {
@@ -114,8 +128,10 @@ body {
   top: 0;
   z-index: 3;
   display: none;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
   width: 100%;
   height: 100%;
   color: white;
@@ -125,7 +141,7 @@ body {
 }
 .login.email-input label.email {
   -webkit-transform: scaleX(0.21);
-  transform: scaleX(0.21);
+          transform: scaleX(0.21);
 }
 .login.email-input svg.email-icon {
   opacity: 1;
@@ -135,11 +151,11 @@ body {
 }
 .login.password-input svg.email-icon {
   -webkit-transform: translateY(100%) scale(0);
-  transform: translateY(100%) scale(0);
+          transform: translateY(100%) scale(0);
 }
 .login.password-input svg.password-icon {
   -webkit-transform: translateY(0) scale(1);
-  transform: translateY(0) scale(1);
+          transform: translateY(0) scale(1);
 }
 .login.password-input label.email {
   display: none;
@@ -153,13 +169,14 @@ body {
 }
 .login.submit label.password {
   -webkit-transform: scaleX(1);
-  transform: scaleX(1);
+          transform: scaleX(1);
 }
 .login.submit svg.password-icon {
   -webkit-transform: translateY(100%) scale(0);
-  transform: translateY(100%) scale(0);
+          transform: translateY(100%) scale(0);
 }
 .login.submit span.submit {
+  display: -webkit-box;
   display: flex;
 }
 .login.submit label.email {

@@ -1,5 +1,10 @@
 export default [
   {
+    title: "share-button-float-icon",
+    description: "分享按钮悬浮出现图标",
+    tags: ["button", "icon", "hover", "staggered"]
+  },
+  {
     title: "header-underline",
     description: "下划线悬浮菜单",
     tags: ["menu", "hover"]

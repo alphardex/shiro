@@ -1,3 +1,4 @@
+"use strict";
 var login = document.querySelector(".login");
 var form = document.querySelector("form");
 var emailInput = document.querySelector("input#email");
