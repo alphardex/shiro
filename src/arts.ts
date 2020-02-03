@@ -1,5 +1,10 @@
 export default [
   {
+    title: "cursor-follow-hover-effect",
+    description: "鼠标跟随悬浮效果",
+    tags: ["cursor", "hover"]
+  },
+  {
     title: "share-button-float-icon",
     description: "分享按钮悬浮出现图标",
     tags: ["button", "icon", "hover", "staggered"]
