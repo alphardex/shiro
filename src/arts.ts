@@ -1,5 +1,10 @@
 export default [
   {
+    title: "simple-landing-page",
+    description: "LP页面设计",
+    tags: ["landing page"]
+  },
+  {
     title: "cursor-follow-hover-effect",
     description: "鼠标跟随悬浮效果",
     tags: ["cursor", "hover"]

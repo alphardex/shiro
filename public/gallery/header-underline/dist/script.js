@@ -1,5 +1,5 @@
 "use strict";
-var underlineMenuItems = document.querySelectorAll("ul li");
+var underlineMenuItems = document.querySelectorAll(".underline li");
 underlineMenuItems[0].classList.add("active");
 underlineMenuItems.forEach(function (item) {
     item.addEventListener("click", function () {
