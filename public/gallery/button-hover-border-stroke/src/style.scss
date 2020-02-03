@@ -12,8 +12,10 @@ body {
 .btn {
   --hue: 190;
   --ease-in-duration: 0.25s;
+  --ease-in-exponential: cubic-bezier(0.95, 0.05, 0.795, 0.035);
   --ease-out-duration: 0.65s;
   --ease-out-delay: var(--ease-in-duration);
+  --ease-out-exponential: cubic-bezier(0.19, 1, 0.22, 1);
   position: relative;
   padding: 1rem 3rem;
   font-size: 1rem;
@@ -41,7 +43,7 @@ body {
     color: hsl(var(--hue), 100%, 41%);
     background-color: transparent;
     border-color: hsl(var(--hue), 100%, 41%);
-    
+
     &:hover {
       color: white;
     }
@@ -97,22 +99,22 @@ body {
         transform-origin: bottom;
       }
 
-      // when unhover, ease-in top, right; ease-out bottom, left
+      // when unhover, ease-out left, bottom; ease-in right, top
 
       .border-left {
         transition: var(--ease-out-duration) var(--ease-out-delay)
-          cubic-bezier(0.2, 1, 0.2, 1);
+          var(--ease-out-exponential);
       }
       .border-bottom {
         transition: var(--ease-out-duration) var(--ease-out-delay)
-          cubic-bezier(0.2, 1, 0.2, 1);
+          var(--ease-out-exponential);
       }
 
       .border-right {
-        transition: var(--ease-in-duration) cubic-bezier(1, 0, 0.8, 0);
+        transition: var(--ease-in-duration) var(--ease-in-exponential);
       }
       .border-top {
-        transition: var(--ease-in-duration) cubic-bezier(1, 0, 0.8, 0);
+        transition: var(--ease-in-duration) var(--ease-in-exponential);
       }
     }
 
@@ -129,22 +131,22 @@ body {
         transform: scaleY(1);
       }
 
-      // when hover, ease-in bottom, left; ease-out top, right
+      // when hover, ease-in left, bottom; ease-out right, top
 
       .border-left {
-        transition: var(--ease-in-duration) cubic-bezier(1, 0, 0.8, 0);
+        transition: var(--ease-in-duration) var(--ease-in-exponential);
       }
       .border-bottom {
-        transition: var(--ease-in-duration) cubic-bezier(1, 0, 0.8, 0);
+        transition: var(--ease-in-duration) var(--ease-in-exponential);
       }
 
       .border-right {
         transition: var(--ease-out-duration) var(--ease-out-delay)
-          cubic-bezier(0.2, 1, 0.2, 1);
+          var(--ease-out-exponential);
       }
       .border-top {
         transition: var(--ease-out-duration) var(--ease-out-delay)
-          cubic-bezier(0.2, 1, 0.2, 1);
+          var(--ease-out-exponential);
       }
     }
   }
@@ -169,7 +171,7 @@ body {
 
     .btn-text {
       display: block;
-      transition: 0.75s 0.1s cubic-bezier(0.2, 1, 0.2, 1);
+      transition: 0.75s 0.1s var(--ease-out-exponential);
     }
 
     &:hover {
@@ -184,7 +186,7 @@ body {
       &::after {
         opacity: 1;
         transform: translateY(0);
-        transition: 0.75s 0.1s cubic-bezier(0.2, 1, 0.2, 1);
+        transition: 0.75s 0.1s var(--ease-out-exponential);
       }
     }
   }
