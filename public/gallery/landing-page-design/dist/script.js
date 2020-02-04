@@ -29,7 +29,7 @@ document.addEventListener("mouseenter", function (e) {
             opacity: 0
         },
         {
-            opacity: 1
+            opacity: 0.8
         }
     ], {
         duration: 300,
@@ -58,7 +58,7 @@ document.addEventListener("mousemove", function (e) {
     });
 });
 document.addEventListener("mouseleave", function (e) {
-    cursor.animate([{ opacity: 1 }, { opacity: 0 }], {
+    cursor.animate([{ opacity: 0.8 }, { opacity: 0 }], {
         duration: 500,
         fill: "forwards"
     });
@@ -87,3 +87,27 @@ letters.forEach(function (letter) {
     span.style.animationDelay = random(1, 1000) + "ms";
     heading.append(span);
 });
+// Staggered Rise In Text https://codepen.io/alphardex/pen/qBEmGbw
+var titles = document.querySelectorAll(".titles > *");
+titles.forEach(function (text) {
+    var letters = text.textContent.split("");
+    text.textContent = "";
+    letters.forEach(function (letter, i) {
+        var span = document.createElement("span");
+        span.textContent = letter;
+        span.style.animationDelay = i / 20 + "s";
+        text.append(span);
+    });
+});
+// Observe the elements which have animations to fire.
+var observer = new IntersectionObserver(function (entries) {
+    console.log(entries);
+    entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+        }
+    });
+});
+titles.forEach(function (title) { return observer.observe(title); });
+var paragraphs = document.querySelectorAll("p");
+paragraphs.forEach(function (p) { return observer.observe(p); });

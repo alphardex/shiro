@@ -31,7 +31,6 @@ header {
 }
 .underline li {
   position: relative;
-  padding: 30px 25px 30px 25px;
   cursor: pointer;
 }
 .underline li::after {
@@ -51,6 +50,7 @@ header {
 .underline li a {
   position: relative;
   display: flex;
+  padding: 30px 25px 30px 25px;
   text-decoration: none;
   color: white;
   transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);

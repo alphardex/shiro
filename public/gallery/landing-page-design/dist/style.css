@@ -43,7 +43,6 @@ header {
 }
 .underline li {
   position: relative;
-  padding: 30px 25px 30px 25px;
 }
 .underline li::after {
   position: absolute;
@@ -62,6 +61,7 @@ header {
 .underline li a {
   position: relative;
   display: flex;
+  padding: 30px 25px 30px 25px;
   text-decoration: none;
   color: white;
   transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -76,8 +76,8 @@ header {
   font-size: 14px;
   line-height: 1.5;
   text-decoration: none;
-  background-color: hsl(var(--hue), 100%, 41%);
-  border: 1px solid hsl(var(--hue), 100%, 41%);
+  background-color: hsl(var(--hue), 70%, 53%);
+  border: 1px solid hsl(var(--hue), 70%, 53%);
   outline: transparent;
   overflow: hidden;
   cursor: none;
@@ -86,16 +86,16 @@ header {
   transition: 0.3s;
 }
 .btn:hover {
-  background: hsl(var(--hue), 100%, 31%);
+  background: hsl(var(--hue), 70%, 43%);
 }
 .btn-ghost {
-  color: hsl(var(--hue), 100%, 41%);
+  color: hsl(var(--hue), 70%, 53%);
   background-color: transparent;
-  border-color: hsl(var(--hue), 100%, 41%);
+  border-color: hsl(var(--hue), 70%, 53%);
 }
 .btn-ghost:hover {
   color: white;
-  background: hsl(var(--hue), 100%, 41%);
+  background: hsl(var(--hue), 70%, 53%);
 }
 .btn-through {
   transition: 0.6s cubic-bezier(0.77, 0, 0.175, 1);
@@ -108,9 +108,11 @@ header {
   z-index: -1;
   width: 100%;
   height: 100%;
-  background: hsl(var(--hue), 100%, 41%);
+  background: hsl(var(--hue), 70%, 53%);
   transform: scaleX(0);
   transform-origin: right;
+  mix-blend-mode: color-dodge;
+  will-change: transform;
   transition: transform 0.6s cubic-bezier(0.77, 0, 0.175, 1);
 }
 .btn-through:hover {
@@ -234,6 +236,13 @@ main {
   color: white;
   scroll-behavior: smooth;
 }
+main section h1,
+main section h2 {
+  margin: 0;
+}
+main section p {
+  margin: 0;
+}
 main .hero-section {
   display: flex;
   flex-direction: column;
@@ -246,7 +255,6 @@ main .hero-section h1 {
   margin-bottom: 8px;
   font-size: 46px;
   text-transform: uppercase;
-  letter-spacing: 1px;
 }
 main .hero-section p {
   font-size: 24px;
@@ -255,4 +263,103 @@ main .hero-section p {
 main .normal-section {
   color: black;
   background: white;
+}
+main [id="about"] {
+  display: grid;
+  justify-items: center;
+  gap: 40px;
+  padding: 48px 0;
+}
+main [id="about"] .titles {
+  display: grid;
+  justify-items: center;
+  gap: 20px;
+}
+main [id="about"] .titles .title {
+  position: relative;
+  display: flex;
+  white-space: pre;
+  overflow: hidden;
+}
+main [id="about"] .titles .title span {
+  transform: translateY(100%);
+}
+main [id="about"] .titles .title.active span {
+  animation: rise-in 1s forwards;
+}
+main [id="about"] .titles .subtitle {
+  position: relative;
+  color: transparent;
+}
+main [id="about"] .titles .subtitle.active {
+  animation: fill-text-black 1.2s 0.8s forwards;
+}
+main [id="about"] .titles .subtitle.active::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #35b9f1;
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: slide-in-out 1.2s 0.6s cubic-bezier(0.75, 0, 0, 1) forwards;
+}
+main [id="about"] .description {
+  display: grid;
+  gap: 24px;
+  width: 640px;
+}
+main [id="about"] .description p {
+  opacity: 0;
+  transform: translateY(20%);
+}
+main [id="about"] .description p.active {
+  animation: fade-in 0.6s forwards;
+}
+main [id="about"] .description p:nth-child(1) {
+  animation-delay: 0.7s;
+}
+main [id="about"] .description p:nth-child(2) {
+  animation-delay: 0.8s;
+}
+main [id="about"] .description p:nth-child(3) {
+  animation-delay: 0.9s;
+}
+main [id="about"] .description p:nth-child(4) {
+  animation-delay: 1s;
+}
+main [id="about"] .description p:nth-child(5) {
+  animation-delay: 1.1s;
+}
+
+@keyframes rise-in {
+  to {
+    transform: translateY(-12%);
+  }
+}
+@keyframes slide-in-out {
+  50% {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  50.1% {
+    transform-origin: right;
+  }
+  100% {
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+}
+@keyframes fill-text-black {
+  to {
+    color: black;
+  }
+}
+@keyframes fade-in {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

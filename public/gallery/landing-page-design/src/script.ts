@@ -31,7 +31,7 @@ document.addEventListener("mouseenter", e => {
         opacity: 0
       },
       {
-        opacity: 1
+        opacity: 0.8
       }
     ],
     {
@@ -66,7 +66,7 @@ document.addEventListener("mousemove", e => {
 });
 
 document.addEventListener("mouseleave", e => {
-  cursor.animate([{ opacity: 1 }, { opacity: 0 }], {
+  cursor.animate([{ opacity: 0.8 }, { opacity: 0 }], {
     duration: 500,
     fill: "forwards"
   });
@@ -98,3 +98,29 @@ letters.forEach(letter => {
   span.style.animationDelay = `${random(1, 1000)}ms`;
   heading.append(span);
 });
+
+// Staggered Rise In Text https://codepen.io/alphardex/pen/qBEmGbw
+let titles = document.querySelectorAll(".titles > *");
+titles.forEach(text => {
+  let letters = text.textContent.split("");
+  text.textContent = "";
+  letters.forEach((letter, i) => {
+    let span = document.createElement("span");
+    span.textContent = letter;
+    span.style.animationDelay = `${i / 20}s`;
+    text.append(span);
+  });
+});
+
+// Observe the elements which have animations to fire.
+let observer = new IntersectionObserver(entries => {
+  console.log(entries);
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("active");
+    }
+  });
+});
+titles.forEach(title => observer.observe(title));
+let paragraphs = document.querySelectorAll("p");
+paragraphs.forEach(p => observer.observe(p));

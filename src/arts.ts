@@ -1,6 +1,6 @@
 export default [
   {
-    title: "simple-landing-page",
+    title: "landing-page-design",
     description: "LP页面设计",
     tags: ["landing page"]
   },

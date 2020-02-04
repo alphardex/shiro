@@ -1,4 +1,4 @@
-# Simple Landing Page
+# Landing Page Design
  _A Pen created at CodePen.io. Original URL: [https://codepen.io/alphardex/pen/RwNXqxV](https://codepen.io/alphardex/pen/RwNXqxV).
 
  Actually it's a combination of my previous pens :)

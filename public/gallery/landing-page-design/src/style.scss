@@ -48,7 +48,6 @@ header {
 
   li {
     position: relative;
-    padding: 30px 25px 30px 25px;
 
     &::after {
       position: absolute;
@@ -72,6 +71,7 @@ header {
     a {
       position: relative;
       display: flex;
+      padding: 30px 25px 30px 25px;
       text-decoration: none;
       color: white;
       transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
@@ -89,8 +89,8 @@ header {
   font-size: 14px;
   line-height: 1.5;
   text-decoration: none;
-  background-color: hsl(var(--hue), 100%, 41%);
-  border: 1px solid hsl(var(--hue), 100%, 41%);
+  background-color: hsl(var(--hue), 70%, 53%);
+  border: 1px solid hsl(var(--hue), 70%, 53%);
   outline: transparent;
   overflow: hidden;
   cursor: none;
@@ -99,17 +99,17 @@ header {
   transition: 0.3s;
 
   &:hover {
-    background: hsl(var(--hue), 100%, 31%);
+    background: hsl(var(--hue), 70%, 43%);
   }
 
   &-ghost {
-    color: hsl(var(--hue), 100%, 41%);
+    color: hsl(var(--hue), 70%, 53%);
     background-color: transparent;
-    border-color: hsl(var(--hue), 100%, 41%);
+    border-color: hsl(var(--hue), 70%, 53%);
 
     &:hover {
       color: white;
-      background: hsl(var(--hue), 100%, 41%);
+      background: hsl(var(--hue), 70%, 53%);
     }
   }
 
@@ -124,9 +124,11 @@ header {
       z-index: -1;
       width: 100%;
       height: 100%;
-      background: hsl(var(--hue), 100%, 41%);
+      background: hsl(var(--hue), 70%, 53%);
       transform: scaleX(0);
       transform-origin: right;
+      mix-blend-mode: color-dodge;
+      will-change: transform;
       transition: transform 0.6s cubic-bezier(0.77, 0, 0.175, 1);
     }
 
@@ -276,6 +278,17 @@ main {
   color: white;
   scroll-behavior: smooth;
 
+  section {
+    h1,
+    h2 {
+      margin: 0;
+    }
+
+    p {
+      margin: 0;
+    }
+  }
+
   .hero-section {
     display: flex;
     flex-direction: column;
@@ -288,7 +301,6 @@ main {
       margin-bottom: 8px;
       font-size: 46px;
       text-transform: uppercase;
-      letter-spacing: 1px;
     }
 
     p {
@@ -300,5 +312,116 @@ main {
   .normal-section {
     color: black;
     background: white;
+  }
+
+  [id="about"] {
+    display: grid;
+    justify-items: center;
+    gap: 40px;
+    padding: 48px 0;
+
+    .titles {
+      display: grid;
+      justify-items: center;
+      gap: 20px;
+
+      // Staggered Rise In Text https://codepen.io/alphardex/pen/qBEmGbw
+      .title {
+        position: relative;
+        display: flex;
+        white-space: pre;
+        overflow: hidden;
+
+        span {
+          transform: translateY(100%);
+        }
+
+        &.active {
+          span {
+            animation: rise-in 1s forwards;
+          }
+        }
+      }
+
+      // Header With Slide Bar https://codepen.io/alphardex/pen/jOEOEzZ
+      .subtitle {
+        position: relative;
+        color: transparent;
+
+        &.active {
+          animation: fill-text-black 1.2s 0.8s forwards;
+
+          &::before {
+            position: absolute;
+            content: "";
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: #35b9f1;
+            transform: scaleX(0);
+            transform-origin: left;
+            animation: slide-in-out 1.2s 0.6s cubic-bezier(0.75, 0, 0, 1)
+              forwards;
+          }
+        }
+      }
+    }
+
+    .description {
+      display: grid;
+      gap: 24px;
+      width: 640px;
+
+      p {
+        opacity: 0;
+        transform: translateY(20%);
+
+        &.active {
+          animation: fade-in 0.6s forwards;
+        }
+
+        @for $i from 1 through 5 {
+          &:nth-child(#{$i}) {
+            animation-delay: 0.6s + 0.1s * $i;
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes rise-in {
+  to {
+    transform: translateY(-12%);
+  }
+}
+
+@keyframes slide-in-out {
+  50% {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  50.1% {
+    transform-origin: right;
+  }
+
+  100% {
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+}
+
+@keyframes fill-text-black {
+  to {
+    color: black;
+  }
+}
+
+@keyframes fade-in {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
