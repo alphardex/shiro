@@ -243,7 +243,7 @@ header {
         transform: translateX(100%);
       }
 
-      @for $i from 1 through 4 {
+      @for $i from 1 through 5 {
         &:nth-child(#{$i}) {
           transition-delay: 0.05s * $i;
         }
@@ -566,6 +566,223 @@ p {
   }
 }
 
+// Profile Card https://codepen.io/alphardex/pen/jOExoLp
+.card {
+  --card-bg-color: hsl(240, 31%, 25%);
+  --card-bg-color-transparent: hsla(240, 31%, 25%, 0.5);
+  position: relative;
+  width: 300px;
+
+  &.active {
+    .card-borders {
+      .border-top {
+        animation: slide-in-horizontal 0.8s cubic-bezier(0.645, 0.045, 0.355, 1)
+          forwards;
+      }
+      .border-right {
+        animation: slide-in-vertical 0.8s cubic-bezier(0.645, 0.045, 0.355, 1)
+          forwards;
+      }
+      .border-bottom {
+        animation: slide-in-horizontal-reverse 0.8s
+          cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+      }
+      .border-left {
+        animation: slide-in-vertical-reverse 0.8s
+          cubic-bezier(0.645, 0.045, 0.355, 1) forwards;
+      }
+    }
+    .card-content {
+      animation: bump-in 0.5s 0.8s forwards;
+
+      .avatar {
+        animation: bump-in 0.5s 1s forwards;
+      }
+
+      .username {
+        animation: fill-text-white 1.2s 2s forwards;
+
+        &::before {
+          animation: slide-in-out 1.2s 1.2s cubic-bezier(0.75, 0, 0, 1) forwards;
+        }
+      }
+
+      .info {
+        animation: fade-up 1.2s 2s forwards;
+      }
+    }
+  }
+
+  .card-borders {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+
+    .border-top {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--card-bg-color);
+      transform: translateX(-100%);
+    }
+
+    .border-right {
+      position: absolute;
+      right: 0;
+      width: 2px;
+      height: 100%;
+      background: var(--card-bg-color);
+      transform: translateY(100%);
+    }
+
+    .border-bottom {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--card-bg-color);
+      transform: translateX(100%);
+    }
+
+    .border-left {
+      position: absolute;
+      top: 0;
+      width: 2px;
+      height: 100%;
+      background: var(--card-bg-color);
+      transform: translateY(-100%);
+    }
+  }
+
+  .card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 0 40px 0;
+    font-family: Lato, sans-serif;
+    background: var(--card-bg-color-transparent);
+    box-shadow: 0 0px 0.6px rgba(0, 0, 0, 0.028),
+      0 0px 1.3px rgba(0, 0, 0, 0.04), 0 0px 2.5px rgba(0, 0, 0, 0.05),
+      0 0px 4.5px rgba(0, 0, 0, 0.06), 0 0px 8.4px rgba(0, 0, 0, 0.072),
+      0 0px 20px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    transform: scale(0.6);
+
+    .avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      margin-bottom: 40px;
+      opacity: 0;
+      transform: scale(0.6);
+    }
+
+    .username {
+      position: relative;
+      font-size: 26px;
+      letter-spacing: 2px;
+      margin-bottom: 40px;
+      color: transparent;
+
+      &::before {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        color: black;
+        background: #35b9f1;
+        transform: scaleX(0);
+        transform-origin: left;
+      }
+    }
+
+    .info {
+      font-size: 12px;
+      opacity: 0;
+      transform: translateY(20%);
+    }
+  }
+}
+
+@keyframes bump-in {
+  50% {
+    transform: scale(1.05);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slide-in-horizontal {
+  50% {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes slide-in-horizontal-reverse {
+  50% {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes slide-in-vertical {
+  50% {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-100%);
+  }
+}
+
+@keyframes slide-in-vertical-reverse {
+  50% {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(100%);
+  }
+}
+
+@keyframes slide-in-out {
+  50% {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  50.1% {
+    transform-origin: right;
+  }
+
+  100% {
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+}
+
+@keyframes fill-text-white {
+  to {
+    color: white;
+  }
+}
+
 // Basic Layout
 main {
   color: white;
@@ -602,30 +819,63 @@ main {
     }
   }
 
-  [id="about"] {
+  .normal-section {
     display: grid;
     justify-items: center;
     gap: 40px;
     padding: 48px 0;
     color: white;
-    background-image: linear-gradient(
-        rgba(16, 16, 16, 0.8),
-        rgba(16, 16, 16, 0.8)
-      ),
-      url("https://i.loli.net/2020/02/04/LUGKzHqecyNE14V.jpg");
-    background-position: center;
-    background-size: cover;
 
     .titles {
       display: grid;
       justify-items: center;
       gap: 20px;
     }
+  }
+
+  [id="about"] {
+    background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
 
     .description {
       display: grid;
       gap: 24px;
       width: 640px;
+    }
+  }
+
+  [id="speakers"] {
+    background-image: linear-gradient(45deg, #874da2 0%, #c43a30 100%);
+
+    .speakers-cards {
+      display: grid;
+      grid-template-columns: repeat(3, auto);
+      gap: 40px;
+    }
+  }
+
+  [id="schedule"] {
+    background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+
+    .timeline {
+      opacity: 0;
+      transform: translateY(20%);
+
+      &.active {
+        animation: fade-up 1.2s 1s forwards;
+      }
+    }
+  }
+
+  [id="location"] {
+    background-image: linear-gradient(45deg, #874da2 0%, #c43a30 100%);
+
+    .map {
+      opacity: 0;
+      transform: translateY(20%);
+
+      &.active {
+        animation: fade-up 1.2s 1s forwards;
+      }
     }
   }
 }

@@ -10,5 +10,6 @@
 5. Cursor Follow & Hover Effect
 6. Staggered Rise In Text 
 7. Header With Slide Bar 
+8. Profile Card
 
 Hope you enjoy it!
