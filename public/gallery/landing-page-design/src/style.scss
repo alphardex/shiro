@@ -310,8 +310,7 @@ main {
   }
 
   .normal-section {
-    color: black;
-    background: white;
+    color: white;
   }
 
   [id="about"] {
@@ -319,6 +318,13 @@ main {
     justify-items: center;
     gap: 40px;
     padding: 48px 0;
+    background-image: linear-gradient(
+      rgba(16, 16, 16, 0.8),
+      rgba(16, 16, 16, 0.8)
+    ),
+    url("https://i.loli.net/2020/02/04/LUGKzHqecyNE14V.jpg");
+    background-position: center;
+    background-size: cover;
 
     .titles {
       display: grid;
@@ -349,7 +355,7 @@ main {
         color: transparent;
 
         &.active {
-          animation: fill-text-black 1.2s 0.8s forwards;
+          animation: fill-text-white 1.2s 0.8s forwards;
 
           &::before {
             position: absolute;
@@ -413,9 +419,9 @@ main {
   }
 }
 
-@keyframes fill-text-black {
+@keyframes fill-text-white {
   to {
-    color: black;
+    color: white;
   }
 }
 
