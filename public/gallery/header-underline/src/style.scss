@@ -1,10 +1,17 @@
 body {
+  min-height: 100vh;
   margin: 0;
   padding: 0;
   background: black;
+  font-family: Montserrat, sans-serif;
+  overflow-x: hidden;
 }
 
 header {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  max-width: 1160px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -34,7 +41,6 @@ header {
 
   li {
     position: relative;
-    cursor: pointer;
 
     &::after {
       position: absolute;

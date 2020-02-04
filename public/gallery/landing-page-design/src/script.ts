@@ -100,8 +100,8 @@ letters.forEach(letter => {
 });
 
 // Staggered Rise In Text https://codepen.io/alphardex/pen/qBEmGbw
-let titles = document.querySelectorAll(".titles > *");
-titles.forEach(text => {
+let staggeredRiseInTexts = document.querySelectorAll(".staggered-rise-in");
+staggeredRiseInTexts.forEach(text => {
   let letters = text.textContent.split("");
   text.textContent = "";
   letters.forEach((letter, i) => {
@@ -121,6 +121,7 @@ let observer = new IntersectionObserver(entries => {
     }
   });
 });
+let titles = document.querySelectorAll(".titles > *");
 titles.forEach(title => observer.observe(title));
 let paragraphs = document.querySelectorAll("p");
 paragraphs.forEach(p => observer.observe(p));

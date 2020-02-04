@@ -8,20 +8,27 @@ body {
   background: #222;
 }
 
-header .title,
-header .subtitle {
+.staggered-rise-in {
   position: relative;
   display: flex;
-  width: 250px;
-  height: 30px;
-  color: white;
   white-space: pre;
   overflow: hidden;
 }
-header .title span,
-header .subtitle span {
+.staggered-rise-in span {
   transform: translateY(100%);
   animation: rise-in 1s forwards;
+}
+
+@keyframes rise-in {
+  to {
+    transform: translateY(-12%);
+  }
+}
+header .title,
+header .subtitle {
+  width: 250px;
+  height: 30px;
+  color: white;
 }
 header .title {
   font-family: Lora, serif;
@@ -35,10 +42,4 @@ header .subtitle {
   line-height: 30px;
   letter-spacing: 5px;
   text-transform: uppercase;
-}
-
-@keyframes rise-in {
-  to {
-    transform: translateY(-12%);
-  }
 }

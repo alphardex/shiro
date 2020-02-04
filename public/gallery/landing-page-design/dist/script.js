@@ -88,8 +88,8 @@ letters.forEach(function (letter) {
     heading.append(span);
 });
 // Staggered Rise In Text https://codepen.io/alphardex/pen/qBEmGbw
-var titles = document.querySelectorAll(".titles > *");
-titles.forEach(function (text) {
+var staggeredRiseInTexts = document.querySelectorAll(".staggered-rise-in");
+staggeredRiseInTexts.forEach(function (text) {
     var letters = text.textContent.split("");
     text.textContent = "";
     letters.forEach(function (letter, i) {
@@ -108,6 +108,7 @@ var observer = new IntersectionObserver(function (entries) {
         }
     });
 });
+var titles = document.querySelectorAll(".titles > *");
 titles.forEach(function (title) { return observer.observe(title); });
 var paragraphs = document.querySelectorAll("p");
 paragraphs.forEach(function (p) { return observer.observe(p); });

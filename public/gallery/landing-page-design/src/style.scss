@@ -273,6 +273,98 @@ header {
   }
 }
 
+// Staggered Rise In Text https://codepen.io/alphardex/pen/qBEmGbw
+.staggered-rise-in {
+  position: relative;
+  display: flex;
+  white-space: pre;
+  overflow: hidden;
+
+  span {
+    transform: translateY(100%);
+  }
+
+  &.active {
+    span {
+      animation: rise-in 1s forwards;
+    }
+  }
+}
+
+@keyframes rise-in {
+  to {
+    transform: translateY(-12%);
+  }
+}
+
+// Header With Slide Bar https://codepen.io/alphardex/pen/jOEOEzZ
+.slide-bar {
+  position: relative;
+  color: transparent;
+
+  &.active {
+    animation: fill-text-white 1.2s 0.8s forwards;
+
+    &::before {
+      position: absolute;
+      content: "";
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #35b9f1;
+      transform: scaleX(0);
+      transform-origin: left;
+      animation: slide-in-out 1.2s 0.6s cubic-bezier(0.75, 0, 0, 1) forwards;
+    }
+  }
+}
+
+@keyframes slide-in-out {
+  50% {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+
+  50.1% {
+    transform-origin: right;
+  }
+
+  100% {
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+}
+
+@keyframes fill-text-white {
+  to {
+    color: white;
+  }
+}
+
+// Fade Up
+p {
+  opacity: 0;
+  transform: translateY(20%);
+
+  &.active {
+    animation: fade-up 0.6s forwards;
+  }
+
+  @for $i from 1 through 5 {
+    &:nth-child(#{$i}) {
+      animation-delay: 0.6s + 0.1s * $i;
+    }
+  }
+}
+
+@keyframes fade-up {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 // Basic Layout
 main {
   color: white;
@@ -309,20 +401,17 @@ main {
     }
   }
 
-  .normal-section {
-    color: white;
-  }
-
   [id="about"] {
     display: grid;
     justify-items: center;
     gap: 40px;
     padding: 48px 0;
+    color: white;
     background-image: linear-gradient(
-      rgba(16, 16, 16, 0.8),
-      rgba(16, 16, 16, 0.8)
-    ),
-    url("https://i.loli.net/2020/02/04/LUGKzHqecyNE14V.jpg");
+        rgba(16, 16, 16, 0.8),
+        rgba(16, 16, 16, 0.8)
+      ),
+      url("https://i.loli.net/2020/02/04/LUGKzHqecyNE14V.jpg");
     background-position: center;
     background-size: cover;
 
@@ -330,104 +419,12 @@ main {
       display: grid;
       justify-items: center;
       gap: 20px;
-
-      // Staggered Rise In Text https://codepen.io/alphardex/pen/qBEmGbw
-      .title {
-        position: relative;
-        display: flex;
-        white-space: pre;
-        overflow: hidden;
-
-        span {
-          transform: translateY(100%);
-        }
-
-        &.active {
-          span {
-            animation: rise-in 1s forwards;
-          }
-        }
-      }
-
-      // Header With Slide Bar https://codepen.io/alphardex/pen/jOEOEzZ
-      .subtitle {
-        position: relative;
-        color: transparent;
-
-        &.active {
-          animation: fill-text-white 1.2s 0.8s forwards;
-
-          &::before {
-            position: absolute;
-            content: "";
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #35b9f1;
-            transform: scaleX(0);
-            transform-origin: left;
-            animation: slide-in-out 1.2s 0.6s cubic-bezier(0.75, 0, 0, 1)
-              forwards;
-          }
-        }
-      }
     }
 
     .description {
       display: grid;
       gap: 24px;
       width: 640px;
-
-      p {
-        opacity: 0;
-        transform: translateY(20%);
-
-        &.active {
-          animation: fade-in 0.6s forwards;
-        }
-
-        @for $i from 1 through 5 {
-          &:nth-child(#{$i}) {
-            animation-delay: 0.6s + 0.1s * $i;
-          }
-        }
-      }
     }
-  }
-}
-
-@keyframes rise-in {
-  to {
-    transform: translateY(-12%);
-  }
-}
-
-@keyframes slide-in-out {
-  50% {
-    transform: scaleX(1);
-    transform-origin: left;
-  }
-
-  50.1% {
-    transform-origin: right;
-  }
-
-  100% {
-    transform: scaleX(0);
-    transform-origin: right;
-  }
-}
-
-@keyframes fill-text-white {
-  to {
-    color: white;
-  }
-}
-
-@keyframes fade-in {
-  to {
-    opacity: 1;
-    transform: translateY(0);
   }
 }

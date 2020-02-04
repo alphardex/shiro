@@ -6,7 +6,9 @@ body {
 }
 
 .ken-burns-slideshow {
-  position: fixed;
+  position: absolute;
+  top: 0;
+  left: 0;
   z-index: -2;
   margin: 0;
   padding: 0;
@@ -41,33 +43,19 @@ body {
 }
 
 #slide1 {
-  background-image: url("https://i.loli.net/2019/11/23/cnKl1Ykd5rZCVwm.jpg");
+  background-image: linear-gradient(rgba(16, 16, 16, 0.8), rgba(16, 16, 16, 0.8)), url("https://images.unsplash.com/photo-1578879279270-f1a166ab29f8?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ");
 }
 
 #slide2 {
-  background-image: url("https://i.loli.net/2019/10/18/uXF1Kx7lzELB6wf.jpg");
+  background-image: linear-gradient(rgba(16, 16, 16, 0.8), rgba(16, 16, 16, 0.8)), url("https://images.unsplash.com/photo-1470219556762-1771e7f9427d?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ");
 }
 
 #slide3 {
-  background-image: url("https://i.loli.net/2019/11/16/FLnzi5Kq4tkRZSm.jpg");
+  background-image: linear-gradient(rgba(16, 16, 16, 0.8), rgba(16, 16, 16, 0.8)), url("https://images.unsplash.com/photo-1435575653489-b0873ec954e2?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ");
 }
 
 #slide4 {
-  background-image: url("https://i.loli.net/2019/10/18/buDT4YS6zUMfHst.jpg");
-}
-
-main {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-family: Lora, serif;
-  letter-spacing: 0.2em;
-  color: white;
-}
-main h1 {
-  font-size: 250%;
-  text-shadow: 0 2px 2px black;
+  background-image: linear-gradient(rgba(16, 16, 16, 0.8), rgba(16, 16, 16, 0.8)), url("https://images.unsplash.com/photo-1462396240927-52058a6a84ec?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ");
 }
 
 @keyframes kenburns {
@@ -82,4 +70,14 @@ main h1 {
     opacity: 0;
     transform: scale(1);
   }
+}
+section {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  color: white;
+}
+section h1 {
+  font-size: 250%;
+  text-shadow: 0 2px 2px black;
 }

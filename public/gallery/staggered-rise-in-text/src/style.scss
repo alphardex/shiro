@@ -9,22 +9,31 @@ body {
   background: #222;
 }
 
+.staggered-rise-in {
+  position: relative;
+  display: flex;
+  white-space: pre;
+  overflow: hidden;
+
+  span {
+    transform: translateY(100%);
+    animation: rise-in 1s forwards;
+  }
+}
+
+@keyframes rise-in {
+  to {
+    transform: translateY(-12%);
+  }
+}
+
 header {
 
   .title,
   .subtitle {
-    position: relative;
-    display: flex;
     width: 250px;
     height: 30px;
     color: white;
-    white-space: pre;
-    overflow: hidden;
-
-    span {
-      transform: translateY(100%);
-      animation: rise-in 1s forwards;
-    }
   }
 
   .title {
@@ -40,11 +49,5 @@ header {
     line-height: 30px;
     letter-spacing: 5px;
     text-transform: uppercase;
-  }
-}
-
-@keyframes rise-in {
-  to {
-    transform: translateY(-12%);
   }
 }

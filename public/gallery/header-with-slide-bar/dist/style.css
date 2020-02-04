@@ -8,25 +8,46 @@ body {
   background: #222;
 }
 
-header .title,
-header .subtitle {
+.slide-bar {
   position: relative;
-  width: 250px;
-  height: 30px;
   color: transparent;
-  animation: fadeIn 2s 1.6s forwards;
+  animation: fill-text-white 2s 1.6s forwards;
 }
-header .title::before,
-header .subtitle::before {
+.slide-bar::before {
   position: absolute;
   content: "";
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  background: #35b9f1;
   transform: scaleX(0);
   transform-origin: left;
-  animation: slideRight 2s cubic-bezier(0.75, 0, 0, 1) forwards;
+  animation: slide-in-out 2s cubic-bezier(0.75, 0, 0, 1) forwards;
+}
+
+@keyframes slide-in-out {
+  50% {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+  50.1% {
+    transform-origin: right;
+  }
+  100% {
+    transform: scaleX(0);
+    transform-origin: right;
+  }
+}
+@keyframes fill-text-white {
+  to {
+    color: white;
+  }
+}
+header .title,
+header .subtitle {
+  width: 250px;
+  height: 30px;
 }
 header .title {
   margin: 0;
@@ -49,22 +70,4 @@ header .subtitle {
 header .subtitle::before {
   background: #03A9F4;
   animation-delay: 2s;
-}
-
-@keyframes fadeIn {
-  to {
-    color: white;
-  }
-}
-@keyframes slideRight {
-  50% {
-    transform: scaleX(1);
-    transform-origin: left;
-  }
-  50.1% {
-    transform-origin: right;
-  }
-  to {
-    transform-origin: right;
-  }
 }
