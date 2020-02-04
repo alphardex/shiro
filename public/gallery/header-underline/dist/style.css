@@ -26,20 +26,20 @@ header {
   color: white;
 }
 
-.underline {
+.underline-menu {
   display: flex;
   padding: 0;
   margin: 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   list-style-type: none;
 }
-.underline:hover li:not(:hover) a {
+.underline-menu:hover li:not(:hover) a {
   opacity: 0.2;
 }
-.underline li {
+.underline-menu li {
   position: relative;
 }
-.underline li::after {
+.underline-menu li::after {
   position: absolute;
   content: "";
   top: 100%;
@@ -50,10 +50,10 @@ header {
   transform: scaleX(0);
   transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
-.underline li:hover::after, .underline li.active::after {
+.underline-menu li:hover::after, .underline-menu li.active::after {
   transform: scaleX(1);
 }
-.underline li a {
+.underline-menu li a {
   position: relative;
   display: flex;
   padding: 30px 25px 30px 25px;

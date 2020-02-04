@@ -1,10 +1,19 @@
 // Header Underline https://codepen.io/alphardex/pen/JjoqbNP
-let underlineMenuItems = document.querySelectorAll(".underline li");
+let underlineMenuItems = document.querySelectorAll(".underline-menu li");
 underlineMenuItems[0].classList.add("active");
 underlineMenuItems.forEach(item => {
   item.addEventListener("click", () => {
     underlineMenuItems.forEach(item => item.classList.remove("active"));
     item.classList.add("active");
+  });
+});
+
+// Full Page Burger Navigation https://codepen.io/alphardex/pen/NWPBwYe
+let burgerMenuToggle = document.querySelector("#burger-toggle");
+let burgerMenuLinks = document.querySelectorAll(".burger-nav li a");
+burgerMenuLinks.forEach(link => {
+  link.addEventListener("click", () => {
+    (burgerMenuToggle as HTMLInputElement).checked = false;
   });
 });
 
@@ -45,7 +54,7 @@ document.addEventListener("mousemove", e => {
   let [cursorX, cursorY] = getXY(e, cursor);
   let [cursorBorderX, cursorBorderY] = getXY(e, cursorBorder);
   let targetName = (e.target as HTMLElement).tagName;
-  if (targetName === "A" || targetName === "LI" || targetName === "BUTTON") {
+  if (targetName === "A" || targetName === "LABEL" || targetName === "BUTTON") {
     cursorBorder.classList.add("on-focus");
   } else {
     cursorBorder.classList.remove("on-focus");
@@ -73,7 +82,7 @@ document.addEventListener("mouseleave", e => {
   cursorBorder.animate(
     [
       {
-        opacity: 1
+        opacity: 0.8
       },
       {
         opacity: 0
@@ -84,19 +93,6 @@ document.addEventListener("mouseleave", e => {
       fill: "forwards"
     }
   );
-});
-
-// Gleaming Heading https://codepen.io/alphardex/pen/rNBrExx
-const random = (min: number, max: number) =>
-  min + Math.floor(Math.random() * (max - min + 1));
-let heading = document.querySelector("h1.gleaming");
-let letters = heading.textContent.split("");
-heading.textContent = "";
-letters.forEach(letter => {
-  let span = document.createElement("span");
-  span.textContent = letter;
-  span.style.animationDelay = `${random(1, 1000)}ms`;
-  heading.append(span);
 });
 
 // Staggered Rise In Text https://codepen.io/alphardex/pen/qBEmGbw

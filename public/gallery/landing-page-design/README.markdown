@@ -4,10 +4,10 @@
  Actually it's a combination of my previous pens :)
 
 1. Header Underline
-2. Button Collection
-3. Ken Burns Effect (Pure CSS)
-4. Cursor Follow & Hover Effect
-5. Gleaming Heading
+2. Full Page Burger Navigation
+3. Button Collection
+4. Ken Burns Effect (Pure CSS)
+5. Cursor Follow & Hover Effect
 6. Staggered Rise In Text 
 7. Header With Slide Bar 
 

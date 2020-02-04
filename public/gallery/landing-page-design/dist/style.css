@@ -31,20 +31,20 @@ header {
   color: white;
 }
 
-.underline {
+.underline-menu {
   display: flex;
   padding: 0;
   margin: 0;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   list-style-type: none;
 }
-.underline:hover li:not(:hover) a {
+.underline-menu:hover li:not(:hover) a {
   opacity: 0.2;
 }
-.underline li {
+.underline-menu li {
   position: relative;
 }
-.underline li::after {
+.underline-menu li::after {
   position: absolute;
   content: "";
   top: 100%;
@@ -55,10 +55,10 @@ header {
   transform: scaleX(0);
   transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
-.underline li:hover::after, .underline li.active::after {
+.underline-menu li:hover::after, .underline-menu li.active::after {
   transform: scaleX(1);
 }
-.underline li a {
+.underline-menu li a {
   position: relative;
   display: flex;
   padding: 30px 25px 30px 25px;
@@ -67,6 +67,193 @@ header {
   transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
+#burger-toggle {
+  position: absolute;
+  appearance: none;
+  opacity: 0;
+}
+#burger-toggle:checked ~ .overlay {
+  opacity: 1;
+  transform: scale(160);
+}
+#burger-toggle:checked ~ .burger-nav {
+  pointer-events: auto;
+}
+#burger-toggle:checked ~ .burger-nav ul li {
+  opacity: 1;
+  transform: translateX(0);
+}
+#burger-toggle:checked ~ main {
+  opacity: 0;
+  pointer-events: none;
+}
+#burger-toggle:checked ~ .burger-menu .line:nth-child(1) {
+  transform: translateY(calc(var(--burger-menu-radius) / 5)) rotate(45deg);
+}
+#burger-toggle:checked ~ .burger-menu .line:nth-child(2) {
+  transform: scaleX(0);
+}
+#burger-toggle:checked ~ .burger-menu .line:nth-child(3) {
+  transform: translateY(calc(var(--burger-menu-radius) / -5)) rotate(-45deg);
+}
+
+.burger-menu {
+  --burger-menu-radius: 4em;
+  position: fixed;
+  top: 25px;
+  right: 60px;
+  z-index: 100;
+  display: none;
+  width: var(--burger-menu-radius);
+  height: var(--burger-menu-radius);
+  background: white;
+  border: solid 2px rgba(149, 166, 167, 0.4);
+  border-radius: 50%;
+  outline: none;
+  transition: 0.5s ease-in-out;
+}
+.burger-menu .line {
+  position: absolute;
+  left: 25%;
+  width: 50%;
+  height: 3px;
+  background: rgba(43, 61, 79, 0.3);
+  border-radius: 10px;
+  overflow: hidden;
+  pointer-events: none;
+  transition: all 0.5s ease;
+}
+.burger-menu .line:nth-child(1) {
+  top: 30%;
+}
+.burger-menu .line:nth-child(2) {
+  top: 50%;
+}
+.burger-menu .line:nth-child(3) {
+  top: 70%;
+}
+.burger-menu .line::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #2980b9;
+  transform: translateX(-100%);
+  transition: all 0.25s ease;
+}
+.burger-menu .line:nth-child(2)::after {
+  transition-delay: 0.1s;
+}
+.burger-menu .line:nth-child(3)::after {
+  transition-delay: 0.2s;
+}
+.burger-menu:hover {
+  box-shadow: 0.4px 0.4px 0.8px rgba(0, 0, 0, 0.042), 1px 1px 2px rgba(0, 0, 0, 0.061), 1.9px 1.9px 3.8px rgba(0, 0, 0, 0.075), 3.4px 3.4px 6.7px rgba(0, 0, 0, 0.089), 6.3px 6.3px 12.5px rgba(0, 0, 0, 0.108), 15px 15px 30px rgba(0, 0, 0, 0.15);
+}
+.burger-menu:hover .line::after {
+  transform: translateX(0);
+}
+
+.overlay {
+  position: fixed;
+  top: 45px;
+  right: 80px;
+  width: 2em;
+  height: 2em;
+  background: #1a5780;
+  border-radius: 50%;
+  opacity: 0;
+  transition: 0.5s ease-in-out;
+  will-change: transform;
+}
+
+.burger-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+.burger-nav ul {
+  position: fixed;
+  z-index: 101;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  list-style-type: none;
+}
+.burger-nav ul li {
+  padding: 6px 0;
+  margin: 1em 3em;
+  opacity: 0;
+  transition: 0.6s cubic-bezier(0.365, 0.84, 0.44, 1);
+}
+.burger-nav ul li:nth-child(odd) {
+  transform: translateX(-100%);
+}
+.burger-nav ul li:nth-child(even) {
+  transform: translateX(100%);
+}
+.burger-nav ul li:nth-child(1) {
+  transition-delay: 0.05s;
+}
+.burger-nav ul li:nth-child(2) {
+  transition-delay: 0.1s;
+}
+.burger-nav ul li:nth-child(3) {
+  transition-delay: 0.15s;
+}
+.burger-nav ul li:nth-child(4) {
+  transition-delay: 0.2s;
+}
+.burger-nav ul li a {
+  position: relative;
+  display: block;
+  padding: 5px;
+  font-family: Lato, sans-serif;
+  font-size: 2em;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: white;
+  transition: 0.5s;
+}
+.burger-nav ul li a::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  background: #ff4281;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.5s;
+}
+.burger-nav ul li a:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+@media (max-width: 768px) {
+  .underline-menu {
+    display: none;
+  }
+
+  .burger-menu {
+    display: block;
+  }
+
+  .logo {
+    padding-top: 20px;
+  }
+}
 .btn {
   --hue: 204;
   position: relative;
@@ -219,19 +406,6 @@ header {
   border-color: transparent;
 }
 
-.gleaming span {
-  opacity: 0;
-  filter: blur(10px);
-  animation: fadeIn 2s alternate infinite;
-}
-
-@keyframes fadeIn {
-  50%,
-  100% {
-    opacity: 1;
-    filter: blur(0px);
-  }
-}
 .staggered-rise-in {
   position: relative;
   display: flex;
@@ -341,7 +515,7 @@ main .hero-section h1 {
   font-size: 46px;
   text-transform: uppercase;
 }
-main .hero-section p {
+main .hero-section h2 {
   font-size: 24px;
   font-weight: lighter;
 }

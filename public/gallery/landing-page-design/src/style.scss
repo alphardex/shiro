@@ -33,7 +33,7 @@ header {
   color: white;
 }
 
-.underline {
+.underline-menu {
   display: flex;
   padding: 0;
   margin: 0;
@@ -76,6 +76,224 @@ header {
       color: white;
       transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     }
+  }
+}
+
+// Full Page Burger Navigation https://codepen.io/alphardex/pen/NWPBwYe
+#burger-toggle {
+  position: absolute;
+  appearance: none;
+  opacity: 0;
+
+  &:checked {
+    // Here don't use box-shadow to make overlay because it will damage performance.
+    & ~ .overlay {
+      opacity: 1;
+      transform: scale(160);
+    }
+
+    & ~ .burger-nav {
+      pointer-events: auto;
+
+      ul li {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    & ~ main {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    & ~ .burger-menu {
+      .line {
+        &:nth-child(1) {
+          transform: translateY(calc(var(--burger-menu-radius) / 5))
+            rotate(45deg);
+        }
+
+        &:nth-child(2) {
+          transform: scaleX(0);
+        }
+
+        &:nth-child(3) {
+          transform: translateY(calc(var(--burger-menu-radius) / -5))
+            rotate(-45deg);
+        }
+      }
+    }
+  }
+}
+
+.burger-menu {
+  --burger-menu-radius: 4em;
+  position: fixed;
+  top: 25px;
+  right: 60px;
+  z-index: 100;
+  display: none;
+  width: var(--burger-menu-radius);
+  height: var(--burger-menu-radius);
+  background: white;
+  border: solid 2px hsla(184, 9%, 62%, 0.4);
+  border-radius: 50%;
+  outline: none;
+  transition: 0.5s ease-in-out;
+
+  .line {
+    position: absolute;
+    left: 25%;
+    width: 50%;
+    height: 3px;
+    background: hsla(210, 29%, 24%, 0.3);
+    border-radius: 10px;
+    overflow: hidden;
+    pointer-events: none;
+    transition: all 0.5s ease;
+
+    &:nth-child(1) {
+      top: 30%;
+    }
+
+    &:nth-child(2) {
+      top: 50%;
+    }
+
+    &:nth-child(3) {
+      top: 70%;
+    }
+
+    &::after {
+      position: absolute;
+      content: "";
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #2980b9;
+      transform: translateX(-100%);
+      transition: all 0.25s ease;
+    }
+
+    @for $i from 2 through 3 {
+      &:nth-child(#{$i})::after {
+        transition-delay: 0.1s * ($i - 1);
+      }
+    }
+  }
+
+  &:hover {
+    box-shadow: 0.4px 0.4px 0.8px rgba(0, 0, 0, 0.042),
+      1px 1px 2px rgba(0, 0, 0, 0.061), 1.9px 1.9px 3.8px rgba(0, 0, 0, 0.075),
+      3.4px 3.4px 6.7px rgba(0, 0, 0, 0.089),
+      6.3px 6.3px 12.5px rgba(0, 0, 0, 0.108),
+      15px 15px 30px rgba(0, 0, 0, 0.15);
+
+    .line::after {
+      transform: translateX(0);
+    }
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 45px;
+  right: 80px;
+  width: 2em;
+  height: 2em;
+  background: #1a5780;
+  border-radius: 50%;
+  opacity: 0;
+  transition: 0.5s ease-in-out;
+  will-change: transform;
+}
+
+.burger-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+
+  ul {
+    position: fixed;
+    z-index: 101;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    list-style-type: none;
+
+    li {
+      padding: 6px 0;
+      margin: 1em 3em;
+      opacity: 0;
+      // easeOutQuart
+      transition: 0.6s cubic-bezier(0.365, 0.84, 0.44, 1);
+
+      &:nth-child(odd) {
+        transform: translateX(-100%);
+      }
+
+      &:nth-child(even) {
+        transform: translateX(100%);
+      }
+
+      @for $i from 1 through 4 {
+        &:nth-child(#{$i}) {
+          transition-delay: 0.05s * $i;
+        }
+      }
+
+      a {
+        position: relative;
+        display: block;
+        padding: 5px;
+        font-family: Lato, sans-serif;
+        font-size: 2em;
+        text-decoration: none;
+        text-transform: uppercase;
+        color: white;
+        transition: 0.5s;
+
+        &::after {
+          position: absolute;
+          content: "";
+          top: 0;
+          left: 0;
+          z-index: -1;
+          width: 100%;
+          height: 100%;
+          background: hsl(340, 100%, 63%);
+          transform: scaleX(0);
+          transform-origin: right;
+          transition: transform 0.5s;
+        }
+
+        &:hover::after {
+          transform: scaleX(1);
+          transform-origin: left;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .underline-menu {
+    display: none;
+  }
+
+  .burger-menu {
+    display: block;
+  }
+
+  .logo {
+    padding-top: 20px;
   }
 }
 
@@ -256,23 +474,6 @@ header {
   }
 }
 
-// Gleaming Heading https://codepen.io/alphardex/pen/rNBrExx
-.gleaming {
-  span {
-    opacity: 0;
-    filter: blur(10px);
-    animation: fadeIn 2s alternate infinite;
-  }
-}
-
-@keyframes fadeIn {
-  50%,
-  100% {
-    opacity: 1;
-    filter: blur(0px);
-  }
-}
-
 // Staggered Rise In Text https://codepen.io/alphardex/pen/qBEmGbw
 .staggered-rise-in {
   position: relative;
@@ -395,7 +596,7 @@ main {
       text-transform: uppercase;
     }
 
-    p {
+    h2 {
       font-size: 24px;
       font-weight: lighter;
     }

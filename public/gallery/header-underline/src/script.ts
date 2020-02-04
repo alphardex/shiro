@@ -1,4 +1,4 @@
-let underlineMenuItems = document.querySelectorAll(".underline li");
+let underlineMenuItems = document.querySelectorAll(".underline-menu li");
 underlineMenuItems[0].classList.add("active");
 underlineMenuItems.forEach(item => {
   item.addEventListener("click", () => {

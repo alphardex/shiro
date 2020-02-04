@@ -1,11 +1,19 @@
 "use strict";
 // Header Underline https://codepen.io/alphardex/pen/JjoqbNP
-var underlineMenuItems = document.querySelectorAll(".underline li");
+var underlineMenuItems = document.querySelectorAll(".underline-menu li");
 underlineMenuItems[0].classList.add("active");
 underlineMenuItems.forEach(function (item) {
     item.addEventListener("click", function () {
         underlineMenuItems.forEach(function (item) { return item.classList.remove("active"); });
         item.classList.add("active");
+    });
+});
+// Full Page Burger Navigation https://codepen.io/alphardex/pen/NWPBwYe
+var burgerMenuToggle = document.querySelector("#burger-toggle");
+var burgerMenuLinks = document.querySelectorAll(".burger-nav li a");
+burgerMenuLinks.forEach(function (link) {
+    link.addEventListener("click", function () {
+        burgerMenuToggle.checked = false;
     });
 });
 // Cursor Follow & Hover Effect https://codepen.io/alphardex/pen/jOEgYjr
@@ -40,7 +48,7 @@ document.addEventListener("mousemove", function (e) {
     var _a = getXY(e, cursor), cursorX = _a[0], cursorY = _a[1];
     var _b = getXY(e, cursorBorder), cursorBorderX = _b[0], cursorBorderY = _b[1];
     var targetName = e.target.tagName;
-    if (targetName === "A" || targetName === "LI" || targetName === "BUTTON") {
+    if (targetName === "A" || targetName === "LABEL" || targetName === "BUTTON") {
         cursorBorder.classList.add("on-focus");
     }
     else {
@@ -64,7 +72,7 @@ document.addEventListener("mouseleave", function (e) {
     });
     cursorBorder.animate([
         {
-            opacity: 1
+            opacity: 0.8
         },
         {
             opacity: 0
@@ -73,19 +81,6 @@ document.addEventListener("mouseleave", function (e) {
         duration: 500,
         fill: "forwards"
     });
-});
-// Gleaming Heading https://codepen.io/alphardex/pen/rNBrExx
-var random = function (min, max) {
-    return min + Math.floor(Math.random() * (max - min + 1));
-};
-var heading = document.querySelector("h1.gleaming");
-var letters = heading.textContent.split("");
-heading.textContent = "";
-letters.forEach(function (letter) {
-    var span = document.createElement("span");
-    span.textContent = letter;
-    span.style.animationDelay = random(1, 1000) + "ms";
-    heading.append(span);
 });
 // Staggered Rise In Text https://codepen.io/alphardex/pen/qBEmGbw
 var staggeredRiseInTexts = document.querySelectorAll(".staggered-rise-in");
