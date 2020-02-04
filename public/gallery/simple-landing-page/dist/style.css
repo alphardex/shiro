@@ -1,21 +1,29 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,400i,700");
 body {
+  min-height: 100vh;
   margin: 0;
   padding: 0;
   background: black;
+  font-family: Montserrat, sans-serif;
+  overflow-x: hidden;
+}
+
+* {
   cursor: none;
 }
 
 header {
-  position: fixed;
+  position: absolute;
   top: 0;
   width: 100%;
+  max-width: 1160px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 60px;
 }
 
 .logo {
-  margin-left: 6em;
   font-size: 34px;
   line-height: 50px;
   text-align: center;
@@ -27,7 +35,6 @@ header {
   display: flex;
   padding: 0;
   margin: 0;
-  margin-right: 6em;
   border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   list-style-type: none;
 }
@@ -37,7 +44,6 @@ header {
 .underline li {
   position: relative;
   padding: 30px 25px 30px 25px;
-  cursor: pointer;
 }
 .underline li::after {
   position: absolute;
@@ -59,30 +65,6 @@ header {
   text-decoration: none;
   color: white;
   transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-}
-
-main {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-}
-main section {
-  text-align: center;
-}
-main h1 {
-  margin-bottom: 8px;
-  font-size: 46px;
-}
-main p {
-  font-size: 24px;
-  font-weight: lighter;
 }
 
 .btn {
@@ -141,14 +123,14 @@ main p {
 }
 
 .ken-burns-slideshow {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   z-index: -2;
   margin: 0;
   padding: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
   list-style-type: none;
 }
@@ -208,28 +190,69 @@ main p {
 }
 .cursor,
 .cursor-border {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
+  z-index: 9999;
   width: 0.4rem;
   height: 0.4rem;
   border-radius: 50%;
   pointer-events: none;
   opacity: 0;
-  mix-blend-mode: color-dodge;
+  will-change: transform;
   transition: 0.3s;
 }
 
 .cursor {
-  background: white;
+  background: #3498db;
 }
 
 .cursor-border {
   padding: 2rem;
-  border: 0.1rem solid white;
+  border: 0.1rem solid #3498db;
 }
 .cursor-border.on-focus {
   padding: 0.5rem;
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(51, 152, 219, 0.5);
   border-color: transparent;
+}
+
+.gleaming span {
+  opacity: 0;
+  filter: blur(10px);
+  animation: fadeIn 2s alternate infinite;
+}
+
+@keyframes fadeIn {
+  50%,
+  100% {
+    opacity: 1;
+    filter: blur(0px);
+  }
+}
+main {
+  color: white;
+  scroll-behavior: smooth;
+}
+main .hero-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+}
+main .hero-section h1 {
+  margin-bottom: 8px;
+  font-size: 46px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+main .hero-section p {
+  font-size: 24px;
+  font-weight: lighter;
+}
+main .normal-section {
+  color: black;
+  background: white;
 }

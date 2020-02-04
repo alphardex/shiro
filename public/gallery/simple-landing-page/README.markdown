@@ -15,4 +15,7 @@ https://codepen.io/alphardex/pen/wvBovww
 4. Cursor Follow & Hover Effect
 https://codepen.io/alphardex/pen/jOEgYjr
 
+5. Gleaming Heading
+https://codepen.io/alphardex/pen/rNBrExx
+
 Hope you enjoy it!

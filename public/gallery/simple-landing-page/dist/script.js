@@ -1,4 +1,5 @@
 "use strict";
+// Header Underline https://codepen.io/alphardex/pen/JjoqbNP
 var underlineMenuItems = document.querySelectorAll(".underline li");
 underlineMenuItems[0].classList.add("active");
 underlineMenuItems.forEach(function (item) {
@@ -7,6 +8,7 @@ underlineMenuItems.forEach(function (item) {
         item.classList.add("active");
     });
 });
+// Cursor Follow & Hover Effect https://codepen.io/alphardex/pen/jOEgYjr
 var cursor = document.querySelector(".cursor");
 var cursorBorder = document.querySelector(".cursor-border");
 var getXY = function (event, element) {
@@ -71,4 +73,17 @@ document.addEventListener("mouseleave", function (e) {
         duration: 500,
         fill: "forwards"
     });
+});
+// Gleaming Heading https://codepen.io/alphardex/pen/rNBrExx
+var random = function (min, max) {
+    return min + Math.floor(Math.random() * (max - min + 1));
+};
+var heading = document.querySelector("h1.gleaming");
+var letters = heading.textContent.split("");
+heading.textContent = "";
+letters.forEach(function (letter) {
+    var span = document.createElement("span");
+    span.textContent = letter;
+    span.style.animationDelay = random(1, 1000) + "ms";
+    heading.append(span);
 });

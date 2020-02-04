@@ -10,7 +10,7 @@ body {
 
 .cursor,
 .cursor-border {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 0.4rem;
@@ -19,6 +19,7 @@ body {
   pointer-events: none;
   opacity: 0;
   mix-blend-mode: color-dodge;
+  will-change: transform;
   transition: 0.3s;
 }
 

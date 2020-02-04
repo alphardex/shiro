@@ -1,21 +1,31 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,400i,700");
+
 body {
+  min-height: 100vh;
   margin: 0;
   padding: 0;
   background: black;
+  font-family: Montserrat, sans-serif;
+  overflow-x: hidden;
+}
+
+* {
   cursor: none;
 }
 
+// Header Underline https://codepen.io/alphardex/pen/JjoqbNP
 header {
-  position: fixed;
+  position: absolute;
   top: 0;
   width: 100%;
+  max-width: 1160px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 60px;
 }
 
 .logo {
-  margin-left: 6em;
   font-size: 34px;
   line-height: 50px;
   text-align: center;
@@ -27,7 +37,6 @@ header {
   display: flex;
   padding: 0;
   margin: 0;
-  margin-right: 6em;
   border-bottom: 1px solid hsla(0, 0%, 100%, 0.2);
   list-style-type: none;
 
@@ -40,7 +49,6 @@ header {
   li {
     position: relative;
     padding: 30px 25px 30px 25px;
-    cursor: pointer;
 
     &::after {
       position: absolute;
@@ -71,33 +79,7 @@ header {
   }
 }
 
-main {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-
-  section {
-    text-align: center;
-  }
-
-  h1 {
-    margin-bottom: 8px;
-    font-size: 46px;
-  }
-
-  p {
-    font-size: 24px;
-    font-weight: lighter;
-  }
-}
-
+// Button Collection https://codepen.io/alphardex/pen/VwwVLdM
 .btn {
   --hue: 204;
   position: relative;
@@ -160,17 +142,18 @@ main {
   }
 }
 
+// Ken Burns Effect (Pure CSS) https://codepen.io/alphardex/pen/wvBovww
 .ken-burns-slideshow {
   $total-slides: 4;
   $interval: 6s;
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   z-index: -2;
   margin: 0;
   padding: 0;
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   overflow: hidden;
   list-style-type: none;
 
@@ -240,31 +223,82 @@ main {
   }
 }
 
+// Cursor Follow & Hover Effect https://codepen.io/alphardex/pen/jOEgYjr
 .cursor,
 .cursor-border {
-  position: absolute;
+  position: fixed; // when scroll, it's fixed and won't move.
   top: 0;
   left: 0;
+  z-index: 9999;
   width: 0.4rem;
   height: 0.4rem;
   border-radius: 50%;
   pointer-events: none;
   opacity: 0;
-  mix-blend-mode: color-dodge;
+  will-change: transform;
   transition: 0.3s;
 }
 
 .cursor {
-  background: white;
+  background: #3498db;
 }
 
 .cursor-border {
   padding: 2rem;
-  border: 0.1rem solid white;
+  border: 0.1rem solid #3498db;
 
   &.on-focus {
     padding: 0.5rem;
-    background: rgba(255, 255, 255, 0.5);
+    background: hsla(204, 70%, 53%, 0.5);
     border-color: transparent;
+  }
+}
+
+// Gleaming Heading https://codepen.io/alphardex/pen/rNBrExx
+.gleaming {
+  span {
+    opacity: 0;
+    filter: blur(10px);
+    animation: fadeIn 2s alternate infinite;
+  }
+}
+
+@keyframes fadeIn {
+  50%,
+  100% {
+    opacity: 1;
+    filter: blur(0px);
+  }
+}
+
+// Basic Layout
+main {
+  color: white;
+  scroll-behavior: smooth;
+
+  .hero-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+
+    h1 {
+      margin-bottom: 8px;
+      font-size: 46px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    p {
+      font-size: 24px;
+      font-weight: lighter;
+    }
+  }
+
+  .normal-section {
+    color: black;
+    background: white;
   }
 }

@@ -5,16 +5,13 @@ body {
 }
 
 header {
-  position: fixed;
-  top: 0;
-  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 0 60px;
 }
 
 .logo {
-  margin-left: 6em;
   font-size: 34px;
   line-height: 50px;
   text-align: center;
@@ -26,7 +23,6 @@ header {
   display: flex;
   padding: 0;
   margin: 0;
-  margin-right: 6em;
   border-bottom: 1px solid hsla(0, 0%, 100%, 0.2);
   list-style-type: none;
 
