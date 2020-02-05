@@ -96,7 +96,6 @@ staggeredRiseInTexts.forEach(function (text) {
 });
 // Observe the elements which have animations to fire.
 var observer = new IntersectionObserver(function (entries) {
-    console.log(entries);
     entries.forEach(function (entry) {
         if (entry.isIntersecting) {
             entry.target.classList.add("active");
@@ -111,5 +110,9 @@ var profileCards = document.querySelectorAll(".card");
 profileCards.forEach(function (profileCard) { return observer.observe(profileCard); });
 var timeline = document.querySelector(".timeline");
 observer.observe(timeline);
-var map = document.querySelector(".map");
+var map = document.querySelector("#map");
 observer.observe(map);
+// Baidu Map API
+var bmap = new BMap.Map("map");
+var point = new BMap.Point(113.950148, 22.553891);
+bmap.centerAndZoom(point, 18);

@@ -1,5 +1,10 @@
 export default [
   {
+    title: "map-marker",
+    description: "地图标记图标",
+    tags: ["icon", "marker"]
+  },
+  {
     title: "landing-page-design",
     description: "LP页面设计",
     tags: ["landing page"]

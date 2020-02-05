@@ -110,7 +110,6 @@ staggeredRiseInTexts.forEach(text => {
 
 // Observe the elements which have animations to fire.
 let observer = new IntersectionObserver(entries => {
-  console.log(entries);
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add("active");
@@ -125,5 +124,10 @@ let profileCards = document.querySelectorAll(".card");
 profileCards.forEach(profileCard => observer.observe(profileCard));
 let timeline = document.querySelector(".timeline");
 observer.observe(timeline);
-let map = document.querySelector(".map");
+let map = document.querySelector("#map");
 observer.observe(map);
+
+// Baidu Map API
+let bmap = new BMap.Map("map");
+let point = new BMap.Point(113.950148, 22.553891);
+bmap.centerAndZoom(point, 18);
