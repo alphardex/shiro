@@ -17,24 +17,17 @@ body {
     height: var(--marker-diameter);
     background: var(--marker-color);
     border-radius: 50% 50% 0 50%;
+    // Use mask to make a ring which really has a hole.
+    mask: radial-gradient(
+      transparent calc(var(--marker-radius) / 2),
+      black calc(var(--marker-radius) / 2)
+    );
     transform: rotate(45deg);
-
-    &::before {
-      //Shit man, why don't we have clip-path: frame-circle😂
-      position: absolute;
-      content: "";
-      top: 25%;
-      left: 25%;
-      width: var(--marker-radius);
-      height: var(--marker-radius);
-      background: #e1e6f9;
-      border-radius: 50%;
-    }
   }
 
   .shadow {
     position: absolute;
-    z-index: -2;
+    z-index: -1;
     display: flex;
     justify-content: center;
     align-items: center;
