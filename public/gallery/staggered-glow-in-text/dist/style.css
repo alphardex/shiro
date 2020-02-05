@@ -13,17 +13,20 @@ p {
   margin: 0em 5em 4em 5em;
 }
 
-.glowIn {
+h1, p {
   text-align: left;
   line-height: 1.8;
-  color: white;
   font-family: Lora, serif;
 }
+
+.glowIn {
+  color: white;
+}
 .glowIn span {
-  animation: glowIn 0.8s ease both;
+  animation: glow-in 0.8s both;
 }
 
-@keyframes glowIn {
+@keyframes glow-in {
   from {
     opacity: 0;
   }

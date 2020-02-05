@@ -1,3 +1,4 @@
+"use strict";
 var glowInTexts = document.querySelectorAll(".glowIn");
 glowInTexts.forEach(function (glowInText) {
     var letters = glowInText.textContent.split("");

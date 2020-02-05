@@ -73,6 +73,7 @@ header {
       display: flex;
       padding: 30px 25px 30px 25px;
       text-decoration: none;
+      text-transform: uppercase;
       color: white;
       transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     }
@@ -571,7 +572,7 @@ p {
   --card-bg-color: hsl(240, 31%, 25%);
   --card-bg-color-transparent: hsla(240, 31%, 25%, 0.5);
   position: relative;
-  width: 300px;
+  width: 240px;
 
   &.active {
     .card-borders {
@@ -662,6 +663,7 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 280px;
     padding: 40px 0 40px 0;
     font-family: Lato, sans-serif;
     background: var(--card-bg-color-transparent);
@@ -704,6 +706,7 @@ p {
 
     .info {
       font-size: 12px;
+      text-align: center;
       opacity: 0;
       transform: translateY(20%);
     }
@@ -830,6 +833,7 @@ main {
       display: grid;
       justify-items: center;
       gap: 20px;
+      letter-spacing: 0.25em;
     }
   }
 
