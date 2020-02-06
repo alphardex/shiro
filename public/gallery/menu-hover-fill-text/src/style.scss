@@ -8,7 +8,7 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  background: #222;
+  background: #1A1E23;
 }
 
 ul {
@@ -33,6 +33,7 @@ ul {
       -webkit-text-stroke: 2px var(--fill-color);
       background: linear-gradient(90deg, var(--fill-color) 0%, var(--fill-color) 100%);
       background-size: 0;
+      background-position: left;
       background-repeat: no-repeat;
       color: transparent;
       background-clip: text;

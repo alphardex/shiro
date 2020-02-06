@@ -4,6 +4,8 @@ body {
   align-items: center;
   min-height: 100vh;
   margin: 0;
+  overflow: hidden;
+  background: #ECEFFC;
 }
 
 #burger-toggle {
@@ -37,10 +39,8 @@ body {
 }
 
 .burger-menu {
-  --burger-menu-radius: 10em;
-  position: fixed;
-  top: 40vh;
-  left: 40vw;
+  --burger-menu-radius: 4em;
+  position: relative;
   z-index: 100;
   display: block;
   width: var(--burger-menu-radius);
@@ -109,9 +109,7 @@ body {
 }
 
 .overlay {
-  position: fixed;
-  top: 55vh;
-  left: 45vw;
+  position: absolute;
   width: 2em;
   height: 2em;
   background: hsla(204, 64%, 44%, 0.9);

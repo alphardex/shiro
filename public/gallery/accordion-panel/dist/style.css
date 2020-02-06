@@ -2,6 +2,7 @@
 body {
   display: flex;
   min-height: 100vh;
+  background: #ECEFFC;
 }
 
 .accordion {
@@ -19,7 +20,7 @@ body {
   font-size: 1.2rem;
   text-decoration: none;
   color: #7f8c8d;
-  border-bottom: 1px solid #e5e5e5;
+  border-bottom: 1px solid rgba(128, 141, 142, 0.5);
 }
 .accordion .accordion-item a svg {
   position: absolute;

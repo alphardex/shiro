@@ -4,7 +4,7 @@ body {
   margin: 0;
   display: grid;
   place-items: center;
-  background: #ecf0f1;
+  background: #ECEFFC;
 }
 
 .btn {
@@ -24,6 +24,7 @@ body {
       -ms-user-select: none;
           user-select: none;
   white-space: nowrap;
+  -webkit-transition: 0.25s;
   transition: 0.25s;
 }
 .btn:hover {
@@ -58,6 +59,7 @@ body {
   bottom: -1px;
   border: inherit;
   border-radius: inherit;
+  -webkit-transition: 0.3s;
   transition: 0.3s;
 }
 .btn-shock::before {
@@ -86,8 +88,11 @@ body {
 
 .card {
   position: relative;
+  display: -webkit-box;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
   width: 360px;
   padding: 10px;
   font-family: Lato, sans-serif;
@@ -107,9 +112,12 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
+  display: -webkit-box;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
 }
 .card .hint h2 {
   z-index: 2;
@@ -119,6 +127,7 @@ body {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  -webkit-transition: 1.5s 0.5s;
   transition: 1.5s 0.5s;
 }
 .card .hint::before, .card .hint::after {
@@ -134,12 +143,14 @@ body {
           transform: rotate(-90deg);
   -webkit-transform-origin: left top;
           transform-origin: left top;
+  -webkit-transition: -webkit-transform cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.5s;
   transition: -webkit-transform cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.5s;
   transition: transform cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.5s;
   transition: transform cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.5s, -webkit-transform cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.5s;
 }
 .card .hint::after {
-  transition-delay: 0.1s;
+  -webkit-transition-delay: 0.1s;
+          transition-delay: 0.1s;
 }
 .card.sent .hint h2 {
   color: white;
@@ -163,9 +174,10 @@ body {
   font-size: 1.5em;
   letter-spacing: 0.1em;
   color: #7f8c8d;
-  background: #ecf0f1;
+  background: #ECEFFC;
   border: none;
   border-radius: 5px;
+  -webkit-transition: 0.5s;
   transition: 0.5s;
   opacity: 0;
   -webkit-transform: translateY(20px);
@@ -178,8 +190,10 @@ body {
   outline: none;
 }
 .card .multi-button {
+  display: -webkit-box;
   display: flex;
-  justify-content: space-between;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
   margin-top: 10px;
 }
 .card .multi-button .btn {

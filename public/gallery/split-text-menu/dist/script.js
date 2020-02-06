@@ -1,3 +1,4 @@
+"use strict";
 var splitMenuLinks = document.querySelectorAll(".split-menu li a");
 splitMenuLinks.forEach(function (link) {
     var words = link.textContent.split(" ");

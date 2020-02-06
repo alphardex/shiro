@@ -1,3 +1,4 @@
+"use strict";
 var AUTO_PLAY_SECOND = 4000;
 var carousel = document.querySelector(".carousel");
 var dots = document.querySelectorAll(".dot a");

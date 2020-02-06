@@ -1,3 +1,4 @@
+"use strict";
 var card = document.querySelector(".card");
 var textarea = document.querySelector(".card .textarea");
 var sendButton = document.querySelector("#send");

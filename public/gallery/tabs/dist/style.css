@@ -1,10 +1,13 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:400,300");
 body {
+  display: -webkit-box;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
   height: 100vh;
-  background: #222;
+  background: #1A1E23;
 }
 
 .tabs {
@@ -29,9 +32,12 @@ body {
 .tabs .tabs__links {
   margin: 0;
   padding: 0;
+  display: -webkit-box;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
+  -webkit-box-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+          align-items: center;
   height: var(--tab-links-height);
   background: var(--tab-links-bg);
   list-style-type: none;
@@ -42,7 +48,8 @@ body {
   }
 }
 .tabs .tabs__links li {
-  flex: 1;
+  -webkit-box-flex: 1;
+          flex: 1;
 }
 .tabs .tabs__links li .tabs__link {
   all: unset;
@@ -52,6 +59,7 @@ body {
   background: var(--tab-link-bg);
   cursor: pointer;
   overflow: hidden;
+  -webkit-transition: 0.3s;
   transition: 0.3s;
 }
 @media screen and (max-width: 750px) {
@@ -73,15 +81,20 @@ body {
           transform: scaleY(0);
   -webkit-transform-origin: top;
           transform-origin: top;
+  -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
 }
 .tabs .tabs__links li .tabs__link .tabs__link__text {
   position: relative;
   z-index: 2;
+  display: -webkit-box;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
   opacity: 0.6;
+  -webkit-transition: 0.5s;
   transition: 0.5s;
 }
 .tabs .tabs__links li .tabs__link .tabs__link__text::before {
@@ -93,6 +106,7 @@ body {
   font-weight: 600;
   color: white;
   opacity: 0.1;
+  -webkit-transition: 1.2s ease-out;
   transition: 1.2s ease-out;
 }
 @media screen and (max-width: 750px) {
@@ -138,6 +152,7 @@ body {
   padding: 40px 60px;
   background: white;
   list-style-type: none;
+  -webkit-transition: 1s;
   transition: 1s;
 }
 .tabs .tabs__contents::after {

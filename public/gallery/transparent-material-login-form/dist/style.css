@@ -5,7 +5,7 @@ body {
   justify-content: center;
   align-items: center;
   font-family: Lato, sans-serif;
-  background: url("https://i.loli.net/2019/10/18/buDT4YS6zUMfHst.jpg") 0/cover fixed;
+  background: #ECEFFC;
 }
 
 .login-form {

@@ -1,3 +1,4 @@
+"use strict";
 var tabLinks = document.querySelectorAll(".tabs__link");
 var tabContents = document.querySelectorAll(".tabs__content");
 tabLinks[0].classList.add("active");

@@ -1,7 +1,10 @@
 body {
+  display: -webkit-box;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
   height: 100vh;
   background: #0a112d;
 }
@@ -25,6 +28,7 @@ body {
           appearance: none;
   cursor: -webkit-grab;
   cursor: grab;
+  -webkit-transition: border 1s;
   transition: border 1s;
 }
 .gradient-range::-webkit-slider-thumb:active {

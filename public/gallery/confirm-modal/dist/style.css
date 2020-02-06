@@ -6,11 +6,15 @@
 }
 
 body {
+  display: -webkit-box;
   display: flex;
   height: 100vh;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
   font-family: Lato, sans-serif;
+  background: #ECEFFC;
 }
 
 .btn {
@@ -30,6 +34,7 @@ body {
       -ms-user-select: none;
           user-select: none;
   white-space: nowrap;
+  -webkit-transition: 0.25s;
   transition: 0.25s;
 }
 .btn-danger {
@@ -61,11 +66,13 @@ body {
   width: 100%;
   height: 100%;
   border-radius: inherit;
+  -webkit-transition: 0.4s cubic-bezier(0.75, 0, 0.25, 1);
   transition: 0.4s cubic-bezier(0.75, 0, 0.25, 1);
 }
 .btn-fill::after {
   position: relative;
   content: attr(data-text);
+  -webkit-transition: 0.4s ease;
   transition: 0.4s ease;
 }
 .btn-fill:hover::before {
@@ -84,6 +91,7 @@ body {
   right: 0;
   z-index: 999;
   color: white;
+  background-image: -webkit-gradient(linear, left top, right top, from(#0acffe), to(#495aff));
   background-image: linear-gradient(to right, #0acffe 0%, #495aff 100%);
   border: transparent;
   border-radius: 12px;
@@ -108,9 +116,13 @@ body {
           animation: show-modal-icon 0.5s ease 0.2s forwards;
 }
 .modal .modal-content {
+  display: -webkit-box;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  -webkit-box-align: center;
+          align-items: center;
   width: 300px;
   padding: 1em;
 }
@@ -129,6 +141,7 @@ body {
 }
 .modal .modal-content .modal-options {
   margin-top: 1rem;
+  display: -webkit-box;
   display: flex;
   justify-content: space-around;
 }

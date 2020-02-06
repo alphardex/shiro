@@ -1,3 +1,4 @@
+"use strict";
 var floatTextMenuLinks = document.querySelectorAll(".float-text-menu li a");
 floatTextMenuLinks.forEach(function (link) {
     var letters = link.textContent.split("");

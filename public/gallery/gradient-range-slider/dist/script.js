@@ -1,3 +1,4 @@
+"use strict";
 var colorStopMap = {
     green: 0,
     blue: 20,
