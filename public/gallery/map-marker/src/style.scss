@@ -13,6 +13,8 @@ body {
   --marker-color: #eb2f06;
 
   .pin {
+    position: relative;
+    z-index: 1;
     width: var(--marker-diameter);
     height: var(--marker-diameter);
     background: var(--marker-color);
@@ -27,7 +29,6 @@ body {
 
   .shadow {
     position: absolute;
-    z-index: -1;
     display: flex;
     justify-content: center;
     align-items: center;

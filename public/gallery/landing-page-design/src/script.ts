@@ -124,6 +124,8 @@ let profileCards = document.querySelectorAll(".card");
 profileCards.forEach(profileCard => observer.observe(profileCard));
 let timeline = document.querySelector(".timeline");
 observer.observe(timeline);
+let place = document.querySelector(".place");
+observer.observe(place);
 let map = document.querySelector("#map");
 observer.observe(map);
 

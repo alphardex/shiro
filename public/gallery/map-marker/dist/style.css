@@ -16,6 +16,8 @@ body {
   --marker-color: #eb2f06;
 }
 .marker .pin {
+  position: relative;
+  z-index: 1;
   width: var(--marker-diameter);
   height: var(--marker-diameter);
   background: var(--marker-color);
@@ -27,7 +29,6 @@ body {
 }
 .marker .shadow {
   position: absolute;
-  z-index: -1;
   display: -webkit-box;
   display: flex;
   -webkit-box-pack: center;

@@ -110,6 +110,8 @@ var profileCards = document.querySelectorAll(".card");
 profileCards.forEach(function (profileCard) { return observer.observe(profileCard); });
 var timeline = document.querySelector(".timeline");
 observer.observe(timeline);
+var place = document.querySelector(".place");
+observer.observe(place);
 var map = document.querySelector("#map");
 observer.observe(map);
 // Baidu Map API

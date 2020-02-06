@@ -786,6 +786,64 @@ p {
   }
 }
 
+// Map Marker https://codepen.io/alphardex/pen/ZEGzZYd
+.marker {
+  position: relative;
+  --marker-radius: 1em;
+  --marker-diameter: calc(var(--marker-radius) * 2);
+  --marker-color: #3498db;
+
+  .pin {
+    position: relative;
+    z-index: 1;
+    width: var(--marker-diameter);
+    height: var(--marker-diameter);
+    background: var(--marker-color);
+    border-radius: 50% 50% 0 50%;
+    // Use mask to make a ring which really has a hole.
+    mask: radial-gradient(
+      transparent calc(var(--marker-radius) / 2),
+      black calc(var(--marker-radius) / 2)
+    );
+    transform: rotate(45deg);
+  }
+
+  .shadow {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: var(--marker-radius);
+    height: var(--marker-radius);
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 50%;
+    transform: translate(50%, -10%) rotateX(60deg);
+
+    &::before {
+      position: absolute;
+      content: "";
+      width: var(--marker-diameter);
+      height: var(--marker-diameter);
+      background: transparent;
+      border: 1px solid var(--marker-color);
+      border-radius: inherit;
+      opacity: 0;
+      transform: scale(0);
+      animation: pulse 1s infinite;
+    }
+  }
+}
+
+@keyframes pulse {
+  50% {
+    opacity: 1;
+  }
+
+  to {
+    transform: scale(1.2);
+  }
+}
+
 // Basic Layout
 main {
   color: white;
@@ -872,6 +930,21 @@ main {
 
   #location {
     background-image: linear-gradient(45deg, #874da2 0%, #c43a30 100%);
+
+    .place {
+      display: flex;
+      align-items: center;
+      opacity: 0;
+      transform: translateY(20%);
+
+      &.active {
+        animation: fade-up 1.2s 1s forwards;
+      }
+
+      .marker {
+        margin: 0 1em 0.5em 0;
+      }
+    }
 
     #map {
       width: 560px;
