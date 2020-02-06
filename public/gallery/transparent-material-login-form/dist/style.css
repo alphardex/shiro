@@ -19,16 +19,22 @@ body {
   box-shadow: 0 0.4px 0.6px rgba(0, 0, 0, 0.141), 0 1px 1.3px rgba(0, 0, 0, 0.202), 0 1.9px 2.5px rgba(0, 0, 0, 0.25), 0 3.4px 4.5px rgba(0, 0, 0, 0.298), 0 6.3px 8.4px rgba(0, 0, 0, 0.359), 0 15px 20px rgba(0, 0, 0, 0.5);
 }
 .login-form h1 {
-  margin: 0 0 0.3em 0;
+  margin: 0 0 1em 0;
   padding: 12px 0;
   font-size: 2.5em;
 }
 .login-form .form-field {
   position: relative;
-  margin: 22px 0 8px 0;
+  display: flex;
+  align-items: center;
+  padding: 4px 0 0 0;
+  margin-bottom: 2em;
   font-size: 20px;
   border-bottom: 1px solid white;
   transition: 0.4s;
+}
+.login-form .form-field > * {
+  padding-bottom: 0.5em;
 }
 .login-form .form-field::after {
   position: absolute;
@@ -46,7 +52,10 @@ body {
   transform: scaleX(1);
 }
 .login-form .form-field input {
-  padding-left: 10px;
+  top: 1px;
+  padding-top: 0;
+  padding-left: 0.5em;
+  margin: 0;
   color: white;
   background: transparent;
   border: none;
@@ -63,8 +72,7 @@ body {
 }
 .login-form .form-field label {
   position: absolute;
-  left: 32px;
-  top: 22px;
+  left: 30px;
   transform-origin: left;
   transition: 0.4s;
 }
@@ -72,7 +80,7 @@ body {
   position: relative;
   width: 100%;
   padding: 6px 0;
-  margin: 36px 0 18px 0;
+  margin: 0.5em 0 1em 0;
   font-size: 1.2em;
   color: white;
   background: transparent;
