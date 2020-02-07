@@ -1,5 +1,13 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,400i,700");
 
+* {
+  cursor: none;
+}
+
+html, body {
+  scroll-behavior: smooth;
+}
+
 body {
   min-height: 100vh;
   margin: 0;
@@ -7,10 +15,6 @@ body {
   background: black;
   font-family: Montserrat, sans-serif;
   overflow-x: hidden;
-}
-
-* {
-  cursor: none;
 }
 
 // Header Underline https://codepen.io/alphardex/pen/JjoqbNP
@@ -504,21 +508,30 @@ header {
   position: relative;
   color: transparent;
 
-  &.active {
-    animation: fill-text-white 1.2s 0.8s forwards;
+  &::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #35b9f1;
+    transform: scaleX(0);
+    transform-origin: left;
+  }
 
+  &.active {
     &::before {
-      position: absolute;
-      content: "";
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: #35b9f1;
-      transform: scaleX(0);
-      transform-origin: left;
       animation: slide-in-out 1.2s 0.6s cubic-bezier(0.75, 0, 0, 1) forwards;
     }
+  }
+
+  &.active {
+    animation: fill-text-white 1.2s 0.8s forwards;
+  }
+
+  &.reverse-color.active {
+    animation: fill-text-black 1.2s 0.8s forwards;
   }
 }
 
@@ -541,6 +554,12 @@ header {
 @keyframes fill-text-white {
   to {
     color: white;
+  }
+}
+
+@keyframes fill-text-black {
+  to {
+    color: black;
   }
 }
 
@@ -569,8 +588,7 @@ p {
 
 // Profile Card https://codepen.io/alphardex/pen/jOExoLp
 .card {
-  --card-bg-color: hsl(240, 31%, 25%);
-  --card-bg-color-transparent: hsla(240, 31%, 25%, 0.5);
+  --card-bg-color: linear-gradient(-20deg, #2b5876 0%, #4e4376 100%);
   position: relative;
   width: 240px;
 
@@ -666,11 +684,11 @@ p {
     height: 280px;
     padding: 40px 0 40px 0;
     font-family: Lato, sans-serif;
-    background: var(--card-bg-color-transparent);
-    box-shadow: 0 0px 0.6px rgba(0, 0, 0, 0.028),
-      0 0px 1.3px rgba(0, 0, 0, 0.04), 0 0px 2.5px rgba(0, 0, 0, 0.05),
-      0 0px 4.5px rgba(0, 0, 0, 0.06), 0 0px 8.4px rgba(0, 0, 0, 0.072),
-      0 0px 20px rgba(0, 0, 0, 0.1);
+    background: var(--card-bg-color);
+    box-shadow: 0 0px 0.7px rgba(0, 0, 0, 0.056),
+      0 0px 1.7px rgba(0, 0, 0, 0.081), 0 0px 3.1px rgba(0, 0, 0, 0.1),
+      0 0px 5.6px rgba(0, 0, 0, 0.119), 0 0px 10.4px rgba(0, 0, 0, 0.144),
+      0 0px 25px rgba(0, 0, 0, 0.2);
     opacity: 0;
     transform: scale(0.6);
 
@@ -847,12 +865,20 @@ p {
 // Basic Layout
 main {
   color: white;
-  scroll-behavior: smooth;
 
   section {
+
     h1,
     h2 {
       margin: 0;
+    }
+
+    h1 {
+      font-size: 32px;
+    }
+
+    h2 {
+      font-size: 14px;
     }
 
     p {
@@ -896,7 +922,7 @@ main {
   }
 
   #about {
-    background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+    background: #1a1e23;
 
     .description {
       display: grid;
@@ -906,7 +932,11 @@ main {
   }
 
   #speakers {
-    background-image: linear-gradient(45deg, #874da2 0%, #c43a30 100%);
+    background: #eceffc;
+
+    .titles {
+      color: black;
+    }
 
     .speakers-cards {
       display: grid;
@@ -916,7 +946,7 @@ main {
   }
 
   #schedule {
-    background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+    background: #1a1e23;
 
     .timeline {
       opacity: 0;
@@ -929,7 +959,8 @@ main {
   }
 
   #location {
-    background-image: linear-gradient(45deg, #874da2 0%, #c43a30 100%);
+    background: #eceffc;
+    color: black;
 
     .place {
       display: flex;

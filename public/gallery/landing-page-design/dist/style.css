@@ -1,4 +1,12 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,400i,700");
+* {
+  cursor: none;
+}
+
+html, body {
+  scroll-behavior: smooth;
+}
+
 body {
   min-height: 100vh;
   margin: 0;
@@ -6,10 +14,6 @@ body {
   background: black;
   font-family: Montserrat, sans-serif;
   overflow-x: hidden;
-}
-
-* {
-  cursor: none;
 }
 
 header {
@@ -531,11 +535,7 @@ header {
   position: relative;
   color: transparent;
 }
-.slide-bar.active {
-  -webkit-animation: fill-text-white 1.2s 0.8s forwards;
-          animation: fill-text-white 1.2s 0.8s forwards;
-}
-.slide-bar.active::before {
+.slide-bar::before {
   position: absolute;
   content: "";
   top: 0;
@@ -547,8 +547,18 @@ header {
           transform: scaleX(0);
   -webkit-transform-origin: left;
           transform-origin: left;
+}
+.slide-bar.active::before {
   -webkit-animation: slide-in-out 1.2s 0.6s cubic-bezier(0.75, 0, 0, 1) forwards;
           animation: slide-in-out 1.2s 0.6s cubic-bezier(0.75, 0, 0, 1) forwards;
+}
+.slide-bar.active {
+  -webkit-animation: fill-text-white 1.2s 0.8s forwards;
+          animation: fill-text-white 1.2s 0.8s forwards;
+}
+.slide-bar.reverse-color.active {
+  -webkit-animation: fill-text-black 1.2s 0.8s forwards;
+          animation: fill-text-black 1.2s 0.8s forwards;
 }
 
 @-webkit-keyframes slide-in-out {
@@ -598,6 +608,16 @@ header {
     color: white;
   }
 }
+@-webkit-keyframes fill-text-black {
+  to {
+    color: black;
+  }
+}
+@keyframes fill-text-black {
+  to {
+    color: black;
+  }
+}
 p {
   opacity: 0;
   -webkit-transform: translateY(20%);
@@ -644,8 +664,7 @@ p:nth-child(5) {
   }
 }
 .card {
-  --card-bg-color: hsl(240, 31%, 25%);
-  --card-bg-color-transparent: hsla(240, 31%, 25%, 0.5);
+  --card-bg-color: linear-gradient(-20deg, #2b5876 0%, #4e4376 100%);
   position: relative;
   width: 240px;
 }
@@ -740,8 +759,8 @@ p:nth-child(5) {
   height: 280px;
   padding: 40px 0 40px 0;
   font-family: Lato, sans-serif;
-  background: var(--card-bg-color-transparent);
-  box-shadow: 0 0px 0.6px rgba(0, 0, 0, 0.028), 0 0px 1.3px rgba(0, 0, 0, 0.04), 0 0px 2.5px rgba(0, 0, 0, 0.05), 0 0px 4.5px rgba(0, 0, 0, 0.06), 0 0px 8.4px rgba(0, 0, 0, 0.072), 0 0px 20px rgba(0, 0, 0, 0.1);
+  background: var(--card-bg-color);
+  box-shadow: 0 0px 0.7px rgba(0, 0, 0, 0.056), 0 0px 1.7px rgba(0, 0, 0, 0.081), 0 0px 3.1px rgba(0, 0, 0, 0.1), 0 0px 5.6px rgba(0, 0, 0, 0.119), 0 0px 10.4px rgba(0, 0, 0, 0.144), 0 0px 25px rgba(0, 0, 0, 0.2);
   opacity: 0;
   -webkit-transform: scale(0.6);
           transform: scale(0.6);
@@ -979,11 +998,16 @@ p:nth-child(5) {
 }
 main {
   color: white;
-  scroll-behavior: smooth;
 }
 main section h1,
 main section h2 {
   margin: 0;
+}
+main section h1 {
+  font-size: 32px;
+}
+main section h2 {
+  font-size: 14px;
 }
 main section p {
   margin: 0;
@@ -1024,8 +1048,7 @@ main .normal-section .titles {
   letter-spacing: 0.25em;
 }
 main #about {
-  background-image: -webkit-gradient(linear, left top, right top, from(#6a11cb), to(#2575fc));
-  background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+  background: #1a1e23;
 }
 main #about .description {
   display: grid;
@@ -1033,7 +1056,10 @@ main #about .description {
   width: 640px;
 }
 main #speakers {
-  background-image: linear-gradient(45deg, #874da2 0%, #c43a30 100%);
+  background: #eceffc;
+}
+main #speakers .titles {
+  color: black;
 }
 main #speakers .speakers-cards {
   display: grid;
@@ -1041,8 +1067,7 @@ main #speakers .speakers-cards {
   gap: 40px;
 }
 main #schedule {
-  background-image: -webkit-gradient(linear, left top, right top, from(#6a11cb), to(#2575fc));
-  background-image: linear-gradient(to right, #6a11cb 0%, #2575fc 100%);
+  background: #1a1e23;
 }
 main #schedule .timeline {
   opacity: 0;
@@ -1054,7 +1079,8 @@ main #schedule .timeline.active {
           animation: fade-up 1.2s 1s forwards;
 }
 main #location {
-  background-image: linear-gradient(45deg, #874da2 0%, #c43a30 100%);
+  background: #eceffc;
+  color: black;
 }
 main #location .place {
   display: -webkit-box;

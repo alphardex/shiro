@@ -17,7 +17,7 @@ export default [
   {
     title: "share-button-float-icon",
     description: "分享按钮悬浮出现图标",
-    tags: ["button", "icon", "hover", "staggered"]
+    tags: ["button", "hover", "staggered"]
   },
   {
     title: "header-underline",
@@ -262,7 +262,7 @@ export default [
   {
     title: "isometric-icon-hover",
     description: "3d等距图标悬浮效果",
-    tags: ["3d", "isometric", "icon", "hover"]
+    tags: ["3d", "isometric", "hover"]
   },
   {
     title: "glowing-list-hover",
