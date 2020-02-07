@@ -33,6 +33,10 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 0 60px;
+
+  @include sp-layout {
+    padding: 0 20px;
+  }
 }
 
 .logo {
@@ -152,6 +156,10 @@ header {
   outline: none;
   transition: 0.5s ease-in-out;
 
+  @include sp-layout {
+    right: 18px;
+  }
+
   .line {
     position: absolute;
     left: 25%;
@@ -231,6 +239,10 @@ header {
   align-items: center;
   pointer-events: none;
 
+  @include sp-layout {
+    transform: translateY(-8%);
+  }
+
   ul {
     position: fixed;
     z-index: 101;
@@ -282,11 +294,19 @@ header {
           transform: scaleX(0);
           transform-origin: right;
           transition: transform 0.5s;
+
+          @include sp-layout {
+            transition: none;
+          }
         }
 
         &:hover::after {
           transform: scaleX(1);
           transform-origin: left;
+
+          @include sp-layout {
+            transform: scaleX(0);
+          }
         }
       }
     }

@@ -29,6 +29,11 @@ header {
           align-items: center;
   padding: 0 60px;
 }
+@media screen and (max-width: 750px) {
+  header {
+    padding: 0 20px;
+  }
+}
 
 .logo {
   font-size: 34px;
@@ -134,6 +139,11 @@ header {
   -webkit-transition: 0.5s ease-in-out;
   transition: 0.5s ease-in-out;
 }
+@media screen and (max-width: 750px) {
+  .burger-menu {
+    right: 18px;
+  }
+}
 .burger-menu .line {
   position: absolute;
   left: 25%;
@@ -212,6 +222,12 @@ header {
           align-items: center;
   pointer-events: none;
 }
+@media screen and (max-width: 750px) {
+  .burger-nav {
+    -webkit-transform: translateY(-8%);
+            transform: translateY(-8%);
+  }
+}
 .burger-nav ul {
   position: fixed;
   z-index: 101;
@@ -288,11 +304,23 @@ header {
   transition: transform 0.5s;
   transition: transform 0.5s, -webkit-transform 0.5s;
 }
+@media screen and (max-width: 750px) {
+  .burger-nav ul li a::after {
+    -webkit-transition: none;
+    transition: none;
+  }
+}
 .burger-nav ul li a:hover::after {
   -webkit-transform: scaleX(1);
           transform: scaleX(1);
   -webkit-transform-origin: left;
           transform-origin: left;
+}
+@media screen and (max-width: 750px) {
+  .burger-nav ul li a:hover::after {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+  }
 }
 
 @media screen and (max-width: 750px) {
