@@ -20,6 +20,7 @@ body {
 header {
   position: absolute;
   top: 0;
+  z-index: 1;
   width: 100%;
   display: -webkit-box;
   display: flex;
@@ -27,7 +28,8 @@ header {
           justify-content: space-between;
   -webkit-box-align: center;
           align-items: center;
-  padding: 0 60px;
+  mix-blend-mode: difference;
+  padding: 15px 60px;
 }
 @media screen and (max-width: 750px) {
   header {
@@ -43,12 +45,21 @@ header {
   color: white;
 }
 
+.site-nav {
+  position: fixed;
+  top: 27%;
+  right: 5%;
+}
+
 .underline-menu {
   display: -webkit-box;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
   padding: 0;
   margin: 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  border-left: 1px solid rgba(255, 255, 255, 0.2);
   list-style-type: none;
 }
 .underline-menu:hover li:not(:hover) a {
@@ -60,25 +71,26 @@ header {
 .underline-menu li::after {
   position: absolute;
   content: "";
-  top: 100%;
+  top: 0;
   left: 0;
-  width: 100%;
-  height: 2px;
+  width: 2px;
+  height: 100%;
   background: #3498db;
-  -webkit-transform: scaleX(0);
-          transform: scaleX(0);
+  -webkit-transform: scaleY(0);
+          transform: scaleY(0);
   -webkit-transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
   transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 .underline-menu li:hover::after, .underline-menu li.active::after {
-  -webkit-transform: scaleX(1);
-          transform: scaleX(1);
+  -webkit-transform: scaleY(1);
+          transform: scaleY(1);
 }
 .underline-menu li a {
   position: relative;
   display: -webkit-box;
   display: flex;
-  padding: 30px 25px 30px 25px;
+  padding: 20px 10px 20px 10px;
+  font-size: 14px;
   text-decoration: none;
   text-transform: uppercase;
   color: white;
@@ -529,6 +541,111 @@ header {
   border-color: transparent;
 }
 
+.staggered-bar-cross {
+  position: relative;
+}
+.staggered-bar-cross.active .text {
+  -webkit-animation: fade-in 0.2s 0.6s ease-out forwards;
+          animation: fade-in 0.2s 0.6s ease-out forwards;
+}
+.staggered-bar-cross.active .bars .bar {
+  -webkit-animation: 0.6s cubic-bezier(0.4, 0.2, 0.175, 1) forwards;
+          animation: 0.6s cubic-bezier(0.4, 0.2, 0.175, 1) forwards;
+}
+.staggered-bar-cross.active .bars .bar:nth-child(odd) {
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  -webkit-animation-name: slide-left;
+          animation-name: slide-left;
+}
+.staggered-bar-cross.active .bars .bar:nth-child(even) {
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  -webkit-animation-name: slide-right;
+          animation-name: slide-right;
+}
+.staggered-bar-cross.active .bars .bar:nth-child(1) {
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+}
+.staggered-bar-cross.active .bars .bar:nth-child(2) {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+}
+.staggered-bar-cross.active .bars .bar:nth-child(3) {
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+.staggered-bar-cross.active .bars .bar:nth-child(4) {
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+}
+.staggered-bar-cross.active .bars .bar:nth-child(5) {
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s;
+}
+.staggered-bar-cross .text {
+  opacity: 0;
+}
+.staggered-bar-cross .bars {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  overflow: hidden;
+}
+.staggered-bar-cross .bars .bar {
+  width: 100%;
+  -webkit-box-flex: 1;
+          flex: 1;
+  background: white;
+  border-radius: 50px;
+}
+.staggered-bar-cross.reverse-color .bars .bar {
+  background: black;
+}
+
+@-webkit-keyframes slide-left {
+  to {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+}
+
+@keyframes slide-left {
+  to {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+}
+@-webkit-keyframes slide-right {
+  to {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+}
+@keyframes slide-right {
+  to {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+  }
+}
+@-webkit-keyframes fade-in {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fade-in {
+  to {
+    opacity: 1;
+  }
+}
 .staggered-rise-in {
   position: relative;
   display: -webkit-box;
@@ -556,96 +673,6 @@ header {
   to {
     -webkit-transform: translateY(-12%);
             transform: translateY(-12%);
-  }
-}
-.slide-bar {
-  position: relative;
-  color: transparent;
-}
-.slide-bar::before {
-  position: absolute;
-  content: "";
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: white;
-  -webkit-transform: scaleX(0);
-          transform: scaleX(0);
-  -webkit-transform-origin: left;
-          transform-origin: left;
-}
-.slide-bar.reverse-color::before {
-  background: black;
-}
-.slide-bar.active::before {
-  -webkit-animation: slide-in-out 1.2s 0.6s cubic-bezier(0.75, 0, 0, 1) forwards;
-          animation: slide-in-out 1.2s 0.6s cubic-bezier(0.75, 0, 0, 1) forwards;
-}
-.slide-bar.active {
-  -webkit-animation: fill-text-white 1.2s 0.8s forwards;
-          animation: fill-text-white 1.2s 0.8s forwards;
-}
-.slide-bar.reverse-color.active {
-  -webkit-animation: fill-text-black 1.2s 0.8s forwards;
-          animation: fill-text-black 1.2s 0.8s forwards;
-}
-
-@-webkit-keyframes slide-in-out {
-  50% {
-    -webkit-transform: scaleX(1);
-            transform: scaleX(1);
-    -webkit-transform-origin: left;
-            transform-origin: left;
-  }
-  50.1% {
-    -webkit-transform-origin: right;
-            transform-origin: right;
-  }
-  100% {
-    -webkit-transform: scaleX(0);
-            transform: scaleX(0);
-    -webkit-transform-origin: right;
-            transform-origin: right;
-  }
-}
-
-@keyframes slide-in-out {
-  50% {
-    -webkit-transform: scaleX(1);
-            transform: scaleX(1);
-    -webkit-transform-origin: left;
-            transform-origin: left;
-  }
-  50.1% {
-    -webkit-transform-origin: right;
-            transform-origin: right;
-  }
-  100% {
-    -webkit-transform: scaleX(0);
-            transform: scaleX(0);
-    -webkit-transform-origin: right;
-            transform-origin: right;
-  }
-}
-@-webkit-keyframes fill-text-white {
-  to {
-    color: white;
-  }
-}
-@keyframes fill-text-white {
-  to {
-    color: white;
-  }
-}
-@-webkit-keyframes fill-text-black {
-  to {
-    color: black;
-  }
-}
-@keyframes fill-text-black {
-  to {
-    color: black;
   }
 }
 p {
@@ -676,6 +703,26 @@ p:nth-child(4) {
 p:nth-child(5) {
   -webkit-animation-delay: 1.1s;
           animation-delay: 1.1s;
+}
+p:nth-child(6) {
+  -webkit-animation-delay: 1.2s;
+          animation-delay: 1.2s;
+}
+p:nth-child(7) {
+  -webkit-animation-delay: 1.3s;
+          animation-delay: 1.3s;
+}
+p:nth-child(8) {
+  -webkit-animation-delay: 1.4s;
+          animation-delay: 1.4s;
+}
+p:nth-child(9) {
+  -webkit-animation-delay: 1.5s;
+          animation-delay: 1.5s;
+}
+p:nth-child(10) {
+  -webkit-animation-delay: 1.6s;
+          animation-delay: 1.6s;
 }
 
 @-webkit-keyframes fade-up {
@@ -935,6 +982,24 @@ p:nth-child(5) {
             transform: translateY(100%);
   }
 }
+@-webkit-keyframes slide-in-out {
+  50% {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+    -webkit-transform-origin: left;
+            transform-origin: left;
+  }
+  50.1% {
+    -webkit-transform-origin: right;
+            transform-origin: right;
+  }
+  100% {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+    -webkit-transform-origin: right;
+            transform-origin: right;
+  }
+}
 @keyframes slide-in-out {
   50% {
     -webkit-transform: scaleX(1);
@@ -951,6 +1016,11 @@ p:nth-child(5) {
             transform: scaleX(0);
     -webkit-transform-origin: right;
             transform-origin: right;
+  }
+}
+@-webkit-keyframes fill-text-white {
+  to {
+    color: white;
   }
 }
 @keyframes fill-text-white {

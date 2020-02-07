@@ -28,11 +28,13 @@ body {
 header {
   position: absolute;
   top: 0;
+  z-index: 1;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 60px;
+  mix-blend-mode: difference;
+  padding: 15px 60px;
 
   @include sp-layout {
     padding: 0 20px;
@@ -47,11 +49,18 @@ header {
   color: white;
 }
 
+.site-nav {
+  position: fixed;
+  top: 27%;
+  right: 5%;
+}
+
 .underline-menu {
   display: flex;
+  flex-direction: column;
   padding: 0;
   margin: 0;
-  border-bottom: 1px solid hsla(0, 0%, 100%, 0.2);
+  border-left: 1px solid hsla(0, 0%, 100%, 0.2);
   list-style-type: none;
 
   &:hover {
@@ -66,26 +75,27 @@ header {
     &::after {
       position: absolute;
       content: "";
-      top: 100%;
+      top: 0;
       left: 0;
-      width: 100%;
-      height: 2px;
+      width: 2px;
+      height: 100%;
       background: #3498db;
-      transform: scaleX(0);
+      transform: scaleY(0);
       transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); // ease-out-quartic
     }
 
     &:hover,
     &.active {
       &::after {
-        transform: scaleX(1);
+        transform: scaleY(1);
       }
     }
 
     a {
       position: relative;
       display: flex;
-      padding: 30px 25px 30px 25px;
+      padding: 20px 10px 20px 10px;
+      font-size: 14px;
       text-decoration: none;
       text-transform: uppercase;
       color: white;
@@ -504,6 +514,82 @@ header {
   }
 }
 
+// Staggered Bar Cross Text https://codepen.io/alphardex/pen/eYNmYjL
+.staggered-bar-cross {
+  position: relative;
+
+  &.active {
+    .text {
+      animation: fade-in 0.2s 0.6s ease-out forwards;
+    }
+
+    .bars .bar {
+      $bars-dalay: 0.3s, 0.2s, 0.5s, 0.3s, 0.4s;
+      animation: 0.6s cubic-bezier(0.4, 0.2, 0.175, 1) forwards; // ease-in-out-quartic
+
+      &:nth-child(odd) {
+        transform: translateX(100%);
+        animation-name: slide-left;
+      }
+
+      &:nth-child(even) {
+        transform: translateX(-100%);
+        animation-name: slide-right;
+      }
+
+      @for $i from 1 through 5 {
+        &:nth-child(#{$i}) {
+          animation-delay: nth($bars-dalay, $i);
+        }
+      }
+    }
+  }
+
+  .text {
+    opacity: 0;
+  }
+
+  .bars {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+
+    .bar {
+      width: 100%;
+      flex: 1;
+      background: white;
+      border-radius: 50px;
+    }
+  }
+
+  &.reverse-color .bars .bar {
+    background: black;
+  }
+}
+
+@keyframes slide-left {
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes slide-right {
+  to {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes fade-in {
+  to {
+    opacity: 1;
+  }
+}
+
 // Staggered Rise In Text https://codepen.io/alphardex/pen/qBEmGbw
 .staggered-rise-in {
   position: relative;
@@ -528,70 +614,6 @@ header {
   }
 }
 
-// Header With Slide Bar https://codepen.io/alphardex/pen/jOEOEzZ
-.slide-bar {
-  position: relative;
-  color: transparent;
-
-  &::before {
-    position: absolute;
-    content: "";
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: white;
-    transform: scaleX(0);
-    transform-origin: left;
-  }
-
-  &.reverse-color::before {
-    background: black;
-  }
-
-  &.active {
-    &::before {
-      animation: slide-in-out 1.2s 0.6s cubic-bezier(0.75, 0, 0, 1) forwards;
-    }
-  }
-
-  &.active {
-    animation: fill-text-white 1.2s 0.8s forwards;
-  }
-
-  &.reverse-color.active {
-    animation: fill-text-black 1.2s 0.8s forwards;
-  }
-}
-
-@keyframes slide-in-out {
-  50% {
-    transform: scaleX(1);
-    transform-origin: left;
-  }
-
-  50.1% {
-    transform-origin: right;
-  }
-
-  100% {
-    transform: scaleX(0);
-    transform-origin: right;
-  }
-}
-
-@keyframes fill-text-white {
-  to {
-    color: white;
-  }
-}
-
-@keyframes fill-text-black {
-  to {
-    color: black;
-  }
-}
-
 // Fade Up
 p {
   opacity: 0;
@@ -601,7 +623,7 @@ p {
     animation: fade-up 0.6s forwards;
   }
 
-  @for $i from 1 through 5 {
+  @for $i from 1 through 10 {
     &:nth-child(#{$i}) {
       animation-delay: 0.6s + 0.1s * $i;
     }
