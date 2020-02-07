@@ -1,5 +1,11 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,400i,700");
 
+@mixin sp-layout {
+  @media screen and (max-width: 750px) {
+    @content;
+  }
+}
+
 * {
   box-sizing: border-box;
   cursor: none;
@@ -287,7 +293,7 @@ header {
   }
 }
 
-@media (max-width: 750px) {
+@include sp-layout {
   .underline-menu {
     display: none;
   }
@@ -933,8 +939,7 @@ main {
     .description {
       display: grid;
       gap: 24px;
-      margin: 0 12.5rem;
-      max-width: 640px;
+      width: 60vw;
     }
   }
 
@@ -951,6 +956,12 @@ main {
       justify-items: center;
       gap: 2rem;
       margin: 0 12.5rem;
+    }
+
+    @include sp-layout {
+      .speakers-cards {
+        margin: 0;
+      }
     }
   }
 
@@ -992,7 +1003,7 @@ main {
     }
 
     #map {
-      width: 560px;
+      width: 60vw;
       height: 360px;
       opacity: 0;
       transform: translateY(20%);

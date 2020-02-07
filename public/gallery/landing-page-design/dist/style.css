@@ -295,7 +295,7 @@ header {
           transform-origin: left;
 }
 
-@media (max-width: 750px) {
+@media screen and (max-width: 750px) {
   .underline-menu {
     display: none;
   }
@@ -1058,8 +1058,7 @@ main #about {
 main #about .description {
   display: grid;
   gap: 24px;
-  margin: 0 12.5rem;
-  max-width: 640px;
+  width: 60vw;
 }
 main #speakers {
   background: #eceffc;
@@ -1073,6 +1072,11 @@ main #speakers .speakers-cards {
   justify-items: center;
   gap: 2rem;
   margin: 0 12.5rem;
+}
+@media screen and (max-width: 750px) {
+  main #speakers .speakers-cards {
+    margin: 0;
+  }
 }
 main #schedule {
   background: #1a1e23;
@@ -1111,7 +1115,7 @@ main #location .place .place-name {
   font-weight: bold;
 }
 main #location #map {
-  width: 560px;
+  width: 60vw;
   height: 360px;
   opacity: 0;
   -webkit-transform: translateY(20%);
