@@ -1,26 +1,26 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,400i,700");
 * {
+  box-sizing: border-box;
   cursor: none;
 }
 
-html, body {
+html,
+body {
+  height: 100%;
   scroll-behavior: smooth;
 }
 
 body {
-  min-height: 100vh;
   margin: 0;
   padding: 0;
   background: black;
   font-family: Montserrat, sans-serif;
-  overflow-x: hidden;
 }
 
 header {
   position: absolute;
   top: 0;
   width: 100%;
-  max-width: 1160px;
   display: -webkit-box;
   display: flex;
   -webkit-box-pack: justify;
@@ -263,7 +263,6 @@ header {
   position: relative;
   display: block;
   padding: 5px;
-  font-family: Lato, sans-serif;
   font-size: 2em;
   text-decoration: none;
   text-transform: uppercase;
@@ -296,7 +295,7 @@ header {
           transform-origin: left;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 750px) {
   .underline-menu {
     display: none;
   }
@@ -542,11 +541,14 @@ header {
   left: 0;
   width: 100%;
   height: 100%;
-  background: #35b9f1;
+  background: white;
   -webkit-transform: scaleX(0);
           transform: scaleX(0);
   -webkit-transform-origin: left;
           transform-origin: left;
+}
+.slide-bar.reverse-color::before {
+  background: black;
 }
 .slide-bar.active::before {
   -webkit-animation: slide-in-out 1.2s 0.6s cubic-bezier(0.75, 0, 0, 1) forwards;
@@ -756,9 +758,8 @@ p:nth-child(5) {
           flex-direction: column;
   -webkit-box-align: center;
           align-items: center;
-  height: 280px;
+  height: 360px;
   padding: 40px 0 40px 0;
-  font-family: Lato, sans-serif;
   background: var(--card-bg-color);
   box-shadow: 0 0px 0.7px rgba(0, 0, 0, 0.056), 0 0px 1.7px rgba(0, 0, 0, 0.081), 0 0px 3.1px rgba(0, 0, 0, 0.1), 0 0px 5.6px rgba(0, 0, 0, 0.119), 0 0px 10.4px rgba(0, 0, 0, 0.144), 0 0px 25px rgba(0, 0, 0, 0.2);
   opacity: 0;
@@ -789,7 +790,7 @@ p:nth-child(5) {
   width: 100%;
   height: 100%;
   color: black;
-  background: #35b9f1;
+  background: white;
   -webkit-transform: scaleX(0);
           transform: scaleX(0);
   -webkit-transform-origin: left;
@@ -997,6 +998,7 @@ p:nth-child(5) {
   }
 }
 main {
+  height: 100%;
   color: white;
 }
 main section h1,
@@ -1013,6 +1015,7 @@ main section p {
   margin: 0;
 }
 main .hero-section {
+  height: 100%;
   display: -webkit-box;
   display: flex;
   -webkit-box-orient: vertical;
@@ -1022,7 +1025,6 @@ main .hero-section {
           justify-content: center;
   -webkit-box-align: center;
           align-items: center;
-  height: 100vh;
   text-align: center;
 }
 main .hero-section h1 {
@@ -1041,6 +1043,9 @@ main .normal-section {
   padding: 48px 0;
   color: white;
 }
+main .normal-section#speakers {
+  justify-items: normal;
+}
 main .normal-section .titles {
   display: grid;
   justify-items: center;
@@ -1053,7 +1058,8 @@ main #about {
 main #about .description {
   display: grid;
   gap: 24px;
-  width: 640px;
+  margin: 0 12.5rem;
+  max-width: 640px;
 }
 main #speakers {
   background: #eceffc;
@@ -1063,8 +1069,10 @@ main #speakers .titles {
 }
 main #speakers .speakers-cards {
   display: grid;
-  grid-template-columns: repeat(3, auto);
-  gap: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  justify-items: center;
+  gap: 2rem;
+  margin: 0 12.5rem;
 }
 main #schedule {
   background: #1a1e23;
@@ -1097,6 +1105,10 @@ main #location .place.active {
 }
 main #location .place .marker {
   margin: 0 1em 0.5em 0;
+}
+main #location .place .place-name {
+  font-size: 20px;
+  font-weight: bold;
 }
 main #location #map {
   width: 560px;

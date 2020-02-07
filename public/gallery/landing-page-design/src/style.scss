@@ -1,20 +1,21 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:400,400i,700");
 
 * {
+  box-sizing: border-box;
   cursor: none;
 }
 
-html, body {
+html,
+body {
+  height: 100%;
   scroll-behavior: smooth;
 }
 
 body {
-  min-height: 100vh;
   margin: 0;
   padding: 0;
   background: black;
   font-family: Montserrat, sans-serif;
-  overflow-x: hidden;
 }
 
 // Header Underline https://codepen.io/alphardex/pen/JjoqbNP
@@ -22,7 +23,6 @@ header {
   position: absolute;
   top: 0;
   width: 100%;
-  max-width: 1160px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -258,7 +258,6 @@ header {
         position: relative;
         display: block;
         padding: 5px;
-        font-family: Lato, sans-serif;
         font-size: 2em;
         text-decoration: none;
         text-transform: uppercase;
@@ -288,7 +287,7 @@ header {
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 750px) {
   .underline-menu {
     display: none;
   }
@@ -515,9 +514,13 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    background: #35b9f1;
+    background: white;
     transform: scaleX(0);
     transform-origin: left;
+  }
+
+  &.reverse-color::before {
+    background: black;
   }
 
   &.active {
@@ -681,9 +684,8 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 280px;
+    height: 360px;
     padding: 40px 0 40px 0;
-    font-family: Lato, sans-serif;
     background: var(--card-bg-color);
     box-shadow: 0 0px 0.7px rgba(0, 0, 0, 0.056),
       0 0px 1.7px rgba(0, 0, 0, 0.081), 0 0px 3.1px rgba(0, 0, 0, 0.1),
@@ -716,7 +718,7 @@ p {
         width: 100%;
         height: 100%;
         color: black;
-        background: #35b9f1;
+        background: white;
         transform: scaleX(0);
         transform-origin: left;
       }
@@ -864,10 +866,10 @@ p {
 
 // Basic Layout
 main {
+  height: 100%;
   color: white;
 
   section {
-
     h1,
     h2 {
       margin: 0;
@@ -887,11 +889,11 @@ main {
   }
 
   .hero-section {
+    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     text-align: center;
 
     h1 {
@@ -913,6 +915,10 @@ main {
     padding: 48px 0;
     color: white;
 
+    &#speakers {
+      justify-items: normal;
+    }
+
     .titles {
       display: grid;
       justify-items: center;
@@ -927,7 +933,8 @@ main {
     .description {
       display: grid;
       gap: 24px;
-      width: 640px;
+      margin: 0 12.5rem;
+      max-width: 640px;
     }
   }
 
@@ -940,8 +947,10 @@ main {
 
     .speakers-cards {
       display: grid;
-      grid-template-columns: repeat(3, auto);
-      gap: 40px;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      justify-items: center;
+      gap: 2rem;
+      margin: 0 12.5rem;
     }
   }
 
@@ -974,6 +983,11 @@ main {
 
       .marker {
         margin: 0 1em 0.5em 0;
+      }
+
+      .place-name {
+        font-size: 20px;
+        font-weight: bold;
       }
     }
 

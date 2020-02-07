@@ -4,14 +4,16 @@ body {
   padding: 0;
   background: black;
   font-family: Montserrat, sans-serif;
-  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
 }
 
 header {
   position: absolute;
   top: 0;
   width: 100%;
-  max-width: 1160px;
   display: flex;
   justify-content: space-between;
   align-items: center;
