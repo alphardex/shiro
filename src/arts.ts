@@ -1,5 +1,10 @@
 export default [
   {
+    title: "staggered-bar-cross-text",
+    description: "交错条划过文字显现效果",
+    tags: ["text", "staggered"]
+  },
+  {
     title: "map-marker",
     description: "地图标记图标",
     tags: ["icon", "marker"]

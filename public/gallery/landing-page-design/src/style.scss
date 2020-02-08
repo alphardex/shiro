@@ -562,13 +562,9 @@ header {
     .bar {
       width: 100%;
       flex: 1;
-      background: white;
+      background: currentColor;
       border-radius: 50px;
     }
-  }
-
-  &.reverse-color .bars .bar {
-    background: black;
   }
 }
 

@@ -604,11 +604,8 @@ header {
   width: 100%;
   -webkit-box-flex: 1;
           flex: 1;
-  background: white;
+  background: currentColor;
   border-radius: 50px;
-}
-.staggered-bar-cross.reverse-color .bars .bar {
-  background: black;
 }
 
 @-webkit-keyframes slide-left {
