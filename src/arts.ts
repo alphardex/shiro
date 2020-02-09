@@ -1,4 +1,5 @@
 export default [
+  { title: "timeline", description: "时间线", tags: ["timeline"] },
   {
     title: "staggered-bar-cross-text",
     description: "交错条划过文字显现效果",

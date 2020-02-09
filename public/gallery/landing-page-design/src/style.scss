@@ -42,11 +42,19 @@ header {
 }
 
 .logo {
-  font-size: 34px;
+  display: flex;
+  align-items: center;
+  font-size: 24px;
   line-height: 50px;
   text-align: center;
   text-decoration: none;
   color: white;
+
+  img {
+    width: 50px;
+    height: 50px;
+    margin-right: 4px;
+  }
 }
 
 .site-nav {
@@ -81,7 +89,7 @@ header {
       height: 100%;
       background: #3498db;
       transform: scaleY(0);
-      transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1); // ease-out-quartic
+      transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
     }
 
     &:hover,
@@ -111,7 +119,6 @@ header {
   opacity: 0;
 
   &:checked {
-    // Here don't use box-shadow to make overlay because it will damage performance.
     & ~ .overlay {
       opacity: 1;
       transform: scale(160);
@@ -265,7 +272,6 @@ header {
       padding: 6px 0;
       margin: 1em 3em;
       opacity: 0;
-      // easeOutQuart
       transition: 0.6s cubic-bezier(0.365, 0.84, 0.44, 1);
 
       &:nth-child(odd) {
@@ -372,7 +378,7 @@ header {
   }
 
   &-through {
-    transition: 0.6s cubic-bezier(0.77, 0, 0.175, 1); // ease-in-out-quartic;
+    transition: 0.6s cubic-bezier(0.77, 0, 0.175, 1);
 
     &::before {
       position: absolute;
@@ -486,7 +492,7 @@ header {
 // Cursor Follow & Hover Effect https://codepen.io/alphardex/pen/jOEgYjr
 .cursor,
 .cursor-border {
-  position: fixed; // when scroll, it's fixed and won't move.
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 9999;
@@ -525,7 +531,7 @@ header {
 
     .bars .bar {
       $bars-dalay: 0.3s, 0.2s, 0.5s, 0.3s, 0.4s;
-      animation: 0.6s cubic-bezier(0.4, 0.2, 0.175, 1) forwards; // ease-in-out-quartic
+      animation: 0.6s cubic-bezier(0.4, 0.2, 0.175, 1) forwards;
 
       &:nth-child(odd) {
         transform: translateX(100%);
@@ -610,34 +616,12 @@ header {
   }
 }
 
-// Fade Up
-p {
-  opacity: 0;
-  transform: translateY(20%);
-
-  &.active {
-    animation: fade-up 0.6s forwards;
-  }
-
-  @for $i from 1 through 10 {
-    &:nth-child(#{$i}) {
-      animation-delay: 0.6s + 0.1s * $i;
-    }
-  }
-}
-
-@keyframes fade-up {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 // Profile Card https://codepen.io/alphardex/pen/jOExoLp
 .card {
   --card-bg-color: linear-gradient(-20deg, #2b5876 0%, #4e4376 100%);
   position: relative;
   width: 240px;
+  color: white;
 
   &.active {
     .card-borders {
@@ -864,7 +848,6 @@ p {
     height: var(--marker-diameter);
     background: var(--marker-color);
     border-radius: 50% 50% 0 50%;
-    // Use mask to make a ring which really has a hole.
     mask: radial-gradient(
       transparent calc(var(--marker-radius) / 2),
       black calc(var(--marker-radius) / 2)
@@ -905,6 +888,96 @@ p {
 
   to {
     transform: scale(1.2);
+  }
+}
+
+// Timeline https://codepen.io/alphardex/pen/bGdNxea
+.timeline {
+  position: relative;
+  display: grid;
+  gap: 40px;
+  padding: 0;
+  margin: 0;
+  max-width: 600px;
+  font-size: 0.75rem;
+  line-height: 1;
+  color: white;
+  list-style-type: none;
+  clip-path: inset(0 0 100% 0);
+
+  &.active {
+    animation: expand 5s 1s forwards linear;
+  }
+
+  .timeline__line {
+    position: absolute;
+    top: 0;
+    left: 6px;
+    width: 4px;
+    height: 100%;
+    background: white;
+  }
+
+  .timeline__item {
+    .info {
+      display: grid;
+      grid-template-columns: repeat(3, auto) 1fr;
+      align-items: center;
+      gap: 0.3rem;
+
+      h4 {
+        margin: 0;
+      }
+
+      a {
+        text-decoration: none;
+        color: #3498db;
+      }
+
+      .dot {
+        position: relative;
+        width: 16px;
+        height: 16px;
+        background: #1a1e23;
+        border-radius: 50%;
+
+        &::before {
+          position: absolute;
+          content: "";
+          top: -4px;
+          left: -4px;
+          right: -4px;
+          bottom: -4px;
+          background: #1a1e23;
+        }
+
+        &::after {
+          position: absolute;
+          content: "";
+          top: 0;
+          left: 0;
+          width: 8px;
+          height: 8px;
+          border: 4px solid white;
+          border-radius: inherit;
+        }
+      }
+
+      .time {
+        margin-right: 8px;
+      }
+    }
+
+    .content {
+      margin: 1rem 0 0 3.9rem;
+      line-height: 1.5;
+    }
+  }
+}
+
+@keyframes expand {
+  to {
+    clip-path: inset(0 0 0 0);
   }
 }
 
@@ -959,7 +1032,8 @@ main {
     padding: 48px 0;
     color: white;
 
-    &#speakers {
+    &#speakers,
+    &#sponsors {
       justify-items: normal;
     }
 
@@ -969,25 +1043,36 @@ main {
       gap: 20px;
       letter-spacing: 0.25em;
     }
+
+    &:nth-child(odd) {
+      background: #eceffc;
+      color: black;
+    }
+
+    &:nth-child(even) {
+      background: #1a1e23;
+      color: white;
+    }
   }
 
   #about {
-    background: #1a1e23;
-
     .description {
       display: grid;
       gap: 24px;
       width: 60vw;
+
+      p {
+        opacity: 0;
+        transform: translateY(20%);
+
+        &.active {
+          animation: fade-up 0.6s forwards;
+        }
+      }
     }
   }
 
   #speakers {
-    background: #eceffc;
-
-    .titles {
-      color: black;
-    }
-
     .speakers-cards {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -1004,22 +1089,22 @@ main {
   }
 
   #schedule {
-    background: #1a1e23;
+    @include sp-layout {
+      .timeline {
+        animation: none;
+        max-width: 60vw;
+        clip-path: inset(0 0 0 0);
+        opacity: 0;
+        transform: translateY(2%);
 
-    .timeline {
-      opacity: 0;
-      transform: translateY(20%);
-
-      &.active {
-        animation: fade-up 1.2s 1s forwards;
+        &.active {
+          animation: fade-up 1.2s 1s forwards;
+        }
       }
     }
   }
 
   #location {
-    background: #eceffc;
-    color: black;
-
     .place {
       display: flex;
       align-items: center;
@@ -1050,5 +1135,46 @@ main {
         animation: fade-up 1.2s 1s forwards;
       }
     }
+  }
+
+  #sponsors {
+    .sponsors-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 2rem;
+      margin: 0 12.5rem;
+      padding: 0;
+      list-style-type: none;
+
+      li {
+        text-align: center;
+        opacity: 0;
+        transform: translateY(20%);
+
+        &.active {
+          animation: fade-up 1.2s 0.1s forwards;
+        }
+
+        a {
+          img {
+            max-width: 150px;
+          }
+        }
+      }
+    }
+
+    @include sp-layout {
+      .sponsors-list {
+        margin: 0;
+      }
+    }
+  }
+}
+
+// Fade Up
+@keyframes fade-up {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

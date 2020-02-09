@@ -9,7 +9,6 @@ staggeredBarCrossTexts.forEach(function (staggeredBarCrossText) {
     staggeredBarCrossText.append(text);
     var bars = document.createElement("div");
     bars.className = "bars";
-    var barCount = staggeredBarCrossText.dataset.barCount;
     for (var i = 0; i < 5; i++) {
         var bar = document.createElement("div");
         bar.className = "bar";

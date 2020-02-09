@@ -148,6 +148,8 @@ let place = document.querySelector(".place");
 observer.observe(place);
 let map = document.querySelector("#map");
 observer.observe(map);
+let sponsorList = document.querySelectorAll(".sponsors-list li");
+sponsorList.forEach(sponsor => observer.observe(sponsor));
 
 // Baidu Map API
 let bmap = new BMap.Map("map");

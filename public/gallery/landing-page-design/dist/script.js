@@ -133,6 +133,8 @@ var place = document.querySelector(".place");
 observer.observe(place);
 var map = document.querySelector("#map");
 observer.observe(map);
+var sponsorList = document.querySelectorAll(".sponsors-list li");
+sponsorList.forEach(function (sponsor) { return observer.observe(sponsor); });
 // Baidu Map API
 var bmap = new BMap.Map("map");
 var point = new BMap.Point(113.950148, 22.553891);

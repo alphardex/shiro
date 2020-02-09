@@ -11,6 +11,7 @@
 6. Staggered Rise In Text 
 7. Header With Slide Bar 
 8. Profile Card
-9. Map Marker
+9. Timeline
+10. Map Marker
 
 Hope you enjoy it!
