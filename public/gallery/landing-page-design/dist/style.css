@@ -1052,8 +1052,24 @@ header {
           clip-path: inset(0 0 100% 0);
 }
 .timeline.active {
-  -webkit-animation: expand 5s 1s forwards linear;
-          animation: expand 5s 1s forwards linear;
+  -webkit-animation: expand 4s 0.6s forwards linear;
+          animation: expand 4s 0.6s forwards linear;
+}
+@media screen and (max-width: 750px) {
+  .timeline {
+    -webkit-animation: none;
+            animation: none;
+    max-width: 60vw;
+    -webkit-clip-path: inset(0 0 0 0);
+            clip-path: inset(0 0 0 0);
+    opacity: 0;
+    -webkit-transform: translateY(2%);
+            transform: translateY(2%);
+  }
+  .timeline.active {
+    -webkit-animation: fade-up 1.2s 0.6s forwards;
+            animation: fade-up 1.2s 0.6s forwards;
+  }
 }
 .timeline .timeline__line {
   position: absolute;
@@ -1122,6 +1138,31 @@ header {
   to {
     -webkit-clip-path: inset(0 0 0 0);
             clip-path: inset(0 0 0 0);
+  }
+}
+.fade-up {
+  opacity: 0;
+  -webkit-transform: translateY(20%);
+          transform: translateY(20%);
+}
+.fade-up.active {
+  -webkit-animation: fade-up 0.6s forwards;
+          animation: fade-up 0.6s forwards;
+}
+
+@-webkit-keyframes fade-up {
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
+  }
+}
+
+@keyframes fade-up {
+  to {
+    opacity: 1;
+    -webkit-transform: translateY(0);
+            transform: translateY(0);
   }
 }
 main {
@@ -1193,13 +1234,8 @@ main #about .description {
   width: 60vw;
 }
 main #about .description p {
-  opacity: 0;
-  -webkit-transform: translateY(20%);
-          transform: translateY(20%);
-}
-main #about .description p.active {
-  -webkit-animation: fade-up 0.6s forwards;
-          animation: fade-up 0.6s forwards;
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s;
 }
 main #speakers .speakers-cards {
   display: grid;
@@ -1213,34 +1249,13 @@ main #speakers .speakers-cards {
     margin: 0;
   }
 }
-@media screen and (max-width: 750px) {
-  main #schedule .timeline {
-    -webkit-animation: none;
-            animation: none;
-    max-width: 60vw;
-    -webkit-clip-path: inset(0 0 0 0);
-            clip-path: inset(0 0 0 0);
-    opacity: 0;
-    -webkit-transform: translateY(2%);
-            transform: translateY(2%);
-  }
-  main #schedule .timeline.active {
-    -webkit-animation: fade-up 1.2s 1s forwards;
-            animation: fade-up 1.2s 1s forwards;
-  }
-}
 main #location .place {
   display: -webkit-box;
   display: flex;
   -webkit-box-align: center;
           align-items: center;
-  opacity: 0;
-  -webkit-transform: translateY(20%);
-          transform: translateY(20%);
-}
-main #location .place.active {
-  -webkit-animation: fade-up 1.2s 1s forwards;
-          animation: fade-up 1.2s 1s forwards;
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s;
 }
 main #location .place .marker {
   margin: 0 1em 0.5em 0;
@@ -1252,13 +1267,8 @@ main #location .place .place-name {
 main #location #map {
   width: 60vw;
   height: 360px;
-  opacity: 0;
-  -webkit-transform: translateY(20%);
-          transform: translateY(20%);
-}
-main #location #map.active {
-  -webkit-animation: fade-up 1.2s 1s forwards;
-          animation: fade-up 1.2s 1s forwards;
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s;
 }
 main #sponsors .sponsors-list {
   display: grid;
@@ -1270,13 +1280,8 @@ main #sponsors .sponsors-list {
 }
 main #sponsors .sponsors-list li {
   text-align: center;
-  opacity: 0;
-  -webkit-transform: translateY(20%);
-          transform: translateY(20%);
-}
-main #sponsors .sponsors-list li.active {
-  -webkit-animation: fade-up 1.2s 0.1s forwards;
-          animation: fade-up 1.2s 0.1s forwards;
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
 }
 main #sponsors .sponsors-list li a img {
   max-width: 150px;
@@ -1284,21 +1289,5 @@ main #sponsors .sponsors-list li a img {
 @media screen and (max-width: 750px) {
   main #sponsors .sponsors-list {
     margin: 0;
-  }
-}
-
-@-webkit-keyframes fade-up {
-  to {
-    opacity: 1;
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-}
-
-@keyframes fade-up {
-  to {
-    opacity: 1;
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
   }
 }

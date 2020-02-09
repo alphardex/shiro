@@ -906,7 +906,21 @@ header {
   clip-path: inset(0 0 100% 0);
 
   &.active {
-    animation: expand 5s 1s forwards linear;
+    animation: expand 4s 0.6s forwards linear;
+  }
+
+  @include sp-layout {
+    & {
+      animation: none;
+      max-width: 60vw;
+      clip-path: inset(0 0 0 0);
+      opacity: 0;
+      transform: translateY(2%);
+
+      &.active {
+        animation: fade-up 1.2s 0.6s forwards;
+      }
+    }
   }
 
   .timeline__line {
@@ -978,6 +992,23 @@ header {
 @keyframes expand {
   to {
     clip-path: inset(0 0 0 0);
+  }
+}
+
+// Fade Up
+.fade-up {
+  opacity: 0;
+  transform: translateY(20%);
+
+  &.active {
+    animation: fade-up 0.6s forwards;
+  }
+}
+
+@keyframes fade-up {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -1062,12 +1093,7 @@ main {
       width: 60vw;
 
       p {
-        opacity: 0;
-        transform: translateY(20%);
-
-        &.active {
-          animation: fade-up 0.6s forwards;
-        }
+        animation-delay: 0.6s;
       }
     }
   }
@@ -1088,32 +1114,11 @@ main {
     }
   }
 
-  #schedule {
-    @include sp-layout {
-      .timeline {
-        animation: none;
-        max-width: 60vw;
-        clip-path: inset(0 0 0 0);
-        opacity: 0;
-        transform: translateY(2%);
-
-        &.active {
-          animation: fade-up 1.2s 1s forwards;
-        }
-      }
-    }
-  }
-
   #location {
     .place {
       display: flex;
       align-items: center;
-      opacity: 0;
-      transform: translateY(20%);
-
-      &.active {
-        animation: fade-up 1.2s 1s forwards;
-      }
+      animation-delay: 0.6s;
 
       .marker {
         margin: 0 1em 0.5em 0;
@@ -1128,12 +1133,7 @@ main {
     #map {
       width: 60vw;
       height: 360px;
-      opacity: 0;
-      transform: translateY(20%);
-
-      &.active {
-        animation: fade-up 1.2s 1s forwards;
-      }
+      animation-delay: 0.6s;
     }
   }
 
@@ -1148,12 +1148,7 @@ main {
 
       li {
         text-align: center;
-        opacity: 0;
-        transform: translateY(20%);
-
-        &.active {
-          animation: fade-up 1.2s 0.1s forwards;
-        }
+        animation-delay: 0.2s;
 
         a {
           img {
@@ -1168,13 +1163,5 @@ main {
         margin: 0;
       }
     }
-  }
-}
-
-// Fade Up
-@keyframes fade-up {
-  to {
-    opacity: 1;
-    transform: translateY(0);
   }
 }
