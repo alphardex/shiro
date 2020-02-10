@@ -128,6 +128,26 @@ staggeredRiseInTexts.forEach(text => {
   });
 });
 
+// Glitch Text Reveal https://codepen.io/alphardex/pen/ExjjYOv
+const random = (min: number, max: number) =>
+  min + Math.floor(Math.random() * (max - min + 1));
+let glitchTexts = document.querySelectorAll(".glitch");
+glitchTexts.forEach(text => {
+  let content = text.textContent;
+  text.textContent = "";
+  let slice = (text as HTMLElement).dataset.slice;
+  (text as HTMLElement).style.setProperty("--slice-count", slice);
+  for (let i = 0; i <= Number(slice); i++) {
+    let span = document.createElement("span");
+    span.textContent = content;
+    span.style.setProperty("--i", `${i + 1}`);
+    if (i !== Number(slice)) {
+      span.style.animationDelay = `${random(100, 300)}ms`;
+    }
+    text.append(span);
+  }
+});
+
 // Observe the elements which have animations to fire.
 let observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
@@ -136,6 +156,10 @@ let observer = new IntersectionObserver(entries => {
     }
   });
 });
+let logoText = document.querySelector(".logo-text");
+observer.observe(logoText);
+let heroTitles = document.querySelectorAll(".hero-title");
+heroTitles.forEach(heroTitle => observer.observe(heroTitle));
 let titles = document.querySelectorAll(".titles > *");
 titles.forEach(title => observer.observe(title));
 let paragraphs = document.querySelectorAll("p");
@@ -144,8 +168,10 @@ let profileCards = document.querySelectorAll(".card");
 profileCards.forEach(profileCard => observer.observe(profileCard));
 let timeline = document.querySelector(".timeline");
 observer.observe(timeline);
-let place = document.querySelector(".place");
-observer.observe(place);
+let marker = document.querySelector(".marker");
+observer.observe(marker);
+let placeName = document.querySelector(".place-name");
+observer.observe(placeName);
 let map = document.querySelector("#map");
 observer.observe(map);
 let sponsorList = document.querySelectorAll(".sponsors-list li");

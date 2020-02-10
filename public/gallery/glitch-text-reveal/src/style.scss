@@ -1,0 +1,65 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #1a1e23;
+}
+
+.glitch {
+  span {
+    &:not(:last-child) {
+      --ratio: calc(100% / var(--slice-count));
+      --top: calc(var(--ratio) * (var(--i) - 1));
+      --bottom: calc(var(--ratio) * (var(--slice-count) - var(--i)));
+
+      position: absolute;
+      white-space: nowrap;
+      clip-path: inset(var(--top) 0 var(--bottom) 0);
+      animation-duration: 0.3s;
+    }
+
+    &:nth-child(odd) {
+      animation-name: slide-from-left;
+    }
+
+    &:nth-child(even) {
+      animation-name: slide-from-right;
+    }
+
+    &:last-child {
+      opacity: 0;
+      animation: reveal steps(1) forwards;
+      animation-delay: 0.6s;
+    }
+  }
+}
+
+@keyframes slide-from-left {
+  from {
+    transform: translateX(-20%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-from-right {
+  from {
+    transform: translateX(20%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes reveal {
+  to {
+    opacity: 1;
+  }
+}
+
+h1 {
+  font-size: 3rem;
+  color: white;
+}

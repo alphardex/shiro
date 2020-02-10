@@ -3,10 +3,10 @@
 
  Actually it's a combination of my previous pens :)
 
-1. Header Underline
-2. Full Page Burger Navigation
-3. Button Collection
-4. Ken Burns Effect (Pure CSS)
+1. Glitch Text Reveal
+2. Header Underline
+3. Full Page Burger Navigation
+4. Button Collection
 5. Cursor Follow & Hover Effect
 6. Staggered Rise In Text 
 7. Header With Slide Bar 

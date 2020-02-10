@@ -1,0 +1,93 @@
+body {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  height: 100vh;
+  background: #1a1e23;
+}
+
+.glitch span:not(:last-child) {
+  --ratio: calc(100% / var(--slice-count));
+  --top: calc(var(--ratio) * (var(--i) - 1));
+  --bottom: calc(var(--ratio) * (var(--slice-count) - var(--i)));
+  position: absolute;
+  white-space: nowrap;
+  -webkit-clip-path: inset(var(--top) 0 var(--bottom) 0);
+          clip-path: inset(var(--top) 0 var(--bottom) 0);
+  -webkit-animation-duration: 0.3s;
+          animation-duration: 0.3s;
+}
+.glitch span:nth-child(odd) {
+  -webkit-animation-name: slide-from-left;
+          animation-name: slide-from-left;
+}
+.glitch span:nth-child(even) {
+  -webkit-animation-name: slide-from-right;
+          animation-name: slide-from-right;
+}
+.glitch span:last-child {
+  opacity: 0;
+  -webkit-animation: reveal steps(1) forwards;
+          animation: reveal steps(1) forwards;
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s;
+}
+
+@-webkit-keyframes slide-from-left {
+  from {
+    -webkit-transform: translateX(-20%);
+            transform: translateX(-20%);
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes slide-from-left {
+  from {
+    -webkit-transform: translateX(-20%);
+            transform: translateX(-20%);
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+@-webkit-keyframes slide-from-right {
+  from {
+    -webkit-transform: translateX(20%);
+            transform: translateX(20%);
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+@keyframes slide-from-right {
+  from {
+    -webkit-transform: translateX(20%);
+            transform: translateX(20%);
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+@-webkit-keyframes reveal {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes reveal {
+  to {
+    opacity: 1;
+  }
+}
+h1 {
+  font-size: 3rem;
+  color: white;
+}

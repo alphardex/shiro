@@ -24,16 +24,77 @@ body {
   font-family: Montserrat, sans-serif;
 }
 
+// Glitch Text Reveal https://codepen.io/alphardex/pen/ExjjYOv
+.glitch {
+  &.active {
+    span {
+      &:not(:last-child) {
+        animation-duration: 0.3s;
+      }
+
+      &:nth-child(odd) {
+        animation-name: slide-from-left;
+      }
+
+      &:nth-child(even) {
+        animation-name: slide-from-right;
+      }
+
+      &:last-child {
+        animation: reveal steps(1) forwards;
+        animation-delay: 0.6s;
+      }
+    }
+  }
+  span {
+    &:not(:last-child) {
+      --ratio: calc(100% / var(--slice-count));
+      --top: calc(var(--ratio) * (var(--i) - 1));
+      --bottom: calc(var(--ratio) * (var(--slice-count) - var(--i)));
+
+      position: absolute;
+      white-space: nowrap;
+      clip-path: inset(var(--top) 0 var(--bottom) 0);
+    }
+
+    &:last-child {
+      opacity: 0;
+    }
+  }
+}
+
+@keyframes slide-from-left {
+  from {
+    transform: translateX(-20%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-from-right {
+  from {
+    transform: translateX(20%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes reveal {
+  to {
+    opacity: 1;
+  }
+}
+
 // Header Underline https://codepen.io/alphardex/pen/JjoqbNP
 header {
   position: absolute;
   top: 0;
-  z-index: 1;
   width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  mix-blend-mode: difference;
   padding: 15px 60px;
 
   @include sp-layout {
@@ -57,19 +118,18 @@ header {
   }
 }
 
-.site-nav {
+.underline-menu {
   position: fixed;
   top: 27%;
   right: 5%;
-}
-
-.underline-menu {
+  z-index: 1;
   display: flex;
   flex-direction: column;
   padding: 0;
   margin: 0;
   border-left: 1px solid hsla(0, 0%, 100%, 0.2);
   list-style-type: none;
+  mix-blend-mode: difference;
 
   &:hover {
     li:not(:hover) a {
@@ -347,10 +407,9 @@ header {
 .btn {
   --hue: 204;
   position: relative;
-  padding: 18px 0;
+  padding: 1rem 1.5rem;
   margin-top: 40px;
-  min-width: 160px;
-  font-size: 14px;
+  font-size: 0.8rem;
   line-height: 1.5;
   text-decoration: none;
   background-color: hsl(var(--hue), 70%, 53%);
@@ -361,6 +420,13 @@ header {
   user-select: none;
   white-space: nowrap;
   transition: 0.3s;
+
+  @include sp-layout {
+    & {
+      margin-top: 20px;
+      font-size: 0.7rem;
+    }
+  }
 
   &:hover {
     background: hsl(var(--hue), 70%, 43%);
@@ -385,7 +451,6 @@ header {
       content: "";
       top: 0;
       left: 0;
-      z-index: -1;
       width: 100%;
       height: 100%;
       background: hsl(var(--hue), 70%, 53%);
@@ -405,87 +470,6 @@ header {
         transform-origin: left;
       }
     }
-  }
-}
-
-// Ken Burns Effect (Pure CSS) https://codepen.io/alphardex/pen/wvBovww
-.ken-burns-slideshow {
-  $total-slides: 4;
-  $interval: 6s;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -2;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  list-style-type: none;
-
-  .slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-position: center;
-    opacity: 0;
-    transform: scale(1.2);
-    animation: kenburns $total-slides * $interval linear infinite;
-
-    @for $i from 1 through $total-slides {
-      &:nth-child(#{$i}) {
-        animation-delay: $interval * ($i - 1);
-      }
-    }
-  }
-}
-
-#slide1 {
-  background-image: linear-gradient(
-      rgba(16, 16, 16, 0.8),
-      rgba(16, 16, 16, 0.8)
-    ),
-    url("https://images.unsplash.com/photo-1578879279270-f1a166ab29f8?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ");
-}
-
-#slide2 {
-  background-image: linear-gradient(
-      rgba(16, 16, 16, 0.8),
-      rgba(16, 16, 16, 0.8)
-    ),
-    url("https://images.unsplash.com/photo-1470219556762-1771e7f9427d?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ");
-}
-#slide3 {
-  background-image: linear-gradient(
-      rgba(16, 16, 16, 0.8),
-      rgba(16, 16, 16, 0.8)
-    ),
-    url("https://images.unsplash.com/photo-1435575653489-b0873ec954e2?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ");
-}
-#slide4 {
-  background-image: linear-gradient(
-      rgba(16, 16, 16, 0.8),
-      rgba(16, 16, 16, 0.8)
-    ),
-    url("https://images.unsplash.com/photo-1462396240927-52058a6a84ec?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ");
-}
-
-@keyframes kenburns {
-  10% {
-    opacity: 1;
-  }
-
-  25% {
-    opacity: 1;
-    transform: scale(1);
-  }
-
-  40% {
-    opacity: 0;
-    transform: scale(1);
   }
 }
 
@@ -1043,6 +1027,7 @@ main {
     justify-content: center;
     align-items: center;
     text-align: center;
+    background: #171c28;
 
     h1 {
       margin-bottom: 8px;
@@ -1053,6 +1038,16 @@ main {
     h2 {
       font-size: 24px;
       font-weight: lighter;
+    }
+
+    @include sp-layout {
+      h1 {
+        font-size: 30px;
+      }
+
+      h2 {
+        font-size: 16px;
+      }
     }
   }
 

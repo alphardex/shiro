@@ -1,4 +1,9 @@
 export default [
+  {
+    title: "glitch-text-reveal",
+    description: "故障文字显现",
+    tags: ["text", "staggered", "glitch"]
+  },
   { title: "timeline", description: "时间线", tags: ["timeline"] },
   {
     title: "staggered-bar-cross-text",

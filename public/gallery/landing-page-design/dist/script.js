@@ -113,6 +113,26 @@ staggeredRiseInTexts.forEach(function (text) {
         text.append(span);
     });
 });
+// Glitch Text Reveal https://codepen.io/alphardex/pen/ExjjYOv
+var random = function (min, max) {
+    return min + Math.floor(Math.random() * (max - min + 1));
+};
+var glitchTexts = document.querySelectorAll(".glitch");
+glitchTexts.forEach(function (text) {
+    var content = text.textContent;
+    text.textContent = "";
+    var slice = text.dataset.slice;
+    text.style.setProperty("--slice-count", slice);
+    for (var i = 0; i <= Number(slice); i++) {
+        var span = document.createElement("span");
+        span.textContent = content;
+        span.style.setProperty("--i", "" + (i + 1));
+        if (i !== Number(slice)) {
+            span.style.animationDelay = random(100, 300) + "ms";
+        }
+        text.append(span);
+    }
+});
 // Observe the elements which have animations to fire.
 var observer = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
@@ -121,6 +141,10 @@ var observer = new IntersectionObserver(function (entries) {
         }
     });
 });
+var logoText = document.querySelector(".logo-text");
+observer.observe(logoText);
+var heroTitles = document.querySelectorAll(".hero-title");
+heroTitles.forEach(function (heroTitle) { return observer.observe(heroTitle); });
 var titles = document.querySelectorAll(".titles > *");
 titles.forEach(function (title) { return observer.observe(title); });
 var paragraphs = document.querySelectorAll("p");
@@ -129,8 +153,10 @@ var profileCards = document.querySelectorAll(".card");
 profileCards.forEach(function (profileCard) { return observer.observe(profileCard); });
 var timeline = document.querySelector(".timeline");
 observer.observe(timeline);
-var place = document.querySelector(".place");
-observer.observe(place);
+var marker = document.querySelector(".marker");
+observer.observe(marker);
+var placeName = document.querySelector(".place-name");
+observer.observe(placeName);
 var map = document.querySelector("#map");
 observer.observe(map);
 var sponsorList = document.querySelectorAll(".sponsors-list li");
