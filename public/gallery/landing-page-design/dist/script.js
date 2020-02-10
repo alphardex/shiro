@@ -82,24 +82,36 @@ document.addEventListener("mouseleave", function (e) {
         fill: "forwards"
     });
 });
-// Staggered Bar Cross Text https://codepen.io/alphardex/pen/eYNmYjL
-var staggeredBarCrossTexts = document.querySelectorAll(".staggered-bar-cross");
-staggeredBarCrossTexts.forEach(function (staggeredBarCrossText) {
-    var content = staggeredBarCrossText.textContent;
-    staggeredBarCrossText.textContent = "";
-    var text = document.createElement("div");
-    text.className = "text";
-    text.textContent = content;
-    staggeredBarCrossText.append(text);
+// Cross Bar Glitch Text https://codepen.io/alphardex/pen/VwLLLNG
+var random = function (min, max) {
+    return min + Math.floor(Math.random() * (max - min + 1));
+};
+var crossBarGlitchTexts = document.querySelectorAll(".cross-bar-glitch");
+crossBarGlitchTexts.forEach(function (text) {
+    var content = text.textContent;
+    text.textContent = "";
+    var slice = text.dataset.slice;
+    var glitchText = document.createElement("div");
+    glitchText.className = "glitch";
+    glitchText.style.setProperty("--slice-count", slice);
+    for (var i = 0; i <= Number(slice); i++) {
+        var span = document.createElement("span");
+        span.textContent = content;
+        span.style.setProperty("--i", "" + (i + 1));
+        if (i !== Number(slice)) {
+            span.style.animationDelay = 800 + random(100, 300) + "ms";
+        }
+        glitchText.append(span);
+    }
+    text.appendChild(glitchText);
     var bars = document.createElement("div");
     bars.className = "bars";
-    var barCount = staggeredBarCrossText.dataset.barCount;
     for (var i = 0; i < 5; i++) {
         var bar = document.createElement("div");
         bar.className = "bar";
         bars.append(bar);
     }
-    staggeredBarCrossText.append(bars);
+    text.append(bars);
 });
 // Staggered Rise In Text https://codepen.io/alphardex/pen/qBEmGbw
 var staggeredRiseInTexts = document.querySelectorAll(".staggered-rise-in");
@@ -113,26 +125,6 @@ staggeredRiseInTexts.forEach(function (text) {
         text.append(span);
     });
 });
-// Glitch Text Reveal https://codepen.io/alphardex/pen/ExjjYOv
-var random = function (min, max) {
-    return min + Math.floor(Math.random() * (max - min + 1));
-};
-var glitchTexts = document.querySelectorAll(".glitch");
-glitchTexts.forEach(function (text) {
-    var content = text.textContent;
-    text.textContent = "";
-    var slice = text.dataset.slice;
-    text.style.setProperty("--slice-count", slice);
-    for (var i = 0; i <= Number(slice); i++) {
-        var span = document.createElement("span");
-        span.textContent = content;
-        span.style.setProperty("--i", "" + (i + 1));
-        if (i !== Number(slice)) {
-            span.style.animationDelay = random(100, 300) + "ms";
-        }
-        text.append(span);
-    }
-});
 // Observe the elements which have animations to fire.
 var observer = new IntersectionObserver(function (entries) {
     entries.forEach(function (entry) {
@@ -141,10 +133,6 @@ var observer = new IntersectionObserver(function (entries) {
         }
     });
 });
-var logoText = document.querySelector(".logo-text");
-observer.observe(logoText);
-var heroTitles = document.querySelectorAll(".hero-title");
-heroTitles.forEach(function (heroTitle) { return observer.observe(heroTitle); });
 var titles = document.querySelectorAll(".titles > *");
 titles.forEach(function (title) { return observer.observe(title); });
 var paragraphs = document.querySelectorAll("p");

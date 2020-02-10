@@ -539,53 +539,46 @@ header {
   border-color: transparent;
 }
 
-.staggered-bar-cross {
+.cross-bar-glitch {
   position: relative;
 }
-.staggered-bar-cross.active .text {
-  -webkit-animation: fade-in 0.2s 0.6s ease-out forwards;
-          animation: fade-in 0.2s 0.6s ease-out forwards;
-}
-.staggered-bar-cross.active .bars .bar {
+.cross-bar-glitch.active .bars .bar {
   -webkit-animation: 0.6s cubic-bezier(0.4, 0.2, 0.175, 1) forwards;
           animation: 0.6s cubic-bezier(0.4, 0.2, 0.175, 1) forwards;
 }
-.staggered-bar-cross.active .bars .bar:nth-child(odd) {
-  -webkit-transform: translateX(100%);
-          transform: translateX(100%);
+.cross-bar-glitch.active .bars .bar:nth-child(odd) {
   -webkit-animation-name: slide-left;
           animation-name: slide-left;
 }
-.staggered-bar-cross.active .bars .bar:nth-child(even) {
-  -webkit-transform: translateX(-100%);
-          transform: translateX(-100%);
+.cross-bar-glitch.active .bars .bar:nth-child(even) {
   -webkit-animation-name: slide-right;
           animation-name: slide-right;
 }
-.staggered-bar-cross.active .bars .bar:nth-child(1) {
-  -webkit-animation-delay: 0.3s;
-          animation-delay: 0.3s;
+.cross-bar-glitch.active .glitch {
+  -webkit-animation: reveal forwards 0.3s;
+          animation: reveal forwards 0.3s;
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s;
 }
-.staggered-bar-cross.active .bars .bar:nth-child(2) {
-  -webkit-animation-delay: 0.2s;
-          animation-delay: 0.2s;
+.cross-bar-glitch.active .glitch span:not(:last-child) {
+  -webkit-animation-duration: 0.3s;
+          animation-duration: 0.3s;
 }
-.staggered-bar-cross.active .bars .bar:nth-child(3) {
-  -webkit-animation-delay: 0.5s;
-          animation-delay: 0.5s;
+.cross-bar-glitch.active .glitch span:nth-child(odd) {
+  -webkit-animation-name: slide-from-left;
+          animation-name: slide-from-left;
 }
-.staggered-bar-cross.active .bars .bar:nth-child(4) {
-  -webkit-animation-delay: 0.3s;
-          animation-delay: 0.3s;
+.cross-bar-glitch.active .glitch span:nth-child(even) {
+  -webkit-animation-name: slide-from-right;
+          animation-name: slide-from-right;
 }
-.staggered-bar-cross.active .bars .bar:nth-child(5) {
-  -webkit-animation-delay: 0.4s;
-          animation-delay: 0.4s;
+.cross-bar-glitch.active .glitch span:last-child {
+  -webkit-animation: reveal steps(1) forwards;
+          animation: reveal steps(1) forwards;
+  -webkit-animation-delay: 1.2s;
+          animation-delay: 1.2s;
 }
-.staggered-bar-cross .text {
-  opacity: 0;
-}
-.staggered-bar-cross .bars {
+.cross-bar-glitch .bars {
   position: absolute;
   top: 0;
   left: 0;
@@ -598,21 +591,89 @@ header {
           flex-direction: column;
   overflow: hidden;
 }
-.staggered-bar-cross .bars .bar {
+.cross-bar-glitch .bars .bar {
   width: 100%;
   -webkit-box-flex: 1;
           flex: 1;
   background: currentColor;
   border-radius: 50px;
 }
+.cross-bar-glitch .bars .bar:nth-child(odd) {
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+}
+.cross-bar-glitch .bars .bar:nth-child(even) {
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+.cross-bar-glitch .bars .bar:nth-child(1) {
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+}
+.cross-bar-glitch .bars .bar:nth-child(2) {
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
+}
+.cross-bar-glitch .bars .bar:nth-child(3) {
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
+}
+.cross-bar-glitch .bars .bar:nth-child(4) {
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
+}
+.cross-bar-glitch .bars .bar:nth-child(5) {
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s;
+}
+.cross-bar-glitch .glitch {
+  opacity: 0;
+}
+.cross-bar-glitch .glitch span:not(:last-child) {
+  --ratio: calc(100% / var(--slice-count));
+  --top: calc(var(--ratio) * (var(--i) - 1));
+  --bottom: calc(var(--ratio) * (var(--slice-count) - var(--i)));
+  position: absolute;
+  color: currentColor;
+  white-space: nowrap;
+  -webkit-clip-path: inset(var(--top) 0 var(--bottom) 0);
+          clip-path: inset(var(--top) 0 var(--bottom) 0);
+}
+.cross-bar-glitch .glitch span:last-child {
+  opacity: 0;
+}
 
+@keyframes slide-from-left {
+  from {
+    -webkit-transform: translateX(-20%);
+            transform: translateX(-20%);
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+@keyframes slide-from-right {
+  from {
+    -webkit-transform: translateX(20%);
+            transform: translateX(20%);
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+@keyframes reveal {
+  to {
+    opacity: 1;
+  }
+}
 @-webkit-keyframes slide-left {
   to {
     -webkit-transform: translateX(-100%);
             transform: translateX(-100%);
   }
 }
-
 @keyframes slide-left {
   to {
     -webkit-transform: translateX(-100%);
@@ -629,16 +690,6 @@ header {
   to {
     -webkit-transform: translateX(100%);
             transform: translateX(100%);
-  }
-}
-@-webkit-keyframes fade-in {
-  to {
-    opacity: 1;
-  }
-}
-@keyframes fade-in {
-  to {
-    opacity: 1;
   }
 }
 .staggered-rise-in {
@@ -1183,7 +1234,10 @@ main .hero-section {
   -webkit-box-align: center;
           align-items: center;
   text-align: center;
-  background: #171c28;
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(16, 16, 16, 0.8)), to(rgba(16, 16, 16, 0.8))), url(https://images.unsplash.com/photo-1435575653489-b0873ec954e2?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ);
+  background-image: linear-gradient(rgba(16, 16, 16, 0.8), rgba(16, 16, 16, 0.8)), url(https://images.unsplash.com/photo-1435575653489-b0873ec954e2?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjE0NTg5fQ);
+  background-position: center;
+  background-size: cover;
 }
 main .hero-section h1 {
   margin-bottom: 8px;

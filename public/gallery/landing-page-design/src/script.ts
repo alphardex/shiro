@@ -95,24 +95,35 @@ document.addEventListener("mouseleave", e => {
   );
 });
 
-// Staggered Bar Cross Text https://codepen.io/alphardex/pen/eYNmYjL
-let staggeredBarCrossTexts = document.querySelectorAll(".staggered-bar-cross");
-staggeredBarCrossTexts.forEach(staggeredBarCrossText => {
-  let content = staggeredBarCrossText.textContent;
-  staggeredBarCrossText.textContent = "";
-  let text = document.createElement("div");
-  text.className = "text";
-  text.textContent = content;
-  staggeredBarCrossText.append(text);
+// Cross Bar Glitch Text https://codepen.io/alphardex/pen/VwLLLNG
+const random = (min: number, max: number) =>
+  min + Math.floor(Math.random() * (max - min + 1));
+let crossBarGlitchTexts = document.querySelectorAll(".cross-bar-glitch");
+crossBarGlitchTexts.forEach(text => {
+  let content = text.textContent;
+  text.textContent = "";
+  let slice = (text as HTMLElement).dataset.slice;
+  let glitchText = document.createElement("div");
+  glitchText.className = "glitch";
+  (glitchText as HTMLElement).style.setProperty("--slice-count", slice);
+  for (let i = 0; i <= Number(slice); i++) {
+    let span = document.createElement("span");
+    span.textContent = content;
+    span.style.setProperty("--i", `${i + 1}`);
+    if (i !== Number(slice)) {
+      span.style.animationDelay = `${800 + random(100, 300)}ms`;
+    }
+    glitchText.append(span);
+  }
+  text.appendChild(glitchText);
   let bars = document.createElement("div");
   bars.className = "bars";
-  let barCount = (staggeredBarCrossText as HTMLElement).dataset.barCount;
   for (let i = 0; i < 5; i++) {
     let bar = document.createElement("div");
     bar.className = "bar";
     bars.append(bar);
   }
-  staggeredBarCrossText.append(bars);
+  text.append(bars);
 });
 
 // Staggered Rise In Text https://codepen.io/alphardex/pen/qBEmGbw
@@ -128,26 +139,6 @@ staggeredRiseInTexts.forEach(text => {
   });
 });
 
-// Glitch Text Reveal https://codepen.io/alphardex/pen/ExjjYOv
-const random = (min: number, max: number) =>
-  min + Math.floor(Math.random() * (max - min + 1));
-let glitchTexts = document.querySelectorAll(".glitch");
-glitchTexts.forEach(text => {
-  let content = text.textContent;
-  text.textContent = "";
-  let slice = (text as HTMLElement).dataset.slice;
-  (text as HTMLElement).style.setProperty("--slice-count", slice);
-  for (let i = 0; i <= Number(slice); i++) {
-    let span = document.createElement("span");
-    span.textContent = content;
-    span.style.setProperty("--i", `${i + 1}`);
-    if (i !== Number(slice)) {
-      span.style.animationDelay = `${random(100, 300)}ms`;
-    }
-    text.append(span);
-  }
-});
-
 // Observe the elements which have animations to fire.
 let observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
@@ -156,10 +147,7 @@ let observer = new IntersectionObserver(entries => {
     }
   });
 });
-let logoText = document.querySelector(".logo-text");
-observer.observe(logoText);
-let heroTitles = document.querySelectorAll(".hero-title");
-heroTitles.forEach(heroTitle => observer.observe(heroTitle));
+
 let titles = document.querySelectorAll(".titles > *");
 titles.forEach(title => observer.observe(title));
 let paragraphs = document.querySelectorAll("p");

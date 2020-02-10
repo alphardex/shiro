@@ -1,5 +1,10 @@
 export default [
   {
+    title: "cross-bar-glitch-text",
+    description: "交错条故障文字显现",
+    tags: ["text", "staggered", "glitch"]
+  },
+  {
     title: "glitch-text-reveal",
     description: "故障文字显现",
     tags: ["text", "staggered", "glitch"]
