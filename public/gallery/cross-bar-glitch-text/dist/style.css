@@ -1,7 +1,10 @@
 body {
+  display: -webkit-box;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
   height: 100vh;
   background: #1a1e23;
 }
@@ -15,44 +18,60 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
+  display: -webkit-box;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
   overflow: hidden;
 }
 .cross-bar-glitch .bars .bar {
   width: 100%;
-  flex: 1;
+  -webkit-box-flex: 1;
+          flex: 1;
   background: currentColor;
   border-radius: 50px;
-  animation: 0.6s cubic-bezier(0.4, 0.2, 0.175, 1) forwards;
+  -webkit-animation: 0.6s cubic-bezier(0.4, 0.2, 0.175, 1) forwards;
+          animation: 0.6s cubic-bezier(0.4, 0.2, 0.175, 1) forwards;
 }
 .cross-bar-glitch .bars .bar:nth-child(odd) {
-  transform: translateX(100%);
-  animation-name: slide-left;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+  -webkit-animation-name: slide-left;
+          animation-name: slide-left;
 }
 .cross-bar-glitch .bars .bar:nth-child(even) {
-  transform: translateX(-100%);
-  animation-name: slide-right;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+  -webkit-animation-name: slide-right;
+          animation-name: slide-right;
 }
 .cross-bar-glitch .bars .bar:nth-child(1) {
-  animation-delay: 0.3s;
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
 }
 .cross-bar-glitch .bars .bar:nth-child(2) {
-  animation-delay: 0.2s;
+  -webkit-animation-delay: 0.2s;
+          animation-delay: 0.2s;
 }
 .cross-bar-glitch .bars .bar:nth-child(3) {
-  animation-delay: 0.5s;
+  -webkit-animation-delay: 0.5s;
+          animation-delay: 0.5s;
 }
 .cross-bar-glitch .bars .bar:nth-child(4) {
-  animation-delay: 0.3s;
+  -webkit-animation-delay: 0.3s;
+          animation-delay: 0.3s;
 }
 .cross-bar-glitch .bars .bar:nth-child(5) {
-  animation-delay: 0.4s;
+  -webkit-animation-delay: 0.4s;
+          animation-delay: 0.4s;
 }
 .cross-bar-glitch .glitch {
   opacity: 0;
-  animation: reveal forwards 0.3s;
-  animation-delay: 0.6s;
+  -webkit-animation: reveal forwards 0.3s;
+          animation: reveal forwards 0.3s;
+  -webkit-animation-delay: 0.6s;
+          animation-delay: 0.6s;
 }
 .cross-bar-glitch .glitch span:not(:last-child) {
   --ratio: calc(100% / var(--slice-count));
@@ -60,35 +79,71 @@ body {
   --bottom: calc(var(--ratio) * (var(--slice-count) - var(--i)));
   position: absolute;
   white-space: nowrap;
-  clip-path: inset(var(--top) 0 var(--bottom) 0);
-  animation-duration: 0.3s;
+  -webkit-clip-path: inset(var(--top) 0 var(--bottom) 0);
+          clip-path: inset(var(--top) 0 var(--bottom) 0);
+  -webkit-animation-duration: 0.3s;
+          animation-duration: 0.3s;
 }
 .cross-bar-glitch .glitch span:nth-child(odd) {
-  animation-name: slide-from-left;
+  -webkit-animation-name: slide-from-left;
+          animation-name: slide-from-left;
 }
 .cross-bar-glitch .glitch span:nth-child(even) {
-  animation-name: slide-from-right;
+  -webkit-animation-name: slide-from-right;
+          animation-name: slide-from-right;
 }
 .cross-bar-glitch .glitch span:last-child {
   opacity: 0;
-  animation: reveal steps(1) forwards;
-  animation-delay: 1.2s;
+  -webkit-animation: reveal steps(1) forwards;
+          animation: reveal steps(1) forwards;
+  -webkit-animation-delay: 1.2s;
+          animation-delay: 1.2s;
+}
+
+@-webkit-keyframes slide-from-left {
+  from {
+    -webkit-transform: translateX(-20%);
+            transform: translateX(-20%);
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
 }
 
 @keyframes slide-from-left {
   from {
-    transform: translateX(-20%);
+    -webkit-transform: translateX(-20%);
+            transform: translateX(-20%);
   }
   to {
-    transform: translateX(0);
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+@-webkit-keyframes slide-from-right {
+  from {
+    -webkit-transform: translateX(20%);
+            transform: translateX(20%);
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
   }
 }
 @keyframes slide-from-right {
   from {
-    transform: translateX(20%);
+    -webkit-transform: translateX(20%);
+            transform: translateX(20%);
   }
   to {
-    transform: translateX(0);
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+@-webkit-keyframes reveal {
+  to {
+    opacity: 1;
   }
 }
 @keyframes reveal {
@@ -96,14 +151,28 @@ body {
     opacity: 1;
   }
 }
+@-webkit-keyframes slide-left {
+  to {
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+}
 @keyframes slide-left {
   to {
-    transform: translateX(-100%);
+    -webkit-transform: translateX(-100%);
+            transform: translateX(-100%);
+  }
+}
+@-webkit-keyframes slide-right {
+  to {
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
   }
 }
 @keyframes slide-right {
   to {
-    transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+            transform: translateX(100%);
   }
 }
 h1 {
