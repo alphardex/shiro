@@ -1058,6 +1058,15 @@ header {
   }
 }
 
+// Fade in
+.fade-in {
+  opacity: 0;
+
+  &.active {
+    animation: reveal 0.6s forwards;
+  }
+}
+
 // Basic Layout
 main {
   height: 100%;
@@ -1150,13 +1159,17 @@ main {
   }
 
   #about {
+    padding: 60px 0;
+
     .description {
       display: grid;
       gap: 24px;
       width: 60vw;
 
-      p {
-        animation-delay: 0.6s;
+      @for $i from 1 through 4 {
+        p:nth-child(#{$i}) {
+          animation-delay: 0.5s + 0.1s * $i;
+        }
       }
     }
   }
@@ -1214,8 +1227,12 @@ main {
         animation-delay: 0.2s;
 
         a {
+          display: block;
+          height: 100%;
+
           img {
             max-width: 150px;
+            pointer-events: none;
           }
         }
       }
