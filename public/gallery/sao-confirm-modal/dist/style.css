@@ -44,12 +44,11 @@ body {
   left: 0;
   bottom: 0;
   right: 0;
-  z-index: 999;
+  z-index: 9999;
   width: 360px;
   padding: 0;
   font-family: Roboto, sans-serif;
   border: transparent;
-  background: white;
   box-shadow: 0 2.8px 2.2px rgba(0, 0, 0, 0.02), 0 6.7px 5.3px rgba(0, 0, 0, 0.028), 0 12.5px 10px rgba(0, 0, 0, 0.035), 0 22.3px 17.9px rgba(0, 0, 0, 0.042), 0 41.8px 33.4px rgba(0, 0, 0, 0.05), 0 100px 80px rgba(0, 0, 0, 0.07);
   opacity: 0;
   animation: show-modal 0.6s forwards;
@@ -58,16 +57,19 @@ body {
   background: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(3px);
 }
-.modal .modal-content > * {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.modal .modal-content {
+  display: grid;
+  place-items: center;
 }
 .modal .modal-title {
   margin: 0;
   padding: 1rem 0;
 }
 .modal .modal-description {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 99%;
   height: 0;
   background: linear-gradient(#b3b3b3 0%, #b3b3b3 1%, #ededed 11%, #ededed 50%, #ededed 89%, #b3b3b3 99%, #b3b3b3 100%);
   overflow: hidden;
