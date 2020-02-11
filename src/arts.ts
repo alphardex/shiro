@@ -1,5 +1,10 @@
 export default [
   {
+    title: "sao-confirm-modal",
+    description: "刀剑神域模态框",
+    tags: ["modal", "button"]
+  },
+  {
     title: "cross-bar-glitch-text",
     description: "交错条故障文字显现",
     tags: ["text", "staggered", "glitch"]

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - SAO Confirm Modal</title>
+  <link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<dialog id="confirm-modal" class="modal">
+  <div class="modal-content">
+    <h3 class="modal-title">Confirm</h3>
+    <article class="modal-description">
+      <div class="container">
+        <p>Will you accept this duel?</p>
+        <p>Challenger: <span class="text-bold">Kirito</span></p>
+        <p>Mode: <span class="text-bold">1 vs 1</span></p>
+      </div>
+    </article>
+    <div class="modal-options">
+      <button
+        class="btn btn-round option confirm"
+        onclick="document.querySelector('#confirm-modal').close()"
+      >
+        <div class="circle"></div>
+      </button>
+      <button
+        class="btn btn-round option cancel"
+        onclick="document.querySelector('#confirm-modal').close()"
+      >
+        <div class="cross"></div>
+      </button>
+    </div>
+  </div>
+</dialog>
+<form action="javascript:void(0);">
+  <button
+    class="btn btn-danger"
+    onclick="document.querySelector('#confirm-modal').showModal()"
+  >
+    Open Modal
+  </button>
+</form>
+<!-- partial -->
+  
+</body>
+</html>
