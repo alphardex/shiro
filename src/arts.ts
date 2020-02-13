@@ -1,5 +1,10 @@
 export default [
   {
+    title: "circle-arrow-nav",
+    description: "圈箭头导航",
+    tags: ["nav", "hover"]
+  },
+  {
     title: "sao-confirm-modal",
     description: "刀剑神域模态框",
     tags: ["modal", "button"]

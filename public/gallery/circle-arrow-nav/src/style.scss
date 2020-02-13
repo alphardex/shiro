@@ -1,0 +1,69 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #1a1e23;
+}
+
+.circle-arrow {
+  --color: white;
+  --radius: 1rem;
+  --diameter: calc(var(--radius) * 2);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: var(--diameter);
+  height: var(--diameter);
+  margin: calc(var(--radius) / 2);
+  color: white;
+  border-radius: 50%;
+  background: transparent;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: --pos 0.8s cubic-bezier(0.77, 0, 0.175, 1);
+
+  svg {
+    --arrow-width: calc(0.15 * var(--diameter));
+    width: var(--arrow-width);
+    height: var(--arrow-width);
+    transform: rotate(-90deg);
+  }
+
+  &::before,
+  &::after {
+    position: absolute;
+    content: "";
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: conic-gradient(
+      var(--color) calc(var(--pos) * 1%),
+      transparent 0%
+    );
+    border-radius: inherit;
+    mask: radial-gradient(
+      transparent var(--radius),
+      grey calc(var(--radius) + 0.5px),
+      black var(--radius)
+    );
+  }
+
+  &::after {
+    transform: scaleX(-1);
+  }
+
+  &:hover {
+    --pos: 50;
+  }
+
+  &.left {
+    transform: rotate(-90deg);
+  }
+
+  &.right {
+    transform: rotate(90deg);
+  }
+}

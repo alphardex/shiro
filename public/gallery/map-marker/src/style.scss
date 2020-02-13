@@ -22,6 +22,7 @@ body {
     // Use mask to make a ring which really has a hole.
     mask: radial-gradient(
       transparent calc(var(--marker-radius) / 2),
+      grey calc(var(--marker-radius) / 2 + 0.5px),
       black calc(var(--marker-radius) / 2)
     );
     transform: rotate(45deg);
