@@ -25,7 +25,7 @@ body {
   transition: --pos 0.8s cubic-bezier(0.77, 0, 0.175, 1);
 
   svg {
-    --arrow-width: calc(0.15 * var(--diameter));
+    --arrow-width: calc(0.2 * var(--diameter));
     width: var(--arrow-width);
     height: var(--arrow-width);
     transform: rotate(-90deg);
@@ -58,11 +58,11 @@ body {
   &:hover {
     --pos: 50;
   }
-
+  
   &.left {
     transform: rotate(-90deg);
   }
-
+  
   &.right {
     transform: rotate(90deg);
   }
