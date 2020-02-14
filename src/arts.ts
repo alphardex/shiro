@@ -1,4 +1,5 @@
 export default [
+  { title: "bookmark", description: "书签图标", tags: ["icon", "bookmark"] },
   {
     title: "circle-arrow-nav",
     description: "圈箭头导航",
