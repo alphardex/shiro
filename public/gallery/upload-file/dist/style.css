@@ -80,7 +80,7 @@ body {
   transform: scaleX(0);
   transform-origin: left;
 }
-.upload__progress__check {
+.upload__progress .check {
   width: 1.5rem;
   height: 1.5rem;
   stroke-dasharray: 20px;
@@ -106,7 +106,7 @@ body {
 .upload.uploaded .upload__progress {
   animation: slide-up 1s var(--ease-in-out-quartic) forwards;
 }
-.upload.uploaded .upload__progress__check {
+.upload.uploaded .upload__progress .check {
   animation: stroke-in 0.6s 0.4s var(--ease-in-out-quartic) forwards;
 }
 .upload.uploaded-after .upload__info {
