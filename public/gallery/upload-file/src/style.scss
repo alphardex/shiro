@@ -12,11 +12,11 @@ body {
 .upload {
   --btn-color: #3bafda;
   --progress-color: #2d334c;
+  --ease-in-out-quartic: cubic-bezier(0.77, 0, 0.175, 1);
 
   position: relative;
   display: flex;
   font-size: 1.5rem;
-  line-height: 1.5;
   background: white;
   border-radius: 0.63rem;
   box-shadow: 0 1.7px 1.4px rgba(0, 0, 0, 0.02),
@@ -30,21 +30,20 @@ body {
     align-items: center;
     padding: 1.6rem 1.8rem;
     margin-right: 3.6rem;
+  }
 
-    .upload__filename {
-      padding-left: 0.75rem;
-    }
+  &__filename {
+    padding-left: 0.75rem;
   }
 
   &__button {
     position: relative;
-    flex: 1;
     padding: 1.12rem 1.12rem;
     font-size: 1.5rem;
-    line-height: 1.5;
     color: white;
     background: none;
     border: none;
+    border-radius: inherit;
     outline: none;
     cursor: pointer;
     transform: scale(0.9);
@@ -58,7 +57,7 @@ body {
       width: 100%;
       height: 100%;
       background-color: var(--btn-color);
-      border-radius: 0.63rem;
+      border-radius: inherit;
       transform-origin: right;
     }
   }
@@ -81,49 +80,37 @@ body {
     content: "";
     top: 90%;
     left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 100%;
     height: 100%;
+    color: white;
     background: var(--progress-color);
     transform: scaleX(0);
     transform-origin: left;
 
-    .complete {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: calc(100% + 4px);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: white;
-
-      .check {
-        width: 1.5rem;
-        height: 1.5rem;
-        stroke-dasharray: 20px;
-        stroke-dashoffset: 20px;
-        margin-right: 0.5rem;
-        transition: 0.6s 0.4s cubic-bezier(0.77, 0, 0.175, 1);
-      }
+    &__check {
+      width: 1.5rem;
+      height: 1.5rem;
+      stroke-dasharray: 20px;
+      stroke-dashoffset: 20px;
+      margin-right: 0.5rem;
     }
   }
 
   &.uploading {
-    .upload__info > * {
-      animation: fade-up-out 0.4s 0.4s forwards;
-    }
-
     .upload__button {
       animation: expand 0.3s forwards;
 
       &::before {
-        animation: fill-left 1.2s 0.4s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+        animation: fill-left 1.2s 0.4s var(--ease-in-out-quartic) forwards;
       }
+    }
 
-      .btn-text {
-        animation: fade-up-out 0.4s 0.4s forwards;
-      }
+    .upload__info > *,
+    .upload__button__text {
+      animation: fade-up-out 0.4s 0.4s forwards;
     }
 
     .upload__hint {
@@ -131,33 +118,31 @@ body {
     }
 
     .upload__progress {
-      animation: fill-right 2s 1s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+      animation: fill-right 2s 1s var(--ease-in-out-quartic) forwards;
     }
   }
 
   &.uploaded {
     .upload__progress {
-      animation: slide-up 1s cubic-bezier(0.77, 0, 0.175, 1) forwards;
-    }
+      animation: slide-up 1s var(--ease-in-out-quartic) forwards;
 
-    .complete {
-      .check {
-        stroke-dashoffset: 0;
+      &__check {
+        animation: stroke-in 0.6s 0.4s var(--ease-in-out-quartic) forwards;
       }
     }
   }
 
   &.uploaded-after {
     .upload__info {
-      animation: slide-down-info 1s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+      animation: slide-down-info 1s var(--ease-in-out-quartic) forwards;
     }
 
     .upload__button {
-      animation: slide-down-button 1s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+      animation: slide-down-button 1s var(--ease-in-out-quartic) forwards;
     }
 
     .upload__progress {
-      animation: slide-down-progress 1s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+      animation: slide-down-progress 1s var(--ease-in-out-quartic) forwards;
     }
   }
 }
@@ -196,10 +181,17 @@ body {
 
 @keyframes slide-up {
   from {
-    transform: scaleX(1);
+    transform: scaleX(1) translateY(0);
   }
+
   to {
     transform: scaleX(1) translateY(-90%);
+  }
+}
+
+@keyframes stroke-in {
+  to {
+    stroke-dashoffset: 0;
   }
 }
 
@@ -229,6 +221,6 @@ body {
   }
 
   to {
-    transform: translateY(10%);
+    transform: scaleX(1) translateY(10%);
   }
 }

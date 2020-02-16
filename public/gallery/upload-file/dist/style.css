@@ -11,10 +11,10 @@ body {
 .upload {
   --btn-color: #3bafda;
   --progress-color: #2d334c;
+  --ease-in-out-quartic: cubic-bezier(0.77, 0, 0.175, 1);
   position: relative;
   display: flex;
   font-size: 1.5rem;
-  line-height: 1.5;
   background: white;
   border-radius: 0.63rem;
   box-shadow: 0 1.7px 1.4px rgba(0, 0, 0, 0.02), 0 4px 3.3px rgba(0, 0, 0, 0.028), 0 7.5px 6.3px rgba(0, 0, 0, 0.035), 0 13.4px 11.2px rgba(0, 0, 0, 0.042), 0 25.1px 20.9px rgba(0, 0, 0, 0.05), 0 60px 50px rgba(0, 0, 0, 0.07);
@@ -26,18 +26,17 @@ body {
   padding: 1.6rem 1.8rem;
   margin-right: 3.6rem;
 }
-.upload__info .upload__filename {
+.upload__filename {
   padding-left: 0.75rem;
 }
 .upload__button {
   position: relative;
-  flex: 1;
   padding: 1.12rem 1.12rem;
   font-size: 1.5rem;
-  line-height: 1.5;
   color: white;
   background: none;
   border: none;
+  border-radius: inherit;
   outline: none;
   cursor: pointer;
   transform: scale(0.9);
@@ -51,7 +50,7 @@ body {
   width: 100%;
   height: 100%;
   background-color: var(--btn-color);
-  border-radius: 0.63rem;
+  border-radius: inherit;
   transform-origin: right;
 }
 .upload__hint {
@@ -71,63 +70,53 @@ body {
   content: "";
   top: 90%;
   left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
   height: 100%;
+  color: white;
   background: var(--progress-color);
   transform: scaleX(0);
   transform-origin: left;
 }
-.upload__progress .complete {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: calc(100% + 4px);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-}
-.upload__progress .complete .check {
+.upload__progress__check {
   width: 1.5rem;
   height: 1.5rem;
   stroke-dasharray: 20px;
   stroke-dashoffset: 20px;
   margin-right: 0.5rem;
-  transition: 0.6s 0.4s cubic-bezier(0.77, 0, 0.175, 1);
-}
-.upload.uploading .upload__info > * {
-  animation: fade-up-out 0.4s 0.4s forwards;
 }
 .upload.uploading .upload__button {
   animation: expand 0.3s forwards;
 }
 .upload.uploading .upload__button::before {
-  animation: fill-left 1.2s 0.4s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+  animation: fill-left 1.2s 0.4s var(--ease-in-out-quartic) forwards;
 }
-.upload.uploading .upload__button .btn-text {
+.upload.uploading .upload__info > *,
+.upload.uploading .upload__button__text {
   animation: fade-up-out 0.4s 0.4s forwards;
 }
 .upload.uploading .upload__hint {
   animation: fade-up-in 0.4s 0.8s forwards;
 }
 .upload.uploading .upload__progress {
-  animation: fill-right 2s 1s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+  animation: fill-right 2s 1s var(--ease-in-out-quartic) forwards;
 }
 .upload.uploaded .upload__progress {
-  animation: slide-up 1s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+  animation: slide-up 1s var(--ease-in-out-quartic) forwards;
 }
-.upload.uploaded .complete .check {
-  stroke-dashoffset: 0;
+.upload.uploaded .upload__progress__check {
+  animation: stroke-in 0.6s 0.4s var(--ease-in-out-quartic) forwards;
 }
 .upload.uploaded-after .upload__info {
-  animation: slide-down-info 1s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+  animation: slide-down-info 1s var(--ease-in-out-quartic) forwards;
 }
 .upload.uploaded-after .upload__button {
-  animation: slide-down-button 1s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+  animation: slide-down-button 1s var(--ease-in-out-quartic) forwards;
 }
 .upload.uploaded-after .upload__progress {
-  animation: slide-down-progress 1s cubic-bezier(0.77, 0, 0.175, 1) forwards;
+  animation: slide-down-progress 1s var(--ease-in-out-quartic) forwards;
 }
 
 @keyframes expand {
@@ -159,10 +148,15 @@ body {
 }
 @keyframes slide-up {
   from {
-    transform: scaleX(1);
+    transform: scaleX(1) translateY(0);
   }
   to {
     transform: scaleX(1) translateY(-90%);
+  }
+}
+@keyframes stroke-in {
+  to {
+    stroke-dashoffset: 0;
   }
 }
 @keyframes slide-down-info {
@@ -186,6 +180,6 @@ body {
     transform: scaleX(1) translateY(-90%);
   }
   to {
-    transform: translateY(10%);
+    transform: scaleX(1) translateY(10%);
   }
 }
