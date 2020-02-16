@@ -1,4 +1,9 @@
 export default [
+  {
+    title: "upload-file",
+    description: "文件上传进度交互",
+    tags: ["upload", "progress bar"]
+  },
   { title: "bookmark", description: "书签图标", tags: ["icon", "bookmark"] },
   {
     title: "circle-arrow-nav",

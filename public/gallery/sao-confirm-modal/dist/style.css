@@ -44,7 +44,6 @@ body {
   left: 0;
   bottom: 0;
   right: 0;
-  z-index: 9999;
   width: 360px;
   padding: 0;
   font-family: Roboto, sans-serif;
@@ -69,9 +68,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 99%;
+  width: 98%;
   height: 0;
-  background: linear-gradient(#b3b3b3 0%, #b3b3b3 1%, #ededed 11%, #ededed 50%, #ededed 89%, #b3b3b3 99%, #b3b3b3 100%);
+  background: linear-gradient(#b3b3b3 0% 1%, #ededed 11% 89%, #b3b3b3 99% 100%);
   overflow: hidden;
   animation: open-description 0.6s 0.2s cubic-bezier(0.745, 0.045, 0.255, 1) forwards;
 }

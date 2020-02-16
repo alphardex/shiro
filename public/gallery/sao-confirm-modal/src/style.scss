@@ -48,7 +48,6 @@ body {
   left: 0;
   bottom: 0;
   right: 0;
-  z-index: 9999;
   width: 360px;
   padding: 0;
   font-family: Roboto, sans-serif;
@@ -79,16 +78,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 99%;
+    width: 98%;
     height: 0;
     background: linear-gradient(
-      hsl(0, 0%, 70%) 0%,
-      hsl(0, 0%, 70%) 1%,
-      hsl(0, 0%, 93%) 11%,
-      hsl(0, 0%, 93%) 50%,
-      hsl(0, 0%, 93%) 89%,
-      hsl(0, 0%, 70%) 99%,
-      hsl(0, 0%, 70%) 100%
+      hsl(0, 0%, 70%) 0% 1%,
+      hsl(0, 0%, 93%) 11% 89%,
+      hsl(0, 0%, 70%) 99% 100%
     );
     overflow: hidden;
     animation: open-description 0.6s 0.2s cubic-bezier(0.745, 0.045, 0.255, 1)
