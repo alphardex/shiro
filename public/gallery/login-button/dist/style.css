@@ -58,19 +58,19 @@ body {
   stroke-dashoffset: 36px;
   transition: opacity 0.3s;
 }
-.login.active {
+.login.loading {
   width: 4em;
   color: transparent;
   pointer-events: none;
   user-select: none;
 }
-.login.active .loader {
+.login.loading .loader {
   opacity: 1;
 }
-.login.verified .loader {
+.login.success .loader {
   opacity: 0;
 }
-.login.verified .tick {
+.login.success .tick {
   opacity: 1;
   animation: show-tick 0.8s 0.4s forwards;
 }

@@ -1,4 +1,4 @@
-let sleep = time => new Promise(resolve => setTimeout(resolve, time));
+let sleep = (time: number) => new Promise(resolve => setTimeout(resolve, time));
 let upload = document.querySelector(".upload");
 let uploadBtn = document.querySelector(".upload__button");
 uploadBtn.addEventListener("click", async () => {

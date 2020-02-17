@@ -70,7 +70,7 @@ body {
     transition: opacity 0.3s;
   }
 
-  &.active {
+  &.loading {
     width: 4em;
     color: transparent;
     pointer-events: none;
@@ -81,7 +81,7 @@ body {
     }
   }
 
-  &.verified {
+  &.success {
     .loader {
       opacity: 0;
     }
