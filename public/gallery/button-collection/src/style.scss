@@ -6,7 +6,7 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
-  background: #222;
+  background: #1a1e23;
 }
 
 .btn {
@@ -167,7 +167,7 @@ body {
 
     &::after {
       z-index: -2;
-      background: #222;
+      background: #1a1e23;
       border-color: hsl(var(--hue), 100%, 41%);
       transform: scale(0.5);
     }
@@ -336,7 +336,7 @@ body {
       content: "";
       width: 14px;
       height: 4px;
-      background: #222;
+      background: #1a1e23;
       transform: skewX(60deg);
       transition: 0.4s linear;
     }

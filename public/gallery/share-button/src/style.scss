@@ -6,29 +6,22 @@ body {
   height: 100vh;
   justify-content: center;
   align-items: center;
+  background: #ECEFFC;
 }
 
 .btn-share {
   position: relative;
   display: flex;
-  width: 280px;
-  height: 80px;
+  width: 240px;
+  height: 72px;
   font-family: Lato, sans-serif;
   font-size: 20px;
   color: white;
   letter-spacing: 2px;
-  background: #edf2f4;
+  background: #E6E9ED;
   border: none;
-  border-radius: 4em;
+  border-radius: 80px;
   outline: none;
-  box-shadow:
-  0 1.4px 2.8px rgba(0, 0, 0, 0.141),
-  0 3.3px 6.7px rgba(0, 0, 0, 0.202),
-  0 6.3px 12.5px rgba(0, 0, 0, 0.25),
-  0 11.2px 22.3px rgba(0, 0, 0, 0.298),
-  0 20.9px 41.8px rgba(0, 0, 0, 0.359),
-  0 50px 100px rgba(0, 0, 0, 0.5)
-;
   cursor: pointer;
   overflow: hidden;
   transition: 0.2s ease-in-out;
@@ -43,7 +36,7 @@ body {
     align-items: center;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to right, #434343 0%, black 100%);
+    background: #1F1E1E;
     border-radius: inherit;
     transition: 0.6s linear;
   }

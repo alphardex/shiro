@@ -1,9 +1,12 @@
 body {
+  display: -webkit-box;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
   height: 100vh;
-  background: #222;
+  background: #1a1e23;
 }
 
 .progress {
@@ -39,9 +42,12 @@ body {
   counter-reset: progress var(--value);
 }
 .progress .progress-bar .progress-indicator::after {
+  display: -webkit-box;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
   position: absolute;
   content: counter(progress) "%";
   width: 100%;
@@ -60,9 +66,12 @@ body {
   border: 4px solid var(--light-color);
 }
 .progress .progress-start svg {
+  display: -webkit-box;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
   width: 100%;
   height: 100%;
   -webkit-transform: scale(0.6);
@@ -79,9 +88,12 @@ body {
   border: 4px solid var(--dark-color);
 }
 .progress .progress-end svg {
+  display: -webkit-box;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
   width: 100%;
   height: 100%;
   -webkit-transform: scale(0.6);

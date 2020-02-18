@@ -1,31 +1,9 @@
 body {
-  min-height: 100vh;
-  margin: 0;
-  padding: 0;
-  background: black;
-  font-family: Montserrat, sans-serif;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-header {
-  position: absolute;
-  top: 0;
-  width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
-  padding: 0 60px;
-}
-
-.logo {
-  font-size: 34px;
-  line-height: 50px;
-  text-align: center;
-  text-decoration: none;
-  color: white;
+  height: 100vh;
+  background: #1a1e23;
 }
 
 .underline-menu {

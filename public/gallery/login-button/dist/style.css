@@ -4,6 +4,7 @@ body {
   height: 100vh;
   justify-content: center;
   align-items: center;
+  background: #ECEFFC;
 }
 
 .login {
@@ -15,7 +16,7 @@ body {
   font-size: 1.5em;
   text-align: center;
   text-transform: uppercase;
-  background: linear-gradient(to right, #434343 0%, black 100%);
+  background: #1F1E1E;
   border: none;
   border-radius: 4em;
   outline: none;

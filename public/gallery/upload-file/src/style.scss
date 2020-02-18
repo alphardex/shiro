@@ -16,9 +16,9 @@ body {
 
   position: relative;
   display: flex;
-  font-size: 1.5rem;
+  font-size: 24px;
   background: white;
-  border-radius: 0.63rem;
+  border-radius: 10px;
   box-shadow: 0 1.7px 1.4px rgba(0, 0, 0, 0.02),
     0 4px 3.3px rgba(0, 0, 0, 0.028), 0 7.5px 6.3px rgba(0, 0, 0, 0.035),
     0 13.4px 11.2px rgba(0, 0, 0, 0.042), 0 25.1px 20.9px rgba(0, 0, 0, 0.05),
@@ -28,18 +28,18 @@ body {
   &__info {
     display: flex;
     align-items: center;
-    padding: 1.6rem 1.8rem;
-    margin-right: 3.6rem;
+    padding: 25px 30px;
+    margin-right: 60px;
   }
 
   &__filename {
-    padding-left: 0.75rem;
+    padding-left: 12px;
   }
 
   &__button {
     position: relative;
-    padding: 1.12rem 1.12rem;
-    font-size: 1.5rem;
+    padding: 20px 20px;
+    font-size: 24px;
     color: white;
     background: none;
     border: none;
@@ -91,11 +91,9 @@ body {
     transform-origin: left;
 
     .check {
-      width: 1.5rem;
-      height: 1.5rem;
       stroke-dasharray: 20px;
       stroke-dashoffset: 20px;
-      margin-right: 0.5rem;
+      margin-right: 10px;
     }
   }
 
