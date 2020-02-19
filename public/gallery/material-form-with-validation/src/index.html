@@ -1,0 +1,54 @@
+<form class="register-form" action="javascript:void(0);">
+  <h2>Register</h2>
+  <div class="form-control">
+    <input
+      type="text"
+      name="username"
+      id="username"
+      placeholder=" "
+      minlength="3"
+      maxlength="16"
+      autocomplete="off"
+    />
+    <label for="username">Username</label>
+    <small class="error">Username must be 3-16 characters</small>
+  </div>
+  <div class="form-control">
+    <input
+      type="email"
+      name="email"
+      id="email"
+      placeholder=" "
+      autocomplete="off"
+    />
+    <label for="email">Email</label>
+    <small class="error">Email is invalid</small>
+  </div>
+  <div class="form-control">
+    <input
+      type="password"
+      name="password"
+      id="password"
+      placeholder=" "
+      autocomplete="off"
+      minlength="6"
+    />
+    <label for="password">Password</label>
+    <small class="error">Password must be at least 6 characters</small>
+  </div>
+  <div class="form-control">
+    <input
+      type="password"
+      name="password-confirm"
+      id="password-confirm"
+      placeholder=" "
+      autocomplete="off"
+      oninput="checkPasswordConfirm(this)"
+    />
+    <label for="password-confirm">Confirm</label>
+    <small class="error">Password should be the same</small>
+  </div>
+  <button type="submit" class="btn btn-info btn-shock">
+    Register
+  </button>
+</form>

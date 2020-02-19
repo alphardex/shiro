@@ -1,5 +1,10 @@
 export default [
   {
+    title: "material-form-with-validation",
+    description: "带验证的material风表单",
+    tags: ["material", "form", "register"]
+  },
+  {
     title: "upload-file",
     description: "文件上传进度交互",
     tags: ["upload", "progress bar"]

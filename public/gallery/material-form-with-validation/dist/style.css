@@ -1,0 +1,165 @@
+@import url(https://fonts.googleapis.com/css?family=Lato);
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: Lato, sans-serif;
+  background: #eceffc;
+  margin: 0;
+}
+
+.form-control {
+  --default-color: #cccccc;
+  --invalid-color: #e74c3c;
+  --valid-color: #3498db;
+  --border-bottom-color: #f3f3f3;
+  position: relative;
+  border-bottom: 1px solid var(--border-bottom-color);
+}
+.form-control::after {
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 2px;
+  background: var(--valid-color);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: 0.3s;
+}
+.form-control:focus-within::after {
+  transform: scaleX(1);
+}
+.form-control input {
+  padding: 8px 0;
+  font-size: inherit;
+  font-weight: inherit;
+  color: currentColor;
+  background: transparent;
+  border: none;
+  outline: none;
+}
+.form-control input:invalid ~ label {
+  color: var(--invalid-color);
+}
+.form-control input:invalid ~ .error {
+  transform: translateX(0);
+}
+.form-control input:valid ~ label {
+  color: var(--valid-color);
+}
+.form-control input:placeholder-shown ~ label {
+  color: var(--default-color);
+}
+.form-control input:focus ~ label, .form-control input:not(:placeholder-shown) ~ label {
+  transform: translateY(-120%) scale(0.75);
+}
+.form-control label {
+  position: absolute;
+  top: 8px;
+  left: 0;
+  transition: 0.3s;
+  transform-origin: left;
+}
+.form-control .error {
+  position: absolute;
+  top: 48px;
+  display: block;
+  margin: 0;
+  font-weight: normal;
+  color: var(--invalid-color);
+  transform: translateX(-360px);
+  transition: 0.3s;
+}
+
+.btn {
+  position: relative;
+  z-index: 1;
+  font-size: 1rem;
+  line-height: 50px;
+  color: white;
+  text-decoration: none;
+  background-color: hsl(var(--hue), 100%, 41%);
+  border: 1px solid hsl(var(--hue), 100%, 41%);
+  border-radius: 25px;
+  outline: transparent;
+  overflow: hidden;
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+  transition: 0.3s;
+}
+.btn:hover {
+  background: hsl(var(--hue), 100%, 31%);
+}
+.btn-info {
+  --hue: 204;
+}
+.btn-shock {
+  background: transparent;
+  border-color: transparent;
+  overflow: visible;
+}
+.btn-shock:hover {
+  background: transparent;
+}
+.btn-shock::before, .btn-shock::after {
+  position: absolute;
+  content: "";
+  top: -1px;
+  left: -1px;
+  right: -1px;
+  bottom: -1px;
+  border: inherit;
+  border-radius: inherit;
+  transition: 0.3s;
+}
+.btn-shock::before {
+  z-index: -1;
+  background: hsl(var(--hue), 100%, 41%);
+}
+.btn-shock::after {
+  z-index: -2;
+  background: white;
+  border-color: hsl(var(--hue), 100%, 41%);
+  transform: scale(0.5);
+}
+.btn-shock:hover {
+  color: hsl(var(--hue), 100%, 41%);
+}
+.btn-shock:hover::before {
+  opacity: 0;
+  transform: scale(1.2);
+}
+.btn-shock:hover::after {
+  transform: scale(1);
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 40px;
+  color: black;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0.4px 0.4px rgba(128, 128, 128, 0.109), 0 1px 1px rgba(128, 128, 128, 0.155), 0 2.1px 2.1px rgba(128, 128, 128, 0.195), 0 4.4px 4.4px rgba(128, 128, 128, 0.241), 0 12px 12px rgba(128, 128, 128, 0.35);
+  overflow: hidden;
+}
+.register-form h2 {
+  margin: 0 0 8px 0;
+}
+.register-form .form-control {
+  margin: 27px 0;
+  font-weight: bold;
+}
+.register-form .form-control input {
+  width: 300px;
+}
+.register-form .btn {
+  width: 100%;
+  margin: 18px 0 0 0;
+  font-weight: bold;
+}

@@ -5,92 +5,75 @@ body {
   justify-content: center;
   align-items: center;
   font-family: Lato, sans-serif;
-  background: #ECEFFC;
+  background: #eceffc;
 }
 
-.login-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 3em;
-  color: white;
-  background: rgba(0, 0, 0, 0.8);
-  border-radius: 10px;
-  box-shadow: 0 0.4px 0.6px rgba(0, 0, 0, 0.141), 0 1px 1.3px rgba(0, 0, 0, 0.202), 0 1.9px 2.5px rgba(0, 0, 0, 0.25), 0 3.4px 4.5px rgba(0, 0, 0, 0.298), 0 6.3px 8.4px rgba(0, 0, 0, 0.359), 0 15px 20px rgba(0, 0, 0, 0.5);
-}
-.login-form h1 {
-  margin: 0 0 1em 0;
-  padding: 12px 0;
-  font-size: 2.5em;
-}
-.login-form .form-field {
+.form-control {
+  --default-color: currentColor;
+  --invalid-color: #e74c3c;
+  --valid-color: #3498db;
+  --border-bottom-color: currentColor;
   position: relative;
-  display: flex;
-  align-items: center;
-  padding: 4px 0 0 0;
-  margin-bottom: 2em;
-  font-size: 20px;
-  border-bottom: 1px solid white;
-  transition: 0.4s;
+  border-bottom: 1px solid var(--border-bottom-color);
 }
-.login-form .form-field > * {
-  padding-bottom: 0.5em;
-}
-.login-form .form-field::after {
+.form-control::after {
   position: absolute;
   content: "";
-  bottom: -1px;
   left: 0;
+  bottom: -1px;
   width: 100%;
   height: 2px;
-  background: #3498db;
-  transform-origin: left;
+  background: var(--valid-color);
   transform: scaleX(0);
-  transition: 0.4s ease;
+  transform-origin: left;
+  transition: 0.3s;
 }
-.login-form .form-field:focus-within::after {
+.form-control:focus-within::after {
   transform: scaleX(1);
 }
-.login-form .form-field input {
-  top: 1px;
-  padding-top: 0;
-  padding-left: 0.5em;
-  margin: 0;
-  color: white;
+.form-control input {
+  padding: 8px 0;
+  font-size: inherit;
+  font-weight: inherit;
+  color: currentColor;
   background: transparent;
   border: none;
   outline: none;
 }
-.login-form .form-field input:focus ~ label, .login-form .form-field input:not(:placeholder-shown) ~ label {
-  transform: translateY(-24px) scale(0.75);
+.form-control input:invalid ~ label {
+  color: var(--invalid-color);
 }
-.login-form .form-field input:valid ~ label {
-  color: #3498db;
+.form-control input:valid ~ label {
+  color: var(--valid-color);
 }
-.login-form .form-field input:invalid ~ label {
-  color: #e74c3c;
+.form-control input:placeholder-shown ~ label {
+  color: var(--default-color);
 }
-.login-form .form-field label {
+.form-control input:focus ~ label, .form-control input:not(:placeholder-shown) ~ label {
+  transform: translateY(-120%) scale(0.75);
+}
+.form-control label {
   position: absolute;
-  left: 30px;
+  top: 8px;
+  left: 0;
+  transition: 0.3s;
   transform-origin: left;
-  transition: 0.4s;
 }
-.login-form .btn {
+
+.btn {
   position: relative;
   width: 100%;
   padding: 6px 0;
-  margin: 0.5em 0 1em 0;
-  font-size: 1.2em;
-  color: white;
+  font-size: 16px;
+  color: currentColor;
   background: transparent;
   border: 2px solid #3398db;
   outline: none;
   cursor: pointer;
   overflow: hidden;
-  transition: 0.5s;
+  transition: 0.6s;
 }
-.login-form .btn::before {
+.btn::before {
   position: absolute;
   content: "";
   top: 0;
@@ -99,11 +82,33 @@ body {
   height: 100%;
   background: linear-gradient(120deg, transparent, rgba(51, 152, 219, 0.5), transparent);
   transform: translateX(-100%);
-  transition: 0.5s;
+  transition: 0.6s;
 }
-.login-form .btn:hover {
+.btn:hover {
   box-shadow: 0 0 20px 10px rgba(51, 152, 219, 0.5);
 }
-.login-form .btn:hover::before {
+.btn:hover::before {
   transform: translateX(100%);
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 50px 40px;
+  color: white;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 10px;
+  box-shadow: 0 0.4px 0.4px rgba(128, 128, 128, 0.109), 0 1px 1px rgba(128, 128, 128, 0.155), 0 2.1px 2.1px rgba(128, 128, 128, 0.195), 0 4.4px 4.4px rgba(128, 128, 128, 0.241), 0 12px 12px rgba(128, 128, 128, 0.35);
+}
+.login-form h1 {
+  margin: 0 0 24px 0;
+  font-size: 36px;
+}
+.login-form .form-control {
+  margin: 18px 0;
+}
+.login-form .btn {
+  width: 100%;
+  margin: 18px 0 9px 0;
 }

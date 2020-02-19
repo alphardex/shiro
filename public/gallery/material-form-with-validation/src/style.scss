@@ -1,0 +1,202 @@
+@import url(https://fonts.googleapis.com/css?family=Lato);
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: Lato, sans-serif;
+  background: #eceffc;
+  margin: 0;
+}
+
+.form-control {
+  --default-color: #cccccc;
+  --invalid-color: #e74c3c;
+  --valid-color: #3498db;
+  --border-bottom-color: #f3f3f3;
+
+  position: relative;
+  border-bottom: 1px solid var(--border-bottom-color);
+
+  &::after {
+    position: absolute;
+    content: "";
+    left: 0;
+    bottom: -1px;
+    width: 100%;
+    height: 2px;
+    background: var(--valid-color);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: 0.3s;
+  }
+
+  &:focus-within::after {
+    transform: scaleX(1);
+  }
+
+  input {
+    padding: 8px 0;
+    font-size: inherit;
+    font-weight: inherit;
+    color: currentColor;
+    background: transparent;
+    border: none;
+    outline: none;
+
+    &:invalid {
+      & ~ label {
+        color: var(--invalid-color);
+      }
+
+      & ~ .error {
+        transform: translateX(0);
+      }
+    }
+
+    &:valid ~ label {
+      color: var(--valid-color);
+    }
+
+    &:placeholder-shown ~ label {
+      color: var(--default-color);
+    }
+
+    // label will float in 2 situations based on its sibling input:
+    // 1. input get focus
+    // 2. input has text filled
+    &:focus ~ label,
+    &:not(:placeholder-shown) ~ label {
+      transform: translateY(-120%) scale(0.75);
+    }
+  }
+
+  label {
+    position: absolute;
+    top: 8px;
+    left: 0;
+    transition: 0.3s;
+    transform-origin: left;
+  }
+
+  .error {
+    position: absolute;
+    top: 48px;
+    display: block;
+    margin: 0;
+    font-weight: normal;
+    color: var(--invalid-color);
+    transform: translateX(-360px);
+    transition: 0.3s;
+  }
+}
+
+.btn {
+  position: relative;
+  z-index: 1;
+  font-size: 1rem;
+  line-height: 50px;
+  color: white;
+  text-decoration: none;
+  background-color: hsl(var(--hue), 100%, 41%);
+  border: 1px solid hsl(var(--hue), 100%, 41%);
+  border-radius: 25px;
+  outline: transparent;
+  overflow: hidden;
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+  transition: 0.3s;
+
+  &:hover {
+    background: hsl(var(--hue), 100%, 31%);
+  }
+
+  &-info {
+    --hue: 204;
+  }
+
+  &-shock {
+    background: transparent;
+    border-color: transparent;
+    overflow: visible;
+
+    &:hover {
+      background: transparent;
+    }
+
+    &::before,
+    &::after {
+      position: absolute;
+      content: "";
+      top: -1px;
+      left: -1px;
+      right: -1px;
+      bottom: -1px;
+      border: inherit;
+      border-radius: inherit;
+      transition: 0.3s;
+    }
+
+    &::before {
+      z-index: -1;
+      background: hsl(var(--hue), 100%, 41%);
+    }
+
+    &::after {
+      z-index: -2;
+      background: white;
+      border-color: hsl(var(--hue), 100%, 41%);
+      transform: scale(0.5);
+    }
+
+    &:hover {
+      color: hsl(var(--hue), 100%, 41%);
+
+      &::before {
+        opacity: 0;
+        transform: scale(1.2);
+      }
+
+      &::after {
+        transform: scale(1);
+      }
+    }
+  }
+}
+
+.register-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 40px;
+  color: black;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0.4px 0.4px rgba(128, 128, 128, 0.109),
+    0 1px 1px rgba(128, 128, 128, 0.155),
+    0 2.1px 2.1px rgba(128, 128, 128, 0.195),
+    0 4.4px 4.4px rgba(128, 128, 128, 0.241),
+    0 12px 12px rgba(128, 128, 128, 0.35);
+  overflow: hidden;
+
+  h2 {
+    margin: 0 0 8px 0;
+  }
+
+  .form-control {
+    margin: 27px 0;
+    font-weight: bold;
+
+    input {
+      width: 300px;
+    }
+  }
+
+  .btn {
+    width: 100%;
+    margin: 18px 0 0 0;
+    font-weight: bold;
+  }
+}
