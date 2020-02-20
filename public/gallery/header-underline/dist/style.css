@@ -37,6 +37,7 @@ body {
   position: relative;
   display: flex;
   padding: 30px 25px 30px 25px;
+  line-height: 1;
   text-decoration: none;
   color: white;
   transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
