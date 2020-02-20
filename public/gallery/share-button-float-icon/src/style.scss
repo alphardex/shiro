@@ -1,4 +1,4 @@
-@import url(https://fonts.googleapis.com/css?family=Lato);
+@import url("https://fonts.googleapis.com/css?family=Roboto:500");
 
 body {
   display: flex;
@@ -9,15 +9,20 @@ body {
 }
 
 .btn-share {
+  --btn-color: #275efe;
   position: relative;
-  padding: 1rem 2rem;
-  font-family: Lato, sans-serif;
+  padding: 16px 32px;
+  font-family: Roboto, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1;
   color: white;
   background: none;
   border: none;
   outline: none;
   overflow: hidden;
   cursor: pointer;
+  filter: drop-shadow(0 2px 8px rgba(#275efe, 0.32));
   transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1); //ease-out-cubic
 
   &::before {
@@ -28,13 +33,8 @@ body {
     z-index: -1;
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(
-      to top,
-      #1e3c72 0%,
-      #1e3c72 1%,
-      #2a5298 100%
-    ); // https://webgradients.com Night Sky
-    border-radius: 2rem;
+    background: var(--btn-color);
+    border-radius: 24px;
     transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
   }
 
@@ -50,7 +50,7 @@ body {
   }
 
   .btn-icon {
-    margin-left: 16px;
+    margin-left: 8px;
     transition-delay: 0.1s;
   }
 

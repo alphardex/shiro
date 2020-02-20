@@ -1,61 +1,54 @@
 body {
   display: flex;
   flex-direction: column;
-  height: 100vh;
   justify-content: center;
   align-items: center;
-  text-align: center;
-  background: #ECEFFC;
+  min-height: 100vh;
+  background: #eceffc;
 }
 
 .switch {
-  --ball-color: #D3D4EC;
+  --switch-color: white;
+  --ball-color: #d3d4ec;
   --ball-active-color: #2357f3;
   --line-color: #e9ecfb;
   position: relative;
   width: 60px;
   height: 32px;
-  border-radius: 1em;
+  margin: 16px;
+  background: var(--switch-color);
+  border-radius: 16px;
   box-shadow: 0 1px 3px hsla(231, 100%, 12%, 0.08);
   cursor: pointer;
 
-  &::before {
-    position: absolute;
-    content: "";
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: white;
-    border-radius: inherit;
-  }
-
   input[type="checkbox"] {
-    & ~ .line::before {
-      position: absolute;
-      content: "";
-      top: 14px;
-      left: 4px;
-      width: 24px;
-      height: 4px;
-      background: var(--line-color);
-      border-radius: 2px 0 0 2px;
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: 0.3s ease;
-    }
+    appearance: none;
+    opacity: 0;
 
-    & ~ .line::after {
-      position: absolute;
-      content: "";
-      top: 14px;
-      left: 32px;
-      width: 24px;
-      height: 4px;
-      background: var(--line-color);
-      border-radius: 0 2px 2px 0;
-      transform-origin: right;
-      transition: 0.3s ease;
+    & ~ .line {
+      &::before,
+      &::after {
+        position: absolute;
+        content: "";
+        top: 14px;
+        width: 24px;
+        height: 4px;
+        background: var(--line-color);
+        transition: 0.3s;
+      }
+
+      &::before {
+        left: 4px;
+        border-radius: 2px 0 0 2px;
+        transform: scaleX(0);
+        transform-origin: left;
+      }
+
+      &::after {
+        left: 32px;
+        border-radius: 0 2px 2px 0;
+        transform-origin: right;
+      }
     }
 
     & ~ .ball {
@@ -65,27 +58,27 @@ body {
       left: 4px;
       width: 24px;
       height: 24px;
-      background: white;
+      background: var(--switch-color);
       border-radius: 50%;
       box-shadow: inset 0 0 0 4px var(--ball-color);
-      transition: 0.3s ease;
+      transition: 0.3s;
     }
 
-    &:checked ~ .line::before {
-      transform: scaleX(1);
-    }
+    &:checked {
+      & ~ .line {
+        &::before {
+          transform: scaleX(1);
+        }
 
-    &:checked ~ .line::after {
-      transform: scaleX(0);
-    }
+        &::after {
+          transform: scaleX(0);
+        }
+      }
 
-    &:checked ~ .ball {
-      box-shadow: inset 0 0 0 12px var(--ball-active-color);
-      transform: translateX(28px);
+      & ~ .ball {
+        box-shadow: inset 0 0 0 12px var(--ball-active-color);
+        transform: translateX(28px);
+      }
     }
-  }
-
-  & + & {
-    margin-top: 2em;
   }
 }

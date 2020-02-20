@@ -1,8 +1,8 @@
 export default [
   {
-    title: "material-form-with-validation",
-    description: "带验证的material风表单",
-    tags: ["material", "form", "register"]
+    title: "material-input-field-with-validation",
+    description: "material风的输入框",
+    tags: ["form", "input", "material"]
   },
   {
     title: "upload-file",
