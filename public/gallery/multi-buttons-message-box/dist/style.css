@@ -1,16 +1,17 @@
-@import url(https://fonts.googleapis.com/css?family=Lato);
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,700");
 body {
   height: 100vh;
   margin: 0;
   display: grid;
   place-items: center;
+  font-family: Roboto, sans-serif;
   background: #ECEFFC;
 }
 
 .btn {
   position: relative;
-  font-size: 1rem;
-  line-height: 1.5;
+  padding: 8px 24px;
+  font-size: 100%;
   color: white;
   text-decoration: none;
   background-color: hsl(var(--hue), 100%, 41%);
@@ -24,8 +25,8 @@ body {
       -ms-user-select: none;
           user-select: none;
   white-space: nowrap;
-  -webkit-transition: 0.25s;
-  transition: 0.25s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 .btn:hover {
   background: hsl(var(--hue), 100%, 31%);
@@ -93,7 +94,6 @@ body {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
           flex-direction: column;
-  width: 360px;
   padding: 10px;
   font-family: Lato, sans-serif;
   background: white;
@@ -169,12 +169,13 @@ body {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-  height: 250px;
+  height: 240px;
   padding: 10px;
-  font-size: 1.5em;
+  font-size: 100%;
+  font-family: inherit;
   letter-spacing: 0.1em;
   color: #7f8c8d;
-  background: #ECEFFC;
+  background: #eeeeee;
   border: none;
   border-radius: 5px;
   -webkit-transition: 0.5s;
@@ -190,16 +191,13 @@ body {
   outline: none;
 }
 .card .multi-button {
-  display: -webkit-box;
-  display: flex;
-  -webkit-box-pack: justify;
-          justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
   margin-top: 10px;
 }
 .card .multi-button .btn {
-  width: 114px;
   font-weight: bold;
-  line-height: 2em;
   opacity: 0;
   -webkit-transform: translateY(20px);
           transform: translateY(20px);

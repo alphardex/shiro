@@ -1,17 +1,18 @@
-@import url(https://fonts.googleapis.com/css?family=Lato);
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,700");
 
 body {
   height: 100vh;
   margin: 0;
   display: grid;
   place-items: center;
+  font-family: Roboto, sans-serif;
   background: #ECEFFC;
 }
 
 .btn {
   position: relative;
-  font-size: 1rem;
-  line-height: 1.5;
+  padding: 8px 24px;
+  font-size: 100%;
   color: white;
   text-decoration: none;
   background-color: hsl(var(--hue), 100%, 41%);
@@ -22,7 +23,7 @@ body {
   cursor: pointer;
   user-select: none;
   white-space: nowrap;
-  transition: 0.25s;
+  transition: 0.3s;
 
   &:hover {
     background: hsl(var(--hue), 100%, 31%);
@@ -97,7 +98,6 @@ body {
   position: relative;
   display: flex;
   flex-direction: column;
-  width: 360px;
   padding: 10px;
   font-family: Lato, sans-serif;
   background: white;
@@ -176,12 +176,13 @@ body {
   .textarea {
     // palette: https://flatuicolors.com
     appearance: none;
-    height: 250px;
+    height: 240px;
     padding: 10px;
-    font-size: 1.5em;
+    font-size: 100%;
+    font-family: inherit;
     letter-spacing: 0.1em;
     color: #7f8c8d;
-    background: #ECEFFC;
+    background: #eeeeee;
     border: none;
     border-radius: 5px;
     transition: 0.5s;
@@ -201,14 +202,13 @@ body {
   }
 
   .multi-button {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
     margin-top: 10px;
 
     .btn {
-      width: 114px;
       font-weight: bold;
-      line-height: 2em;
       opacity: 0;
       transform: translateY(20px);
       animation: float-in 0.8s forwards;

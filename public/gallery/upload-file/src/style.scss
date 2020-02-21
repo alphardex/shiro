@@ -1,11 +1,11 @@
-@import url(https://fonts.googleapis.com/css?family=Lato);
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,700");
 
 body {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 100vh;
-  font-family: Lato, sans-serif;
+  font-family: Roboto, sans-serif;
   background: #eceffc;
 }
 
@@ -23,6 +23,7 @@ body {
     0 13.4px 11.2px rgba(0, 0, 0, 0.042), 0 25.1px 20.9px rgba(0, 0, 0, 0.05),
     0 60px 50px rgba(0, 0, 0, 0.07);
   overflow: hidden;
+  transform: rotate(0);
 
   &__info {
     display: flex;
@@ -38,7 +39,8 @@ body {
   &__button {
     position: relative;
     padding: 16px;
-    font-size: 16px;
+    margin: 0;
+    font-size: 100%;
     font-family: inherit;
     color: white;
     background: none;
@@ -91,9 +93,9 @@ body {
     transform-origin: left;
 
     .check {
-      stroke-dasharray: 20px;
-      stroke-dashoffset: 20px;
-      margin-right: 10px;
+      stroke-dasharray: 16px;
+      stroke-dashoffset: 16px;
+      margin-right: 6px;
     }
   }
 

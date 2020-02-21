@@ -10,23 +10,25 @@ body {
 }
 
 .btn-share {
+  --btn-inner-color: #E6E9ED;
+  --btn-overlay-color: #1F1E1E;
+  --icon-color: #1c1d2a;
   position: relative;
   display: flex;
-  width: 240px;
-  height: 72px;
+  font-size: 100%;
   font-family: Lato, sans-serif;
-  font-size: 20px;
   color: white;
   letter-spacing: 2px;
-  background: #E6E9ED;
+  background: var(--btn-inner-color);
   border: none;
   border-radius: 80px;
   outline: none;
   cursor: pointer;
   overflow: hidden;
+  transform: rotate(0);
   transition: 0.2s ease-in-out;
 
-  .btn-text {
+  .btn-overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -36,15 +38,14 @@ body {
     align-items: center;
     width: 100%;
     height: 100%;
-    background: #1F1E1E;
+    background: var(--btn-overlay-color);
     border-radius: inherit;
     transition: 0.6s linear;
   }
 
   a {
-    flex: 1;
-    font-size: 28px;
-    color: #1c1d2a;
+    padding: 14px;
+    color: var(--icon-color);
     opacity: 0;
     transform: translateX(-100%);
     transition: 0.3s;
@@ -59,7 +60,7 @@ body {
   &:hover {
     transform: scale(1.1);
 
-    .btn-text {
+    .btn-overlay {
       transform: translateX(-100%);
       transition-delay: 0.25s;
     }
