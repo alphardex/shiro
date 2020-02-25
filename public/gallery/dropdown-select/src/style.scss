@@ -1,11 +1,8 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,700");
-
 body {
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  font-family: Roboto, sans-serif;
   background: #eceffc;
 }
 
@@ -14,9 +11,12 @@ body {
   --ease-in-out-quartic: cubic-bezier(0.77, 0, 0.175, 1);
 
   line-height: 1;
+  background: transparent;
+  border-radius: 16px 16px 0 0;
   cursor: pointer;
   filter: drop-shadow(0 60px 50px rgba(0, 0, 0, 0.15));
   overflow: hidden;
+  user-select: none;
   transform: rotate(0) translateY(25%);
 
   &__selected {
@@ -24,8 +24,24 @@ body {
     z-index: 1;
     width: 216px;
     padding: 21.6px 0 21.6px 28.8px;
+    font-size: 100%;
+    line-height: inherit;
     background: white;
     border-radius: 16px;
+
+    &::before {
+      position: absolute;
+      content: "";
+      top: 50%;
+      left: 0;
+      z-index: -1;
+      width: 100%;
+      height: 50%;
+      background: white;
+      border-radius: 16px 16px 0 0;
+      transform: scaleY(0);
+      transform-origin: top;
+    }
 
     .new-text {
       position: absolute;
@@ -50,7 +66,7 @@ body {
     .chevron {
       position: absolute;
       top: 30%;
-      right: 10%;
+      right: 12%;
       color: var(--arrow-color);
     }
   }
@@ -60,11 +76,11 @@ body {
     padding: 0;
     margin: 0;
     list-style-type: none;
-    background: #fffeff;
+    background: white;
     border-radius: 0 0 16px 16px;
     filter: brightness(0.95);
-    clip-path: inset(0 0 100% 0);
     pointer-events: none;
+    transform: translateY(-100%);
 
     li {
       position: relative;
@@ -87,7 +103,9 @@ body {
     pointer-events: none;
 
     .dropdown__selected {
-      animation: remove-border-radius-below 0.3s forwards;
+      &::before {
+        animation: reveal-border 0.1s forwards;
+      }
 
       .chevron {
         animation: flip-up 0.3s forwards;
@@ -96,14 +114,16 @@ body {
 
     .dropdown__options {
       pointer-events: auto;
-      animation: spread-down 0.6s 0.1s forwards var(--ease-in-out-quartic);
+      animation: slide-down 0.6s forwards var(--ease-in-out-quartic);
     }
   }
 
   &.close {
     .dropdown__selected {
-      border-radius: 16px 16px 0 0;
-      animation: add-border-radius-below 0.3s 0.4s forwards;
+      &::before {
+        transform: scaleY(1);
+        animation: hide-border 0.3s 0.4s forwards;
+      }
 
       .old-text {
         animation: fade-out 0.3s forwards;
@@ -119,14 +139,14 @@ body {
     }
 
     .dropdown__options {
-      animation: shrink-up 0.6s forwards var(--ease-in-out-quartic);
+      animation: slide-up 0.6s forwards var(--ease-in-out-quartic);
     }
   }
 }
 
-@keyframes remove-border-radius-below {
+@keyframes reveal-border {
   to {
-    border-radius: 16px 16px 0 0;
+    transform: scaleY(1);
   }
 }
 
@@ -136,26 +156,15 @@ body {
   }
 }
 
-@keyframes add-border-radius-below {
+@keyframes slide-down {
   to {
-    border-radius: 16px;
+    transform: translateY(0);
   }
 }
 
-@keyframes spread-down {
+@keyframes hide-border {
   to {
-    clip-path: inset(0 0 0 0);
-  }
-}
-
-@keyframes shrink-up {
-  from {
-    clip-path: inset(0 0 0 0);
-  }
-
-  to {
-    clip-path: inset(0 0 0 0);
-    transform: translateY(-100%);
+    transform: scaleY(0);
   }
 }
 
@@ -184,5 +193,15 @@ body {
 
   to {
     transform: scaleY(1);
+  }
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateY(0);
+  }
+
+  to {
+    transform: translateY(-100%);
   }
 }
