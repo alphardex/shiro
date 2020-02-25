@@ -1,5 +1,10 @@
 export default [
   {
+    title: "dropdown-select",
+    description: "下拉选择菜单交互",
+    tags: ["dropdown", "select"]
+  },
+  {
     title: "material-input-field-with-validation",
     description: "material风的输入框",
     tags: ["form", "input", "material"]
