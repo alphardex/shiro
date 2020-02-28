@@ -12,24 +12,24 @@ body {
   width: 16px;
   height: 16px;
 }
-.elastic-love #like-toggle {
+.elastic-love input {
   position: absolute;
   opacity: 0;
 }
-.elastic-love #like-toggle:checked ~ * {
+.elastic-love input:checked ~ * {
   --heart-color: #ed5565;
 }
-.elastic-love #like-toggle:checked ~ .heart {
+.elastic-love input:checked ~ .heart {
   animation: scale-out-elastic 1.2s ease-out reverse forwards;
 }
-.elastic-love #like-toggle:checked ~ .lines .line::before {
+.elastic-love input:checked ~ .lines .line::before {
   animation: slide-left-right 0.4s ease-in forwards;
 }
-.elastic-love #like-toggle:checked ~ .ring {
+.elastic-love input:checked ~ .ring {
   background: var(--heart-color);
   animation: scale-out-bigger 0.75s cubic-bezier(0, 1, 0.5, 1) forwards;
 }
-.elastic-love #like-toggle:checked ~ .ring::before {
+.elastic-love input:checked ~ .ring::before {
   animation: scale-out 0.75s cubic-bezier(0, 1, 0.5, 1) forwards;
 }
 .elastic-love .heart {
