@@ -1,5 +1,10 @@
 export default [
   {
+    title: "elastic-love",
+    description: "弹性动画的心形点赞图标",
+    tags: ["icon", "toggle", "heart", "love"]
+  },
+  {
     title: "dropdown-select",
     description: "下拉选择菜单交互",
     tags: ["dropdown", "select"]
