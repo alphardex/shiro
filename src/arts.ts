@@ -1,7 +1,7 @@
 export default [
   {
     title: "masonry-gallery",
-    description: "column实现砖石结构画廊",
+    description: "砖石结构画廊",
     tags: ["masonry", "image"]
   },
   {
