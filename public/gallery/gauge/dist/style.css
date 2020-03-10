@@ -4,7 +4,7 @@ body {
   height: 100vh;
   justify-content: center;
   align-items: center;
-  background: #222;
+  background: #1a1e23;
 }
 
 ul {
@@ -20,19 +20,19 @@ ul .circle-gauge {
 }
 ul .circle-gauge:nth-child(1) a {
   --percentage: calc(var(--gauge-value) / var(--gauge-max-value) * 100%);
-  background: conic-gradient(#e74c3c var(--percentage), #111 0);
+  background: conic-gradient(#e74c3c var(--percentage), rgba(231, 76, 60, 0.3) 0);
 }
 ul .circle-gauge:nth-child(2) a {
   --percentage: calc(var(--gauge-value) / var(--gauge-max-value) * 100%);
-  background: conic-gradient(#3498db var(--percentage), #111 0);
+  background: conic-gradient(#3498db var(--percentage), rgba(52, 152, 219, 0.3) 0);
 }
 ul .circle-gauge:nth-child(3) a {
   --percentage: calc(var(--gauge-value) / var(--gauge-max-value) * 100%);
-  background: conic-gradient(#2ecc71 var(--percentage), #111 0);
+  background: conic-gradient(#2ecc71 var(--percentage), rgba(46, 204, 113, 0.3) 0);
 }
 ul .circle-gauge:nth-child(4) a {
   --percentage: calc(var(--gauge-value) / var(--gauge-max-value) * 100%);
-  background: conic-gradient(#f1c40f var(--percentage), #111 0);
+  background: conic-gradient(#f1c40f var(--percentage), rgba(241, 196, 15, 0.3) 0);
 }
 ul .circle-gauge a {
   position: relative;
@@ -56,7 +56,7 @@ ul .circle-gauge a::before {
   align-items: center;
   width: 90%;
   height: 90%;
-  background: #222;
+  background: #1a1e23;
   border-radius: inherit;
 }
 ul span {
