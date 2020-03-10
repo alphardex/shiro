@@ -70,104 +70,24 @@ body {
 }
 
 .loading {
-  --loading-width: 45px;
   position: fixed;
-  top: 50vh;
-  left: 50vw;
-  width: var(--loading-width);
-  height: var(--loading-width);
-  z-index: 9999;
-  transform: rotate(75deg);
-  transition: 0.6s;
+  top: 50%;
+  left: 50%;
+  display: flex;
+  color: black;
+  font-size: 2rem;
+  font-family: Lato, sans-serif;
+  letter-spacing: 0.5rem;
+  text-transform: uppercase;
+  transform: translate(-50%, -50%);
+  transition: 0.3s;
 }
-.loading .bar {
-  position: absolute;
-  animation: 1.5s cubic-bezier(0.645, 0.045, 0.355, 1) infinite;
-}
-.loading .bar:nth-child(1) {
-  bottom: calc(var(--loading-width) / 3);
-  width: calc(var(--loading-width) / 3);
-  height: 100%;
-  background: #0984e3;
-  transform: scaleY(0);
-  transform-origin: bottom;
-  animation-name: slide-bottom-top;
-}
-.loading .bar:nth-child(2) {
-  left: calc(var(--loading-width) / 3);
-  width: 100%;
-  height: calc(var(--loading-width) / 3);
-  background: #d63031;
-  transform: scaleX(0);
-  transform-origin: left;
-  animation-name: slide-left-right;
-}
-.loading .bar:nth-child(3) {
-  top: calc(var(--loading-width) / 3);
-  right: 0;
-  width: calc(var(--loading-width) / 3);
-  height: 100%;
-  background: #fdcb6e;
-  transform: scaleY(0);
-  transform-origin: top;
-  animation-name: slide-top-bottom;
-}
-.loading .bar:nth-child(4) {
-  right: calc(var(--loading-width) / 3);
-  bottom: 0;
-  width: 100%;
-  height: calc(var(--loading-width) / 3);
-  background: #00b894;
-  transform: scaleX(0);
-  transform-origin: right;
-  animation-name: slide-right-left;
+.loading span {
+  animation: shrink 2s infinite;
 }
 
-@keyframes slide-bottom-top {
+@keyframes shrink {
   50% {
-    transform: scaleY(1);
-    transform-origin: bottom;
-  }
-  50.1% {
-    transform-origin: top;
-  }
-  to {
-    transform-origin: top;
-  }
-}
-@keyframes slide-left-right {
-  50% {
-    transform: scaleX(1);
-    transform-origin: left;
-  }
-  50.1% {
-    transform-origin: right;
-  }
-  to {
-    transform-origin: right;
-  }
-}
-@keyframes slide-top-bottom {
-  50% {
-    transform: scaleY(1);
-    transform-origin: top;
-  }
-  50.1% {
-    transform-origin: bottom;
-  }
-  to {
-    transform-origin: bottom;
-  }
-}
-@keyframes slide-right-left {
-  50% {
-    transform: scaleX(1);
-    transform-origin: right;
-  }
-  50.1% {
-    transform-origin: left;
-  }
-  to {
-    transform-origin: left;
+    transform: scale(0);
   }
 }
