@@ -1,0 +1,230 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: var(--theme-color);
+  transition: 1s;
+}
+
+:root {
+  --theme-color: #1a1e23;
+}
+
+.loading-bar {
+  --bar-color: #ccd1d9;
+  --progress-color: #4a89dc;
+  --progress-value: 0;
+  --ease-out-quartic: cubic-bezier(0.165, 0.84, 0.44, 1);
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 120px;
+  height: 6px;
+  background: var(--bar-color);
+  transform: translate(-50%, -50%);
+  transition: 0.6s var(--ease-out-quartic);
+
+  &::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--progress-color);
+    transform: scaleX(calc(var(--progress-value) / 100));
+    transform-origin: left;
+    transition: 0.1s linear;
+  }
+  
+  &.complete {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.quote-box {
+  width: 450px;
+  padding: 40px 50px;
+  color: var(--theme-color);
+  background: #eceffc;
+  border-radius: 24px;
+
+  &.active {
+    .quote-text {
+      opacity: 1;
+    }
+  }
+
+  .quote-text {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    opacity: 0;
+    transition: 0.6s;
+
+    .hitokoto {
+      font-size: 24px;
+    }
+
+    .from {
+      align-self: flex-end;
+      padding-top: 20px;
+    }
+  }
+
+  .quote-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 30px;
+  }
+}
+
+.btn-share {
+  --btn-color: #275efe;
+  position: relative;
+  padding: 16px 32px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1;
+  color: white;
+  background: none;
+  border: none;
+  outline: none;
+  overflow: hidden;
+  cursor: pointer;
+  filter: drop-shadow(0 2px 8px transparent);
+  transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1); //ease-out-cubic
+
+  &::before {
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background: var(--theme-color);
+    border-radius: 24px;
+    transition: transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1),
+      background 0.6s;
+  }
+
+  .btn-text,
+  .btn-icon {
+    display: inline-flex;
+    vertical-align: middle;
+    transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  .btn-text {
+    transition-delay: 0.05s;
+  }
+
+  .btn-icon {
+    margin-left: 8px;
+    transition-delay: 0.1s;
+  }
+
+  .social-icons {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    transform: translateY(-50%);
+
+    li {
+      flex: 1;
+
+      a {
+        display: inline-flex;
+        vertical-align: middle;
+        transform: translateY(55px);
+        transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1);
+
+        &:hover {
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+
+  &:hover {
+    &::before {
+      transform: scale(1.2);
+    }
+
+    .btn-text,
+    .btn-icon {
+      transform: translateY(-55px);
+    }
+
+    .social-icons li {
+      a {
+        transform: translateY(0);
+      }
+
+      @for $i from 1 through 3 {
+        &:nth-child(#{$i}) a {
+          transition-delay: 0.1s + 0.05s * $i;
+        }
+      }
+    }
+  }
+}
+
+.btn {
+  position: relative;
+  padding: 16px 32px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1;
+  color: white;
+  text-decoration: none;
+  background-color: var(--theme-color);
+  border: none;
+  border-radius: 24px;
+  outline: transparent;
+  overflow: hidden;
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+  transition: 0.6s;
+
+  .btn-text,
+  .btn-icon {
+    display: inline-flex;
+    vertical-align: middle;
+  }
+
+  .btn-icon {
+    margin-left: 8px;
+  }
+
+  &-jelly {
+    &:hover {
+      animation: jelly 0.5s;
+    }
+  }
+}
+
+@keyframes jelly {
+  25% {
+    transform: scale(0.9, 1.1);
+  }
+
+  50% {
+    transform: scale(1.1, 0.9);
+  }
+
+  75% {
+    transform: scale(0.95, 1.05);
+  }
+}

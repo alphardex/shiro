@@ -1,5 +1,10 @@
 export default [
   {
+    title: "random-quote-machine",
+    description: "随机一言API",
+    tags: ["quote", "loading", "progress bar", "ajax"]
+  },
+  {
     title: "masonry-gallery",
     description: "砖石结构画廊",
     tags: ["masonry", "image"]
