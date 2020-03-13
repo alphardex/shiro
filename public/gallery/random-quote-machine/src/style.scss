@@ -96,6 +96,7 @@ body {
   outline: none;
   overflow: hidden;
   cursor: pointer;
+  white-space: nowrap;
   filter: drop-shadow(0 2px 8px transparent);
   transition: 0.3s cubic-bezier(0.215, 0.61, 0.355, 1); //ease-out-cubic
 

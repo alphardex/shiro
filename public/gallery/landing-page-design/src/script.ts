@@ -140,13 +140,16 @@ staggeredRiseInTexts.forEach(text => {
 });
 
 // Observe the elements which have animations to fire.
-let observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("active");
-    }
-  });
-});
+let observer = new IntersectionObserver(
+  entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("active");
+      }
+    });
+  },
+  { rootMargin: "0 0 -200px 0" }
+);
 
 let titles = document.querySelectorAll(".titles > *");
 titles.forEach(title => observer.observe(title));

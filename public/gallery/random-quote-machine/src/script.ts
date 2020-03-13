@@ -30,8 +30,7 @@ const PALETTE = [
 const socialShareURLMap = {
   twitter: "https://twitter.com/intent/tweet?hashtags=quotes&text=",
   facebook: "",
-  tumblr:
-    "https://www.tumblr.com/widgets/share/tool?posttype=quote&tags=quotes&canonicalUrl=https%3A%2F%2Fwww.tumblr.com%2Fbuttons&shareSource=tumblr_share_button&content="
+  tumblr: ""
 };
 const sample = (arr: string[]) => arr[Math.floor(Math.random() * arr.length)];
 let loadingBar = document.querySelector(".loading-bar");
@@ -76,10 +75,12 @@ const setQuote = async () => {
 };
 const setSocialBtn = async () => {
   [twitter, faecbook, tumblr].forEach(socialBtn => {
-    let content = `"${hitokoto.textContent}" ${from.textContent} #quotes`;
+    let hitokotoText = hitokoto.textContent;
+    let fromText = from.textContent;
+    let content = `"${hitokotoText}" ${fromText} #quotes`;
     let url = `${socialShareURLMap[socialBtn.className]}${content}`;
     if (socialBtn.className === "tumblr") {
-      url = `https://www.tumblr.com/widgets/share/tool?posttype=quote&tags=quotes&canonicalUrl=https%3A%2F%2Fwww.tumblr.com%2Fbuttons&shareSource=tumblr_share_button&content=${hitokoto.textContent}&caption=${from.textContent}`;
+      url = `https://www.tumblr.com/widgets/share/tool?posttype=quote&tags=quotes&canonicalUrl=https%3A%2F%2Fwww.tumblr.com%2Fbuttons&shareSource=tumblr_share_button&content=${hitokotoText}&caption=${fromText}`;
     }
     if (socialBtn.className === "facebook") {
       url = "#";
