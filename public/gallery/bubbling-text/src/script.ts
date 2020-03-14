@@ -15,7 +15,7 @@ const requestInterval = (fn: Function, delay: number) => {
   handle.value = requestAnimationFrame(loop);
   return handle;
 };
-const sample = (arr: number[]) => arr[Math.floor(Math.random() * arr.length)];
+const sample = (arr: any[]) => arr[Math.floor(Math.random() * arr.length)];
 
 let bubbleSizes = [3, 6, 9, 12];
 let bubbleText = document.querySelector(".bubbling");

@@ -1,5 +1,5 @@
 const sizes = ["short", "tall", "taller"];
-const sample = (arr: string[]) => arr[Math.floor(Math.random() * arr.length)];
+const sample = (arr: any[]) => arr[Math.floor(Math.random() * arr.length)];
 let masonry = document.querySelector(".masonry");
 (masonry as HTMLElement).style.opacity = "0";
 let masonryItems = document.querySelectorAll(".masonry__item");

@@ -148,7 +148,7 @@ let observer = new IntersectionObserver(
       }
     });
   },
-  { rootMargin: "0 0 -200px 0" }
+  { rootMargin: "0px 0px -140px" }
 );
 
 let titles = document.querySelectorAll(".titles > *");

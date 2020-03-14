@@ -32,9 +32,8 @@ const socialShareURLMap = {
   facebook: "",
   tumblr: ""
 };
-const sample = (arr: string[]) => arr[Math.floor(Math.random() * arr.length)];
+const sample = (arr: any[]) => arr[Math.floor(Math.random() * arr.length)];
 let loadingBar = document.querySelector(".loading-bar");
-let quoteBox = document.querySelector(".quote-box");
 let hitokoto = document.querySelector(".hitokoto-text");
 let from = document.querySelector(".from-text");
 let newQuoteBtn = document.querySelector(".new-quote");
@@ -62,15 +61,14 @@ const request = (request: Request_) => {
 };
 const setQuote = async () => {
   (loadingBar as HTMLElement).style.setProperty("--progress-value", `${0}`);
-  quoteBox.classList.remove("active");
   loadingBar.classList.remove("complete");
-  let data = JSON.parse(
-    (await request({ url: API_URL, method: "GET" })) as string
-  );
+  let data = JSON.parse((await request({
+    url: API_URL,
+    method: "GET"
+  })) as string);
   hitokoto.textContent = data.hitokoto;
   from.textContent = data.from;
   loadingBar.classList.add("complete");
-  quoteBox.classList.add("active");
   (root as HTMLElement).style.setProperty("--theme-color", sample(PALETTE));
 };
 const setSocialBtn = async () => {

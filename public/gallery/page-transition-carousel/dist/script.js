@@ -1,21 +1,20 @@
+"use strict";
 var slideshow = document.querySelector(".slideshow");
 var slides = document.querySelectorAll(".slideshow .slide");
 var bars = document.querySelectorAll(".bars .bar");
 var dots = document.querySelectorAll(".nav-dots .dot a");
 var slideTitles = document.querySelectorAll(".slide-title");
-// https://easings.net
-// easing is very important, here I chose easeInOutCubic.
-// If you found a better easing function, just overwrite it.
-var easing = "cubic-bezier(0.645, 0.045, 0.355, 1)";
+var easeInOutQuart = "cubic-bezier(0.77, 0, 0.175, 1)";
+var easeOutCubic = "cubic-bezier(0.215, 0.61, 0.355, 1)";
 var staggeredSlideIn = function (element, delay) {
     return element.animate([
         { transform: "scaleY(0)", transformOrigin: "top" },
         { transform: "scaleY(1)", transformOrigin: "top" }
     ], {
         duration: 800,
-        easing: easing,
+        easing: easeInOutQuart,
         fill: "forwards",
-        delay: 200 * delay
+        delay: 80 * delay
     });
 };
 var staggeredSlideOut = function (element, delay) {
@@ -25,9 +24,9 @@ var staggeredSlideOut = function (element, delay) {
         { transform: "scaleY(0)", transformOrigin: "bottom" }
     ], {
         duration: 800,
-        easing: easing,
+        easing: easeInOutQuart,
         fill: "forwards",
-        delay: 200 * delay
+        delay: 80 * delay
     });
 };
 var fadeIn = function (element) {
@@ -35,10 +34,10 @@ var fadeIn = function (element) {
         { opacity: 0, transform: "translateY(100%)" },
         { opacity: 1, transform: "translateY(0)" }
     ], {
-        duration: 1200,
-        easing: "ease",
+        duration: 800,
+        easing: easeOutCubic,
         fill: "forwards",
-        delay: 500
+        delay: 350
     });
 };
 var fadeOut = function (element) {
@@ -47,7 +46,7 @@ var fadeOut = function (element) {
         { opacity: 0, transform: "translateY(-100%)" }
     ], {
         duration: 600,
-        easing: "ease",
+        easing: easeOutCubic,
         fill: "forwards"
     });
 };

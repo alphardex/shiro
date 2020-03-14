@@ -3,10 +3,8 @@ let slides = document.querySelectorAll(".slideshow .slide");
 let bars = document.querySelectorAll(".bars .bar");
 let dots = document.querySelectorAll(".nav-dots .dot a");
 let slideTitles = document.querySelectorAll(".slide-title");
-// https://easings.net
-// easing is very important, here I chose easeInOutCubic.
-// If you found a better easing function, just overwrite it.
-let easing = "cubic-bezier(0.645, 0.045, 0.355, 1)";
+let easeInOutQuart = "cubic-bezier(0.77, 0, 0.175, 1)";
+let easeOutCubic = "cubic-bezier(0.215, 0.61, 0.355, 1)";
 
 let staggeredSlideIn = (element: Element, delay: number) => {
   return element.animate(
@@ -16,9 +14,9 @@ let staggeredSlideIn = (element: Element, delay: number) => {
     ],
     {
       duration: 800,
-      easing: easing,
+      easing: easeInOutQuart,
       fill: "forwards",
-      delay: 200 * delay
+      delay: 80 * delay
     }
   );
 };
@@ -32,9 +30,9 @@ let staggeredSlideOut = (element: Element, delay: number) => {
     ],
     {
       duration: 800,
-      easing: easing,
+      easing: easeInOutQuart,
       fill: "forwards",
-      delay: 200 * delay
+      delay: 80 * delay
     }
   );
 };
@@ -46,10 +44,10 @@ let fadeIn = (element: Element) => {
       { opacity: 1, transform: "translateY(0)" }
     ],
     {
-      duration: 1200,
-      easing: "ease",
+      duration: 800,
+      easing: easeOutCubic,
       fill: "forwards",
-      delay: 500
+      delay: 350
     }
   );
 };
@@ -62,7 +60,7 @@ let fadeOut = (element: Element) => {
     ],
     {
       duration: 600,
-      easing: "ease",
+      easing: easeOutCubic,
       fill: "forwards"
     }
   );
