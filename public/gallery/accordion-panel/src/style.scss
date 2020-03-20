@@ -1,52 +1,49 @@
-// palette: https://flatuicolors.com/palette/defo
-@import url("https://fonts.googleapis.com/css?family=Lato");
-
 body {
-  display: flex;
+  display: grid;
+  place-items: center;
   min-height: 100vh;
-  background: #ECEFFC;
+  background: #eceffc;
 }
 
 .accordion {
-  margin: 0 auto;
-  padding: 4rem;
-  width: 30rem;
-  font-family: Lato, sans-serif;
+  --primary-color: #3498db;
+  --secondary-color: #7f8c8d;
+  --line-color: hsla(184, 6%, 53%, 0.5);
+
+  padding: 0;
+  margin: 0;
+  width: 720px;
+  color: var(--secondary-color);
   list-style-type: none;
 
   .accordion-item {
     a {
-      position: relative;
       display: flex;
-      width: 100%;
-      padding: 1rem 3rem 1rem 1rem;
+      justify-content: space-between;
+      padding: 1rem;
       font-size: 1.2rem;
       text-decoration: none;
-      color: #7f8c8d;
-      border-bottom: 1px solid hsla(184, 6%, 53%, 0.5);
+      color: currentColor;
+      border-bottom: 1px solid var(--line-color);
+      cursor: pointer;
 
       svg {
-        position: absolute;
-        right: 1rem;
         width: 30px;
         height: 30px;
-        border: 1px solid #7f8c8d;
+        border: 1px solid currentColor;
         border-radius: 50%;
         transition: 0.3s;
       }
 
-      &:hover, &:active {
-        color: #3498db;
+      &:hover,
+      &:active {
+        color: var(--primary-color);
         border-bottom: 1px solid currentColor;
 
         svg {
           border-color: currentColor;
           fill: currentColor;
         }
-      }
-
-      &.active svg {
-          transform: rotate(0.5turn);
       }
     }
 
@@ -56,13 +53,14 @@ body {
       overflow: hidden;
       opacity: 0;
       transition: 0.3s 0.15s;
+    }
 
-      p {
-        font-size: 1rem;
-        color: #7f8c8d;
+    &.active {
+      a svg {
+        transform: rotate(0.5turn);
       }
 
-      &.active {
+      .content {
         padding: 1rem;
         max-height: 10rem;
         opacity: 1;

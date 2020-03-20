@@ -1,5 +1,11 @@
 export default [
   {
+    title: "bounce-checkbox",
+    description: "弹性复选框",
+    tags: ["checkbox", "bounce"]
+  },
+  { title: "delete-item", description: "移除物品", tags: ["list", "delete"] },
+  {
     title: "random-quote-machine",
     description: "随机一言API",
     tags: ["quote", "loading", "progress bar", "ajax"]

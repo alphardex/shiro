@@ -1,0 +1,145 @@
+body {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  min-height: 100vh;
+  background: #eceffc;
+}
+
+.checkbox {
+  --checkbox-bg-color: white;
+  --border-color: #ccd1d9;
+  --checkbox-hover-color: #aab2bd;
+  --checkbox-checked-color: #3bafda;
+  position: relative;
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  background: var(--checkbox-bg-color);
+  border: none;
+  border-radius: 4px;
+  box-shadow: inset 0 0 0 1px var(--border-color);
+  cursor: pointer;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  outline: none;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.checkbox ~ label {
+  margin-left: 10px;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.checkbox::before {
+  position: absolute;
+  content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18px' height='18px' fill='none' stroke-width='2px' stroke='white' stroke-linecap='round' viewBox='0 0 21 21'%3E%3Cpolyline points='5 10.75 8.5 14.25 16 6'%3E%3C/polyline%3E%3C/svg%3E");
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+.checkbox:hover {
+  box-shadow: inset 0 0 0 2px var(--checkbox-hover-color);
+}
+.checkbox:checked {
+  box-shadow: inset 0 0 0 12px var(--checkbox-checked-color);
+}
+.checkbox:checked::before {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+.checkbox.bounce:checked::before {
+  animation: scale-out-bounce 0.6s ease-out reverse forwards;
+}
+
+@-webkit-keyframes scale-out-bounce {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  4% {
+    -webkit-transform: scale(0.98);
+            transform: scale(0.98);
+  }
+  8% {
+    -webkit-transform: scale(0.99);
+            transform: scale(0.99);
+  }
+  18% {
+    -webkit-transform: scale(0.94);
+            transform: scale(0.94);
+  }
+  26% {
+    -webkit-transform: scale(0.98);
+            transform: scale(0.98);
+  }
+  46% {
+    -webkit-transform: scale(0.75);
+            transform: scale(0.75);
+  }
+  64% {
+    -webkit-transform: scale(0.98);
+            transform: scale(0.98);
+  }
+  76% {
+    -webkit-transform: scale(0.44);
+            transform: scale(0.44);
+  }
+  88% {
+    -webkit-transform: scale(0.11);
+            transform: scale(0.11);
+  }
+  100% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+}
+
+@keyframes scale-out-bounce {
+  0% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+  }
+  4% {
+    -webkit-transform: scale(0.98);
+            transform: scale(0.98);
+  }
+  8% {
+    -webkit-transform: scale(0.99);
+            transform: scale(0.99);
+  }
+  18% {
+    -webkit-transform: scale(0.94);
+            transform: scale(0.94);
+  }
+  26% {
+    -webkit-transform: scale(0.98);
+            transform: scale(0.98);
+  }
+  46% {
+    -webkit-transform: scale(0.75);
+            transform: scale(0.75);
+  }
+  64% {
+    -webkit-transform: scale(0.98);
+            transform: scale(0.98);
+  }
+  76% {
+    -webkit-transform: scale(0.44);
+            transform: scale(0.44);
+  }
+  88% {
+    -webkit-transform: scale(0.11);
+            transform: scale(0.11);
+  }
+  100% {
+    -webkit-transform: scale(0);
+            transform: scale(0);
+  }
+}

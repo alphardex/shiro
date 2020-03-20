@@ -1,3 +1,4 @@
+"use strict";
 var loading = document.querySelector(".loading");
 var letters = loading.textContent.split("");
 loading.textContent = "";
