@@ -62,10 +62,9 @@ const request = (request: Request_) => {
 const setQuote = async () => {
   (loadingBar as HTMLElement).style.setProperty("--progress-value", `${0}`);
   loadingBar.classList.remove("complete");
-  let data = JSON.parse((await request({
-    url: API_URL,
-    method: "GET"
-  })) as string);
+  let data = JSON.parse(
+    (await request({ url: API_URL, method: "GET" })) as string
+  );
   hitokoto.textContent = data.hitokoto;
   from.textContent = data.from;
   loadingBar.classList.add("complete");

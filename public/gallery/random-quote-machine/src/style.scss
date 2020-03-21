@@ -38,7 +38,7 @@ body {
     transform-origin: left;
     transition: 0.1s linear;
   }
-
+  
   &.complete {
     opacity: 0;
     visibility: hidden;
@@ -55,23 +55,24 @@ body {
   .quote-text {
     display: flex;
     flex-direction: column;
+    margin: 0;
     text-align: center;
     transition: 0.6s;
 
     .hitokoto {
       font-size: 24px;
-
+      
       .hitokoto-text:empty::before {
-        content: "数据获取失败";
+        content: '数据获取失败';
       }
     }
 
     .from {
       align-self: flex-end;
       padding-top: 20px;
-
+      
       .from-text:empty::before {
-        content: "佚名";
+        content: '佚名';
       }
     }
   }

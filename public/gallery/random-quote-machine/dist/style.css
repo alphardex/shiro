@@ -53,6 +53,7 @@ body {
 .quote-box .quote-text {
   display: flex;
   flex-direction: column;
+  margin: 0;
   text-align: center;
   transition: 0.6s;
 }
@@ -60,14 +61,14 @@ body {
   font-size: 24px;
 }
 .quote-box .quote-text .hitokoto .hitokoto-text:empty::before {
-  content: "数据获取失败";
+  content: '数据获取失败';
 }
 .quote-box .quote-text .from {
   align-self: flex-end;
   padding-top: 20px;
 }
 .quote-box .quote-text .from .from-text:empty::before {
-  content: "佚名";
+  content: '佚名';
 }
 .quote-box .quote-actions {
   display: flex;
@@ -103,8 +104,7 @@ body {
   height: 100%;
   background: var(--theme-color);
   border-radius: 24px;
-  transition: transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1),
-    background 0.6s;
+  transition: transform 0.3s cubic-bezier(0.215, 0.61, 0.355, 1), background 0.6s;
 }
 .btn-share .btn-text,
 .btn-share .btn-icon {

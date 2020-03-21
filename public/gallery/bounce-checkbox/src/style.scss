@@ -80,6 +80,7 @@ body {
   &.bounce {
     &:checked {
       &::before {
+        transition: none;
         animation: scale-out-bounce 0.6s ease-out reverse forwards;
       }
     }

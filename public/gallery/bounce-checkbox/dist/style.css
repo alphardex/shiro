@@ -76,6 +76,8 @@ body {
   cursor: not-allowed;
 }
 .checkbox.bounce:checked::before {
+  -webkit-transition: none;
+  transition: none;
   animation: scale-out-bounce 0.6s ease-out reverse forwards;
 }
 

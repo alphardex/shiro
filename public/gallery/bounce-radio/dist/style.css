@@ -80,6 +80,8 @@ body {
   cursor: not-allowed;
 }
 .radio.bounce:checked::before {
+  -webkit-transition: none;
+  transition: none;
   animation: scale-out-bounce 0.6s ease-out reverse forwards;
 }
 
