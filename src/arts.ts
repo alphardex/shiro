@@ -1,5 +1,10 @@
 export default [
   {
+    title: "bounce-radio",
+    description: "弹性单选框",
+    tags: ["radio", "bounce"]
+  },
+  {
     title: "bounce-checkbox",
     description: "弹性复选框",
     tags: ["checkbox", "bounce"]
