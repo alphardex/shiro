@@ -6,15 +6,20 @@ body {
   background: #eceffc;
 }
 
-.form-control {
+:root {
+  --primary-color: hsl(196, 78%, 61%);
+  --danger-color: hsl(354, 81%, 63%);
+}
+
+.form-input-material {
   --default-color: rgba(0, 0, 0, 0.5);
-  --invalid-color: #e74c3c;
-  --valid-color: #3498db;
+  --invalid-color: var(--danger-color);
+  --valid-color: var(--primary-color);
   --border-bottom-color: rgba(0, 0, 0, 0.3);
   position: relative;
   border-bottom: 1px solid var(--border-bottom-color);
 }
-.form-control::after {
+.form-input-material::before {
   position: absolute;
   content: "";
   left: 0;
@@ -26,10 +31,17 @@ body {
   transform-origin: left;
   transition: 0.3s;
 }
-.form-control:focus-within::after {
+.form-input-material:focus-within::before {
   transform: scaleX(1);
 }
-.form-control input {
+.form-input-material label {
+  position: absolute;
+  top: 8px;
+  left: 0;
+  transition: 0.3s;
+  transform-origin: left;
+}
+.form-input-material .form-control {
   padding: 8px 0;
   font-size: inherit;
   font-weight: inherit;
@@ -38,35 +50,15 @@ body {
   border: none;
   outline: none;
 }
-.form-control input:invalid ~ label {
+.form-input-material .form-control:invalid ~ label {
   color: var(--invalid-color);
 }
-.form-control input:invalid ~ .error {
-  opacity: 1;
-}
-.form-control input:valid ~ label {
+.form-input-material .form-control:valid ~ label {
   color: var(--valid-color);
 }
-.form-control input:placeholder-shown ~ label {
+.form-input-material .form-control:placeholder-shown ~ label {
   color: var(--default-color);
 }
-.form-control input:focus ~ label, .form-control input:not(:placeholder-shown) ~ label {
+.form-input-material .form-control:focus ~ label, .form-input-material .form-control:not(:placeholder-shown) ~ label {
   transform: translateY(-120%) scale(0.75);
-}
-.form-control label {
-  position: absolute;
-  top: 8px;
-  left: 0;
-  transition: 0.3s;
-  transform-origin: left;
-}
-.form-control .error {
-  position: absolute;
-  top: 48px;
-  display: block;
-  margin: 0;
-  font-weight: normal;
-  color: var(--invalid-color);
-  opacity: 0;
-  transition: 0.3s;
 }

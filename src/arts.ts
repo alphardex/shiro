@@ -1,5 +1,10 @@
 export default [
   {
+    title: "code-input",
+    description: "字符输入",
+    tags: ["input"]
+  },
+  {
     title: "bounce-radio",
     description: "弹性单选框",
     tags: ["radio", "bounce"]

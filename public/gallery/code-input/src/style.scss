@@ -1,0 +1,38 @@
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.code-input {
+  --text-color: var(--secondary-color-darkest);
+  --underline-color: var(--secondary-color);
+  --underline-focus-color: var(--info-color);
+
+  max-width: 240px;
+
+  .chars {
+    display: flex;
+
+    .char {
+      // https://stackoverflow.com/questions/42421361/input-button-elements-not-shrinking-in-a-flex-container
+      min-width: 0;
+      margin-right: 9px;
+      line-height: 2;
+      text-align: center;
+      color: var(--text-color);
+      border: 1px solid var(--underline-color);
+      border-width: 0 0 1px 0;
+      border-radius: 0;
+      outline: none;
+      appearance: none;
+      transition: 0.3s;
+
+      &:focus {
+        border-color: var(--underline-focus-color);
+      }
+    }
+  }
+}

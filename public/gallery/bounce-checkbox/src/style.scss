@@ -8,7 +8,7 @@ body {
   background: #eceffc;
 }
 
-.checkbox {
+.form-check-input[type="checkbox"] {
   --checkbox-bg-color: white;
   --border-color: #ccd1d9;
   --checkbox-hover-color: #aab2bd;
@@ -28,7 +28,7 @@ body {
   outline: none;
   transition: 0.3s;
 
-  & ~ label {
+  & ~ .form-check-label {
     margin-left: 10px;
     cursor: pointer;
     transition: 0.3s;
@@ -72,7 +72,7 @@ body {
 
     cursor: not-allowed;
 
-    & ~ label {
+    & ~ .form-check-label {
       cursor: not-allowed;
     }
   }
@@ -130,7 +130,7 @@ body {
   }
 }
 
-.form-control {
+.form-check {
   display: flex;
   align-items: center;
   margin: 12px 0;

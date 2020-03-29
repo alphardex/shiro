@@ -7,18 +7,19 @@ body {
   background: #eceffc;
 }
 
-.switch {
+.form-switch {
   --switch-color: white;
-  --ball-color: #d3d4ec;
-  --ball-active-color: #2357f3;
-  --line-color: #e9ecfb;
+  --ball-color: #CCD1D9;
+  --ball-active-color: #3BAFDA;
+  --line-color: #CCD1D9;
+
   position: relative;
   width: 60px;
   height: 32px;
-  margin: 16px;
+  margin-right: 10px;
   background: var(--switch-color);
   border-radius: 16px;
-  box-shadow: 0 1px 3px hsla(231, 100%, 12%, 0.08);
+  box-shadow: 0 1px 3px hsla(231, 100%, 12%, 0.3);
   cursor: pointer;
 
   input[type="checkbox"] {
@@ -81,4 +82,10 @@ body {
       }
     }
   }
+}
+
+.form-check {
+  display: flex;
+  align-items: center;
+  margin: 12px 0;
 }

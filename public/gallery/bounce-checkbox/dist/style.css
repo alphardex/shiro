@@ -9,7 +9,7 @@ body {
   background: #eceffc;
 }
 
-.checkbox {
+.form-check-input[type="checkbox"] {
   --checkbox-bg-color: white;
   --border-color: #ccd1d9;
   --checkbox-hover-color: #aab2bd;
@@ -31,13 +31,13 @@ body {
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
-.checkbox ~ label {
+.form-check-input[type="checkbox"] ~ .form-check-label {
   margin-left: 10px;
   cursor: pointer;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
-.checkbox::before {
+.form-check-input[type="checkbox"]::before {
   position: absolute;
   content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='18px' height='18px' fill='none' stroke-width='2px' stroke='white' stroke-linecap='round' viewBox='0 0 21 21'%3E%3Cpolyline points='5 10.75 8.5 14.25 16 6'%3E%3C/polyline%3E%3C/svg%3E");
   -webkit-transform: scale(0);
@@ -45,7 +45,7 @@ body {
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
-.checkbox::after {
+.form-check-input[type="checkbox"]::after {
   position: absolute;
   content: "";
   width: 100%;
@@ -56,26 +56,26 @@ body {
   -webkit-transition: 0.2s;
   transition: 0.2s;
 }
-.checkbox:hover {
+.form-check-input[type="checkbox"]:hover {
   --border-color: var(--checkbox-hover-color);
 }
-.checkbox:checked::before {
+.form-check-input[type="checkbox"]:checked::before {
   -webkit-transform: scale(1);
           transform: scale(1);
 }
-.checkbox:checked::after {
+.form-check-input[type="checkbox"]:checked::after {
   -webkit-transform: scale(0);
           transform: scale(0);
 }
-.checkbox:disabled {
+.form-check-input[type="checkbox"]:disabled {
   --checkbox-bg-color: var(--checkbox-disabled-bg-color);
   --checkbox-checked-color: var(--checkbox-disabled-checked-color);
   cursor: not-allowed;
 }
-.checkbox:disabled ~ label {
+.form-check-input[type="checkbox"]:disabled ~ .form-check-label {
   cursor: not-allowed;
 }
-.checkbox.bounce:checked::before {
+.form-check-input[type="checkbox"].bounce:checked::before {
   -webkit-transition: none;
   transition: none;
   animation: scale-out-bounce 0.6s ease-out reverse forwards;
@@ -166,7 +166,7 @@ body {
             transform: scale(0);
   }
 }
-.form-control {
+.form-check {
   display: -webkit-box;
   display: flex;
   -webkit-box-align: center;

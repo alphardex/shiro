@@ -9,7 +9,7 @@ body {
   background: #eceffc;
 }
 
-.radio {
+.form-check-input[type="radio"] {
   --radio-bg-color: white;
   --border-color: #ccd1d9;
   --radio-hover-color: #aab2bd;
@@ -31,13 +31,13 @@ body {
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
-.radio ~ label {
+.form-check-input[type="radio"] ~ .form-check-label {
   margin-left: 10px;
   cursor: pointer;
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
-.radio::before {
+.form-check-input[type="radio"]::before {
   position: absolute;
   content: "";
   width: 100%;
@@ -49,7 +49,7 @@ body {
   -webkit-transition: 0.3s;
   transition: 0.3s;
 }
-.radio::after {
+.form-check-input[type="radio"]::after {
   position: absolute;
   content: "";
   width: 100%;
@@ -60,26 +60,26 @@ body {
   -webkit-transition: 0.2s;
   transition: 0.2s;
 }
-.radio:hover {
+.form-check-input[type="radio"]:hover {
   --border-color: var(--radio-hover-color);
 }
-.radio:checked::before {
+.form-check-input[type="radio"]:checked::before {
   -webkit-transform: scale(1);
           transform: scale(1);
 }
-.radio:checked::after {
+.form-check-input[type="radio"]:checked::after {
   -webkit-transform: scale(0);
           transform: scale(0);
 }
-.radio:disabled {
+.form-check-input[type="radio"]:disabled {
   --radio-bg-color: var(--radio-disabled-bg-color);
   --radio-checked-color: var(--radio-disabled-checked-color);
   cursor: not-allowed;
 }
-.radio:disabled ~ label {
+.form-check-input[type="radio"]:disabled ~ .form-check-label {
   cursor: not-allowed;
 }
-.radio.bounce:checked::before {
+.form-check-input[type="radio"].bounce:checked::before {
   -webkit-transition: none;
   transition: none;
   animation: scale-out-bounce 0.6s ease-out reverse forwards;
@@ -170,7 +170,7 @@ body {
             transform: scale(0);
   }
 }
-.form-control {
+.form-check {
   display: -webkit-box;
   display: flex;
   -webkit-box-align: center;
