@@ -1,0 +1,93 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: Helvetica;
+}
+
+.card-items {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+.card-items .card-item {
+  display: grid;
+  grid-template-columns: 488px 72px;
+  align-items: center;
+  width: 560px;
+  height: 80px;
+  padding: 18px 0;
+  transition: 0.3s;
+}
+.card-items .card-item:not(:last-child) {
+  border-bottom: 1px solid #f0f0f0;
+}
+.card-items .card-item__content {
+  position: relative;
+  overflow: hidden;
+}
+.card-items .card-item__content::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  width: 3px;
+  height: 100%;
+  background: black;
+  transform: scaleY(0);
+}
+.card-items .card-item__info {
+  display: grid;
+  grid-template-columns: 128px 240px 120px;
+  align-items: center;
+  transition: 0.6s;
+}
+.card-items .card-item__img {
+  width: 100%;
+  height: 100%;
+}
+.card-items .card-item__titles {
+  padding-left: 24px;
+  white-space: nowrap;
+}
+.card-items .card-item__titles .category {
+  margin-top: 4px;
+  color: #a1a1a1;
+}
+.card-items .card-item__price {
+  position: relative;
+  padding-left: 36px;
+  line-height: 80px;
+}
+.card-items .card-item__delete {
+  justify-self: end;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.card-items .card-item.deleted .card-item__content::after {
+  animation: scale-in 0.3s forwards, scale-out 0.3s 0.5s forwards;
+}
+.card-items .card-item.deleted .card-item__info {
+  transform: translateX(100%);
+}
+.card-items .card-item.deleted .card-item__delete {
+  opacity: 0;
+}
+.card-items .card-item.removed {
+  height: 0;
+  padding: 0;
+  border-bottom-width: 0;
+  border-bottom-color: transparent;
+}
+
+@keyframes scale-in {
+  to {
+    transform: scaleY(1);
+  }
+}
+@keyframes scale-out {
+  to {
+    transform: scaleY(0);
+  }
+}
