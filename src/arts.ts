@@ -207,11 +207,6 @@ export default [
     tags: ["parallax", "fullscreen"]
   },
   {
-    title: "button-collection",
-    description: "有意思的按钮合集",
-    tags: ["button", "hover", "cta"]
-  },
-  {
     title: "snow",
     description: "雪花飘飘",
     tags: ["snow", "staggered"]
