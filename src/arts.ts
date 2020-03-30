@@ -4,16 +4,6 @@ export default [
     description: "字符输入",
     tags: ["input"]
   },
-  {
-    title: "bounce-radio",
-    description: "弹性单选框",
-    tags: ["radio", "bounce"]
-  },
-  {
-    title: "bounce-checkbox",
-    description: "弹性复选框",
-    tags: ["checkbox", "bounce"]
-  },
   { title: "delete-item", description: "移除物品", tags: ["list", "delete"] },
   {
     title: "random-quote-machine",
@@ -26,19 +16,9 @@ export default [
     tags: ["masonry", "image"]
   },
   {
-    title: "elastic-love",
-    description: "弹性动画的心形点赞图标",
-    tags: ["icon", "toggle", "heart", "love"]
-  },
-  {
     title: "dropdown-select",
     description: "下拉选择菜单交互",
     tags: ["dropdown", "select"]
-  },
-  {
-    title: "material-input-field-with-validation",
-    description: "material风的输入框",
-    tags: ["form", "input", "material"]
   },
   {
     title: "upload-file",
@@ -66,7 +46,6 @@ export default [
     description: "故障文字显现",
     tags: ["text", "staggered", "glitch"]
   },
-  { title: "timeline", description: "时间线", tags: ["timeline"] },
   {
     title: "staggered-bar-cross-text",
     description: "交错条划过文字显现效果",
@@ -91,11 +70,6 @@ export default [
     title: "share-button-float-icon",
     description: "分享按钮悬浮出现图标",
     tags: ["button", "hover", "staggered"]
-  },
-  {
-    title: "header-underline",
-    description: "下划线悬浮菜单",
-    tags: ["menu", "hover"]
   },
   {
     title: "staggered-blink-text-menu",
@@ -178,11 +152,6 @@ export default [
     tags: ["loading", "glow"]
   },
   {
-    title: "gauge",
-    description: "conic-gradient实现的度量计",
-    tags: ["gauge"]
-  },
-  {
     title: "shinchou-menu",
     description: "慎重勇者风格菜单",
     tags: ["menu", "hover", "staggered"]
@@ -248,11 +217,6 @@ export default [
     tags: ["snow", "staggered"]
   },
   {
-    title: "star-rating",
-    description: "5星评分",
-    tags: ["radio", "rating"]
-  },
-  {
     title: "tabs",
     description: "动态的渐变标签页",
     tags: ["tabs", "gradient", "hover"]
@@ -261,16 +225,6 @@ export default [
     title: "pagination",
     description: "分页栏",
     tags: ["pagination"]
-  },
-  {
-    title: "accordion-panel",
-    description: "折叠面板",
-    tags: ["accordion", "panel"]
-  },
-  {
-    title: "3d-dropdown-menu",
-    description: "3D旋转变换的下拉菜单",
-    tags: ["3d", "menu", "dropdown", "hover"]
   },
   {
     title: "gradient-border",
@@ -398,11 +352,6 @@ export default [
     tags: ["menu", "hover", "staggered"]
   },
   {
-    title: "checkbox",
-    description: "精巧的复选框",
-    tags: ["form", "checkbox"]
-  },
-  {
     title: "reveal-text",
     description: "文本展现",
     tags: ["text", "staggered"]
@@ -411,16 +360,6 @@ export default [
     title: "rainbow-color-text",
     description: "彩虹渐变文本",
     tags: ["text", "staggered"]
-  },
-  {
-    title: "radio-button",
-    description: "精巧的单选按钮",
-    tags: ["form", "radio"]
-  },
-  {
-    title: "toggle",
-    description: "精巧的开关",
-    tags: ["toggle"]
   },
   {
     title: "staggered-glow-in-text",
@@ -486,11 +425,6 @@ export default [
     title: "burger-menu",
     description: "汉堡菜单",
     tags: ["menu", "burger", "staggered"]
-  },
-  {
-    title: "staggered-square-loading",
-    description: "交错放大的方块加载",
-    tags: ["loading", "staggered"]
   },
   {
     title: "glowing-menu-buttons",
