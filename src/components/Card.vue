@@ -1,14 +1,12 @@
 <template>
   <a :href="link" target="_blank">
     <figure data-aos="fade-up">
-      <img :src="thumbnailPath" :alt="title" loading="lazy" />
+      <img :src="thumbnailPath" :alt="title" lazyload="on" />
       <figcaption>
         <h3>{{ title }}</h3>
         <p>{{ description }}</p>
         <p>
-          <i class="fa fa-tag" v-for="(tag, i) in tags" :key="i"
-            >&nbsp;{{ tag }}</i
-          >
+          <i class="fa fa-tag" v-for="(tag, i) in tags" :key="i">&nbsp;{{ tag }}</i>
         </p>
       </figcaption>
     </figure>
