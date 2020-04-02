@@ -34,7 +34,7 @@ body {
 }
 
 .logo {
-    padding: 36px;
+    padding: 36px 18px;
     font-size: 18px;
     font-weight: bold;
     color: white;
@@ -49,7 +49,7 @@ body {
     list-style-type: none;
 
     &__item {
-        padding: 36px;
+        padding: 36px 18px;
 
         &:first-child {
             padding-top: 0;
@@ -58,7 +58,7 @@ body {
 }
 
 .logout {
-    padding: 36px;
+    padding: 36px 18px;
 }
 
 // dashboard content
@@ -138,6 +138,7 @@ body {
         }
 
         .day {
+            font-weight: bold;
             margin-bottom: 18px;
         }
 
@@ -159,6 +160,9 @@ body {
     display: flex;
 
     &__item {
+        color: var(--secondary-color-darkest);
+        text-decoration: none;
+
         &:not(:last-child) {
             margin-right: 21px;
         }
@@ -181,9 +185,14 @@ body {
         display: flex;
         flex-direction: column;
         align-items: center;
+        box-sizing: border-box;
         padding: 18px 24px;
         border: 1px solid var(--secondary-color-lighter);
         border-radius: 20px;
+
+        &:not(.active) {
+            max-height: 148px;
+        }
 
         .junk-icon {
             display: flex;
@@ -203,7 +212,30 @@ body {
         .junk-size {
             margin-top: 9px;
             font-size: 18px;
+            font-weight: bold;
             white-space: nowrap;
+        }
+
+        &.active {
+            padding: 18px 3px 5px 3px;
+            border: none;
+            box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+
+            .junk-icon {
+                background: var(--junk-color);
+
+                svg {
+                    fill: white;
+                }
+            }
+
+            .junk-size {
+                margin-top: 21px;
+                padding: 18px 36px;
+                color: white;
+                background: var(--junk-color);
+                border-radius: 15px;
+            }
         }
     }
 }
@@ -292,6 +324,11 @@ body {
         padding: 4px;
         background: white;
         border-radius: 15px;
+        transition: 0.3s;
+
+        &:hover {
+            box-shadow: 0 0 0 1px var(--function-color);
+        }
 
         .function {
             display: flex;
@@ -337,6 +374,10 @@ body {
         }
 
         &.update-function {
+            &:hover {
+                box-shadow: 0 0 0 1px var(--secondary-color-darker);
+            }
+
             .function-icon {
                 color: var(--secondary-color-darker);
                 background: white;

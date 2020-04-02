@@ -30,7 +30,7 @@ body {
 }
 
 .logo {
-  padding: 36px;
+  padding: 36px 18px;
   font-size: 18px;
   font-weight: bold;
   color: white;
@@ -45,14 +45,14 @@ body {
   list-style-type: none;
 }
 .nav-icon-list__item {
-  padding: 36px;
+  padding: 36px 18px;
 }
 .nav-icon-list__item:first-child {
   padding-top: 0;
 }
 
 .logout {
-  padding: 36px;
+  padding: 36px 18px;
 }
 
 .welcome-banner {
@@ -124,6 +124,7 @@ body {
   color: white !important;
 }
 .time-list__item .day {
+  font-weight: bold;
   margin-bottom: 18px;
 }
 .time-list__item .day-number {
@@ -139,6 +140,10 @@ body {
 
 .weeks-option {
   display: flex;
+}
+.weeks-option__item {
+  color: var(--secondary-color-darkest);
+  text-decoration: none;
 }
 .weeks-option__item:not(:last-child) {
   margin-right: 21px;
@@ -159,9 +164,13 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  box-sizing: border-box;
   padding: 18px 24px;
   border: 1px solid var(--secondary-color-lighter);
   border-radius: 20px;
+}
+.junk-list__item:not(.active) {
+  max-height: 148px;
 }
 .junk-list__item .junk-icon {
   display: flex;
@@ -179,7 +188,26 @@ body {
 .junk-list__item .junk-size {
   margin-top: 9px;
   font-size: 18px;
+  font-weight: bold;
   white-space: nowrap;
+}
+.junk-list__item.active {
+  padding: 18px 3px 5px 3px;
+  border: none;
+  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, 0.1);
+}
+.junk-list__item.active .junk-icon {
+  background: var(--junk-color);
+}
+.junk-list__item.active .junk-icon svg {
+  fill: white;
+}
+.junk-list__item.active .junk-size {
+  margin-top: 21px;
+  padding: 18px 36px;
+  color: white;
+  background: var(--junk-color);
+  border-radius: 15px;
 }
 
 .monitor-list {
@@ -253,6 +281,10 @@ body {
   padding: 4px;
   background: white;
   border-radius: 15px;
+  transition: 0.3s;
+}
+.function-list__item:hover {
+  box-shadow: 0 0 0 1px var(--function-color);
 }
 .function-list__item .function {
   display: flex;
@@ -290,6 +322,9 @@ body {
 }
 .function-list__item .function-switch:checked {
   --border-color: var(--function-color);
+}
+.function-list__item.update-function:hover {
+  box-shadow: 0 0 0 1px var(--secondary-color-darker);
 }
 .function-list__item.update-function .function-icon {
   color: var(--secondary-color-darker);
