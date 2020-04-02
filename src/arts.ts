@@ -1,5 +1,10 @@
 export default [
   {
+    title: "dashboard",
+    description: "精美的控制面板",
+    tags: ["dashboard"]
+  },
+  {
     title: "code-input",
     description: "字符输入",
     tags: ["input"]
