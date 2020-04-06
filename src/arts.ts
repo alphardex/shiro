@@ -1,4 +1,5 @@
 export default [
+  { title: "food-delivery", description: "餐饮配送面板", tags: ["dashboard"] },
   {
     title: "task-management",
     description: "任务管理面板",

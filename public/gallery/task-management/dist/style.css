@@ -122,6 +122,37 @@ body {
 .project-list__item .project-name {
   margin-top: 30px;
 }
+.project-list__item.active .project-block {
+  box-sizing: border-box;
+}
+.project-list__item.active .project-block::before {
+  position: absolute;
+  content: '';
+  top: -12px;
+  left: -12px;
+  right: -12px;
+  bottom: -12px;
+  box-sizing: border-box;
+  background: var(--project-color);
+  border-radius: 20px;
+}
+.project-list__item.active .project-block::after {
+  position: absolute;
+  content: attr(data-abbr);
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  font-size: 18px;
+  font-weight: bold;
+  background: var(--project-color);
+  box-shadow: 0 0 0 9px var(--info-color-darkest);
+  border-radius: 10px;
+}
 
 .ripe-malinka {
   --project-color: linear-gradient(120deg, #f093fb 0%, #f5576c 100%);
