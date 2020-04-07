@@ -24,7 +24,6 @@ body {
 .dashboard {
   position: relative;
   width: 1378px;
-  height: 926px;
   display: grid;
   grid-template-columns: repeat(2, auto);
   color: white;
