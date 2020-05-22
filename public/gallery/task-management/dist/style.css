@@ -126,7 +126,7 @@ body {
 }
 .project-list__item.active .project-block::before {
   position: absolute;
-  content: '';
+  content: "";
   top: -12px;
   left: -12px;
   right: -12px;

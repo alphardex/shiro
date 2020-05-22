@@ -155,7 +155,7 @@ body {
 .junk-list {
   display: grid;
   grid-template-columns: repeat(4, auto);
-  column-gap: 30px;
+  gap: 30px;
   padding: 0;
   margin: 0;
   list-style-type: none;
@@ -213,7 +213,7 @@ body {
 .monitor-list {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  column-gap: 32px;
+  gap: 32px;
   padding: 0;
   margin: 0;
   list-style-type: none;
