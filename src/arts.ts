@@ -1,5 +1,10 @@
 export default [
   {
+    title: "3d-loader",
+    description: "3d弧形旋转加载效果",
+    tags: ["loading", "3d"]
+  },
+  {
     title: "link-hover-flash",
     description: "链接悬浮一闪而过",
     tags: ["text", "underline", "hover"]
