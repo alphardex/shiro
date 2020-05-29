@@ -1,5 +1,25 @@
 export default [
   {
+    title: "motion-path-explore",
+    description: "运动路径探索",
+    tags: ["motion path"]
+  },
+  {
+    title: "frame-text-reveal",
+    description: "框型文本展现效果",
+    tags: ["text", "staggered", "reveal"]
+  },
+  {
+    title: "memory-card-game",
+    description: "记忆卡牌游戏",
+    tags: ["memory card", "game"]
+  },
+  {
+    title: "minimal-type-animation",
+    description: "极简JS实现的打字效果",
+    tags: ["typing"]
+  },
+  {
     title: "3d-loader",
     description: "3d弧形旋转加载效果",
     tags: ["loading", "3d"]

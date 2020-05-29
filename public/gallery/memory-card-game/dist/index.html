@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Memory Card Game</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel='stylesheet' href='https://alphardex.github.io/static/aqua.min.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="statistics">
+  <div class="score">
+    Score：<span class="score-number">0</span>
+  </div>
+  <div class="time-left">
+    Time：<span class="time-left-number">0</span>
+  </div>
+</div>
+<div class="game">
+  <div class="card" data-id="0">
+    <div class="card__face card__face--front"></div>
+    <div class="card__face card__face--back"></div>
+  </div>
+  <div class="card" data-id="0">
+    <div class="card__face card__face--front"></div>
+    <div class="card__face card__face--back"></div>
+  </div>
+  <div class="card" data-id="1">
+    <div class="card__face card__face--front"></div>
+    <div class="card__face card__face--back"></div>
+  </div>
+  <div class="card" data-id="1">
+    <div class="card__face card__face--front"></div>
+    <div class="card__face card__face--back"></div>
+  </div>
+  <div class="card" data-id="2">
+    <div class="card__face card__face--front"></div>
+    <div class="card__face card__face--back"></div>
+  </div>
+  <div class="card" data-id="2">
+    <div class="card__face card__face--front"></div>
+    <div class="card__face card__face--back"></div>
+  </div>
+  <div class="card" data-id="3">
+    <div class="card__face card__face--front"></div>
+    <div class="card__face card__face--back"></div>
+  </div>
+  <div class="card" data-id="3">
+    <div class="card__face card__face--front"></div>
+    <div class="card__face card__face--back"></div>
+  </div>
+  <div class="card" data-id="4">
+    <div class="card__face card__face--front"></div>
+    <div class="card__face card__face--back"></div>
+  </div>
+  <div class="card" data-id="4">
+    <div class="card__face card__face--front"></div>
+    <div class="card__face card__face--back"></div>
+  </div>
+  <div class="card" data-id="5">
+    <div class="card__face card__face--front"></div>
+    <div class="card__face card__face--back"></div>
+  </div>
+  <div class="card" data-id="5">
+    <div class="card__face card__face--front"></div>
+    <div class="card__face card__face--back"></div>
+  </div>
+  <div class="card" data-id="6">
+    <div class="card__face card__face--front"></div>
+    <div class="card__face card__face--back"></div>
+  </div>
+  <div class="card" data-id="6">
+    <div class="card__face card__face--front"></div>
+    <div class="card__face card__face--back"></div>
+  </div>
+  <div class="card" data-id="7">
+    <div class="card__face card__face--front"></div>
+    <div class="card__face card__face--back"></div>
+  </div>
+  <div class="card" data-id="7">
+    <div class="card__face card__face--front"></div>
+    <div class="card__face card__face--back"></div>
+  </div>
+</div>
+<a class="btn-ark" id="start">
+  <div class="play-icon"></div>
+  <div class="label">START</div>
+</a>
+<div class="dialog" id="final-score-dialog" hidden>
+  <div class="dialog-content">
+    <div class="dialog-header">
+      <div class="dialog-title">You Scored <span class="final-score">0</span></div>
+    </div>
+    <div class="dialog-body">
+      <p><span class="you-win" hidden>Congratulations! You win!🎉</span></p>
+      <p><span class="you-lose" hidden>You lose! Have another try?😂</span></p>
+    </div>
+    <div class="dialog-footer">
+      <button class="btn btn-primary" onclick="closeFinalScore()">
+        OK
+      </button>
+    </div>
+  </div>
+</div>
+<!-- partial -->
+  <script  src="./script.js"></script>
+
+</body>
+</html>
