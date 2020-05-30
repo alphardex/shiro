@@ -15,11 +15,6 @@ export default [
     tags: ["memory card", "game"]
   },
   {
-    title: "minimal-type-animation",
-    description: "极简JS实现的打字效果",
-    tags: ["typing"]
-  },
-  {
     title: "3d-loader",
     description: "3d弧形旋转加载效果",
     tags: ["loading", "3d"]

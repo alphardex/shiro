@@ -1,6 +1,6 @@
 let d = document.querySelector("#path").children[0].getAttribute("d");
 let stage = document.querySelector(".stage");
-stage.style.setProperty("--d", `path('${d}')`);
+(stage as HTMLElement).style.setProperty("--d", `path('${d}')`);
 let goForthBtn = document.querySelector("#go-forth");
 let hero = document.querySelector(".hero");
 let currentCheckPointId = 0;

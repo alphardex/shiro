@@ -15,7 +15,7 @@ const finalScoreDialog = document.querySelector("#final-score-dialog");
 const finalScore = document.querySelector(".final-score");
 const youWin = document.querySelector(".you-win");
 const youLose = document.querySelector(".you-lose");
-let cardFlippedElements = [];
+let cardFlippedElements: Element[] = [];
 let score = 0;
 let win = false;
 const SCOREINC = 10;
@@ -23,13 +23,14 @@ const WINSCORE = (SCOREINC * cards.length) / 2;
 const TIME = 40;
 const INTERVAL = 600;
 let timer;
+let timeLeft = TIME;
 
 const shuffleCards = () => {
   // 将卡牌顺序打乱
   const cardIndexes = Array.from(Array(cards.length).keys());
   const shufferedIndexs = shuffle(cardIndexes);
   cards.forEach((card, i) =>
-    card.style.setProperty("--order", shufferedIndexs[i])
+    (card as HTMLElement).style.setProperty("--order", shufferedIndexs[i])
   );
 };
 
@@ -64,9 +65,9 @@ const listenCardFlip = () => {
         // 当翻面的卡牌数量为2张时判断它们是否相同，相同则得分并保持状态，不相同则不得分并翻回来
         if (cardFlippedElements.length === 2) {
           const [card1, card2] = cardFlippedElements;
-          if (card1.dataset.id === card2.dataset.id) {
+          if ((card1 as HTMLElement).dataset.id === (card2 as HTMLElement).dataset.id) {
             score += SCOREINC;
-            scoreNumber.textContent = score;
+            scoreNumber.textContent = `${score}`;
             cardFlippedElements = [];
             winGameJudge();
           } else {
@@ -90,8 +91,8 @@ const cleanData = () => {
   score = 0;
   timeLeft = TIME;
   win = false;
-  scoreNumber.textContent = score;
-  timeLeftNumber.textContent = timeLeft;
+  scoreNumber.textContent = `${score}`;
+  timeLeftNumber.textContent = `${timeLeft}`;
   youWin.setAttribute("hidden", "");
   youLose.setAttribute("hidden", "");
 };
@@ -103,7 +104,7 @@ const startGame = () => {
   listenCardFlip();
   timer = setInterval(() => {
     timeLeft--;
-    timeLeftNumber.textContent = timeLeft;
+    timeLeftNumber.textContent = `${timeLeft}`;
     if (timeLeft === 0) {
       clearInterval(timer);
       endGame();
@@ -135,7 +136,7 @@ const showFinalScore = () => {
   } else {
     youLose.removeAttribute("hidden");
   }
-  finalScore.textContent = score;
+  finalScore.textContent = `${score}`;
   finalScoreDialog.removeAttribute("hidden");
 };
 
