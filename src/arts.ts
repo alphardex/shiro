@@ -52,6 +52,11 @@ export default [
     tags: ["masonry", "image"]
   },
   {
+    title: "elastic-love",
+    description: "Q弹的点赞效果",
+    tags: ["icon", "heart", "toggle", "love"]
+  },
+  {
     title: "dropdown-select",
     description: "下拉选择菜单交互",
     tags: ["dropdown", "select"]
