@@ -156,9 +156,9 @@ export default class Home extends Vue {
     border: none;
     border-radius: 3px;
     outline: none;
-    transition: all 0.3s ease-in-out;
+    transition: 0.3s ease-in-out;
 
-    &::-webkit-input-placeholder {
+    &::placeholder {
       text-indent: 0;
       color: #efefef;
     }
@@ -190,12 +190,13 @@ export default class Home extends Vue {
         transition: 0.3s ease-in-out;
       }
     }
+
     &:focus,
     &:active {
       color: #4fc1e9;
       text-indent: 0;
 
-      &::-webkit-input-placeholder {
+      &::placeholder {
         color: #aaa;
       }
 
@@ -219,7 +220,6 @@ export default class Home extends Vue {
   grid-template-columns: repeat(auto-fill, minmax(25ch, 1fr));
   grid-gap: 2rem;
   margin: 0 6rem 3rem 6rem;
-
   padding-top: 2.5rem;
 }
 </style>

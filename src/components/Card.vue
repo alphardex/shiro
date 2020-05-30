@@ -6,7 +6,9 @@
         <h3>{{ title }}</h3>
         <p>{{ description }}</p>
         <p>
-          <i class="fa fa-tag" v-for="(tag, i) in tags" :key="i">&nbsp;{{ tag }}</i>
+          <i class="fa fa-tag" v-for="(tag, i) in tags" :key="i"
+            >&nbsp;{{ tag }}</i
+          >
         </p>
       </figcaption>
     </figure>
