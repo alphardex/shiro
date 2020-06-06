@@ -25,7 +25,8 @@ body {
     transition: 1.1s var(--ease-out-expo);
   }
   
-  // 默认情况下，前条收缩，后跳伸展
+  // 默认情况下，前条收缩，后条伸展
+  // 悬浮时，后条先缩回右边，前条再伸出来
   // 松开时，前条先缩回左边，后条再伸出来
 
   &::before {
@@ -37,8 +38,6 @@ body {
     transform-origin: right;
     transition-delay: 0.25s;
   }
-
-  // 悬浮时，后条先缩回右边，前条再伸出来
   
   &:hover {
     &::before {
