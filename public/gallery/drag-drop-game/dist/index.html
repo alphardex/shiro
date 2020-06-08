@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Drag &amp; Drop Game</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel='stylesheet' href='https://cdn.jsdelivr.net/gh/alphardex/aqua.css/dist/aqua.min.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="statistics">
+  <div class="score">
+    Score：<span class="score-number">0</span>
+  </div>
+  <div class="time-left">
+    Time：<span class="time-left-number">0</span>
+  </div>
+</div>
+<div class="game">
+  <div class="target-blocks">
+    <div class="block target" data-id="1"></div>
+    <div class="block target" data-id="2"></div>
+    <div class="block target" data-id="3"></div>
+    <div class="block target" data-id="4"></div>
+    <div class="block target" data-id="5"></div>
+    <div class="block target" data-id="6"></div>
+    <div class="block target" data-id="7"></div>
+    <div class="block target" data-id="8"></div>
+    <div class="block target" data-id="9"></div>
+    <div class="block target" data-id="10"></div>
+  </div>
+  <div class="draggable-blocks">
+    <div class="block draggable" data-id="1"></div>
+    <div class="block draggable" data-id="2"></div>
+    <div class="block draggable" data-id="3"></div>
+    <div class="block draggable" data-id="4"></div>
+    <div class="block draggable" data-id="5"></div>
+    <div class="block draggable" data-id="6"></div>
+    <div class="block draggable" data-id="7"></div>
+    <div class="block draggable" data-id="8"></div>
+    <div class="block draggable" data-id="9"></div>
+    <div class="block draggable" data-id="10"></div>
+  </div>
+</div>
+<button class="btn btn-primary" id="start">Start</button>
+<div class="dialog" id="final-score-dialog" hidden>
+  <div class="dialog-content">
+    <div class="dialog-header">
+      <div class="dialog-title">You Scored <span class="final-score">0</span></div>
+    </div>
+    <div class="dialog-body">
+      <p><span class="you-win" hidden>Congratulations! You win!🎉</span></p>
+      <p><span class="you-lose" hidden>You lose! Have another try?😂</span></p>
+    </div>
+    <div class="dialog-footer">
+      <button class="btn btn-primary" onclick="closeFinalScore()">
+        OK
+      </button>
+    </div>
+  </div>
+</div>
+<!-- partial -->
+  <script src='https://cdn.bootcdn.net/ajax/libs/draggabilly/2.3.0/draggabilly.pkgd.min.js'></script><script  src="./script.js"></script>
+
+</body>
+</html>

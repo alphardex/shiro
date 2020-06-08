@@ -1,5 +1,10 @@
 export default [
   {
+    title: 'drag-drop-game',
+    description: '拖拽游戏',
+    tags: ['drag', 'game']
+  },
+  {
     title: "motion-path-explore",
     description: "运动路径探索",
     tags: ["motion path"]
