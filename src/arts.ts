@@ -1,5 +1,10 @@
 export default [
   {
+    title: 'fullscreen-search-bar',
+    description: '全屏搜索框',
+    tags: ['fullscreen', 'search']
+  },
+  {
     title: 'drag-drop-game',
     description: '拖拽游戏',
     tags: ['drag', 'game']
