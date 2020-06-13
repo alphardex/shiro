@@ -1,5 +1,10 @@
 export default [
   {
+    title: 'fullscreen-menu-enter',
+    description: '全屏菜单进入动画',
+    tags: ['fullscreen', 'menu', 'hover', 'reveal']
+  },
+  {
     title: 'fullscreen-search-bar',
     description: '全屏搜索框',
     tags: ['fullscreen', 'search']
