@@ -1,0 +1,58 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+  filter: drop-shadow(0 0 15px var(--primary-color));
+  overflow: hidden;
+}
+
+$block-count: 240;
+$block-width: 5em;
+$block-height: 0.6em;
+$ring-radius: 5.5em;
+$z-axis-offset: 500px;
+
+.loading {
+  perspective: 240px;
+  transform-style: preserve-3d;
+  transform: rotateX(1deg) rotateY(-3deg) rotateZ(-15deg);
+
+  .block {
+    $duration: 3s;
+    position: absolute;
+    width: $block-width;
+    height: $block-height;
+    opacity: 0;
+    background: white;
+  
+    @for $i from 1 through $block-count {
+      &:nth-child(#{$i}) {
+        $ratio: $i / $block-count;
+        transform: rotate($ratio * 3240deg) translateX($ring-radius) translateZ($z-axis-offset * $ratio + 1.6px * $i);
+        animation: blink-in $duration $ratio * $duration steps(1) infinite, go-forth-#{$i} $duration * 60 linear infinite;
+
+        @keyframes go-forth-#{$i} {
+          to {
+            transform: rotate($ratio * 3240deg) translateX($ring-radius) translateZ($z-axis-offset * $ratio + 12px * $i - 7200px);
+          }
+        }
+      }
+    }
+  } 
+}
+
+@keyframes blink-in {
+  from {
+    opacity: 0.2;
+  }
+
+  50% {
+    opacity: 0.6;
+  }
+
+  to {
+    opacity: 0.4;
+  }
+}

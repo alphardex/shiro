@@ -1,77 +1,15 @@
-@import url(https://fonts.googleapis.com/css?family=Lato);
 body {
   display: flex;
-  height: 100vh;
   justify-content: center;
   align-items: center;
-  font-family: Lato, sans-serif;
+  min-height: 100vh;
   background: #eceffc;
 }
 
-.form-control {
-  --default-color: currentColor;
-  --invalid-color: #e74c3c;
-  --valid-color: #3498db;
-  --border-bottom-color: currentColor;
-  position: relative;
-  border-bottom: 1px solid var(--border-bottom-color);
-}
-.form-control::after {
-  position: absolute;
-  content: "";
-  left: 0;
-  bottom: -1px;
-  width: 100%;
-  height: 2px;
-  background: var(--valid-color);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: 0.3s;
-}
-.form-control:focus-within::after {
-  transform: scaleX(1);
-}
-.form-control input {
-  padding: 8px 0;
-  font-size: inherit;
-  font-weight: inherit;
-  color: currentColor;
-  background: transparent;
-  border: none;
-  outline: none;
-}
-.form-control input:invalid ~ label {
-  color: var(--invalid-color);
-}
-.form-control input:valid ~ label {
-  color: var(--valid-color);
-}
-.form-control input:placeholder-shown ~ label {
-  color: var(--default-color);
-}
-.form-control input:focus ~ label, .form-control input:not(:placeholder-shown) ~ label {
-  transform: translateY(-120%) scale(0.75);
-}
-.form-control label {
-  position: absolute;
-  top: 8px;
-  left: 0;
-  transition: 0.3s;
-  transform-origin: left;
-}
-
 .btn {
-  position: relative;
-  width: 100%;
-  padding: 6px 0;
-  font-size: 16px;
-  color: currentColor;
-  background: transparent;
-  border: 2px solid #3398db;
-  outline: none;
-  cursor: pointer;
+  padding: 8px 20px;
+  border-radius: 0;
   overflow: hidden;
-  transition: 0.6s;
 }
 .btn::before {
   position: absolute;
@@ -80,15 +18,21 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(120deg, transparent, rgba(51, 152, 219, 0.5), transparent);
+  background: linear-gradient(120deg, transparent, var(--primary-color), transparent);
   transform: translateX(-100%);
   transition: 0.6s;
 }
 .btn:hover {
+  background: transparent;
   box-shadow: 0 0 20px 10px rgba(51, 152, 219, 0.5);
 }
 .btn:hover::before {
   transform: translateX(100%);
+}
+
+.form-input-material {
+  --default-color: white;
+  --border-bottom-color: white;
 }
 
 .login-form {
@@ -103,10 +47,9 @@ body {
 }
 .login-form h1 {
   margin: 0 0 24px 0;
-  font-size: 36px;
 }
-.login-form .form-control {
-  margin: 18px 0;
+.login-form .form-input-material {
+  margin: 12px 0;
 }
 .login-form .btn {
   width: 100%;

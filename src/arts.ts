@@ -1,5 +1,15 @@
 export default [
   {
+    title: 'bubble-float',
+    description: '气泡浮动背景',
+    tags: ['bubble', 'random']
+  },
+  {
+    title: 'spiral-stair-loader',
+    description: '仿灰色的果实OP螺旋动画',
+    tags: ['spiral', 'loading']
+  },
+  {
     title: 'fullscreen-menu-enter',
     description: '全屏菜单进入动画',
     tags: ['fullscreen', 'menu', 'hover', 'reveal']
@@ -201,6 +211,11 @@ export default [
     title: "button-hover-multiple-border-stroke",
     description: "按钮多重边框悬浮效果",
     tags: ["button", "hover", "border"]
+  },
+  {
+    title: 'button-collection',
+    description: "按钮样式大全",
+    tags: ['button', 'hover', 'cta']
   },
   {
     title: "crimson-crescent-loading",

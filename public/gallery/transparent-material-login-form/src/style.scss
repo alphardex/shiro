@@ -1,91 +1,15 @@
-@import url(https://fonts.googleapis.com/css?family=Lato);
-
 body {
   display: flex;
-  height: 100vh;
   justify-content: center;
   align-items: center;
-  font-family: Lato, sans-serif;
+  min-height: 100vh;
   background: #eceffc;
 }
 
-.form-control {
-  --default-color: currentColor;
-  --invalid-color: #e74c3c;
-  --valid-color: #3498db;
-  --border-bottom-color: currentColor;
-
-  position: relative;
-  border-bottom: 1px solid var(--border-bottom-color);
-
-  &::after {
-    position: absolute;
-    content: "";
-    left: 0;
-    bottom: -1px;
-    width: 100%;
-    height: 2px;
-    background: var(--valid-color);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: 0.3s;
-  }
-
-  &:focus-within::after {
-    transform: scaleX(1);
-  }
-
-  input {
-    padding: 8px 0;
-    font-size: inherit;
-    font-weight: inherit;
-    color: currentColor;
-    background: transparent;
-    border: none;
-    outline: none;
-
-    &:invalid ~ label {
-      color: var(--invalid-color);
-    }
-
-    &:valid ~ label {
-      color: var(--valid-color);
-    }
-
-    &:placeholder-shown ~ label {
-      color: var(--default-color);
-    }
-
-    // label will float in 2 situations based on its sibling input:
-    // 1. input get focus
-    // 2. input has text filled
-    &:focus ~ label,
-    &:not(:placeholder-shown) ~ label {
-      transform: translateY(-120%) scale(0.75);
-    }
-  }
-
-  label {
-    position: absolute;
-    top: 8px;
-    left: 0;
-    transition: 0.3s;
-    transform-origin: left;
-  }
-}
-
 .btn {
-  position: relative;
-  width: 100%;
-  padding: 6px 0;
-  font-size: 16px;
-  color: currentColor;
-  background: transparent;
-  border: 2px solid hsla(204, 70%, 53%, 1);
-  outline: none;
-  cursor: pointer;
+  padding: 8px 20px;
+  border-radius: 0;
   overflow: hidden;
-  transition: 0.6s;
 
   &::before {
     position: absolute;
@@ -97,7 +21,7 @@ body {
     background: linear-gradient(
       120deg,
       transparent,
-      hsla(204, 70%, 53%, 0.5),
+      var(--primary-color),
       transparent
     );
     transform: translateX(-100%);
@@ -105,12 +29,18 @@ body {
   }
 
   &:hover {
+    background: transparent;
     box-shadow: 0 0 20px 10px hsla(204, 70%, 53%, 0.5);
-  }
 
-  &:hover::before {
-    transform: translateX(100%);
+    &::before {
+      transform: translateX(100%);
+    }
   }
+}
+
+.form-input-material {
+  --default-color: white;
+  --border-bottom-color: white;
 }
 
 .login-form {
@@ -119,7 +49,7 @@ body {
   align-items: center;
   padding: 50px 40px;
   color: white;
-  background: rgba(0,0,0,0.8);
+  background: rgba(0, 0, 0, 0.8);
   border-radius: 10px;
   box-shadow: 0 0.4px 0.4px rgba(128, 128, 128, 0.109),
     0 1px 1px rgba(128, 128, 128, 0.155),
@@ -129,11 +59,10 @@ body {
 
   h1 {
     margin: 0 0 24px 0;
-    font-size: 36px;
   }
 
-  .form-control {
-    margin: 18px 0;
+  .form-input-material {
+    margin: 12px 0;
   }
 
   .btn {
