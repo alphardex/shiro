@@ -1,0 +1,66 @@
+@mixin sp-layout {
+  @media screen and (max-width: 750px) {
+    @content;
+  }
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background-image: linear-gradient(to top, #09203f 0%, #537895 100%);
+}
+
+@function random_range($min, $max) {
+  $rand: random();
+  $random_range: $min + floor($rand * (($max - $min) + 1));
+  @return $random_range;
+}
+
+@function sample($list) {
+  @return nth($list, random(length($list)));
+}
+
+.bubble {
+  $bubble-colors: var(--primary-color), var(--info-color), var(--success-color), var(--warning-color), var(--danger-color);
+  --ring-radius: 16em;
+  $bubble-count: 50;
+  
+  @include sp-layout {
+    --ring-radius: 10em;
+  }
+
+  position: absolute;
+  display: block;
+  width: var(--bubble-radius);
+  height: var(--bubble-radius);
+  background: var(--bubble-color);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--bubble-color);
+  opacity: var(--bubble-opacity);
+  mix-blend-mode: screen;
+
+  @for $i from 0 through $bubble-count {
+    &:nth-child(#{$i}) {
+      --bubble-color: #{sample($bubble-colors)};
+      --bubble-opacity: #{random_range(0.8, 1)};
+      --bubble-radius: #{random_range(1em, 50000em) / 18000};
+      --ratio: #{$i / $bubble-count};
+      --start-deg: calc(var(--ratio) * 2turn);
+      --end-deg: calc(var(--start-deg) + 1turn);
+      --duration: #{random_range(3s, 5s)};
+      --delay: #{random_range(-3s, 0)};
+
+      transform: rotate(var(--start-deg)) translateX(var(--ring-radius));
+      animation: rotate-around-#{$i} linear var(--duration) var(--delay) infinite;
+
+      @keyframes rotate-around-#{$i} {
+        to {
+          transform: rotate(var(--end-deg)) translateX(var(--ring-radius));
+        }
+      }
+    }
+  }
+}

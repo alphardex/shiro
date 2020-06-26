@@ -1,5 +1,15 @@
 export default [
   {
+    title: 'shooting-star',
+    description: '流星雨',
+    tags: ['shooting-star', 'random']
+  },
+  {
+    title: 'bubble-ring',
+    description: '气泡环',
+    tags: ['bubble', 'random', 'ring']
+  },
+  {
     title: 'bubble-float',
     description: '气泡浮动背景',
     tags: ['bubble', 'random']
