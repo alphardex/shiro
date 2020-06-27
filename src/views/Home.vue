@@ -83,8 +83,6 @@ export default class Home extends Vue {
 </script>
 
 <style lang="scss">
-@import url(https://fonts.googleapis.com/css?family=Lobster);
-@import url(https://fonts.googleapis.com/css?family=ZCOOL+QingKe+HuangYou|ZCOOL+XiaoWei&display=swap);
 @import "@/styles/_mixin.scss";
 
 .github-corner:hover .octo-arm {
@@ -119,14 +117,12 @@ export default class Home extends Vue {
   color: #172530;
   text-align: center;
   font-size: 4em;
-  font-family: "Lobster";
 }
 
 .intro {
   color: #0b2438;
   text-align: center;
   font-size: 1.2em;
-  font-family: "ZCOOL XiaoWei", serif;
   line-height: 1.6em;
 }
 
