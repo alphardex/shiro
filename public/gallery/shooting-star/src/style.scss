@@ -9,16 +9,18 @@ body {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-   background: radial-gradient(ellipse at bottom, #0d1d31 0%, #0c0d13 100%);
+  background: radial-gradient(ellipse at bottom, #0d1d31 0%, #0c0d13 100%);
   overflow: hidden;
 }
 
+// 取某一范围内的随机数
 @function random_range($min, $max) {
   $rand: random();
   $random_range: $min + floor($rand * (($max - $min) + 1));
   @return $random_range;
 }
 
+// 流星雨整体
 .stars {
   position: fixed;
   top: 0;
@@ -28,14 +30,15 @@ body {
   transform: rotate(-45deg);
 }
 
+// 单个流星
 .star {
   $star-count: 50;
-  --star-color: var(--primary-color);
-  --star-tail-length: 6em;
-  --star-tail-height: 2px;
-  --star-width: calc(var(--star-tail-length) / 6);
-  --fall-duration: 9s;
-  --tail-fade-duration: var(--fall-duration);
+  --star-color: var(--primary-color);  // 流星颜色
+  --star-tail-length: 6em;  // 流星尾巴长度
+  --star-tail-height: 2px;  // 流星尾巴高度
+  --star-width: calc(var(--star-tail-length) / 6);  // 流星的星星长度
+  --fall-duration: 9s;  // 下落时长
+  --tail-fade-duration: var(--fall-duration);  // 流星尾巴消失时长
 
   position: absolute;
   top: var(--top-offset);
@@ -43,27 +46,26 @@ body {
   width: var(--star-tail-length);
   height: var(--star-tail-height);
   color: var(--star-color);
-  background: linear-gradient(45deg, currentColor, transparent);
+  background: linear-gradient(45deg, currentColor, transparent);  // 流星的尾巴的形状
   border-radius: 50%;
-  filter: drop-shadow(0 0 6px currentColor);
+  filter: drop-shadow(0 0 6px currentColor);  // 发光效果
   transform: translate3d(104em, 0, 0);
   animation: fall var(--fall-duration) var(--fall-delay) linear infinite, tail-fade var(--tail-fade-duration) var(--fall-delay) ease-out infinite;
   
   @include sp-layout {
-    // For mobile performance, tail-fade animation will be removed QAQ
-    animation: fall var(--fall-duration) var(--fall-delay) linear infinite;
+    animation: fall var(--fall-duration) var(--fall-delay) linear infinite; // 下落动画
   }
 
   @for $i from 1 through $star-count {
     &:nth-child(#{$i}) {
-      --star-tail-length: #{random_range(500em, 750em) / 100};
-      --top-offset: #{random_range(0vh, 10000vh) / 100};
-      --fall-duration: #{random_range(6000, 12000s) / 1000};
-      --fall-delay: #{random_range(0, 10000s) / 1000};
+      --star-tail-length: #{random_range(500em, 750em) / 100};  // 流星尾巴长度随机
+      --top-offset: #{random_range(0vh, 10000vh) / 100};  // 流星下落位置随机
+      --fall-duration: #{random_range(6000, 12000s) / 1000};  // 流星下落时间随机
+      --fall-delay: #{random_range(0, 10000s) / 1000};  //  流星下落延迟随机
     }
   }
 
-  &::before, &::after {
+  &::before, &::after { // 流星的星星的形状
     position: absolute;
     content: '';
     top: 0;
@@ -72,7 +74,7 @@ body {
     height: 100%;
     background: linear-gradient(45deg, transparent, currentColor, transparent);
     border-radius: inherit;
-    animation: blink 2s linear infinite;
+    animation: blink 2s linear infinite;  // 星星闪烁动画
   }
 
   &::before {
