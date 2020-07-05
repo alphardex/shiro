@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css?family=Lora:400,400i,700");
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: Lora, sans-serif;
+  background: black;
+  cursor: none;
+}
+
+.cursor,
+.cursor-border {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0;
+  will-change: transform;
+  transition: 0.3s;
+}
+
+.cursor {
+  background: white;
+}
+
+.cursor-border {
+  padding: 2rem;
+  border: 0.1rem solid white;
+}
+.cursor-border.on-focus {
+  padding: 0.5rem;
+  background: rgba(255, 255, 255, 0.5);
+  border-color: transparent;
+}
+
+.magnetize {
+  font-size: 3rem;
+  font-weight: bold;
+  color: white;
+  will-change: transform;
+  transform: translate(var(--h, 0), var(--v, 0));
+  transition: var(--t, 0.3s);
+}

@@ -1,5 +1,25 @@
 export default [
   {
+    title: 'star-burst',
+    description: '流星爆发效果',
+    tags: ['star', 'random', 'burst']
+  },
+  {
+    title: 'cursor-hover-magnetize',
+    description: '鼠标悬浮磁化效果',
+    tags: ['cursor', 'hover', 'magnetize']
+  },
+  {
+    title: '3d-text-hover-tilt',
+    description: '3d文字倾斜效果',
+    tags: ['text', '3d', 'tilt']
+  },
+  {
+    title: 'image-hover-origami',
+    description: '图片折纸效果',
+    tags: ['image', 'hover', 'origami']
+  },
+  {
     title: 'shooting-star',
     description: '流星雨',
     tags: ['shooting-star', 'random']

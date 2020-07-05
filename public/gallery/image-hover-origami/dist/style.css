@@ -1,0 +1,70 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #1a1e23;
+  margin: 0;
+}
+
+.scene {
+  transform-style: preserve-3d;
+  transform: rotateX(55deg) rotateZ(45deg);
+}
+
+.square-origami {
+  --slice-width: 5em;
+  --square-width: calc(2 * var(--slice-width));
+  display: flex;
+  flex-wrap: wrap;
+  width: var(--square-width);
+  height: var(--square-width);
+  cursor: pointer;
+}
+.square-origami .slice {
+  width: var(--slice-width);
+  height: var(--slice-width);
+  background-image: url("https://i.loli.net/2019/11/23/cnKl1Ykd5rZCVwm.jpg");
+  background-size: var(--square-width) var(--square-width);
+  transition: 0.3s;
+  transform: rotateZ(0);
+}
+.square-origami .slice:nth-child(1) {
+  background-position: top left;
+  transform-origin: right;
+  transition-delay: 0.9s;
+}
+.square-origami .slice:nth-child(2) {
+  background-position: top right;
+  transform-origin: bottom;
+  transition-delay: 0.6s;
+}
+.square-origami .slice:nth-child(3) {
+  background-position: bottom left;
+  transform-origin: top;
+  transition-delay: 0s;
+}
+.square-origami .slice:nth-child(4) {
+  background-position: bottom right;
+  transform-origin: left;
+  transition-delay: 0.3s;
+}
+.square-origami:hover .slice:not(:nth-child(3)) {
+  visibility: hidden;
+}
+.square-origami:hover .slice:nth-child(1) {
+  transform: rotateY(0.5turn);
+  transition-delay: 0s;
+}
+.square-origami:hover .slice:nth-child(2) {
+  transform: rotateX(-0.5turn);
+  transition-delay: 0.3s;
+}
+.square-origami:hover .slice:nth-child(3) {
+  transform: rotateX(0.5turn);
+  transition-delay: 0.9s;
+}
+.square-origami:hover .slice:nth-child(4) {
+  transform: rotateY(-0.5turn);
+  transition-delay: 0.6s;
+}

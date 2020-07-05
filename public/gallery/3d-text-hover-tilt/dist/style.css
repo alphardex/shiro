@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap");
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
+
+.scene {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.d-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  font-size: 4rem;
+  font-weight: bold;
+  font-family: 'Fredoka One', cursive;
+  color: white;
+  -webkit-text-stroke: 2px black;
+  text-transform: uppercase;
+}
+.d-text:nth-child(0) {
+  transform: translateX(-50%) translateY(-50%) translateZ(0px);
+}
+.d-text:nth-child(1) {
+  transform: translateX(-50%) translateY(-50%) translateZ(1px);
+}
+.d-text:nth-child(2) {
+  transform: translateX(-50%) translateY(-50%) translateZ(2px);
+}
+.d-text:nth-child(3) {
+  transform: translateX(-50%) translateY(-50%) translateZ(3px);
+}
+.d-text:nth-child(4) {
+  transform: translateX(-50%) translateY(-50%) translateZ(4px);
+}
+.d-text:nth-child(5) {
+  transform: translateX(-50%) translateY(-50%) translateZ(5px);
+}
+.d-text:nth-child(6) {
+  transform: translateX(-50%) translateY(-50%) translateZ(6px);
+}
+.d-text:nth-child(7) {
+  transform: translateX(-50%) translateY(-50%) translateZ(7px);
+}
+.d-text:nth-child(8) {
+  transform: translateX(-50%) translateY(-50%) translateZ(8px);
+}
+.d-text:nth-child(9) {
+  transform: translateX(-50%) translateY(-50%) translateZ(9px);
+}
+.d-text:nth-child(10) {
+  transform: translateX(-50%) translateY(-50%) translateZ(10px);
+}
+.d-text:nth-child(11) {
+  transform: translateX(-50%) translateY(-50%) translateZ(11px);
+}
+.d-text:nth-child(12) {
+  transform: translateX(-50%) translateY(-50%) translateZ(12px);
+}
+.d-text:nth-child(13) {
+  transform: translateX(-50%) translateY(-50%) translateZ(13px);
+}
+.d-text:nth-child(14) {
+  transform: translateX(-50%) translateY(-50%) translateZ(14px);
+}
+.d-text:nth-child(15) {
+  transform: translateX(-50%) translateY(-50%) translateZ(15px);
+}
+.d-text:nth-child(16) {
+  transform: translateX(-50%) translateY(-50%) translateZ(16px);
+}
+.d-text:nth-child(17) {
+  transform: translateX(-50%) translateY(-50%) translateZ(17px);
+}
+.d-text:nth-child(18) {
+  transform: translateX(-50%) translateY(-50%) translateZ(18px);
+}
+.d-text:nth-child(19) {
+  transform: translateX(-50%) translateY(-50%) translateZ(19px);
+}
+.d-text:nth-child(20) {
+  transform: translateX(-50%) translateY(-50%) translateZ(20px);
+}
+.d-text:nth-child(21) {
+  transform: translateX(-50%) translateY(-50%) translateZ(21px);
+}
+.d-text:nth-child(22) {
+  transform: translateX(-50%) translateY(-50%) translateZ(22px);
+}
+.d-text:nth-child(23) {
+  transform: translateX(-50%) translateY(-50%) translateZ(23px);
+}
+.d-text:nth-child(24) {
+  transform: translateX(-50%) translateY(-50%) translateZ(24px);
+}
+.d-text:nth-child(25) {
+  transform: translateX(-50%) translateY(-50%) translateZ(25px);
+}
+.d-text:nth-child(26) {
+  transform: translateX(-50%) translateY(-50%) translateZ(26px);
+}
+.d-text:nth-child(27) {
+  transform: translateX(-50%) translateY(-50%) translateZ(27px);
+}
+.d-text:nth-child(28) {
+  transform: translateX(-50%) translateY(-50%) translateZ(28px);
+}
+.d-text:nth-child(29) {
+  transform: translateX(-50%) translateY(-50%) translateZ(29px);
+}
+.d-text:nth-child(30) {
+  transform: translateX(-50%) translateY(-50%) translateZ(30px);
+}

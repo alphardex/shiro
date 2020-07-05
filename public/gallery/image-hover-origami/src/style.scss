@@ -1,0 +1,65 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #1a1e23;
+  margin: 0;
+}
+
+.scene {
+  transform-style: preserve-3d;
+  transform: rotateX(55deg) rotateZ(45deg);
+}
+
+.square-origami {
+  --slice-width: 5em;
+  --square-width: calc(2 * var(--slice-width));
+  $square-bg: url("https://i.loli.net/2019/11/23/cnKl1Ykd5rZCVwm.jpg");
+  $base-duration: 0.3s;
+  $slice-origins: right, bottom, top, left;
+  $slice-rotates: rotateY(0.5turn), rotateX(-0.5turn), rotateX(0.5turn),
+    rotateY(-0.5turn);
+  $slice-bgps: top left, top right, bottom left, bottom right;
+  $slice-delays: 0s, $base-duration, $base-duration * 3, $base-duration * 2;
+  $slice-delays-reverse: $base-duration * 3, $base-duration * 2, 0s,
+    $base-duration;
+
+  display: flex;
+  flex-wrap: wrap;
+  width: var(--square-width);
+  height: var(--square-width);
+  cursor: pointer;
+
+  .slice {
+    width: var(--slice-width);
+    height: var(--slice-width);
+    background-image: $square-bg;
+    background-size: var(--square-width) var(--square-width);
+    transition: $base-duration;
+    transform: rotateZ(0);
+
+    @for $i from 1 through 4 {
+      &:nth-child(#{$i}) {
+        background-position: nth($slice-bgps, $i);
+        transform-origin: nth($slice-origins, $i);
+        transition-delay: nth($slice-delays-reverse, $i);
+      }
+    }
+  }
+
+  &:hover {
+    .slice {
+      &:not(:nth-child(3)) {
+        visibility: hidden;
+      }
+
+      @for $i from 1 through 4 {
+        &:nth-child(#{$i}) {
+          transform: nth($slice-rotates, $i);
+          transition-delay: nth($slice-delays, $i);
+        }
+      }
+    }
+  }
+}

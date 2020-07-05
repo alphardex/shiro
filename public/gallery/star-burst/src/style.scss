@@ -1,0 +1,83 @@
+body {
+  background: radial-gradient(ellipse at bottom, #0d1d31 0%, #0c0d13 100%);
+  margin: 0;
+  overflow: hidden;
+}
+
+@function random_range($min, $max) {
+  $rand: random();
+  $random_range: $min + floor($rand * (($max - $min) + 1));
+  @return $random_range;
+}
+
+@function sample($list) {
+  @return nth($list, random(length($list)));
+}
+
+.scene {
+  width: 100vw;
+  height: 100vh;
+  perspective: 400px;
+  transform-style: preserve-3d;
+}
+
+.star {
+  $star-colors: #4FC1E9, #5D9CEC, #F5F7FA;
+  $star-count: 100;
+  --star-width: 1em;
+  --star-tail-rate: 4;
+  --star-tail-width: calc(var(--star-tail-rate) * var(--star-width));
+  --star-tail-radius-rate: calc(50% / var(--star-tail-rate));
+  --easing-function: cubic-bezier(0.45, 0, 0.55, 1);
+  $basic-duration: 1s;
+  $time-scale: 3;
+
+  position: absolute;
+  top: 50vh;
+  left: 50vw;
+  width: var(--star-width);
+  height: var(--star-width);
+  background: var(--star-color);
+  border-radius: 50%;
+  transform: rotate(var(--rotate-deg)) translateX(0);
+  will-change: transform;
+  filter: blur(1px) contrast(2);
+  animation: shoot var(--shoot-duration) var(--shoot-delay)
+    var(--easing-function) infinite;
+
+  &::before {
+    position: absolute;
+    content: "";
+    width: var(--star-tail-width);
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      var(--star-tail-color),
+      transparent
+    );
+    border-radius: var(--star-tail-radius-rate) 0% 0%
+      var(--star-tail-radius-rate) / 50% 0% 0% 50%;
+  }
+
+  @for $i from 1 through $star-count {
+    &:nth-child(#{$i}) {
+      $star-color: sample($star-colors);
+      --star-color: #{$star-color};
+      --star-tail-color: #{transparentize($star-color, 0.25)};
+      --star-tail-rate: #{random_range(500, 1000) / 100};
+      --rotate-deg: #{random(360) * 1deg};
+      --shoot-duration: #{(
+          random_range(0, 1000) / 1000 * 1s + $basic-duration - 0.6s
+        ) *
+        $time-scale};
+      --shoot-delay: #{(random_range(0, 1000) / 1000 * -1s - $basic-duration) *
+        $time-scale};
+    }
+  }
+}
+
+@keyframes shoot {
+  to {
+    transform: rotate(var(--rotate-deg)) translateX(-70vw);
+  }
+}

@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
+
+.scene {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.d-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  display: block;
+  font-size: 4rem;
+  font-weight: bold;
+  font-family: 'Fredoka One', cursive;
+  color: white;
+  -webkit-text-stroke: 2px black;
+  text-transform: uppercase;
+
+  @for $i from 0 through 30 {
+    &:nth-child(#{$i}) {
+      transform: translateX(-50%) translateY(-50%) translateZ(1px * $i);
+    }
+  }
+}
