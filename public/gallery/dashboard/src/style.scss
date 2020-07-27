@@ -85,7 +85,7 @@ body {
 }
 
 .nav-btns {
-  --divider-length: 0;
+  --btn-group-divider-length: 0;
 
   margin-left: 24px;
 
@@ -271,8 +271,8 @@ body {
       border-left: 1px solid var(--secondary-color-lighter);
 
       .gauge {
-        --gauge-color-lighter: var(--secondary-color);
-        --text-color: var(--secondary-color-darkest);
+        --gauge-circle-color-lighter: var(--secondary-color);
+        --gauge-color: var(--secondary-color-darkest);
 
         width: 70px;
         height: 70px;
@@ -294,7 +294,7 @@ body {
       }
 
       .gauge {
-        --bg-color: var(--info-color-darker);
+        --gauge-bg: var(--info-color-darker);
         --gauge-color-lighter: var(--info-color-lighter);
 
         color: white;
@@ -362,14 +362,14 @@ body {
     }
 
     .function-switch {
-      --switch-ball-color: var(--function-color);
-      --switch-checked-color: var(--function-color);
-      --border-color: var(--function-color);
-      --switch-hover-color: transparent;
-      --switch-disabled-checked-color: transparent;
+      --switch-ball-bg: var(--function-color);
+      --switch-checked-bg: var(--function-color);
+      --switch-border-color: var(--function-color);
+      --switch-hover-border-color: transparent;
+      --switch-disabled-checked-bg: transparent;
 
       &:checked {
-        --border-color: var(--function-color);
+        --switch-border-color: var(--function-color);
       }
     }
 
@@ -388,14 +388,14 @@ body {
       }
 
       .function-switch {
-        --switch-ball-color: var(--secondary-color-darker);
-        --switch-checked-color: var(--secondary-color-darker);
-        --border-color: var(--secondary-color-darker);
-        --switch-hover-color: transparent;
-        --switch-disabled-checked-color: transparent;
+        --switch-ball-bg: var(--secondary-color-darker);
+        --switch-checked-bg: var(--secondary-color-darker);
+        --switch-border-color: var(--secondary-color-darker);
+        --switch-hover-border-color: transparent;
+        --switch-disabled-checked-bg: transparent;
 
         &:checked {
-          --border-color: var(--secondary-color-darker);
+          --switch-border-color: var(--secondary-color-darker);
         }
       }
     }
@@ -449,7 +449,7 @@ body {
     }
 
     .progress-bar {
-      --bar-color: var(--secondary-color);
+      --progress-bar-color: var(--secondary-color);
 
       width: 300px;
     }

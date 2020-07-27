@@ -31,8 +31,11 @@ body {
 }
 
 .form-input-material {
-  --default-color: white;
-  --border-bottom-color: white;
+  --input-default-border-color: white;
+  --input-border-bottom-color: white;
+}
+.form-input-material input {
+  color: white;
 }
 
 .login-form {

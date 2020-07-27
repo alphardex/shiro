@@ -55,13 +55,13 @@ body {
   width: 100%;
 }
 .search-bar .form-control {
-  --input-color: var(--secondary-color-lighter);
+  --input-bg: var(--secondary-color-lighter);
   width: 100%;
   border-color: transparent;
   border-radius: 15px;
 }
 .search-bar .btn {
-  --btn-color: var(--secondary-color-lighter);
+  --btn-bg: var(--secondary-color-lighter);
   display: flex;
   justify-content: center;
   align-items: center;

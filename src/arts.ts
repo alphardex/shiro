@@ -1,5 +1,20 @@
 export default [
   {
+    title: 'burger-menu-interaction',
+    description: '汉堡菜单微交互',
+    tags: ['menu', 'burger', 'hover', 'staggered']
+  },
+  {
+    title: 'clock-loader',
+    description: '时钟加载效果',
+    tags: ['loading', 'clock']
+  },
+  {
+    title: 'mask-loader',
+    description: 'mask实现的加载效果',
+    tags: ['loading', 'mask']
+  },
+  {
     title: 'star-burst',
     description: '流星爆发效果',
     tags: ['star', 'random', 'burst']
@@ -516,6 +531,11 @@ export default [
     title: "button-hover-shining",
     description: "会闪烁的按钮",
     tags: ["button", "hover"]
+  },
+  {
+    title: "toggle",
+    description: "精巧的开关",
+    tags: ['toggle']
   },
   {
     title: "burger-menu",

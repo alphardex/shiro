@@ -1,0 +1,167 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  background: black;
+  min-height: 100vh;
+}
+
+.burger-menu {
+  --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+  --line-width: 3rem;
+  --line-height: 0.12rem;
+  --line-bg: white;
+  --line-radius: 10px;
+  --line-gap: 0.3rem;
+  --line-transition-time: 0.3s;
+
+  position: relative;
+  width: var(--line-width);
+  height: calc((var(--line-gap) + var(--line-height)) * 2);
+  cursor: pointer;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+
+  &-lines {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-auto-flow: row;
+    gap: var(--line-gap);
+    transition: var(--line-transition-time);
+
+    .line {
+      position: relative;
+      width: var(--line-width);
+      height: var(--line-height);
+
+      &::before,
+      &::after {
+        position: absolute;
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        background: var(--line-bg);
+        border-radius: var(--line-radius);
+        transition: 1.1s var(--ease-out-expo);
+      }
+
+      &::before {
+        transform: scaleX(0);
+        transform-origin: left;
+      }
+
+      &::after {
+        transform-origin: right;
+        transition-delay: 0.25s;
+      }
+
+      @for $i from 1 through 3 {
+        &:nth-child(#{$i}) {
+          &::before {
+            transition-delay: 0.1s * ($i - 1);
+          }
+
+          &::after {
+            transition-delay: 0.25s + 0.1s * ($i - 1);
+          }
+        }
+      }
+    }
+
+    &:hover {
+      .line {
+        &::before {
+          transform: scaleX(1);
+          transition-delay: 0.25s;
+        }
+
+        &::after {
+          transform: scaleX(0);
+          transition-delay: 0s;
+        }
+
+        @for $i from 1 through 3 {
+          &:nth-child(#{$i}) {
+            &::before {
+              transition-delay: 0.25s + 0.1s * ($i - 1);
+            }
+
+            &::after {
+              transition-delay: 0.1s * ($i - 1);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &-close-icon {
+    --close-icon-cross-width: 4rem;
+    --close-icon-cross-height: 0.1rem;
+    --close-icon-cross-color: white;
+    --close-icon-cross-radius: 10px;
+    --close-icon-cross-transition-time: 0.3s;
+    --close-icon-cross-transition-delay: 0.1s;
+
+    position: absolute;
+    top: calc(-0.375 * var(--close-icon-cross-width));
+    left: calc(-5 * var(--close-icon-cross-height));
+    display: block;
+    width: var(--close-icon-cross-width);
+    height: var(--close-icon-cross-width);
+    cursor: pointer;
+    transform: scale(0) rotate(-90deg);
+    pointer-events: none;
+    transition: var(--close-icon-cross-transition-time)
+      var(--close-icon-cross-transition-delay);
+
+    &::before,
+    &::after {
+      position: absolute;
+      content: "";
+      top: 50%;
+      left: 50%;
+      background: var(--close-icon-cross-color);
+      border-radius: var(--close-icon-cross-radius);
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    &::before {
+      width: 50%;
+      height: var(--close-icon-cross-height);
+    }
+
+    &::after {
+      width: var(--close-icon-cross-height);
+      height: 50%;
+    }
+  }
+}
+
+#toggle:checked {
+  & ~ .burger-menu {
+    .burger-menu-lines {
+      transform: scale(0) rotate(90deg);
+    }
+
+    .burger-menu-close-icon {
+      transform: scale(1) rotate(0);
+      pointer-events: auto;
+
+      &:hover {
+        transform: scale(1) rotate(180deg);
+      }
+    }
+  }
+}

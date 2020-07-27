@@ -56,7 +56,7 @@ body {
   width: 100%;
 
   .form-control {
-    --input-color: var(--secondary-color-lighter);
+    --input-bg: var(--secondary-color-lighter);
 
     width: 100%;
     border-color: transparent;
@@ -64,7 +64,7 @@ body {
   }
 
   .btn {
-    --btn-color: var(--secondary-color-lighter);
+    --btn-bg: var(--secondary-color-lighter);
 
     display: flex;
     justify-content: center;
