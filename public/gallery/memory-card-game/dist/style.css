@@ -33,6 +33,9 @@ body {
           perspective: 800px;
 }
 .game .card {
+  --card-padding: 0;
+  --card-bg: transparent;
+  --card-radius: 0;
   position: relative;
   width: 60px;
   height: 60px;

@@ -44,6 +44,10 @@ $bg-urls: url("https://i.loli.net/2020/05/28/svkFR1Hi7Cq8Mx2.png"),
   perspective: 800px;
 
   .card {
+    --card-padding: 0;
+    --card-bg: transparent;
+    --card-radius: 0;
+
     position: relative;
     width: 60px;
     height: 60px;
