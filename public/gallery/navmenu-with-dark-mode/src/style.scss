@@ -34,11 +34,11 @@ body {
   --info-color: #1a2b81;
   --info-color-darker: #f3f3f3;
   --info-color-lighter: white;
-  --secondary-color: #b8b7bb;
+  --secondary-color: #c5cbe6;
   --secondary-color-darker: #576bd7;
-  --secondary-color-lighter: #394fc3;
+  --secondary-color-lighter: #3951d1;
   --secondary-color-darkest: white;
-  --secondary-color-lightest: #b8b7bb;
+  --secondary-color-lightest: #c5cbe6;
 }
 
 ul {
@@ -72,7 +72,7 @@ a {
   }
 
   .btn {
-    --btn-padding: 12px 11px 12px 17px;
+    --btn-padding: 12px 9px 12px 15px;
     --btn-bg: var(--secondary-color-darker);
     --btn-radius: 8px;
 
