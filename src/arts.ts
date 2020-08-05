@@ -1,7 +1,7 @@
 export default [
   {
-    title: 'navmenu-with-different-modes',
-    description: '不同色调的导航菜单',
+    title: 'navmenu-with-dark-mode',
+    description: '有暗黑模式的导航菜单',
     tags: ['nav', 'menu', 'darkmode']
   },
   {
@@ -503,7 +503,7 @@ export default [
     tags: ["text", "glow", "staggered"]
   },
   {
-    title: "staggered-bouncing-3d-loading",
+    title: "staggered-bounce-loading",
     description: "弹跳的3D文本加载",
     tags: ["text", "loading", "staggered"]
   },
@@ -533,7 +533,7 @@ export default [
     tags: ["nav", "tabs"]
   },
   {
-    title: "transparent-material-login-form",
+    title: "transparent-login-form",
     description: "透明material风格的登录表单",
     tags: ["material", "form", "login"]
   },

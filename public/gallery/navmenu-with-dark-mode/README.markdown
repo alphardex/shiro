@@ -1,4 +1,4 @@
-# Navmenu With Different Modes
+# Navmenu With Dark Mode
 
 A Pen created on CodePen.io. Original URL: [https://codepen.io/alphardex/pen/VwawKQQ](https://codepen.io/alphardex/pen/VwawKQQ).
 
