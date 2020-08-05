@@ -1,0 +1,76 @@
+body {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+          flex-direction: column;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  height: 100vh;
+  background: #f7f7fd;
+  margin: 0;
+}
+
+.swiper {
+  position: absolute;
+  width: 120px;
+  height: 468px;
+  cursor: pointer;
+}
+
+.camera {
+  --d-carousel-item-gap: 5px;
+  --d-carousel-transition: 0.3s;
+  --d-carousel-perspective: 250px;
+  --d-carousel-rotate-x: 0;
+  --d-carousel-translate-z: -100px;
+  --d-carousel-item-width: 45px;
+  --d-carousel-item-height: 45px;
+  --d-carousel-item-gap-double: calc(var(--d-carousel-item-gap) * 2);
+  --camera-width: calc(
+    var(--d-carousel-item-width) + var(--d-carousel-item-gap-double)
+  );
+  --camera-height: calc(
+    var(--d-carousel-item-height) + var(--d-carousel-item-gap-double)
+  );
+  position: relative;
+  width: var(--camera-width);
+  height: var(--camera-height);
+  -webkit-perspective: var(--d-carousel-perspective);
+          perspective: var(--d-carousel-perspective);
+  pointer-events: none;
+}
+.camera .d-carousel {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transform: translateZ(var(--d-carousel-translate-z)) rotateX(var(--d-carousel-rotate-x));
+          transform: translateZ(var(--d-carousel-translate-z)) rotateX(var(--d-carousel-rotate-x));
+  -webkit-transition: var(--d-carousel-transition);
+  transition: var(--d-carousel-transition);
+  pointer-events: none;
+}
+.camera .d-carousel-item {
+  --d-carousel-item-rotate-x: calc(var(--i) * var(--d-carousel-item-deg));
+  --d-carousel-item-translate-z: var(--d-carousel-item-r);
+  position: absolute;
+  left: var(--d-carousel-item-gap);
+  top: var(--d-carousel-item-gap);
+  width: var(--d-carousel-item-width);
+  height: var(--d-carousel-item-height);
+  border-radius: 5px;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  pointer-events: none;
+  -webkit-transform: rotateX(var(--d-carousel-item-rotate-x)) translateZ(var(--d-carousel-item-translate-z));
+          transform: rotateX(var(--d-carousel-item-rotate-x)) translateZ(var(--d-carousel-item-translate-z));
+}
+
+.tip {
+  position: absolute;
+  top: 4rem;
+}

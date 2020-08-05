@@ -1,0 +1,118 @@
+body {
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  margin: 0;
+  background: #eaecf0;
+  font-size: 14px;
+}
+
+.light-mode {
+  --primary-color: white;
+  --info-color: #2169f6;
+  --info-color-darker: white;
+  --info-color-lighter: #7c8b97;
+  --secondary-color: #7c8b97;
+  --secondary-color-lightest: white;
+  --secondary-color-darkest: black;
+}
+
+.dark-mode {
+  --primary-color: #11101d;
+  --info-color: white;
+  --info-color-darker: #11101d;
+  --info-color-lighter: white;
+  --secondary-color: #b8b7bb;
+  --secondary-color-darker: #41404a;
+  --secondary-color-lighter: #242431;
+  --secondary-color-darkest: white;
+  --secondary-color-lightest: #b8b7bb;
+}
+
+.blue-mode {
+  --primary-color: #2f49d0;
+  --info-color: #1a2b81;
+  --info-color-darker: #f3f3f3;
+  --info-color-lighter: white;
+  --secondary-color: #b8b7bb;
+  --secondary-color-darker: #576bd7;
+  --secondary-color-lighter: #394fc3;
+  --secondary-color-darkest: white;
+  --secondary-color-lightest: #b8b7bb;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+a {
+  color: currentColor;
+  text-decoration: none;
+}
+
+.container {
+  height: 750px;
+}
+
+.icon {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 1rem;
+}
+
+.input-group {
+  --search-color: var(--secondary-color-lightest);
+}
+.input-group .btn,
+.input-group .form-control {
+  border-color: transparent;
+}
+.input-group .btn {
+  --btn-padding: 12px 11px 12px 17px;
+  --btn-bg: var(--secondary-color-darker);
+  --btn-radius: 8px;
+}
+.input-group .btn .icon {
+  color: var(--secondary-color-lightest);
+}
+.input-group .form-control {
+  --input-bg: var(--secondary-color-darker);
+  --input-placeholder-color: var(--secondary-color-lightest);
+  --input-radius: 8px;
+  width: 100%;
+  color: var(--secondary-color-lightest);
+}
+
+.menu {
+  display: flex;
+  flex-direction: column;
+}
+.menu > * ~ * {
+  margin-top: 0.5rem;
+}
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  color: var(--secondary-color);
+  white-space: nowrap;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.menu-item.active {
+  color: var(--info-color-darker);
+  background: var(--info-color);
+}
+
+.divider {
+  position: relative;
+  width: 123%;
+  left: -27px;
+  max-height: 2px;
+  margin: 1rem 0;
+  border-top: 2px solid var(--divider-border-color);
+}

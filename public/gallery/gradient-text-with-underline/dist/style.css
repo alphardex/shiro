@@ -1,0 +1,64 @@
+body {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
+
+.text-grad-underline {
+  --ease-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
+  --ease-in-out-cubic: cubic-bezier(0.645, 0.045, 0.355, 1);
+  position: relative;
+  display: inline;
+  font-size: 2.4rem;
+  line-height: 1.5;
+  font-weight: bold;
+  font-style: italic;
+}
+.text-grad-underline::before, .text-grad-underline::after {
+  content: attr(data-text);
+}
+.text-grad-underline::before {
+  position: absolute;
+  color: transparent;
+  background: -webkit-gradient(linear, left top, right top, from(var(--primary-color)), color-stop(50%, var(--info-color-darker)), to(var(--primary-color))) 0/500% no-repeat;
+  background: linear-gradient(90deg, var(--primary-color) 0%, var(--info-color-darker) 50%, var(--primary-color) 100%) 0/500% no-repeat;
+  -webkit-background-clip: text;
+          background-clip: text;
+  -webkit-animation: flow 1s linear infinite;
+          animation: flow 1s linear infinite;
+}
+.text-grad-underline::after {
+  color: transparent;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(70%, transparent), color-stop(0, var(--secondary-color)), color-stop(0, transparent)) 0 0/0% 100% no-repeat;
+  background: linear-gradient(transparent 70%, var(--secondary-color) 0 85%, transparent 0 100%) 0 0/0% 100% no-repeat;
+  -webkit-animation: stroke 1.6s 0.3s var(--ease-in-out-cubic) forwards;
+          animation: stroke 1.6s 0.3s var(--ease-in-out-cubic) forwards;
+}
+
+@-webkit-keyframes flow {
+  from {
+    background-position: 0;
+  }
+  to {
+    background-position: 100%;
+  }
+}
+
+@keyframes flow {
+  from {
+    background-position: 0;
+  }
+  to {
+    background-position: 100%;
+  }
+}
+@-webkit-keyframes stroke {
+  to {
+    background-size: 100% 100%;
+  }
+}
+@keyframes stroke {
+  to {
+    background-size: 100% 100%;
+  }
+}

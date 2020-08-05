@@ -1,5 +1,30 @@
 export default [
   {
+    title: 'navmenu-with-different-modes',
+    description: '不同色调的导航菜单',
+    tags: ['nav', 'menu', 'darkmode']
+  },
+  {
+    title: '3d-carousel-swipe',
+    description: '3d滑动式轮播图',
+    tags: ['carousel', '3d', 'hammer']
+  },
+  {
+    title: 'diamond-grid',
+    description: '钻石型网格形状',
+    tags: ['image', 'grid']
+  },
+  {
+    title: 'menu-hover-slide-fill',
+    description: '菜单悬浮刷效果',
+    tags: ['menu', 'hover']
+  },
+  {
+    title: 'gradient-text-with-underline',
+    description: '有下划线的渐变文字',
+    tags: ['text', 'gradient']
+  },
+  {
     title: 'burger-menu-interaction',
     description: '汉堡菜单微交互',
     tags: ['menu', 'burger', 'hover', 'staggered']

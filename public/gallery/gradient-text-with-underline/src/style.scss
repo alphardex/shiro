@@ -1,0 +1,56 @@
+body {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
+
+.text-grad-underline {
+  --ease-out-cubic: cubic-bezier(0.215, 0.61, 0.355, 1);
+  --ease-in-out-cubic: cubic-bezier(0.645, 0.045, 0.355, 1);
+  position: relative;
+  display: inline;
+  font-size: 2.4rem;
+  line-height: 1.5;
+  font-weight: bold;
+  font-style: italic;
+
+  &::before,
+  &::after {
+    content: attr(data-text);
+  }
+
+  &::before {
+    position: absolute;
+    color: transparent;
+    background: linear-gradient(90deg, var(--primary-color) 0%, var(--info-color-darker) 50%, var(--primary-color) 100%) 0 / 500% no-repeat;
+    background-clip: text;
+    animation: flow 1s linear infinite;
+  }
+
+  &::after {
+    color: transparent;
+    background: linear-gradient(
+        transparent 70%,
+        var(--secondary-color) 0 85%,
+        transparent 0 100%
+      )
+      0 0 / 0% 100% no-repeat;
+    animation: stroke 1.6s 0.3s var(--ease-in-out-cubic) forwards;
+  }
+}
+
+@keyframes flow {
+  from {
+    background-position: 0;
+  }
+
+  to {
+    background-position: 100%;
+  }
+}
+
+@keyframes stroke {
+  to {
+    background-size: 100% 100%;
+  }
+}
