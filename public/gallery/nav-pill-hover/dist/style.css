@@ -1,0 +1,31 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f7f7fd;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.nav-pill-indicator {
+  --i: 0;
+  transform: translateX(calc(100% * var(--i)));
+}
+.nav-pill-item {
+  color: var(--secondary-color-darkest);
+  transition: 0.3s;
+}
+.nav-pill-item:nth-child(1):hover ~ .nav-pill-indicator {
+  --i: 0;
+}
+.nav-pill-item:nth-child(2):hover ~ .nav-pill-indicator {
+  --i: 1;
+}
+.nav-pill-item:nth-child(3):hover ~ .nav-pill-indicator {
+  --i: 2;
+}

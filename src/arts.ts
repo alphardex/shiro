@@ -1,5 +1,40 @@
 export default [
   {
+    title: 'ios-notification-fold-toggle',
+    description: 'ios通知折叠效果',
+    tags: ['ios', 'notification', 'fold']
+  },
+  {
+    title: 'share-button-hidden-icon',
+    description: '隐藏在门后的分享按钮',
+    tags: ['button', 'hover']
+  },
+  {
+    title: 'slash-open-animation',
+    description: '切裂开场动画',
+    tags: ['slash', 'open animation']
+  },
+  {
+    title: 'nav-pill-hover',
+    description: '片状导航悬浮效果',
+    tags: ['nav', 'pill', 'hover']
+  },
+  {
+    title: 'image-side-alter',
+    description: '二重人格图片',
+    tags: ['image', 'filter']
+  },
+  {
+    title: 'twisted-image',
+    description: '扭曲的图片',
+    tags: ['image', 'staggered', 'twist']
+  },
+  {
+    title: 'button-fill-up-hover',
+    description: '按钮悬浮填充效果',
+    tags: ['button', 'hover']
+  },
+  {
     title: 'navmenu-with-dark-mode',
     description: '有暗黑模式的导航菜单',
     tags: ['nav', 'menu', 'darkmode']

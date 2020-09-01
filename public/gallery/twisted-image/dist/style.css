@@ -1,0 +1,108 @@
+body {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  min-height: 100vh;
+  background: #f7f7fd;
+}
+
+.twisted-image {
+  position: relative;
+  width: 400px;
+  height: 200px;
+  overflow: hidden;
+}
+.twisted-image .twister {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.twisted-image .twister:nth-child(1) {
+  z-index: 9;
+  -webkit-clip-path: circle(5%);
+          clip-path: circle(5%);
+  -webkit-animation: spin 4s 0s infinite;
+          animation: spin 4s 0s infinite;
+}
+.twisted-image .twister:nth-child(2) {
+  z-index: 8;
+  -webkit-clip-path: circle(10%);
+          clip-path: circle(10%);
+  -webkit-animation: spin 4s 0.2s infinite;
+          animation: spin 4s 0.2s infinite;
+}
+.twisted-image .twister:nth-child(3) {
+  z-index: 7;
+  -webkit-clip-path: circle(15%);
+          clip-path: circle(15%);
+  -webkit-animation: spin 4s 0.4s infinite;
+          animation: spin 4s 0.4s infinite;
+}
+.twisted-image .twister:nth-child(4) {
+  z-index: 6;
+  -webkit-clip-path: circle(20%);
+          clip-path: circle(20%);
+  -webkit-animation: spin 4s 0.6s infinite;
+          animation: spin 4s 0.6s infinite;
+}
+.twisted-image .twister:nth-child(5) {
+  z-index: 5;
+  -webkit-clip-path: circle(25%);
+          clip-path: circle(25%);
+  -webkit-animation: spin 4s 0.8s infinite;
+          animation: spin 4s 0.8s infinite;
+}
+.twisted-image .twister:nth-child(6) {
+  z-index: 4;
+  -webkit-clip-path: circle(30%);
+          clip-path: circle(30%);
+  -webkit-animation: spin 4s 1s infinite;
+          animation: spin 4s 1s infinite;
+}
+.twisted-image .twister:nth-child(7) {
+  z-index: 3;
+  -webkit-clip-path: circle(35%);
+          clip-path: circle(35%);
+  -webkit-animation: spin 4s 1.2s infinite;
+          animation: spin 4s 1.2s infinite;
+}
+.twisted-image .twister:nth-child(8) {
+  z-index: 2;
+  -webkit-clip-path: circle(40%);
+          clip-path: circle(40%);
+  -webkit-animation: spin 4s 1.4s infinite;
+          animation: spin 4s 1.4s infinite;
+}
+.twisted-image .twister:nth-child(9) {
+  z-index: 1;
+  -webkit-clip-path: circle(45%);
+          clip-path: circle(45%);
+  -webkit-animation: spin 4s 1.6s infinite;
+          animation: spin 4s 1.6s infinite;
+}
+.twisted-image .twister:nth-child(10) {
+  z-index: 0;
+  -webkit-clip-path: circle(50%);
+          clip-path: circle(50%);
+  -webkit-animation: spin 4s 1.8s infinite;
+          animation: spin 4s 1.8s infinite;
+}
+
+@-webkit-keyframes spin {
+  60%, 100% {
+    -webkit-transform: rotate(1turn);
+            transform: rotate(1turn);
+  }
+}
+
+@keyframes spin {
+  60%, 100% {
+    -webkit-transform: rotate(1turn);
+            transform: rotate(1turn);
+  }
+}

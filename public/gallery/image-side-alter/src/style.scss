@@ -1,0 +1,28 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: hsl(240, 56%, 98%);
+}
+
+.img-side-alter {
+  --img-width: 4rem;
+
+  display: flex;
+  width: var(--img-width);
+
+  & > * {
+    width: var(--img-width);
+  }
+
+  .origin {
+    z-index: 1;
+    clip-path: inset(0 50% 0 0);
+  }
+
+  .altered {
+    margin-left: -100%;
+    filter: grayscale(1) contrast(1);
+  }
+}

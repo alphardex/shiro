@@ -1,0 +1,65 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: black;
+}
+
+:root {
+  --ease-in-out-quartic: cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+.btn {
+  --btn-padding: 12px 51px;
+  --btn-border-width: 2px;
+  --btn-radius: 0;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  white-space: nowrap;
+}
+.btn-fill-up {
+  --btn-color: var(--btn-bg);
+  --btn-border-color: var(--btn-bg);
+  background: transparent;
+  overflow: hidden;
+  transition: 0.5s var(--ease-in-out-quartic);
+}
+.btn-fill-up .btn-text {
+  display: block;
+  transition: inherit;
+}
+.btn-fill-up::before, .btn-fill-up::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  transform: translateY(100%);
+  transition: inherit;
+}
+.btn-fill-up::before {
+  content: "";
+  background: var(--btn-bg);
+}
+.btn-fill-up::after {
+  content: attr(data-text);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  opacity: 0;
+}
+.btn-fill-up:hover .btn-text {
+  transform: translateY(-100%);
+  opacity: 0;
+}
+.btn-fill-up:hover::before {
+  transform: scale(3);
+}
+.btn-fill-up:hover::after {
+  transform: translateY(0);
+  opacity: 1;
+}

@@ -1,0 +1,24 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f7f7fd;
+}
+
+.img-side-alter {
+  --img-width: 4rem;
+  display: flex;
+  width: var(--img-width);
+}
+.img-side-alter > * {
+  width: var(--img-width);
+}
+.img-side-alter .origin {
+  z-index: 1;
+  clip-path: inset(0 50% 0 0);
+}
+.img-side-alter .altered {
+  margin-left: -100%;
+  filter: grayscale(1) contrast(1);
+}
