@@ -1,0 +1,36 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background: black;
+}
+
+.smoke {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 30vw;
+  height: 30vw;
+  overflow: hidden;
+  border: 3px solid grey;
+
+  .dust {
+    --dust-bottom-offset: 0.5rem;
+    --dust-basic-width: 0.3rem;
+    --dust-basic-height: 1px;
+    --dust-bg: rgba(255, 255, 255, calc(1 - var(--i) / 60));
+
+    position: absolute;
+    bottom: calc(var(--i) * var(--dust-bottom-offset));
+    width: calc(var(--i) * var(--dust-basic-width));
+    height: calc(var(--i) * var(--dust-basic-height));
+    background: var(--dust-bg);
+    border-radius: 666px;
+    filter: blur(calc(var(--i) / 3 * 1px + 10px));
+    will-change: transform;
+    animation: spin 3s calc(0.1s * var(--i)) linear infinite;
+  }
+}

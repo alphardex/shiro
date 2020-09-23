@@ -1,0 +1,35 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background: linear-gradient(-20deg, #2b5876 0%, #4e4376 100%);
+}
+
+.puzzle {
+  --puzzle-width: 16rem;
+  --puzzle-height: 24rem;
+  --puzzle-row: 3;
+  --puzzle-col: 4;
+  --puzzle-gap: 1px;
+  --puzzle-frag-width: calc(var(--puzzle-width) / var(--puzzle-col));
+  --puzzle-frag-height: calc(var(--puzzle-height) / var(--puzzle-row));
+  --puzzle-img: url(https://i.picsum.photos/id/293/300/600.jpg?hmac=wAkrJNl_2A_s-EGqCrQv-YK5-yEjaoiTDxggC7HOboE);
+
+  display: flex;
+  flex-wrap: wrap;
+  width: calc(var(--puzzle-width) + calc(var(--puzzle-col) * var(--puzzle-gap) * 2));
+  height: calc(var(--puzzle-height) + calc(var(--puzzle-row) * var(--puzzle-gap) * 2));
+
+  .fragment {
+    --x-offset: calc(var(--x) * var(--puzzle-frag-width) * -1);
+    --y-offset: calc(var(--y) * var(--puzzle-frag-height) * -1);
+    width: var(--puzzle-frag-width);
+    height: var(--puzzle-frag-height);
+    order: var(--order);
+    margin: var(--puzzle-gap);
+    background: var(--puzzle-img) var(--x-offset) var(--y-offset) / var(--puzzle-width) var(--puzzle-height) no-repeat;
+    border-radius: 10px;
+  }
+}

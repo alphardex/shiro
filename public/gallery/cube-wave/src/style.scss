@@ -1,0 +1,142 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: var(--grey-color);
+  margin: 0;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  transform-style: preserve-3d;
+}
+
+:root {
+  --grey-color-1: #bdc3c7;
+  --grey-color-2: #95a5a6;
+  --grey-color-3: #7f8c8d;
+}
+
+// Thanks to this article: https://frontend.horse/articles/creating-3d-illustrations-with-css/
+@mixin cube($width, $height, $depth) {
+  &__front {
+    @include cube-front($width, $height, $depth);
+  }
+  &__back {
+    @include cube-back($width, $height, $depth);
+  }
+  &__right {
+    @include cube-right($width, $height, $depth);
+  }
+  &__left {
+    @include cube-left($width, $height, $depth);
+  }
+  &__top {
+    @include cube-top($width, $height, $depth);
+  }
+  &__bottom {
+    @include cube-bottom($width, $height, $depth);
+  }
+  .face {
+    position: absolute;
+  }
+}
+
+@mixin cube-front($width, $height, $depth) {
+  width: var($width);
+  height: var($height);
+  transform-origin: bottom left;
+  transform: rotateX(-90deg) translateZ(calc(calc(var(#{$depth}) * 2) - var(#{$height})));
+}
+
+@mixin cube-back($width, $height, $depth) {
+  width: var($width);
+  height: var($height);
+  transform-origin: top left;
+  transform: rotateX(-90deg) rotateY(180deg) translateX(calc(var(#{$width}) * -1))
+    translateY(calc(var(#{$height}) * -1));
+}
+
+@mixin cube-right($width, $height, $depth) {
+  width: calc(var(#{$depth}) * 2);
+  height: var($height);
+  transform-origin: top left;
+  transform: rotateY(90deg) rotateZ(-90deg) translateZ(var(#{$width}))
+    translateX(calc(var(#{$depth}) * -2)) translateY(calc(var(#{$height}) * -1));
+}
+
+@mixin cube-left($width, $height, $depth) {
+  width: calc(var(#{$depth}) * 2);
+  height: var($height);
+  transform-origin: top left;
+  transform: rotateY(-90deg) rotateZ(90deg) translateY(calc(var(#{$height}) * -1));
+}
+
+@mixin cube-top($width, $height, $depth) {
+  width: var($width);
+  height: calc(var(#{$depth}) * 2);
+  transform-origin: top left;
+  transform: translateZ(var($height));
+}
+
+@mixin cube-bottom($width, $height, $depth) {
+  width: var($width);
+  height: calc(var(#{$depth}) * 2);
+  transform-origin: top left;
+  transform: rotateY(180deg) translateX(calc(var(#{$width}) * -1));
+}
+
+.cube {
+  --cube-width: 3rem;
+  --cube-height: 3rem;
+  --cube-depth: 1.5rem;
+
+  @include cube(--cube-width, --cube-height, --cube-depth);
+  width: 3rem;
+  height: 3rem;
+
+  &__front {
+    background-color: var(--grey-color-1);
+  }
+  &__back {
+    background-color: var(--grey-color-3);
+  }
+  &__right {
+    background-color: var(--grey-color-1);
+  }
+  &__left {
+    background-color: var(--grey-color-2);
+  }
+  &__top {
+    background-color: var(--grey-color-3);
+  }
+  &__bottom {
+    background-color: var(--grey-color-2);
+  }
+}
+
+.board {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  width: 24rem;
+  height: 24rem;
+  transform: rotateX(60deg) rotateZ(-45deg);
+  cursor: pointer;
+
+  .cube {
+    transition: --cube-height 0.3s;
+
+    &.active {
+      --cube-height: 0;
+    }
+
+    &.active-2 {
+      --cube-height: 2.99rem;
+    }
+  }
+}

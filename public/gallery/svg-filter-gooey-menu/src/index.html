@@ -1,0 +1,24 @@
+<svg width="0" height="0" class="absolute">
+  <filter id="goo">
+    <feGaussianBlur stdDeviation="10 10" in="SourceGraphic" result="blur" />
+    <feColorMatrix type="matrix" values="1 0 0 0 0
+    0 1 0 0 0
+    0 0 1 0 0
+    0 0 0 18 -7" in="blur" result="colormatrix" />
+    <feComposite in="SourceGraphic" in2="colormatrix" operator="over" result="composite" />
+  </filter>
+</svg>
+<nav class="gooey-menu" style="--item-count: 6;">
+  <input type="checkbox" id="gooey-menu__check" class="gooey-menu__check hidden">
+  <label for="gooey-menu__check" class="gooey-menu__toggle">
+    <i class="fas fa-share"></i>
+  </label>
+  <ul class="gooey-menu__items">
+    <li class="gooey-menu__item" style="--i: 1;"><i class="fab fa-twitter"></i></li>
+    <li class="gooey-menu__item" style="--i: 2;"><i class="fab fa-facebook"></i></li>
+    <li class="gooey-menu__item" style="--i: 3;"><i class="fab fa-weixin"></i></li>
+    <li class="gooey-menu__item" style="--i: 4;"><i class="fab fa-codepen"></i></li>
+    <li class="gooey-menu__item" style="--i: 5;"><i class="fab fa-github"></i></li>
+    <li class="gooey-menu__item" style="--i: 6;"><i class="fab fa-youtube"></i></li>
+  </ul>
+</nav>

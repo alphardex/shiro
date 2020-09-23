@@ -1,0 +1,53 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: var(--grey-color);
+  margin: 0;
+}
+
+:root {
+  --grey-color: #95a5a6;
+}
+
+@function tunnel-shadow($layer-count, $layer-start: 1) {
+  $layers: ();
+  @if $layer-start == 1 {
+    $layers: inset 0 0 0 var(--line-width) var(--color-2), inset 0 0 0 0 var(--color-1),
+      inset 0 0 0 var(--line-width) transparent;
+  } @else {
+    $layers: inset 0 0 0 var(--line-width) var(--color-2), inset 0 0 0 var(--offset) var(--color-1),
+      inset 0 0 0 calc(var(--line-width) + var(--offset)) var(--color-2);
+  }
+  @for $i from $layer-start through $layer-count {
+    $layer-odd: inset 0 0 0 calc(var(--offset) * #{$i}) var(--color-1);
+    $layer-even: inset 0 0 0 calc(var(--line-width) + var(--offset) * #{$i}) var(--color-2);
+    $layers: append($layers, $layer-odd, comma);
+    $layers: append($layers, $layer-even, comma);
+  }
+  @return $layers;
+}
+
+.tunnel {
+  --color-1: var(--grey-color);
+  --color-2: rgba(0, 0, 0, 0.5);
+  --offset: 2rem;
+  --line-width: 8px;
+
+  width: 45vw;
+  height: 45vw;
+  transform: rotate(45deg);
+  will-change: box-shadow;
+  animation: move 0.6s infinite linear;
+}
+
+@keyframes move {
+  from {
+    box-shadow: tunnel-shadow(9, 1);
+  }
+
+  to {
+    box-shadow: tunnel-shadow(9, 2);
+  }
+}

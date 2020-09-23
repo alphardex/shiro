@@ -1,0 +1,39 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(to top, #48c6ef 0%, #6f86d6 100%);
+  overflow: hidden;
+}
+
+.ring {
+  --line-count: 12;
+  position: relative;
+}
+.ring .line {
+  position: absolute;
+  width: 75vmax;
+  height: 3px;
+  transform: rotate(calc(360deg / var(--line-count) * var(--i)));
+  transform-origin: left;
+  overflow: hidden;
+}
+.ring .line::before {
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  background: white;
+  animation: move-center 1s both infinite;
+  animation-delay: calc(0.1s * calc(var(--i) - 1));
+}
+
+@keyframes move-center {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}

@@ -1,0 +1,65 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: hsl(240, 56%, 98%);
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.gooey-menu {
+  width: 6rem;
+  height: 6rem;
+  filter: url("#goo");
+
+  &__toggle,
+  &__item {
+    box-sizing: border-box;
+    width: 3rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    color: white;
+    background: var(--primary-color);
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  &__toggle {
+    position: absolute;
+    z-index: 1;
+  }
+
+  &__check {
+    &:checked {
+      & ~ .gooey-menu__items {
+        .gooey-menu__item {
+          transform: rotate(var(--rotate-deg)) translateX(var(--ring-radius));
+        }
+      }
+    }
+  }
+
+  &__item {
+    --ratio: calc(var(--i) / var(--item-count));
+    --rotate-deg: calc(var(--ratio) * 360deg);
+    --rotate-deg-reverse: calc(var(--rotate-deg) * -1);
+    --ring-radius: 5rem;
+
+    position: absolute;
+    transform: rotate(var(--rotate-deg));
+    transition: 0.3s calc(calc(var(--i) - 1) * 0.05s);
+
+    i {
+      transform: rotate(var(--rotate-deg-reverse));
+    }
+  }
+}

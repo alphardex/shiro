@@ -1,0 +1,151 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background: var(--grey-color-4);
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  transform-style: preserve-3d;
+}
+
+:root {
+  --red-color: #ae2a4a;
+  --grey-color-1: #979797;
+  --grey-color-2: #959595;
+  --grey-color-3: #e0dfe0;
+  --grey-color-4: #dadada;
+}
+
+.cube {
+  --cube-width: 3rem;
+  --cube-height: 1rem;
+  --cube-depth: 1.5rem;
+  width: 3rem;
+  height: 1rem;
+}
+.cube__front {
+  width: var(--cube-width);
+  height: var(--cube-height);
+  transform-origin: bottom left;
+  transform: rotateX(-90deg) translateZ(calc(calc(var(--cube-depth) * 2) - var(--cube-height)));
+}
+.cube__back {
+  width: var(--cube-width);
+  height: var(--cube-height);
+  transform-origin: top left;
+  transform: rotateX(-90deg) rotateY(180deg) translateX(calc(var(--cube-width) * -1)) translateY(calc(var(--cube-height) * -1));
+}
+.cube__right {
+  width: calc(var(--cube-depth) * 2);
+  height: var(--cube-height);
+  transform-origin: top left;
+  transform: rotateY(90deg) rotateZ(-90deg) translateZ(var(--cube-width)) translateX(calc(var(--cube-depth) * -2)) translateY(calc(var(--cube-height) * -1));
+}
+.cube__left {
+  width: calc(var(--cube-depth) * 2);
+  height: var(--cube-height);
+  transform-origin: top left;
+  transform: rotateY(-90deg) rotateZ(90deg) translateY(calc(var(--cube-height) * -1));
+}
+.cube__top {
+  width: var(--cube-width);
+  height: calc(var(--cube-depth) * 2);
+  transform-origin: top left;
+  transform: translateZ(var(--cube-height));
+}
+.cube__bottom {
+  width: var(--cube-width);
+  height: calc(var(--cube-depth) * 2);
+  transform-origin: top left;
+  transform: rotateY(180deg) translateX(calc(var(--cube-width) * -1));
+}
+.cube .face {
+  position: absolute;
+  border-radius: 4px;
+}
+.cube__front {
+  background-color: var(--grey-color-1);
+}
+.cube__back {
+  background-color: var(--grey-color-3);
+}
+.cube__right {
+  background-color: var(--grey-color-1);
+}
+.cube__left {
+  background-color: var(--grey-color-2);
+}
+.cube__top {
+  background-color: var(--grey-color-3);
+  overflow: hidden;
+}
+.cube__bottom {
+  background-color: var(--grey-color-2);
+}
+
+.camera {
+  perspective: 300px;
+  transform: scale(3);
+}
+
+.board {
+  --board-row: 4;
+  --board-col: 6;
+  position: relative;
+  display: grid;
+  grid-template-rows: repeat(var(--board-row), 1fr);
+  grid-template-columns: repeat(var(--board-col), 1fr);
+  width: 18rem;
+  height: 12rem;
+  transform: rotateX(45deg);
+}
+
+.clip {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  font-size: 4rem;
+  line-height: 1;
+  color: var(--red-color);
+  user-select: none;
+}
+.clip-1 {
+  text-align: right;
+  left: 38%;
+}
+.clip-2 {
+  right: 61%;
+}
+.clip-3 {
+  text-align: right;
+  left: 38%;
+  bottom: 100%;
+}
+.clip-4 {
+  right: 61%;
+  bottom: 100%;
+}
+.clip-5 {
+  text-align: right;
+  left: 38%;
+  bottom: 68%;
+}
+.clip-6 {
+  right: 61%;
+  bottom: 68%;
+}
+.clip-7 {
+  text-align: right;
+  left: 38%;
+  bottom: 35%;
+}
+.clip-8 {
+  right: 61%;
+  bottom: 35%;
+}

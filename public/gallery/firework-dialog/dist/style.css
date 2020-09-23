@@ -1,0 +1,26 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.z-10086 {
+  z-index: 10086;
+}
+
+.-top-6 {
+  top: -6rem;
+}
+
+.emitter {
+  position: relative;
+}
+.emitter div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 4px;
+  background: var(--particle-color);
+}

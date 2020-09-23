@@ -1,0 +1,26 @@
+body {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background: #f7f7fd;
+}
+
+:root {
+  --blue-color: #5296F9;
+}
+
+.divider-grad-mask {
+  width: 100%;
+  height: 1rem;
+  background: -webkit-gradient(linear, left top, right top, color-stop(0, var(--blue-color)), color-stop(0, transparent)) 0 0/2rem 1rem;
+  background: linear-gradient(90deg, var(--blue-color) 0 50%, transparent 0 100%) 0 0/2rem 1rem;
+  -webkit-mask: -webkit-gradient(linear, right top, left top, from(black), to(transparent));
+  -webkit-mask: linear-gradient(-90deg, black, transparent);
+          mask: -webkit-gradient(linear, right top, left top, from(black), to(transparent));
+          mask: linear-gradient(-90deg, black, transparent);
+}

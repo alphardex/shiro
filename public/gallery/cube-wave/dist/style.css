@@ -1,0 +1,106 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: var(--grey-color);
+  margin: 0;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  transform-style: preserve-3d;
+}
+
+:root {
+  --grey-color-1: #bdc3c7;
+  --grey-color-2: #95a5a6;
+  --grey-color-3: #7f8c8d;
+}
+
+.cube {
+  --cube-width: 3rem;
+  --cube-height: 3rem;
+  --cube-depth: 1.5rem;
+  width: 3rem;
+  height: 3rem;
+}
+.cube__front {
+  width: var(--cube-width);
+  height: var(--cube-height);
+  transform-origin: bottom left;
+  transform: rotateX(-90deg) translateZ(calc(calc(var(--cube-depth) * 2) - var(--cube-height)));
+}
+.cube__back {
+  width: var(--cube-width);
+  height: var(--cube-height);
+  transform-origin: top left;
+  transform: rotateX(-90deg) rotateY(180deg) translateX(calc(var(--cube-width) * -1)) translateY(calc(var(--cube-height) * -1));
+}
+.cube__right {
+  width: calc(var(--cube-depth) * 2);
+  height: var(--cube-height);
+  transform-origin: top left;
+  transform: rotateY(90deg) rotateZ(-90deg) translateZ(var(--cube-width)) translateX(calc(var(--cube-depth) * -2)) translateY(calc(var(--cube-height) * -1));
+}
+.cube__left {
+  width: calc(var(--cube-depth) * 2);
+  height: var(--cube-height);
+  transform-origin: top left;
+  transform: rotateY(-90deg) rotateZ(90deg) translateY(calc(var(--cube-height) * -1));
+}
+.cube__top {
+  width: var(--cube-width);
+  height: calc(var(--cube-depth) * 2);
+  transform-origin: top left;
+  transform: translateZ(var(--cube-height));
+}
+.cube__bottom {
+  width: var(--cube-width);
+  height: calc(var(--cube-depth) * 2);
+  transform-origin: top left;
+  transform: rotateY(180deg) translateX(calc(var(--cube-width) * -1));
+}
+.cube .face {
+  position: absolute;
+}
+.cube__front {
+  background-color: var(--grey-color-1);
+}
+.cube__back {
+  background-color: var(--grey-color-3);
+}
+.cube__right {
+  background-color: var(--grey-color-1);
+}
+.cube__left {
+  background-color: var(--grey-color-2);
+}
+.cube__top {
+  background-color: var(--grey-color-3);
+}
+.cube__bottom {
+  background-color: var(--grey-color-2);
+}
+
+.board {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  width: 24rem;
+  height: 24rem;
+  transform: rotateX(60deg) rotateZ(-45deg);
+  cursor: pointer;
+}
+.board .cube {
+  transition: --cube-height 0.3s;
+}
+.board .cube.active {
+  --cube-height: 0;
+}
+.board .cube.active-2 {
+  --cube-height: 2.99rem;
+}

@@ -1,0 +1,124 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #464343;
+}
+
+:root {
+  --white-color-transparent-1: #{transparentize(white, 0.5)};
+  --white-color-transparent-2: #{transparentize(white, 0.65)};
+  --brown-color-transparent: #{transparentize(#a2763f, 0.5)};
+  --blue-color-transparent: #{transparentize(#425b64, 0.05)};
+  --red-color-transparent: #{transparentize(#963d41, 0.05)};
+  --yellow-color-transparent: #{transparentize(#959041, 0.05)};
+}
+
+.w-half {
+  width: 50%;
+}
+
+.h-half {
+  height: 50%;
+}
+
+.w-quart {
+  width: 25%;
+}
+
+.h-quart {
+  height: 25%;
+}
+
+.bg-blue-transparent {
+  background: var(--blue-color-transparent);
+}
+
+.bg-red-transparent {
+  background: var(--red-color-transparent);
+}
+
+.bg-yellow-transparent {
+  background: var(--yellow-color-transparent);
+}
+
+.bg-white-transparent-2 {
+  background: var(--white-color-transparent-2);
+}
+
+.border-white-transparent-1 {
+  border-color: var(--white-color-transparent-1);
+}
+
+.border-white-transparent-2 {
+  border-color: var(--white-color-transparent-2);
+}
+
+.orbit {
+  --orbit-width: 6rem;
+  --point-width: 1.5rem;
+  --orbit-color: var(--white-color-transparent-1);
+  --point-color: white;
+  --spin-duration: 4s;
+  --spin-delay: 0s;
+  position: relative;
+  width: var(--orbit-width);
+  height: var(--orbit-width);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid var(--orbit-color);
+  border-radius: 50%;
+
+  .point {
+    position: absolute;
+    width: var(--point-width);
+    height: var(--point-width);
+    animation: spin var(--spin-duration) var(--spin-delay) linear infinite;
+
+    &::before {
+      position: absolute;
+      content: "";
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--point-color);
+      border-radius: 50%;
+      transform: translateX(calc((var(--orbit-width)) / 2));
+    }
+  }
+}
+
+.wave {
+  transform: scale(0);
+  animation: wave 3s var(--wave-delay, 0s) var(--ease-out-cubic) forwards infinite;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0);
+  }
+
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+@keyframes wave {
+  0% {
+    transform: scale(0);
+  }
+
+  10%,
+  65% {
+    transform: scale(1.5);
+  }
+
+  80%,
+  100% {
+    opacity: 0;
+    transform: scale(1.5);
+  }
+}

@@ -1,0 +1,11 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: hsl(240, 56%, 98%);
+}
+
+.glitch {
+  filter: url('#glitch')
+}

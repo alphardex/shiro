@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - SVG Filter Motion Blur</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/@alphardex/aqua.css@1.5.5/dist/aqua.min.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<svg width="0" height="0" class="absolute">
+  <filter id="motion-blur" filterUnits="userSpaceOnUse">
+    <feGaussianBlur stdDeviation="100 0" in="SourceGraphic" result="blur">
+      <animate
+        dur="0.6s"
+        attributeName="stdDeviation"
+        from="100 0"
+        to="0 0"
+        fill="freeze"
+      ></animate>
+    </feGaussianBlur>
+  </filter>
+</svg>
+<div class="flex flex-col items-center space-y-4">
+  <div class="motion-blur text-5xl font-bold">Motion Blur Horizontal</div>
+  <div class="motion-blur slide-in-left text-5xl font-bold">
+    Motion Blur Left
+  </div>
+  <div class="motion-blur slide-in-right text-5xl font-bold">
+    Motion Blur Right
+  </div>
+</div>
+<!-- partial -->
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js'></script>
+</body>
+</html>

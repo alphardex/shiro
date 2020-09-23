@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Motion Table - Orbit</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"><link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/@alphardex/aqua.css@1.5.5/dist/aqua.min.css'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="flex flex-col items-center space-y-12">
+  <div class="text-6xl text-white">Orbit</div>
+  <div class="flex space-x-12">
+    <div class="orbit">
+      <div class="point"></div>
+    </div>
+    <div class="orbit">
+      <div
+        class="absolute left-0 top-0 w-quart h-quart border border-solid border-white-transparent-2 rounded-full wave"
+        style="--wave-delay: 0.1s"
+      ></div>
+      <div
+        class="absolute left-0 bottom-0 w-half h-half border border-solid border-white-transparent-2 rounded-full wave"
+        style="--wave-delay: 0s"
+      ></div>
+      <div
+        class="absolute right-0 bottom-0 w-quart h-quart border border-solid border-white-transparent-2 rounded-full wave"
+        style="--wave-delay: 0.2s"
+      ></div>
+      <div
+        class="absolute top-0 right-0 w-half h-half bg-blue-transparent rounded-full wave"
+        style="--wave-delay: 0.4s"
+      ></div>
+      <div
+        class="absolute left-0 w-half h-half bg-white-transparent-2 rounded-full wave"
+        style="--wave-delay: 0.5s"
+      ></div>
+      <div class="absolute w-full h-0 border border-dashed border-white-transparent-1"></div>
+      <div class="absolute w-0 h-full border border-dashed border-white-transparent-1"></div>
+      <div class="absolute border border-solid border-white w-half h-half rounded-full"></div>
+      <div class="absolute border border-solid border-white w-quart h-quart rounded-full"></div>
+      <div class="point" style="--point-color: var(--brown-color-transparent); --point-width: 1rem"></div>
+      <div
+        class="point"
+        style="
+          --point-color: var(--brown-color-transparent);
+          --point-width: 1rem;
+          --spin-delay: calc(var(--spin-duration) / -2);
+        "
+      ></div>
+    </div>
+    <div class="orbit">
+      <div
+        class="absolute left-0 top-0 w-quart h-quart border border-solid border-white-transparent-2 rounded-full wave"
+        style="--wave-delay: 1.1s"
+      ></div>
+      <div
+        class="absolute left-0 bottom-0 w-half h-half border border-solid border-white-transparent-2 rounded-full wave"
+        style="--wave-delay: 1s"
+      ></div>
+      <div
+        class="absolute right-0 bottom-0 w-quart h-quart border border-solid border-white-transparent-2 rounded-full wave"
+        style="--wave-delay: 1.2s"
+      ></div>
+      <div
+        class="absolute top-0 right-0 w-half h-half bg-blue-transparent rounded-full wave"
+        style="--wave-delay: 1.4s"
+      ></div>
+      <div
+        class="absolute left-0 w-half h-half bg-white-transparent-2 rounded-full wave"
+        style="--wave-delay: 1.5s"
+      ></div>
+      <div class="absolute w-full h-0 border border-dashed border-white-transparent-1"></div>
+      <div class="absolute w-0 h-full border border-dashed border-white-transparent-1"></div>
+      <div class="absolute border border-solid border-white w-half h-half rounded-full"></div>
+      <div class="absolute border border-solid border-white w-quart h-quart rounded-full"></div>
+      <div class="point" style="--point-color: var(--red-color-transparent); --point-width: 1rem"></div>
+      <div
+        class="point"
+        style="
+          --point-color: var(--red-color-transparent);
+          --point-width: 1rem;
+          --spin-delay: calc(var(--spin-duration) / -2);
+          --spin-duration: 2s;
+        "
+      ></div>
+      <div
+        class="point"
+        style="
+          --point-color: var(--red-color-transparent);
+          --point-width: 1rem;
+          --spin-delay: calc(var(--spin-duration) / -4);
+          --spin-duration: 2s;
+        "
+      ></div>
+    </div>
+    <div class="orbit">
+      <div
+        class="absolute left-0 top-0 w-quart h-quart border border-solid border-white-transparent-2 rounded-full wave"
+        style="--wave-delay: 2.1s"
+      ></div>
+      <div
+        class="absolute left-0 bottom-0 w-half h-half border border-solid border-white-transparent-2 rounded-full wave"
+        style="--wave-delay: 2s"
+      ></div>
+      <div
+        class="absolute right-0 bottom-0 w-quart h-quart border border-solid border-white-transparent-2 rounded-full wave"
+        style="--wave-delay: 2.2s"
+      ></div>
+      <div
+        class="absolute top-0 right-0 w-half h-half bg-blue-transparent rounded-full wave"
+        style="--wave-delay: 2.4s"
+      ></div>
+      <div
+        class="absolute left-0 w-half h-half bg-white-transparent-2 rounded-full wave"
+        style="--wave-delay: 2.5s"
+      ></div>
+      <div class="absolute w-full h-0 border border-dashed border-white-transparent-1"></div>
+      <div class="absolute w-0 h-full border border-dashed border-white-transparent-1"></div>
+      <div class="absolute border border-solid border-white w-half h-half rounded-full"></div>
+      <div class="absolute border border-solid border-white w-quart h-quart rounded-full"></div>
+      <div class="point" style="--point-color: var(--yellow-color-transparent); --point-width: 1rem"></div>
+      <div
+        class="point"
+        style="
+          --point-color: var(--yellow-color-transparent);
+          --point-width: 1rem;
+          --spin-delay: calc(var(--spin-duration) / -2);
+          --spin-duration: 2s;
+        "
+      ></div>
+      <div
+        class="point"
+        style="
+          --point-color: var(--yellow-color-transparent);
+          --point-width: 1rem;
+          --spin-delay: calc(var(--spin-duration) / -4);
+          --spin-duration: 2s;
+        "
+      ></div>
+      <div
+        class="point"
+        style="
+          --point-color: var(--yellow-color-transparent);
+          --point-width: 1rem;
+          --spin-delay: calc(var(--spin-duration) / -4);
+          --spin-duration: 1s;
+        "
+      ></div>
+    </div>
+  </div>
+</div>
+<!-- partial -->
+  
+</body>
+</html>
